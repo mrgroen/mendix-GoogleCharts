@@ -23,14 +23,14 @@
 define([
     'dojo/_base/declare', 'mxui/widget/_WidgetBase', 'dijit/_TemplatedMixin',
     'mxui/dom', 'dojo/dom', 'dojo/query', 'dojo/dom-prop', 'dojo/dom-geometry', 'dojo/dom-class', 'dojo/dom-style', 'dojo/dom-construct', 'dojo/_base/array', 'dojo/_base/lang', 'dojo/html', 'dojo/_base/event',
-    'GoogleChart/lib/jquery-1.11.2', 'dojo/text!GoogleChart/widget/template/GoogleChart.html'
+    'GoogleCharts/lib/jquery-1.11.2', 'dojo/text!GoogleCharts/widget/template/GoogleChart.html'
 ], function (declare, _WidgetBase, _TemplatedMixin, dom, dojoDom, domQuery, domProp, domGeom, domClass, domStyle, domConstruct, dojoArray, lang, html, event, _jQuery, widgetTemplate) {
     'use strict';
 
     var $ = _jQuery.noConflict(true);
     
     // Declare widget's prototype.
-    return declare('GoogleChart.widget.GooglePieChart', [_WidgetBase, _TemplatedMixin], {
+    return declare('GoogleCharts.widget.GooglePieChart', [_WidgetBase, _TemplatedMixin], {
 
         // _TemplatedMixin will create our dom node using this HTML template.
         templateString: widgetTemplate,
@@ -335,6 +335,6 @@ define([
         }
     });
 });
-require(['GoogleChart/widget/GooglePieChart'], function () {
+require(['GoogleCharts/widget/GooglePieChart'], function () {
     'use strict';
 });

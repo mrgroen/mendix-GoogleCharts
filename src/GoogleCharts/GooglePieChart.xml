@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<widget id="GoogleChart.widget.GooglePieChart" needsEntityContext="true" xmlns="http://www.mendix.com/widget/1.0/">
+<widget id="GoogleCharts.widget.GooglePieChart" needsEntityContext="true" xmlns="http://www.mendix.com/widget/1.0/">
   <name>Google Pie Chart</name>
   <description>A pie chart that is rendered within the browser using SVG or VML. Displays tooltips when hovering over slices.</description>
   
