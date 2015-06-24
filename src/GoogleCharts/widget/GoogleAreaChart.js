@@ -3,10 +3,10 @@
 /*global mx, define, require, browser, devel, console, google */
 /*mendix */
 /*
-    GooglePieChart
+    GoogleAreaChart
     ========================
 
-    @file      : GooglePieChart.js
+    @file      : GoogleAreaChart.js
     @version   : 1.0
     @author    : Marcus Groen
     @date      : Fri, 19 Jun 2015 12:52:36 GMT
@@ -15,7 +15,7 @@
 
     Documentation
     ========================
-    A pie chart that is rendered within the browser using SVG or VML. Displays tooltips when hovering over slices.
+    A area chart that is rendered within the browser using SVG or VML. Displays tooltips when hovering over points.
     Google charts are powerful, simple to use, and free.
 */
 
@@ -30,7 +30,7 @@ define([
     var $ = _jQuery.noConflict(true);
     
     // Declare widget's prototype.
-    return declare('GoogleCharts.widget.GooglePieChart', [_WidgetBase, _TemplatedMixin], {
+    return declare('GoogleCharts.widget.GoogleAreaChart', [_WidgetBase, _TemplatedMixin], {
 
         // _TemplatedMixin will create our dom node using this HTML template.
         templateString: widgetTemplate,
@@ -41,16 +41,7 @@ define([
         colors: "",
         enableInteractivity: true,
         forceIFrame: true,
-        is3D: true,
         legend: "",
-        pieHole: "",
-        pieSliceBorderColor: "",
-        pieSliceText: "percentage",
-        pieSliceTextStyle: true,
-        pieStartAngle: true,
-        reverseCategories: "",
-        slices: "",
-        sliceVisibilityThreshold: "",
         tooltip: "",
         jsonDataSource: "",
         mfToExecute: "",
@@ -125,25 +116,20 @@ define([
         _drawChart: function (data) {
             if (typeof data !== 'undefined' || data.trim() !== '') {
               var options = $.extend({},{
+                animation:{
+                  duration: 1000,
+                  easing: 'out',
+                },
                 'title': (this.title !== '') ? this.title : undefined,
                 'backgroundColor': (this.backgroundColor !== '') ? this.backgroundColor : undefined,
                 'colors': (this.colors !== '') ? this.colors : undefined,
                 'enableInteractivity': (this.enableInteractivity !== null) ? this.enableInteractivity : undefined,
                 'forceIFrame': (this.forceIFrame !== null) ? this.forceIFrame : undefined,
-                'is3D': (this.is3D !== null) ? this.is3D : undefined,
                 'legend': (this.legend !== '') ? this.legend : undefined,
-                'pieHole': (this.pieHole !== null) ? this.pieHole : undefined,
-                'pieSliceBorderColor': (this.pieSliceBorderColor !== '') ? this.pieSliceBorderColor : undefined,
-                'pieSliceText': (this.pieSliceText !== '') ? this.pieSliceText : undefined,
-                'pieSliceTextStyle': (this.pieSliceTextStyle !== '') ? this.pieSliceTextStyle : undefined,
-                'pieStartAngle': (this.pieStartAngle !== null) ? this.pieStartAngle : undefined,
-                'reverseCategories': (this.reverseCategories !== null) ? this.reverseCategories : undefined,
-                'slices': (this.slices !== '') ? this.slices : undefined,
-                'sliceVisibilityThreshold': (this.sliceVisibilityThreshold !== null) ? this.sliceVisibilityThreshold : undefined,
                 'tooltip': (this.tooltip !== '') ? this.tooltip : undefined
               });
               this._chartWrapper = new google.visualization.ChartWrapper({
-                'chartType': 'PieChart',
+                'chartType': 'AreaChart',
                 'dataTable': data,
                 'options': options,
                 'containerId': this.id
@@ -330,6 +316,6 @@ define([
         }
     });
 });
-require(['GoogleCharts/widget/GooglePieChart'], function () {
+require(['GoogleCharts/widget/GoogleAreaChart'], function () {
     'use strict';
 });
