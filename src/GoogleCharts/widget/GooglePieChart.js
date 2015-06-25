@@ -39,15 +39,15 @@ define([
         title: "",
         backgroundColor: "",
         colors: "",
-        enableInteractivity: true,
-        forceIFrame: true,
-        is3D: true,
+        enableInteractivity: null,
+        forceIFrame: null,
+        is3D: null,
         legend: "",
         pieHole: "",
         pieSliceBorderColor: "",
-        pieSliceText: "percentage",
-        pieSliceTextStyle: true,
-        pieStartAngle: true,
+        pieSliceText: "",
+        pieSliceTextStyle: "",
+        pieStartAngle: "",
         reverseCategories: "",
         slices: "",
         sliceVisibilityThreshold: "",
@@ -77,14 +77,14 @@ define([
 
         // dijit._WidgetBase.postCreate is called after constructing the widget. Implement to do extra setup work.
         postCreate: function () {
-          console.log(this.id + '.postCreate');
+          console.debug(this.id + '.postCreate');
           this._updateRendering();
           this._setupEvents();
         },
 
         // mxui.widget._WidgetBase.update is called when context is changed or initialized. Implement to re-render and / or fetch data.
         update: function (obj, callback) {
-            console.log(this.id + '.update');
+            console.debug(this.id + '.update');
 
             this._contextObj = obj;
             this._resetSubscriptions();
@@ -132,12 +132,12 @@ define([
                 'forceIFrame': (this.forceIFrame !== null) ? this.forceIFrame : undefined,
                 'is3D': (this.is3D !== null) ? this.is3D : undefined,
                 'legend': (this.legend !== '') ? this.legend : undefined,
-                'pieHole': (this.pieHole !== null) ? this.pieHole : undefined,
+                'pieHole': (this.pieHole !== '') ? this.pieHole : undefined,
                 'pieSliceBorderColor': (this.pieSliceBorderColor !== '') ? this.pieSliceBorderColor : undefined,
                 'pieSliceText': (this.pieSliceText !== '') ? this.pieSliceText : undefined,
                 'pieSliceTextStyle': (this.pieSliceTextStyle !== '') ? this.pieSliceTextStyle : undefined,
-                'pieStartAngle': (this.pieStartAngle !== null) ? this.pieStartAngle : undefined,
-                'reverseCategories': (this.reverseCategories !== null) ? this.reverseCategories : undefined,
+                'pieStartAngle': (this.pieStartAngle !== '') ? this.pieStartAngle : undefined,
+                'reverseCategories': (this.reverseCategories !== '') ? this.reverseCategories : undefined,
                 'slices': (this.slices !== '') ? this.slices : undefined,
                 'sliceVisibilityThreshold': (this.sliceVisibilityThreshold !== null) ? this.sliceVisibilityThreshold : undefined,
                 'tooltip': (this.tooltip !== '') ? this.tooltip : undefined
@@ -199,7 +199,7 @@ define([
                             //TODO what to do when all is ok!
                         },
                         error: lang.hitch(this, function (error) {
-                            console.log(this.id + ': An error occurred while executing microflow: ' + error.description);
+                            console.debug(this.id + ': An error occurred while executing microflow: ' + error.description);
                         })
                     }, this);
                 }
@@ -271,6 +271,7 @@ define([
 
         // Show an error message.
         _showError: function (message) {
+            console.log('[' + this.id + '] ERROR ' + message);
             if (this._alertDiv !== null) {
                 html.set(this._alertDiv, message);
                 return true;
@@ -295,7 +296,7 @@ define([
 
             // Release handles on previous object, if any.
             if (this._handles) {
-                this._handles.forEach(function (handle, i) {
+                dojoArray.forEach(this._handles, function (handle, i) {
                     mx.data.unsubscribe(handle);
                 });
                 this._handles = [];

@@ -57,14 +57,6 @@
             <category>Appearance</category>
             <description>The default opacity of the colored area under an area chart series, where 0.0 is fully transparent and 1.0 is fully opaque. To specify opacity for an individual series, set the areaOpacity value in the series property.</description>
         </property>
-        <property key="jsonDataSource" type="attribute">
-            <caption>JSON</caption>
-            <category>Data Source</category>
-            <description>The data source of the chart.</description>
-            <attributeTypes>
-                <attributeType name="String"/>
-            </attributeTypes>
-        </property>
         <property key="animation" type="boolean" required="true" defaultValue="false">
             <caption>Use Animation</caption>
             <category>Animation</category>
@@ -90,6 +82,14 @@
                 <enumerationValue key="out">out</enumerationValue>
                 <enumerationValue key="inAndOut">inAndOut</enumerationValue>
             </enumerationValues>
+        </property>
+        <property key="jsonDataSource" type="attribute">
+            <caption>JSON</caption>
+            <category>Data Source</category>
+            <description>The data source of the chart.</description>
+            <attributeTypes>
+                <attributeType name="String"/>
+            </attributeTypes>
         </property>
         <!--
         <property key="mfToExecute" type="microflow" required="false" defaultValue="">

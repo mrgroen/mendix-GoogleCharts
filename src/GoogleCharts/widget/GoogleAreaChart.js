@@ -39,10 +39,16 @@ define([
         title: "",
         backgroundColor: "",
         colors: "",
-        enableInteractivity: true,
-        forceIFrame: true,
+        enableInteractivity: null,
+        forceIFrame: null,
         legend: "",
+        aggregationTarget: "",
         tooltip: "",
+        areaOpacity: "",
+        animation: false,
+        animationStartup: false,
+        animationDuration: 0,
+        animationEasing: "",
         jsonDataSource: "",
         mfToExecute: "",
 
@@ -68,14 +74,14 @@ define([
 
         // dijit._WidgetBase.postCreate is called after constructing the widget. Implement to do extra setup work.
         postCreate: function () {
-          console.log(this.id + '.postCreate');
+          console.debug(this.id + '.postCreate');
           this._updateRendering();
           this._setupEvents();
         },
 
         // mxui.widget._WidgetBase.update is called when context is changed or initialized. Implement to re-render and / or fetch data.
         update: function (obj, callback) {
-            console.log(this.id + '.update');
+            console.debug(this.id + '.update');
 
             this._contextObj = obj;
             this._resetSubscriptions();
@@ -116,17 +122,20 @@ define([
         _drawChart: function (data) {
             if (typeof data !== 'undefined' || data.trim() !== '') {
               var options = $.extend({},{
-                animation:{
-                  duration: 1000,
-                  easing: 'out',
-                },
+                'animation': (this.animation !== false) ? {
+                  'startup': this.animationStartup,
+                  'duration': this.animationDuration,
+                  'easing': (this.animationEasing !== '') ? this.animationEasing : undefined
+                } : undefined,
                 'title': (this.title !== '') ? this.title : undefined,
                 'backgroundColor': (this.backgroundColor !== '') ? this.backgroundColor : undefined,
                 'colors': (this.colors !== '') ? this.colors : undefined,
+                'areaOpacity': (this.areaOpacity !== '') ? this.areaOpacity : undefined,
                 'enableInteractivity': (this.enableInteractivity !== null) ? this.enableInteractivity : undefined,
                 'forceIFrame': (this.forceIFrame !== null) ? this.forceIFrame : undefined,
                 'legend': (this.legend !== '') ? this.legend : undefined,
-                'tooltip': (this.tooltip !== '') ? this.tooltip : undefined
+                'tooltip': (this.tooltip !== '') ? this.tooltip : undefined,
+                'aggregationTarget': (this.aggregationTarget !== '') ? this.aggregationTarget : undefined
               });
               this._chartWrapper = new google.visualization.ChartWrapper({
                 'chartType': 'AreaChart',
@@ -185,7 +194,7 @@ define([
                             //TODO what to do when all is ok!
                         },
                         error: lang.hitch(this, function (error) {
-                            console.log(this.id + ': An error occurred while executing microflow: ' + error.description);
+                            console.debug(this.id + ': An error occurred while executing microflow: ' + error.description);
                         })
                     }, this);
                 }
@@ -257,6 +266,7 @@ define([
 
         // Show an error message.
         _showError: function (message) {
+            console.log('[' + this.id + '] ERROR ' + message);
             if (this._alertDiv !== null) {
                 html.set(this._alertDiv, message);
                 return true;
@@ -281,7 +291,7 @@ define([
 
             // Release handles on previous object, if any.
             if (this._handles) {
-                this._handles.forEach(function (handle, i) {
+                dojoArray.forEach(this._handles, function (handle, i) {
                     mx.data.unsubscribe(handle);
                 });
                 this._handles = [];
