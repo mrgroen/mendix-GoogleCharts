@@ -128,12 +128,12 @@ define([
                 } : undefined,
                 'title': (this.title !== '') ? this.title : undefined,
                 'backgroundColor': (this.backgroundColor !== '') ? this.backgroundColor : undefined,
-                'colors': (this.colors !== '') ? this.colors : undefined,
+                'colors': (this.colors !== '') ? JSON.parse(this.colors) : undefined,
                 'dataOpacity': (this.dataOpacity !== '') ? this.dataOpacity : undefined,
                 'enableInteractivity': (this.enableInteractivity !== null) ? this.enableInteractivity : undefined,
                 'forceIFrame': (this.forceIFrame !== null) ? this.forceIFrame : undefined,
-                'legend': (this.legend !== '') ? this.legend : undefined,
-                'tooltip': (this.tooltip !== '') ? this.tooltip : undefined
+                'legend': (this.legend !== '') ? JSON.parse(this.legend) : undefined,
+                'tooltip': (this.tooltip !== '') ? JSON.parse(this.tooltip) : undefined
               });
               this._chartWrapper = new google.visualization.ChartWrapper({
                 'chartType': 'ColumnChart',

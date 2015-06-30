@@ -127,11 +127,11 @@ define([
               var options = $.extend({},{
                 'title': (this.title !== '') ? this.title : undefined,
                 'backgroundColor': (this.backgroundColor !== '') ? this.backgroundColor : undefined,
-                'colors': (this.colors !== '') ? this.colors : undefined,
+                'colors': (this.colors !== '') ? JSON.parse(this.colors) : undefined,
                 'enableInteractivity': (this.enableInteractivity !== null) ? this.enableInteractivity : undefined,
                 'forceIFrame': (this.forceIFrame !== null) ? this.forceIFrame : undefined,
                 'is3D': (this.is3D !== null) ? this.is3D : undefined,
-                'legend': (this.legend !== '') ? this.legend : undefined,
+                'legend': (this.legend !== '') ? JSON.parse(this.legend) : undefined,
                 'pieHole': (this.pieHole !== '') ? this.pieHole : undefined,
                 'pieSliceBorderColor': (this.pieSliceBorderColor !== '') ? this.pieSliceBorderColor : undefined,
                 'pieSliceText': (this.pieSliceText !== '') ? this.pieSliceText : undefined,
@@ -140,7 +140,7 @@ define([
                 'reverseCategories': (this.reverseCategories !== '') ? this.reverseCategories : undefined,
                 'slices': (this.slices !== '') ? this.slices : undefined,
                 'sliceVisibilityThreshold': (this.sliceVisibilityThreshold !== null) ? this.sliceVisibilityThreshold : undefined,
-                'tooltip': (this.tooltip !== '') ? this.tooltip : undefined
+                'tooltip': (this.tooltip !== '') ? JSON.parse(this.tooltip) : undefined
               });
               this._chartWrapper = new google.visualization.ChartWrapper({
                 'chartType': 'PieChart',
