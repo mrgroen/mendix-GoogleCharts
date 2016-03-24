@@ -4,6 +4,7 @@
 		<widgetFiles>
 			<widgetFile path="GoogleCharts/GoogleAreaChart.xml"/>
 			<widgetFile path="GoogleCharts/GoogleColumnChart.xml"/>
+			<widgetFile path="GoogleCharts/GoogleBarChart.xml"/>
 			<widgetFile path="GoogleCharts/GooglePieChart.xml"/>
 		</widgetFiles>
 		<files>
