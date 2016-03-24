@@ -8,6 +8,7 @@ The widgets are compatible with Mendix 5.16.1 and up.
 
 - Area Chart
 - Column Chart
+- Bar chart
 - Pie Chart (with donut option)
 
 ## Configuration
