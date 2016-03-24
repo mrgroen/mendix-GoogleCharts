@@ -4,38 +4,32 @@
 
 package restservices.proxies;
 
-import com.mendix.core.Core;
-import com.mendix.core.CoreException;
-import com.mendix.systemwideinterfaces.core.IContext;
-import com.mendix.systemwideinterfaces.core.IMendixIdentifier;
-import com.mendix.systemwideinterfaces.core.IMendixObject;
-
 /**
  * This class exists because java api has no support for List<Any Object>. 
  * So just inherit your object from this object, to make it passable to an Any Object list. 
  */
 public class AnyObject
 {
-	private final IMendixObject anyObjectMendixObject;
+	private final com.mendix.systemwideinterfaces.core.IMendixObject anyObjectMendixObject;
 
-	private final IContext context;
+	private final com.mendix.systemwideinterfaces.core.IContext context;
 
 	/**
 	 * Internal name of this entity
 	 */
-	public static final String entityName = "RestServices.AnyObject";
+	public static final java.lang.String entityName = "RestServices.AnyObject";
 
-	public AnyObject(IContext context)
+	public AnyObject(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, Core.instantiate(context, "RestServices.AnyObject"));
+		this(context, com.mendix.core.Core.instantiate(context, "RestServices.AnyObject"));
 	}
 
-	protected AnyObject(IContext context, IMendixObject anyObjectMendixObject)
+	protected AnyObject(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject anyObjectMendixObject)
 	{
 		if (anyObjectMendixObject == null)
-			throw new IllegalArgumentException("The given object cannot be null.");
-		if (!Core.isSubClassOf("RestServices.AnyObject", anyObjectMendixObject.getType()))
-			throw new IllegalArgumentException("The given object is not a RestServices.AnyObject");
+			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
+		if (!com.mendix.core.Core.isSubClassOf("RestServices.AnyObject", anyObjectMendixObject.getType()))
+			throw new java.lang.IllegalArgumentException("The given object is not a RestServices.AnyObject");
 
 		this.anyObjectMendixObject = anyObjectMendixObject;
 		this.context = context;
@@ -45,7 +39,7 @@ public class AnyObject
 	 * @deprecated Use 'AnyObject.load(IContext, IMendixIdentifier)' instead.
 	 */
 	@Deprecated
-	public static restservices.proxies.AnyObject initialize(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static restservices.proxies.AnyObject initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
 		return restservices.proxies.AnyObject.load(context, mendixIdentifier);
 	}
@@ -54,37 +48,37 @@ public class AnyObject
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.getSudoContext() can be used to obtain sudo access).
 	 */
-	public static restservices.proxies.AnyObject initialize(IContext context, IMendixObject mendixObject)
+	public static restservices.proxies.AnyObject initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
-		if (Core.isSubClassOf("RestServices.Primitive", mendixObject.getType()))
+		if (com.mendix.core.Core.isSubClassOf("RestServices.Primitive", mendixObject.getType()))
 			return restservices.proxies.Primitive.initialize(context, mendixObject);
 
-		if (Core.isSubClassOf("RestServices.ReferableObject", mendixObject.getType()))
+		if (com.mendix.core.Core.isSubClassOf("RestServices.ReferableObject", mendixObject.getType()))
 			return restservices.proxies.ReferableObject.initialize(context, mendixObject);
 
 		return new restservices.proxies.AnyObject(context, mendixObject);
 	}
 
-	public static restservices.proxies.AnyObject load(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static restservices.proxies.AnyObject load(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
-		IMendixObject mendixObject = Core.retrieveId(context, mendixIdentifier);
+		com.mendix.systemwideinterfaces.core.IMendixObject mendixObject = com.mendix.core.Core.retrieveId(context, mendixIdentifier);
 		return restservices.proxies.AnyObject.initialize(context, mendixObject);
 	}
 
 	/**
 	 * Commit the changes made on this proxy object.
 	 */
-	public final void commit() throws CoreException
+	public final void commit() throws com.mendix.core.CoreException
 	{
-		Core.commit(context, getMendixObject());
+		com.mendix.core.Core.commit(context, getMendixObject());
 	}
 
 	/**
 	 * Commit the changes made on this proxy object using the specified context.
 	 */
-	public final void commit(IContext context) throws CoreException
+	public final void commit(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
-		Core.commit(context, getMendixObject());
+		com.mendix.core.Core.commit(context, getMendixObject());
 	}
 
 	/**
@@ -92,20 +86,20 @@ public class AnyObject
 	 */
 	public final void delete()
 	{
-		Core.delete(context, getMendixObject());
+		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 
 	/**
 	 * Delete the object using the specified context.
 	 */
-	public final void delete(IContext context)
+	public final void delete(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		Core.delete(context, getMendixObject());
+		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 	/**
 	 * @return the IMendixObject instance of this proxy for use in the Core interface.
 	 */
-	public final IMendixObject getMendixObject()
+	public final com.mendix.systemwideinterfaces.core.IMendixObject getMendixObject()
 	{
 		return anyObjectMendixObject;
 	}
@@ -113,7 +107,7 @@ public class AnyObject
 	/**
 	 * @return the IContext instance of this proxy, or null if no IContext instance was specified at initialization.
 	 */
-	public final IContext getContext()
+	public final com.mendix.systemwideinterfaces.core.IContext getContext()
 	{
 		return context;
 	}
@@ -141,7 +135,7 @@ public class AnyObject
 	/**
 	 * @return String name of this class
 	 */
-	public static String getType()
+	public static java.lang.String getType()
 	{
 		return "RestServices.AnyObject";
 	}
@@ -151,7 +145,7 @@ public class AnyObject
 	 * @deprecated Use getMendixObject().getId().toLong() to get a unique identifier for this object.
 	 */
 	@Deprecated
-	public String getGUID()
+	public java.lang.String getGUID()
 	{
 		return "ID_" + getMendixObject().getId().toLong();
 	}

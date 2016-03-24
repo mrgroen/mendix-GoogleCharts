@@ -4,25 +4,19 @@
 
 package mxmodelreflection.proxies;
 
-import com.mendix.core.Core;
-import com.mendix.core.CoreException;
-import com.mendix.systemwideinterfaces.core.IContext;
-import com.mendix.systemwideinterfaces.core.IMendixIdentifier;
-import com.mendix.systemwideinterfaces.core.IMendixObject;
-
 /**
  * 
  */
 public class Token
 {
-	private final IMendixObject tokenMendixObject;
+	private final com.mendix.systemwideinterfaces.core.IMendixObject tokenMendixObject;
 
-	private final IContext context;
+	private final com.mendix.systemwideinterfaces.core.IContext context;
 
 	/**
 	 * Internal name of this entity
 	 */
-	public static final String entityName = "MxModelReflection.Token";
+	public static final java.lang.String entityName = "MxModelReflection.Token";
 
 	/**
 	 * Enum describing members of this entity
@@ -48,31 +42,31 @@ public class Token
 		Token_MxObjectType_Referenced("MxModelReflection.Token_MxObjectType_Referenced"),
 		Token_MxObjectReference("MxModelReflection.Token_MxObjectReference");
 
-		private String metaName;
+		private java.lang.String metaName;
 
-		MemberNames(String s)
+		MemberNames(java.lang.String s)
 		{
 			metaName = s;
 		}
 
 		@Override
-		public String toString()
+		public java.lang.String toString()
 		{
 			return metaName;
 		}
 	}
 
-	public Token(IContext context)
+	public Token(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, Core.instantiate(context, "MxModelReflection.Token"));
+		this(context, com.mendix.core.Core.instantiate(context, "MxModelReflection.Token"));
 	}
 
-	protected Token(IContext context, IMendixObject tokenMendixObject)
+	protected Token(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject tokenMendixObject)
 	{
 		if (tokenMendixObject == null)
-			throw new IllegalArgumentException("The given object cannot be null.");
-		if (!Core.isSubClassOf("MxModelReflection.Token", tokenMendixObject.getType()))
-			throw new IllegalArgumentException("The given object is not a MxModelReflection.Token");
+			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
+		if (!com.mendix.core.Core.isSubClassOf("MxModelReflection.Token", tokenMendixObject.getType()))
+			throw new java.lang.IllegalArgumentException("The given object is not a MxModelReflection.Token");
 
 		this.tokenMendixObject = tokenMendixObject;
 		this.context = context;
@@ -82,7 +76,7 @@ public class Token
 	 * @deprecated Use 'Token.load(IContext, IMendixIdentifier)' instead.
 	 */
 	@Deprecated
-	public static mxmodelreflection.proxies.Token initialize(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static mxmodelreflection.proxies.Token initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
 		return mxmodelreflection.proxies.Token.load(context, mendixIdentifier);
 	}
@@ -91,21 +85,21 @@ public class Token
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.getSudoContext() can be used to obtain sudo access).
 	 */
-	public static mxmodelreflection.proxies.Token initialize(IContext context, IMendixObject mendixObject)
+	public static mxmodelreflection.proxies.Token initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
 		return new mxmodelreflection.proxies.Token(context, mendixObject);
 	}
 
-	public static mxmodelreflection.proxies.Token load(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static mxmodelreflection.proxies.Token load(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
-		IMendixObject mendixObject = Core.retrieveId(context, mendixIdentifier);
+		com.mendix.systemwideinterfaces.core.IMendixObject mendixObject = com.mendix.core.Core.retrieveId(context, mendixIdentifier);
 		return mxmodelreflection.proxies.Token.initialize(context, mendixObject);
 	}
 
-	public static java.util.List<mxmodelreflection.proxies.Token> load(IContext context, String xpathConstraint) throws CoreException
+	public static java.util.List<mxmodelreflection.proxies.Token> load(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String xpathConstraint) throws com.mendix.core.CoreException
 	{
 		java.util.List<mxmodelreflection.proxies.Token> result = new java.util.ArrayList<mxmodelreflection.proxies.Token>();
-		for (IMendixObject obj : Core.retrieveXPathQuery(context, "//MxModelReflection.Token" + xpathConstraint))
+		for (com.mendix.systemwideinterfaces.core.IMendixObject obj : com.mendix.core.Core.retrieveXPathQuery(context, "//MxModelReflection.Token" + xpathConstraint))
 			result.add(mxmodelreflection.proxies.Token.initialize(context, obj));
 		return result;
 	}
@@ -113,17 +107,17 @@ public class Token
 	/**
 	 * Commit the changes made on this proxy object.
 	 */
-	public final void commit() throws CoreException
+	public final void commit() throws com.mendix.core.CoreException
 	{
-		Core.commit(context, getMendixObject());
+		com.mendix.core.Core.commit(context, getMendixObject());
 	}
 
 	/**
 	 * Commit the changes made on this proxy object using the specified context.
 	 */
-	public final void commit(IContext context) throws CoreException
+	public final void commit(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
-		Core.commit(context, getMendixObject());
+		com.mendix.core.Core.commit(context, getMendixObject());
 	}
 
 	/**
@@ -131,15 +125,15 @@ public class Token
 	 */
 	public final void delete()
 	{
-		Core.delete(context, getMendixObject());
+		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 
 	/**
 	 * Delete the object using the specified context.
 	 */
-	public final void delete(IContext context)
+	public final void delete(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		Core.delete(context, getMendixObject());
+		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 	/**
 	 * @return value of Token
@@ -153,7 +147,7 @@ public class Token
 	 * @param context
 	 * @return value of Token
 	 */
-	public final String getToken(IContext context)
+	public final String getToken(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.Token.toString());
 	}
@@ -172,7 +166,7 @@ public class Token
 	 * @param context
 	 * @param token
 	 */
-	public final void setToken(IContext context, String token)
+	public final void setToken(com.mendix.systemwideinterfaces.core.IContext context, String token)
 	{
 		getMendixObject().setValue(context, MemberNames.Token.toString(), token);
 	}
@@ -189,7 +183,7 @@ public class Token
 	 * @param context
 	 * @return value of Prefix
 	 */
-	public final String getPrefix(IContext context)
+	public final String getPrefix(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.Prefix.toString());
 	}
@@ -208,7 +202,7 @@ public class Token
 	 * @param context
 	 * @param prefix
 	 */
-	public final void setPrefix(IContext context, String prefix)
+	public final void setPrefix(com.mendix.systemwideinterfaces.core.IContext context, String prefix)
 	{
 		getMendixObject().setValue(context, MemberNames.Prefix.toString(), prefix);
 	}
@@ -225,7 +219,7 @@ public class Token
 	 * @param context
 	 * @return value of Suffix
 	 */
-	public final String getSuffix(IContext context)
+	public final String getSuffix(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.Suffix.toString());
 	}
@@ -244,7 +238,7 @@ public class Token
 	 * @param context
 	 * @param suffix
 	 */
-	public final void setSuffix(IContext context, String suffix)
+	public final void setSuffix(com.mendix.systemwideinterfaces.core.IContext context, String suffix)
 	{
 		getMendixObject().setValue(context, MemberNames.Suffix.toString(), suffix);
 	}
@@ -261,7 +255,7 @@ public class Token
 	 * @param context
 	 * @return value of CombinedToken
 	 */
-	public final String getCombinedToken(IContext context)
+	public final String getCombinedToken(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.CombinedToken.toString());
 	}
@@ -280,7 +274,7 @@ public class Token
 	 * @param context
 	 * @param combinedtoken
 	 */
-	public final void setCombinedToken(IContext context, String combinedtoken)
+	public final void setCombinedToken(com.mendix.systemwideinterfaces.core.IContext context, String combinedtoken)
 	{
 		getMendixObject().setValue(context, MemberNames.CombinedToken.toString(), combinedtoken);
 	}
@@ -297,7 +291,7 @@ public class Token
 	 * @param context
 	 * @return value of Description
 	 */
-	public final String getDescription(IContext context)
+	public final String getDescription(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.Description.toString());
 	}
@@ -316,7 +310,7 @@ public class Token
 	 * @param context
 	 * @param description
 	 */
-	public final void setDescription(IContext context, String description)
+	public final void setDescription(com.mendix.systemwideinterfaces.core.IContext context, String description)
 	{
 		getMendixObject().setValue(context, MemberNames.Description.toString(), description);
 	}
@@ -333,7 +327,7 @@ public class Token
 	 * @param context
 	 * @return value of MetaModelPath
 	 */
-	public final String getMetaModelPath(IContext context)
+	public final String getMetaModelPath(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.MetaModelPath.toString());
 	}
@@ -352,7 +346,7 @@ public class Token
 	 * @param context
 	 * @param metamodelpath
 	 */
-	public final void setMetaModelPath(IContext context, String metamodelpath)
+	public final void setMetaModelPath(com.mendix.systemwideinterfaces.core.IContext context, String metamodelpath)
 	{
 		getMendixObject().setValue(context, MemberNames.MetaModelPath.toString(), metamodelpath);
 	}
@@ -370,13 +364,13 @@ public class Token
 	 * @param context
 	 * @return value of TokenType
 	 */
-	public final mxmodelreflection.proxies.TokenType getTokenType(IContext context)
+	public final mxmodelreflection.proxies.TokenType getTokenType(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		Object obj = getMendixObject().getValue(context, MemberNames.TokenType.toString());
 		if (obj == null)
 			return null;
 
-		return mxmodelreflection.proxies.TokenType.valueOf((String) obj);
+		return mxmodelreflection.proxies.TokenType.valueOf((java.lang.String) obj);
 	}
 
 	/**
@@ -393,7 +387,7 @@ public class Token
 	 * @param context
 	 * @param tokentype
 	 */
-	public final void setTokenType(IContext context, mxmodelreflection.proxies.TokenType tokentype)
+	public final void setTokenType(com.mendix.systemwideinterfaces.core.IContext context, mxmodelreflection.proxies.TokenType tokentype)
 	{
 		if (tokentype != null)
 			getMendixObject().setValue(context, MemberNames.TokenType.toString(), tokentype.toString());
@@ -414,13 +408,13 @@ public class Token
 	 * @param context
 	 * @return value of Status
 	 */
-	public final mxmodelreflection.proxies.Status getStatus(IContext context)
+	public final mxmodelreflection.proxies.Status getStatus(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		Object obj = getMendixObject().getValue(context, MemberNames.Status.toString());
 		if (obj == null)
 			return null;
 
-		return mxmodelreflection.proxies.Status.valueOf((String) obj);
+		return mxmodelreflection.proxies.Status.valueOf((java.lang.String) obj);
 	}
 
 	/**
@@ -437,7 +431,7 @@ public class Token
 	 * @param context
 	 * @param status
 	 */
-	public final void setStatus(IContext context, mxmodelreflection.proxies.Status status)
+	public final void setStatus(com.mendix.systemwideinterfaces.core.IContext context, mxmodelreflection.proxies.Status status)
 	{
 		if (status != null)
 			getMendixObject().setValue(context, MemberNames.Status.toString(), status.toString());
@@ -457,7 +451,7 @@ public class Token
 	 * @param context
 	 * @return value of FindObjectStart
 	 */
-	public final String getFindObjectStart(IContext context)
+	public final String getFindObjectStart(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.FindObjectStart.toString());
 	}
@@ -476,7 +470,7 @@ public class Token
 	 * @param context
 	 * @param findobjectstart
 	 */
-	public final void setFindObjectStart(IContext context, String findobjectstart)
+	public final void setFindObjectStart(com.mendix.systemwideinterfaces.core.IContext context, String findobjectstart)
 	{
 		getMendixObject().setValue(context, MemberNames.FindObjectStart.toString(), findobjectstart);
 	}
@@ -493,7 +487,7 @@ public class Token
 	 * @param context
 	 * @return value of FindObjectReference
 	 */
-	public final String getFindObjectReference(IContext context)
+	public final String getFindObjectReference(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.FindObjectReference.toString());
 	}
@@ -512,7 +506,7 @@ public class Token
 	 * @param context
 	 * @param findobjectreference
 	 */
-	public final void setFindObjectReference(IContext context, String findobjectreference)
+	public final void setFindObjectReference(com.mendix.systemwideinterfaces.core.IContext context, String findobjectreference)
 	{
 		getMendixObject().setValue(context, MemberNames.FindObjectReference.toString(), findobjectreference);
 	}
@@ -529,7 +523,7 @@ public class Token
 	 * @param context
 	 * @return value of FindReference
 	 */
-	public final String getFindReference(IContext context)
+	public final String getFindReference(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.FindReference.toString());
 	}
@@ -548,7 +542,7 @@ public class Token
 	 * @param context
 	 * @param findreference
 	 */
-	public final void setFindReference(IContext context, String findreference)
+	public final void setFindReference(com.mendix.systemwideinterfaces.core.IContext context, String findreference)
 	{
 		getMendixObject().setValue(context, MemberNames.FindReference.toString(), findreference);
 	}
@@ -565,7 +559,7 @@ public class Token
 	 * @param context
 	 * @return value of FindMember
 	 */
-	public final String getFindMember(IContext context)
+	public final String getFindMember(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.FindMember.toString());
 	}
@@ -584,7 +578,7 @@ public class Token
 	 * @param context
 	 * @param findmember
 	 */
-	public final void setFindMember(IContext context, String findmember)
+	public final void setFindMember(com.mendix.systemwideinterfaces.core.IContext context, String findmember)
 	{
 		getMendixObject().setValue(context, MemberNames.FindMember.toString(), findmember);
 	}
@@ -601,7 +595,7 @@ public class Token
 	 * @param context
 	 * @return value of FindMemberReference
 	 */
-	public final String getFindMemberReference(IContext context)
+	public final String getFindMemberReference(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.FindMemberReference.toString());
 	}
@@ -620,7 +614,7 @@ public class Token
 	 * @param context
 	 * @param findmemberreference
 	 */
-	public final void setFindMemberReference(IContext context, String findmemberreference)
+	public final void setFindMemberReference(com.mendix.systemwideinterfaces.core.IContext context, String findmemberreference)
 	{
 		getMendixObject().setValue(context, MemberNames.FindMemberReference.toString(), findmemberreference);
 	}
@@ -637,7 +631,7 @@ public class Token
 	 * @param context
 	 * @return value of IsOptional
 	 */
-	public final Boolean getIsOptional(IContext context)
+	public final Boolean getIsOptional(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (Boolean) getMendixObject().getValue(context, MemberNames.IsOptional.toString());
 	}
@@ -656,7 +650,7 @@ public class Token
 	 * @param context
 	 * @param isoptional
 	 */
-	public final void setIsOptional(IContext context, Boolean isoptional)
+	public final void setIsOptional(com.mendix.systemwideinterfaces.core.IContext context, Boolean isoptional)
 	{
 		getMendixObject().setValue(context, MemberNames.IsOptional.toString(), isoptional);
 	}
@@ -664,7 +658,7 @@ public class Token
 	/**
 	 * @return value of Token_MxObjectMember
 	 */
-	public final mxmodelreflection.proxies.MxObjectMember getToken_MxObjectMember() throws CoreException
+	public final mxmodelreflection.proxies.MxObjectMember getToken_MxObjectMember() throws com.mendix.core.CoreException
 	{
 		return getToken_MxObjectMember(getContext());
 	}
@@ -673,10 +667,10 @@ public class Token
 	 * @param context
 	 * @return value of Token_MxObjectMember
 	 */
-	public final mxmodelreflection.proxies.MxObjectMember getToken_MxObjectMember(IContext context) throws CoreException
+	public final mxmodelreflection.proxies.MxObjectMember getToken_MxObjectMember(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
 		mxmodelreflection.proxies.MxObjectMember result = null;
-		IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.Token_MxObjectMember.toString());
+		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.Token_MxObjectMember.toString());
 		if (identifier != null)
 			result = mxmodelreflection.proxies.MxObjectMember.load(context, identifier);
 		return result;
@@ -696,7 +690,7 @@ public class Token
 	 * @param context
 	 * @param token_mxobjectmember
 	 */
-	public final void setToken_MxObjectMember(IContext context, mxmodelreflection.proxies.MxObjectMember token_mxobjectmember)
+	public final void setToken_MxObjectMember(com.mendix.systemwideinterfaces.core.IContext context, mxmodelreflection.proxies.MxObjectMember token_mxobjectmember)
 	{
 		if (token_mxobjectmember == null)
 			getMendixObject().setValue(context, MemberNames.Token_MxObjectMember.toString(), null);
@@ -707,7 +701,7 @@ public class Token
 	/**
 	 * @return value of Token_MxObjectType_Start
 	 */
-	public final mxmodelreflection.proxies.MxObjectType getToken_MxObjectType_Start() throws CoreException
+	public final mxmodelreflection.proxies.MxObjectType getToken_MxObjectType_Start() throws com.mendix.core.CoreException
 	{
 		return getToken_MxObjectType_Start(getContext());
 	}
@@ -716,10 +710,10 @@ public class Token
 	 * @param context
 	 * @return value of Token_MxObjectType_Start
 	 */
-	public final mxmodelreflection.proxies.MxObjectType getToken_MxObjectType_Start(IContext context) throws CoreException
+	public final mxmodelreflection.proxies.MxObjectType getToken_MxObjectType_Start(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
 		mxmodelreflection.proxies.MxObjectType result = null;
-		IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.Token_MxObjectType_Start.toString());
+		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.Token_MxObjectType_Start.toString());
 		if (identifier != null)
 			result = mxmodelreflection.proxies.MxObjectType.load(context, identifier);
 		return result;
@@ -739,7 +733,7 @@ public class Token
 	 * @param context
 	 * @param token_mxobjecttype_start
 	 */
-	public final void setToken_MxObjectType_Start(IContext context, mxmodelreflection.proxies.MxObjectType token_mxobjecttype_start)
+	public final void setToken_MxObjectType_Start(com.mendix.systemwideinterfaces.core.IContext context, mxmodelreflection.proxies.MxObjectType token_mxobjecttype_start)
 	{
 		if (token_mxobjecttype_start == null)
 			getMendixObject().setValue(context, MemberNames.Token_MxObjectType_Start.toString(), null);
@@ -750,7 +744,7 @@ public class Token
 	/**
 	 * @return value of Token_MxObjectType_Referenced
 	 */
-	public final mxmodelreflection.proxies.MxObjectType getToken_MxObjectType_Referenced() throws CoreException
+	public final mxmodelreflection.proxies.MxObjectType getToken_MxObjectType_Referenced() throws com.mendix.core.CoreException
 	{
 		return getToken_MxObjectType_Referenced(getContext());
 	}
@@ -759,10 +753,10 @@ public class Token
 	 * @param context
 	 * @return value of Token_MxObjectType_Referenced
 	 */
-	public final mxmodelreflection.proxies.MxObjectType getToken_MxObjectType_Referenced(IContext context) throws CoreException
+	public final mxmodelreflection.proxies.MxObjectType getToken_MxObjectType_Referenced(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
 		mxmodelreflection.proxies.MxObjectType result = null;
-		IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.Token_MxObjectType_Referenced.toString());
+		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.Token_MxObjectType_Referenced.toString());
 		if (identifier != null)
 			result = mxmodelreflection.proxies.MxObjectType.load(context, identifier);
 		return result;
@@ -782,7 +776,7 @@ public class Token
 	 * @param context
 	 * @param token_mxobjecttype_referenced
 	 */
-	public final void setToken_MxObjectType_Referenced(IContext context, mxmodelreflection.proxies.MxObjectType token_mxobjecttype_referenced)
+	public final void setToken_MxObjectType_Referenced(com.mendix.systemwideinterfaces.core.IContext context, mxmodelreflection.proxies.MxObjectType token_mxobjecttype_referenced)
 	{
 		if (token_mxobjecttype_referenced == null)
 			getMendixObject().setValue(context, MemberNames.Token_MxObjectType_Referenced.toString(), null);
@@ -793,7 +787,7 @@ public class Token
 	/**
 	 * @return value of Token_MxObjectReference
 	 */
-	public final mxmodelreflection.proxies.MxObjectReference getToken_MxObjectReference() throws CoreException
+	public final mxmodelreflection.proxies.MxObjectReference getToken_MxObjectReference() throws com.mendix.core.CoreException
 	{
 		return getToken_MxObjectReference(getContext());
 	}
@@ -802,10 +796,10 @@ public class Token
 	 * @param context
 	 * @return value of Token_MxObjectReference
 	 */
-	public final mxmodelreflection.proxies.MxObjectReference getToken_MxObjectReference(IContext context) throws CoreException
+	public final mxmodelreflection.proxies.MxObjectReference getToken_MxObjectReference(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
 		mxmodelreflection.proxies.MxObjectReference result = null;
-		IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.Token_MxObjectReference.toString());
+		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.Token_MxObjectReference.toString());
 		if (identifier != null)
 			result = mxmodelreflection.proxies.MxObjectReference.load(context, identifier);
 		return result;
@@ -825,7 +819,7 @@ public class Token
 	 * @param context
 	 * @param token_mxobjectreference
 	 */
-	public final void setToken_MxObjectReference(IContext context, mxmodelreflection.proxies.MxObjectReference token_mxobjectreference)
+	public final void setToken_MxObjectReference(com.mendix.systemwideinterfaces.core.IContext context, mxmodelreflection.proxies.MxObjectReference token_mxobjectreference)
 	{
 		if (token_mxobjectreference == null)
 			getMendixObject().setValue(context, MemberNames.Token_MxObjectReference.toString(), null);
@@ -836,7 +830,7 @@ public class Token
 	/**
 	 * @return the IMendixObject instance of this proxy for use in the Core interface.
 	 */
-	public final IMendixObject getMendixObject()
+	public final com.mendix.systemwideinterfaces.core.IMendixObject getMendixObject()
 	{
 		return tokenMendixObject;
 	}
@@ -844,7 +838,7 @@ public class Token
 	/**
 	 * @return the IContext instance of this proxy, or null if no IContext instance was specified at initialization.
 	 */
-	public final IContext getContext()
+	public final com.mendix.systemwideinterfaces.core.IContext getContext()
 	{
 		return context;
 	}
@@ -872,7 +866,7 @@ public class Token
 	/**
 	 * @return String name of this class
 	 */
-	public static String getType()
+	public static java.lang.String getType()
 	{
 		return "MxModelReflection.Token";
 	}
@@ -882,7 +876,7 @@ public class Token
 	 * @deprecated Use getMendixObject().getId().toLong() to get a unique identifier for this object.
 	 */
 	@Deprecated
-	public String getGUID()
+	public java.lang.String getGUID()
 	{
 		return "ID_" + getMendixObject().getId().toLong();
 	}

@@ -4,25 +4,19 @@
 
 package emailtemplate.proxies;
 
-import com.mendix.core.Core;
-import com.mendix.core.CoreException;
-import com.mendix.systemwideinterfaces.core.IContext;
-import com.mendix.systemwideinterfaces.core.IMendixIdentifier;
-import com.mendix.systemwideinterfaces.core.IMendixObject;
-
 /**
  * 
  */
 public class EmailLog
 {
-	private final IMendixObject emailLogMendixObject;
+	private final com.mendix.systemwideinterfaces.core.IMendixObject emailLogMendixObject;
 
-	private final IContext context;
+	private final com.mendix.systemwideinterfaces.core.IContext context;
 
 	/**
 	 * Internal name of this entity
 	 */
-	public static final String entityName = "EmailTemplate.EmailLog";
+	public static final java.lang.String entityName = "EmailTemplate.EmailLog";
 
 	/**
 	 * Enum describing members of this entity
@@ -36,31 +30,31 @@ public class EmailLog
 		TriggeredInMF("TriggeredInMF"),
 		StackTrace("StackTrace");
 
-		private String metaName;
+		private java.lang.String metaName;
 
-		MemberNames(String s)
+		MemberNames(java.lang.String s)
 		{
 			metaName = s;
 		}
 
 		@Override
-		public String toString()
+		public java.lang.String toString()
 		{
 			return metaName;
 		}
 	}
 
-	public EmailLog(IContext context)
+	public EmailLog(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, Core.instantiate(context, "EmailTemplate.EmailLog"));
+		this(context, com.mendix.core.Core.instantiate(context, "EmailTemplate.EmailLog"));
 	}
 
-	protected EmailLog(IContext context, IMendixObject emailLogMendixObject)
+	protected EmailLog(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject emailLogMendixObject)
 	{
 		if (emailLogMendixObject == null)
-			throw new IllegalArgumentException("The given object cannot be null.");
-		if (!Core.isSubClassOf("EmailTemplate.EmailLog", emailLogMendixObject.getType()))
-			throw new IllegalArgumentException("The given object is not a EmailTemplate.EmailLog");
+			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
+		if (!com.mendix.core.Core.isSubClassOf("EmailTemplate.EmailLog", emailLogMendixObject.getType()))
+			throw new java.lang.IllegalArgumentException("The given object is not a EmailTemplate.EmailLog");
 
 		this.emailLogMendixObject = emailLogMendixObject;
 		this.context = context;
@@ -70,7 +64,7 @@ public class EmailLog
 	 * @deprecated Use 'EmailLog.load(IContext, IMendixIdentifier)' instead.
 	 */
 	@Deprecated
-	public static emailtemplate.proxies.EmailLog initialize(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static emailtemplate.proxies.EmailLog initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
 		return emailtemplate.proxies.EmailLog.load(context, mendixIdentifier);
 	}
@@ -79,21 +73,21 @@ public class EmailLog
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.getSudoContext() can be used to obtain sudo access).
 	 */
-	public static emailtemplate.proxies.EmailLog initialize(IContext context, IMendixObject mendixObject)
+	public static emailtemplate.proxies.EmailLog initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
 		return new emailtemplate.proxies.EmailLog(context, mendixObject);
 	}
 
-	public static emailtemplate.proxies.EmailLog load(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static emailtemplate.proxies.EmailLog load(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
-		IMendixObject mendixObject = Core.retrieveId(context, mendixIdentifier);
+		com.mendix.systemwideinterfaces.core.IMendixObject mendixObject = com.mendix.core.Core.retrieveId(context, mendixIdentifier);
 		return emailtemplate.proxies.EmailLog.initialize(context, mendixObject);
 	}
 
-	public static java.util.List<emailtemplate.proxies.EmailLog> load(IContext context, String xpathConstraint) throws CoreException
+	public static java.util.List<emailtemplate.proxies.EmailLog> load(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String xpathConstraint) throws com.mendix.core.CoreException
 	{
 		java.util.List<emailtemplate.proxies.EmailLog> result = new java.util.ArrayList<emailtemplate.proxies.EmailLog>();
-		for (IMendixObject obj : Core.retrieveXPathQuery(context, "//EmailTemplate.EmailLog" + xpathConstraint))
+		for (com.mendix.systemwideinterfaces.core.IMendixObject obj : com.mendix.core.Core.retrieveXPathQuery(context, "//EmailTemplate.EmailLog" + xpathConstraint))
 			result.add(emailtemplate.proxies.EmailLog.initialize(context, obj));
 		return result;
 	}
@@ -101,17 +95,17 @@ public class EmailLog
 	/**
 	 * Commit the changes made on this proxy object.
 	 */
-	public final void commit() throws CoreException
+	public final void commit() throws com.mendix.core.CoreException
 	{
-		Core.commit(context, getMendixObject());
+		com.mendix.core.Core.commit(context, getMendixObject());
 	}
 
 	/**
 	 * Commit the changes made on this proxy object using the specified context.
 	 */
-	public final void commit(IContext context) throws CoreException
+	public final void commit(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
-		Core.commit(context, getMendixObject());
+		com.mendix.core.Core.commit(context, getMendixObject());
 	}
 
 	/**
@@ -119,15 +113,15 @@ public class EmailLog
 	 */
 	public final void delete()
 	{
-		Core.delete(context, getMendixObject());
+		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 
 	/**
 	 * Delete the object using the specified context.
 	 */
-	public final void delete(IContext context)
+	public final void delete(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		Core.delete(context, getMendixObject());
+		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 	/**
 	 * @return value of Created
@@ -141,7 +135,7 @@ public class EmailLog
 	 * @param context
 	 * @return value of Created
 	 */
-	public final java.util.Date getCreated(IContext context)
+	public final java.util.Date getCreated(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (java.util.Date) getMendixObject().getValue(context, MemberNames.Created.toString());
 	}
@@ -160,7 +154,7 @@ public class EmailLog
 	 * @param context
 	 * @param created
 	 */
-	public final void setCreated(IContext context, java.util.Date created)
+	public final void setCreated(com.mendix.systemwideinterfaces.core.IContext context, java.util.Date created)
 	{
 		getMendixObject().setValue(context, MemberNames.Created.toString(), created);
 	}
@@ -178,13 +172,13 @@ public class EmailLog
 	 * @param context
 	 * @return value of Logtype
 	 */
-	public final emailtemplate.proxies.LogType getLogtype(IContext context)
+	public final emailtemplate.proxies.LogType getLogtype(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		Object obj = getMendixObject().getValue(context, MemberNames.Logtype.toString());
 		if (obj == null)
 			return null;
 
-		return emailtemplate.proxies.LogType.valueOf((String) obj);
+		return emailtemplate.proxies.LogType.valueOf((java.lang.String) obj);
 	}
 
 	/**
@@ -201,7 +195,7 @@ public class EmailLog
 	 * @param context
 	 * @param logtype
 	 */
-	public final void setLogtype(IContext context, emailtemplate.proxies.LogType logtype)
+	public final void setLogtype(com.mendix.systemwideinterfaces.core.IContext context, emailtemplate.proxies.LogType logtype)
 	{
 		if (logtype != null)
 			getMendixObject().setValue(context, MemberNames.Logtype.toString(), logtype.toString());
@@ -221,7 +215,7 @@ public class EmailLog
 	 * @param context
 	 * @return value of Message
 	 */
-	public final String getMessage(IContext context)
+	public final String getMessage(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.Message.toString());
 	}
@@ -240,7 +234,7 @@ public class EmailLog
 	 * @param context
 	 * @param message
 	 */
-	public final void setMessage(IContext context, String message)
+	public final void setMessage(com.mendix.systemwideinterfaces.core.IContext context, String message)
 	{
 		getMendixObject().setValue(context, MemberNames.Message.toString(), message);
 	}
@@ -257,7 +251,7 @@ public class EmailLog
 	 * @param context
 	 * @return value of ErrorMessage
 	 */
-	public final String getErrorMessage(IContext context)
+	public final String getErrorMessage(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.ErrorMessage.toString());
 	}
@@ -276,7 +270,7 @@ public class EmailLog
 	 * @param context
 	 * @param errormessage
 	 */
-	public final void setErrorMessage(IContext context, String errormessage)
+	public final void setErrorMessage(com.mendix.systemwideinterfaces.core.IContext context, String errormessage)
 	{
 		getMendixObject().setValue(context, MemberNames.ErrorMessage.toString(), errormessage);
 	}
@@ -293,7 +287,7 @@ public class EmailLog
 	 * @param context
 	 * @return value of TriggeredInMF
 	 */
-	public final String getTriggeredInMF(IContext context)
+	public final String getTriggeredInMF(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.TriggeredInMF.toString());
 	}
@@ -312,7 +306,7 @@ public class EmailLog
 	 * @param context
 	 * @param triggeredinmf
 	 */
-	public final void setTriggeredInMF(IContext context, String triggeredinmf)
+	public final void setTriggeredInMF(com.mendix.systemwideinterfaces.core.IContext context, String triggeredinmf)
 	{
 		getMendixObject().setValue(context, MemberNames.TriggeredInMF.toString(), triggeredinmf);
 	}
@@ -329,7 +323,7 @@ public class EmailLog
 	 * @param context
 	 * @return value of StackTrace
 	 */
-	public final String getStackTrace(IContext context)
+	public final String getStackTrace(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.StackTrace.toString());
 	}
@@ -348,7 +342,7 @@ public class EmailLog
 	 * @param context
 	 * @param stacktrace
 	 */
-	public final void setStackTrace(IContext context, String stacktrace)
+	public final void setStackTrace(com.mendix.systemwideinterfaces.core.IContext context, String stacktrace)
 	{
 		getMendixObject().setValue(context, MemberNames.StackTrace.toString(), stacktrace);
 	}
@@ -356,7 +350,7 @@ public class EmailLog
 	/**
 	 * @return the IMendixObject instance of this proxy for use in the Core interface.
 	 */
-	public final IMendixObject getMendixObject()
+	public final com.mendix.systemwideinterfaces.core.IMendixObject getMendixObject()
 	{
 		return emailLogMendixObject;
 	}
@@ -364,7 +358,7 @@ public class EmailLog
 	/**
 	 * @return the IContext instance of this proxy, or null if no IContext instance was specified at initialization.
 	 */
-	public final IContext getContext()
+	public final com.mendix.systemwideinterfaces.core.IContext getContext()
 	{
 		return context;
 	}
@@ -392,7 +386,7 @@ public class EmailLog
 	/**
 	 * @return String name of this class
 	 */
-	public static String getType()
+	public static java.lang.String getType()
 	{
 		return "EmailTemplate.EmailLog";
 	}
@@ -402,7 +396,7 @@ public class EmailLog
 	 * @deprecated Use getMendixObject().getId().toLong() to get a unique identifier for this object.
 	 */
 	@Deprecated
-	public String getGUID()
+	public java.lang.String getGUID()
 	{
 		return "ID_" + getMendixObject().getId().toLong();
 	}

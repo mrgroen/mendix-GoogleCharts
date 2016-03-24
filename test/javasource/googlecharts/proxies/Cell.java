@@ -4,37 +4,31 @@
 
 package googlecharts.proxies;
 
-import com.mendix.core.Core;
-import com.mendix.core.CoreException;
-import com.mendix.systemwideinterfaces.core.IContext;
-import com.mendix.systemwideinterfaces.core.IMendixIdentifier;
-import com.mendix.systemwideinterfaces.core.IMendixObject;
-
 /**
  * 
  */
 public class Cell
 {
-	private final IMendixObject cellMendixObject;
+	private final com.mendix.systemwideinterfaces.core.IMendixObject cellMendixObject;
 
-	private final IContext context;
+	private final com.mendix.systemwideinterfaces.core.IContext context;
 
 	/**
 	 * Internal name of this entity
 	 */
-	public static final String entityName = "GoogleCharts.Cell";
+	public static final java.lang.String entityName = "GoogleCharts.Cell";
 
-	public Cell(IContext context)
+	public Cell(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, Core.instantiate(context, "GoogleCharts.Cell"));
+		this(context, com.mendix.core.Core.instantiate(context, "GoogleCharts.Cell"));
 	}
 
-	protected Cell(IContext context, IMendixObject cellMendixObject)
+	protected Cell(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject cellMendixObject)
 	{
 		if (cellMendixObject == null)
-			throw new IllegalArgumentException("The given object cannot be null.");
-		if (!Core.isSubClassOf("GoogleCharts.Cell", cellMendixObject.getType()))
-			throw new IllegalArgumentException("The given object is not a GoogleCharts.Cell");
+			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
+		if (!com.mendix.core.Core.isSubClassOf("GoogleCharts.Cell", cellMendixObject.getType()))
+			throw new java.lang.IllegalArgumentException("The given object is not a GoogleCharts.Cell");
 
 		this.cellMendixObject = cellMendixObject;
 		this.context = context;
@@ -44,7 +38,7 @@ public class Cell
 	 * @deprecated Use 'Cell.load(IContext, IMendixIdentifier)' instead.
 	 */
 	@Deprecated
-	public static googlecharts.proxies.Cell initialize(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static googlecharts.proxies.Cell initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
 		return googlecharts.proxies.Cell.load(context, mendixIdentifier);
 	}
@@ -53,46 +47,46 @@ public class Cell
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.getSudoContext() can be used to obtain sudo access).
 	 */
-	public static googlecharts.proxies.Cell initialize(IContext context, IMendixObject mendixObject)
+	public static googlecharts.proxies.Cell initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
-		if (Core.isSubClassOf("GoogleCharts.BooleanValue", mendixObject.getType()))
+		if (com.mendix.core.Core.isSubClassOf("GoogleCharts.BooleanValue", mendixObject.getType()))
 			return googlecharts.proxies.BooleanValue.initialize(context, mendixObject);
 
-		if (Core.isSubClassOf("GoogleCharts.DateTimeValue", mendixObject.getType()))
+		if (com.mendix.core.Core.isSubClassOf("GoogleCharts.DateTimeValue", mendixObject.getType()))
 			return googlecharts.proxies.DateTimeValue.initialize(context, mendixObject);
 
-		if (Core.isSubClassOf("GoogleCharts.FloatValue", mendixObject.getType()))
+		if (com.mendix.core.Core.isSubClassOf("GoogleCharts.FloatValue", mendixObject.getType()))
 			return googlecharts.proxies.FloatValue.initialize(context, mendixObject);
 
-		if (Core.isSubClassOf("GoogleCharts.IntegerValue", mendixObject.getType()))
+		if (com.mendix.core.Core.isSubClassOf("GoogleCharts.IntegerValue", mendixObject.getType()))
 			return googlecharts.proxies.IntegerValue.initialize(context, mendixObject);
 
-		if (Core.isSubClassOf("GoogleCharts.StringValue", mendixObject.getType()))
+		if (com.mendix.core.Core.isSubClassOf("GoogleCharts.StringValue", mendixObject.getType()))
 			return googlecharts.proxies.StringValue.initialize(context, mendixObject);
 
 		return new googlecharts.proxies.Cell(context, mendixObject);
 	}
 
-	public static googlecharts.proxies.Cell load(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static googlecharts.proxies.Cell load(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
-		IMendixObject mendixObject = Core.retrieveId(context, mendixIdentifier);
+		com.mendix.systemwideinterfaces.core.IMendixObject mendixObject = com.mendix.core.Core.retrieveId(context, mendixIdentifier);
 		return googlecharts.proxies.Cell.initialize(context, mendixObject);
 	}
 
 	/**
 	 * Commit the changes made on this proxy object.
 	 */
-	public final void commit() throws CoreException
+	public final void commit() throws com.mendix.core.CoreException
 	{
-		Core.commit(context, getMendixObject());
+		com.mendix.core.Core.commit(context, getMendixObject());
 	}
 
 	/**
 	 * Commit the changes made on this proxy object using the specified context.
 	 */
-	public final void commit(IContext context) throws CoreException
+	public final void commit(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
-		Core.commit(context, getMendixObject());
+		com.mendix.core.Core.commit(context, getMendixObject());
 	}
 
 	/**
@@ -100,20 +94,20 @@ public class Cell
 	 */
 	public final void delete()
 	{
-		Core.delete(context, getMendixObject());
+		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 
 	/**
 	 * Delete the object using the specified context.
 	 */
-	public final void delete(IContext context)
+	public final void delete(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		Core.delete(context, getMendixObject());
+		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 	/**
 	 * @return the IMendixObject instance of this proxy for use in the Core interface.
 	 */
-	public final IMendixObject getMendixObject()
+	public final com.mendix.systemwideinterfaces.core.IMendixObject getMendixObject()
 	{
 		return cellMendixObject;
 	}
@@ -121,7 +115,7 @@ public class Cell
 	/**
 	 * @return the IContext instance of this proxy, or null if no IContext instance was specified at initialization.
 	 */
-	public final IContext getContext()
+	public final com.mendix.systemwideinterfaces.core.IContext getContext()
 	{
 		return context;
 	}
@@ -149,7 +143,7 @@ public class Cell
 	/**
 	 * @return String name of this class
 	 */
-	public static String getType()
+	public static java.lang.String getType()
 	{
 		return "GoogleCharts.Cell";
 	}
@@ -159,7 +153,7 @@ public class Cell
 	 * @deprecated Use getMendixObject().getId().toLong() to get a unique identifier for this object.
 	 */
 	@Deprecated
-	public String getGUID()
+	public java.lang.String getGUID()
 	{
 		return "ID_" + getMendixObject().getId().toLong();
 	}

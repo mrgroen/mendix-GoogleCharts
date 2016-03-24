@@ -4,25 +4,19 @@
 
 package restservices.proxies;
 
-import com.mendix.core.Core;
-import com.mendix.core.CoreException;
-import com.mendix.systemwideinterfaces.core.IContext;
-import com.mendix.systemwideinterfaces.core.IMendixIdentifier;
-import com.mendix.systemwideinterfaces.core.IMendixObject;
-
 /**
  * 
  */
 public class ChangeLog
 {
-	private final IMendixObject changeLogMendixObject;
+	private final com.mendix.systemwideinterfaces.core.IMendixObject changeLogMendixObject;
 
-	private final IContext context;
+	private final com.mendix.systemwideinterfaces.core.IContext context;
 
 	/**
 	 * Internal name of this entity
 	 */
-	public static final String entityName = "RestServices.ChangeLog";
+	public static final java.lang.String entityName = "RestServices.ChangeLog";
 
 	/**
 	 * Enum describing members of this entity
@@ -34,31 +28,31 @@ public class ChangeLog
 		NrOfConnections("NrOfConnections"),
 		ChangeLog_ServiceDefinition("RestServices.ChangeLog_ServiceDefinition");
 
-		private String metaName;
+		private java.lang.String metaName;
 
-		MemberNames(String s)
+		MemberNames(java.lang.String s)
 		{
 			metaName = s;
 		}
 
 		@Override
-		public String toString()
+		public java.lang.String toString()
 		{
 			return metaName;
 		}
 	}
 
-	public ChangeLog(IContext context)
+	public ChangeLog(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, Core.instantiate(context, "RestServices.ChangeLog"));
+		this(context, com.mendix.core.Core.instantiate(context, "RestServices.ChangeLog"));
 	}
 
-	protected ChangeLog(IContext context, IMendixObject changeLogMendixObject)
+	protected ChangeLog(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject changeLogMendixObject)
 	{
 		if (changeLogMendixObject == null)
-			throw new IllegalArgumentException("The given object cannot be null.");
-		if (!Core.isSubClassOf("RestServices.ChangeLog", changeLogMendixObject.getType()))
-			throw new IllegalArgumentException("The given object is not a RestServices.ChangeLog");
+			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
+		if (!com.mendix.core.Core.isSubClassOf("RestServices.ChangeLog", changeLogMendixObject.getType()))
+			throw new java.lang.IllegalArgumentException("The given object is not a RestServices.ChangeLog");
 
 		this.changeLogMendixObject = changeLogMendixObject;
 		this.context = context;
@@ -68,7 +62,7 @@ public class ChangeLog
 	 * @deprecated Use 'ChangeLog.load(IContext, IMendixIdentifier)' instead.
 	 */
 	@Deprecated
-	public static restservices.proxies.ChangeLog initialize(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static restservices.proxies.ChangeLog initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
 		return restservices.proxies.ChangeLog.load(context, mendixIdentifier);
 	}
@@ -77,21 +71,21 @@ public class ChangeLog
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.getSudoContext() can be used to obtain sudo access).
 	 */
-	public static restservices.proxies.ChangeLog initialize(IContext context, IMendixObject mendixObject)
+	public static restservices.proxies.ChangeLog initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
 		return new restservices.proxies.ChangeLog(context, mendixObject);
 	}
 
-	public static restservices.proxies.ChangeLog load(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static restservices.proxies.ChangeLog load(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
-		IMendixObject mendixObject = Core.retrieveId(context, mendixIdentifier);
+		com.mendix.systemwideinterfaces.core.IMendixObject mendixObject = com.mendix.core.Core.retrieveId(context, mendixIdentifier);
 		return restservices.proxies.ChangeLog.initialize(context, mendixObject);
 	}
 
-	public static java.util.List<restservices.proxies.ChangeLog> load(IContext context, String xpathConstraint) throws CoreException
+	public static java.util.List<restservices.proxies.ChangeLog> load(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String xpathConstraint) throws com.mendix.core.CoreException
 	{
 		java.util.List<restservices.proxies.ChangeLog> result = new java.util.ArrayList<restservices.proxies.ChangeLog>();
-		for (IMendixObject obj : Core.retrieveXPathQuery(context, "//RestServices.ChangeLog" + xpathConstraint))
+		for (com.mendix.systemwideinterfaces.core.IMendixObject obj : com.mendix.core.Core.retrieveXPathQuery(context, "//RestServices.ChangeLog" + xpathConstraint))
 			result.add(restservices.proxies.ChangeLog.initialize(context, obj));
 		return result;
 	}
@@ -99,17 +93,17 @@ public class ChangeLog
 	/**
 	 * Commit the changes made on this proxy object.
 	 */
-	public final void commit() throws CoreException
+	public final void commit() throws com.mendix.core.CoreException
 	{
-		Core.commit(context, getMendixObject());
+		com.mendix.core.Core.commit(context, getMendixObject());
 	}
 
 	/**
 	 * Commit the changes made on this proxy object using the specified context.
 	 */
-	public final void commit(IContext context) throws CoreException
+	public final void commit(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
-		Core.commit(context, getMendixObject());
+		com.mendix.core.Core.commit(context, getMendixObject());
 	}
 
 	/**
@@ -117,15 +111,15 @@ public class ChangeLog
 	 */
 	public final void delete()
 	{
-		Core.delete(context, getMendixObject());
+		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 
 	/**
 	 * Delete the object using the specified context.
 	 */
-	public final void delete(IContext context)
+	public final void delete(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		Core.delete(context, getMendixObject());
+		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 	/**
 	 * @return value of SequenceNr
@@ -139,7 +133,7 @@ public class ChangeLog
 	 * @param context
 	 * @return value of SequenceNr
 	 */
-	public final Long getSequenceNr(IContext context)
+	public final Long getSequenceNr(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (Long) getMendixObject().getValue(context, MemberNames.SequenceNr.toString());
 	}
@@ -158,7 +152,7 @@ public class ChangeLog
 	 * @param context
 	 * @param sequencenr
 	 */
-	public final void setSequenceNr(IContext context, Long sequencenr)
+	public final void setSequenceNr(com.mendix.systemwideinterfaces.core.IContext context, Long sequencenr)
 	{
 		getMendixObject().setValue(context, MemberNames.SequenceNr.toString(), sequencenr);
 	}
@@ -175,7 +169,7 @@ public class ChangeLog
 	 * @param context
 	 * @return value of _ConfigurationHash
 	 */
-	public final String get_ConfigurationHash(IContext context)
+	public final String get_ConfigurationHash(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames._ConfigurationHash.toString());
 	}
@@ -194,7 +188,7 @@ public class ChangeLog
 	 * @param context
 	 * @param _configurationhash
 	 */
-	public final void set_ConfigurationHash(IContext context, String _configurationhash)
+	public final void set_ConfigurationHash(com.mendix.systemwideinterfaces.core.IContext context, String _configurationhash)
 	{
 		getMendixObject().setValue(context, MemberNames._ConfigurationHash.toString(), _configurationhash);
 	}
@@ -211,7 +205,7 @@ public class ChangeLog
 	 * @param context
 	 * @return value of NrOfConnections
 	 */
-	public final Integer getNrOfConnections(IContext context)
+	public final Integer getNrOfConnections(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (Integer) getMendixObject().getValue(context, MemberNames.NrOfConnections.toString());
 	}
@@ -230,7 +224,7 @@ public class ChangeLog
 	 * @param context
 	 * @param nrofconnections
 	 */
-	public final void setNrOfConnections(IContext context, Integer nrofconnections)
+	public final void setNrOfConnections(com.mendix.systemwideinterfaces.core.IContext context, Integer nrofconnections)
 	{
 		getMendixObject().setValue(context, MemberNames.NrOfConnections.toString(), nrofconnections);
 	}
@@ -238,7 +232,7 @@ public class ChangeLog
 	/**
 	 * @return value of ChangeLog_ServiceDefinition
 	 */
-	public final restservices.proxies.DataServiceDefinition getChangeLog_ServiceDefinition() throws CoreException
+	public final restservices.proxies.DataServiceDefinition getChangeLog_ServiceDefinition() throws com.mendix.core.CoreException
 	{
 		return getChangeLog_ServiceDefinition(getContext());
 	}
@@ -247,10 +241,10 @@ public class ChangeLog
 	 * @param context
 	 * @return value of ChangeLog_ServiceDefinition
 	 */
-	public final restservices.proxies.DataServiceDefinition getChangeLog_ServiceDefinition(IContext context) throws CoreException
+	public final restservices.proxies.DataServiceDefinition getChangeLog_ServiceDefinition(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
 		restservices.proxies.DataServiceDefinition result = null;
-		IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.ChangeLog_ServiceDefinition.toString());
+		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.ChangeLog_ServiceDefinition.toString());
 		if (identifier != null)
 			result = restservices.proxies.DataServiceDefinition.load(context, identifier);
 		return result;
@@ -270,7 +264,7 @@ public class ChangeLog
 	 * @param context
 	 * @param changelog_servicedefinition
 	 */
-	public final void setChangeLog_ServiceDefinition(IContext context, restservices.proxies.DataServiceDefinition changelog_servicedefinition)
+	public final void setChangeLog_ServiceDefinition(com.mendix.systemwideinterfaces.core.IContext context, restservices.proxies.DataServiceDefinition changelog_servicedefinition)
 	{
 		if (changelog_servicedefinition == null)
 			getMendixObject().setValue(context, MemberNames.ChangeLog_ServiceDefinition.toString(), null);
@@ -281,7 +275,7 @@ public class ChangeLog
 	/**
 	 * @return the IMendixObject instance of this proxy for use in the Core interface.
 	 */
-	public final IMendixObject getMendixObject()
+	public final com.mendix.systemwideinterfaces.core.IMendixObject getMendixObject()
 	{
 		return changeLogMendixObject;
 	}
@@ -289,7 +283,7 @@ public class ChangeLog
 	/**
 	 * @return the IContext instance of this proxy, or null if no IContext instance was specified at initialization.
 	 */
-	public final IContext getContext()
+	public final com.mendix.systemwideinterfaces.core.IContext getContext()
 	{
 		return context;
 	}
@@ -317,7 +311,7 @@ public class ChangeLog
 	/**
 	 * @return String name of this class
 	 */
-	public static String getType()
+	public static java.lang.String getType()
 	{
 		return "RestServices.ChangeLog";
 	}
@@ -327,7 +321,7 @@ public class ChangeLog
 	 * @deprecated Use getMendixObject().getId().toLong() to get a unique identifier for this object.
 	 */
 	@Deprecated
-	public String getGUID()
+	public java.lang.String getGUID()
 	{
 		return "ID_" + getMendixObject().getId().toLong();
 	}

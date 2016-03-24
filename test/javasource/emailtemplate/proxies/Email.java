@@ -4,25 +4,19 @@
 
 package emailtemplate.proxies;
 
-import com.mendix.core.Core;
-import com.mendix.core.CoreException;
-import com.mendix.systemwideinterfaces.core.IContext;
-import com.mendix.systemwideinterfaces.core.IMendixIdentifier;
-import com.mendix.systemwideinterfaces.core.IMendixObject;
-
 /**
  * 
  */
 public class Email
 {
-	private final IMendixObject emailMendixObject;
+	private final com.mendix.systemwideinterfaces.core.IMendixObject emailMendixObject;
 
-	private final IContext context;
+	private final com.mendix.systemwideinterfaces.core.IContext context;
 
 	/**
 	 * Internal name of this entity
 	 */
-	public static final String entityName = "EmailTemplate.Email";
+	public static final java.lang.String entityName = "EmailTemplate.Email";
 
 	/**
 	 * Enum describing members of this entity
@@ -46,31 +40,31 @@ public class Email
 		Status("Status"),
 		Email_EmailTemplate("EmailTemplate.Email_EmailTemplate");
 
-		private String metaName;
+		private java.lang.String metaName;
 
-		MemberNames(String s)
+		MemberNames(java.lang.String s)
 		{
 			metaName = s;
 		}
 
 		@Override
-		public String toString()
+		public java.lang.String toString()
 		{
 			return metaName;
 		}
 	}
 
-	public Email(IContext context)
+	public Email(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, Core.instantiate(context, "EmailTemplate.Email"));
+		this(context, com.mendix.core.Core.instantiate(context, "EmailTemplate.Email"));
 	}
 
-	protected Email(IContext context, IMendixObject emailMendixObject)
+	protected Email(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject emailMendixObject)
 	{
 		if (emailMendixObject == null)
-			throw new IllegalArgumentException("The given object cannot be null.");
-		if (!Core.isSubClassOf("EmailTemplate.Email", emailMendixObject.getType()))
-			throw new IllegalArgumentException("The given object is not a EmailTemplate.Email");
+			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
+		if (!com.mendix.core.Core.isSubClassOf("EmailTemplate.Email", emailMendixObject.getType()))
+			throw new java.lang.IllegalArgumentException("The given object is not a EmailTemplate.Email");
 
 		this.emailMendixObject = emailMendixObject;
 		this.context = context;
@@ -80,7 +74,7 @@ public class Email
 	 * @deprecated Use 'Email.load(IContext, IMendixIdentifier)' instead.
 	 */
 	@Deprecated
-	public static emailtemplate.proxies.Email initialize(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static emailtemplate.proxies.Email initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
 		return emailtemplate.proxies.Email.load(context, mendixIdentifier);
 	}
@@ -89,21 +83,21 @@ public class Email
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.getSudoContext() can be used to obtain sudo access).
 	 */
-	public static emailtemplate.proxies.Email initialize(IContext context, IMendixObject mendixObject)
+	public static emailtemplate.proxies.Email initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
 		return new emailtemplate.proxies.Email(context, mendixObject);
 	}
 
-	public static emailtemplate.proxies.Email load(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static emailtemplate.proxies.Email load(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
-		IMendixObject mendixObject = Core.retrieveId(context, mendixIdentifier);
+		com.mendix.systemwideinterfaces.core.IMendixObject mendixObject = com.mendix.core.Core.retrieveId(context, mendixIdentifier);
 		return emailtemplate.proxies.Email.initialize(context, mendixObject);
 	}
 
-	public static java.util.List<emailtemplate.proxies.Email> load(IContext context, String xpathConstraint) throws CoreException
+	public static java.util.List<emailtemplate.proxies.Email> load(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String xpathConstraint) throws com.mendix.core.CoreException
 	{
 		java.util.List<emailtemplate.proxies.Email> result = new java.util.ArrayList<emailtemplate.proxies.Email>();
-		for (IMendixObject obj : Core.retrieveXPathQuery(context, "//EmailTemplate.Email" + xpathConstraint))
+		for (com.mendix.systemwideinterfaces.core.IMendixObject obj : com.mendix.core.Core.retrieveXPathQuery(context, "//EmailTemplate.Email" + xpathConstraint))
 			result.add(emailtemplate.proxies.Email.initialize(context, obj));
 		return result;
 	}
@@ -111,17 +105,17 @@ public class Email
 	/**
 	 * Commit the changes made on this proxy object.
 	 */
-	public final void commit() throws CoreException
+	public final void commit() throws com.mendix.core.CoreException
 	{
-		Core.commit(context, getMendixObject());
+		com.mendix.core.Core.commit(context, getMendixObject());
 	}
 
 	/**
 	 * Commit the changes made on this proxy object using the specified context.
 	 */
-	public final void commit(IContext context) throws CoreException
+	public final void commit(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
-		Core.commit(context, getMendixObject());
+		com.mendix.core.Core.commit(context, getMendixObject());
 	}
 
 	/**
@@ -129,15 +123,15 @@ public class Email
 	 */
 	public final void delete()
 	{
-		Core.delete(context, getMendixObject());
+		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 
 	/**
 	 * Delete the object using the specified context.
 	 */
-	public final void delete(IContext context)
+	public final void delete(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		Core.delete(context, getMendixObject());
+		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 	/**
 	 * @return value of To
@@ -151,7 +145,7 @@ public class Email
 	 * @param context
 	 * @return value of To
 	 */
-	public final String getTo(IContext context)
+	public final String getTo(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.To.toString());
 	}
@@ -170,7 +164,7 @@ public class Email
 	 * @param context
 	 * @param to
 	 */
-	public final void setTo(IContext context, String to)
+	public final void setTo(com.mendix.systemwideinterfaces.core.IContext context, String to)
 	{
 		getMendixObject().setValue(context, MemberNames.To.toString(), to);
 	}
@@ -187,7 +181,7 @@ public class Email
 	 * @param context
 	 * @return value of From
 	 */
-	public final String getFrom(IContext context)
+	public final String getFrom(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.From.toString());
 	}
@@ -206,7 +200,7 @@ public class Email
 	 * @param context
 	 * @param from
 	 */
-	public final void setFrom(IContext context, String from)
+	public final void setFrom(com.mendix.systemwideinterfaces.core.IContext context, String from)
 	{
 		getMendixObject().setValue(context, MemberNames.From.toString(), from);
 	}
@@ -223,7 +217,7 @@ public class Email
 	 * @param context
 	 * @return value of CC
 	 */
-	public final String getCC(IContext context)
+	public final String getCC(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.CC.toString());
 	}
@@ -242,7 +236,7 @@ public class Email
 	 * @param context
 	 * @param cc
 	 */
-	public final void setCC(IContext context, String cc)
+	public final void setCC(com.mendix.systemwideinterfaces.core.IContext context, String cc)
 	{
 		getMendixObject().setValue(context, MemberNames.CC.toString(), cc);
 	}
@@ -259,7 +253,7 @@ public class Email
 	 * @param context
 	 * @return value of BCC
 	 */
-	public final String getBCC(IContext context)
+	public final String getBCC(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.BCC.toString());
 	}
@@ -278,7 +272,7 @@ public class Email
 	 * @param context
 	 * @param bcc
 	 */
-	public final void setBCC(IContext context, String bcc)
+	public final void setBCC(com.mendix.systemwideinterfaces.core.IContext context, String bcc)
 	{
 		getMendixObject().setValue(context, MemberNames.BCC.toString(), bcc);
 	}
@@ -295,7 +289,7 @@ public class Email
 	 * @param context
 	 * @return value of Subject
 	 */
-	public final String getSubject(IContext context)
+	public final String getSubject(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.Subject.toString());
 	}
@@ -314,7 +308,7 @@ public class Email
 	 * @param context
 	 * @param subject
 	 */
-	public final void setSubject(IContext context, String subject)
+	public final void setSubject(com.mendix.systemwideinterfaces.core.IContext context, String subject)
 	{
 		getMendixObject().setValue(context, MemberNames.Subject.toString(), subject);
 	}
@@ -331,7 +325,7 @@ public class Email
 	 * @param context
 	 * @return value of Date
 	 */
-	public final java.util.Date getDate(IContext context)
+	public final java.util.Date getDate(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (java.util.Date) getMendixObject().getValue(context, MemberNames.Date.toString());
 	}
@@ -350,7 +344,7 @@ public class Email
 	 * @param context
 	 * @param date
 	 */
-	public final void setDate(IContext context, java.util.Date date)
+	public final void setDate(com.mendix.systemwideinterfaces.core.IContext context, java.util.Date date)
 	{
 		getMendixObject().setValue(context, MemberNames.Date.toString(), date);
 	}
@@ -367,7 +361,7 @@ public class Email
 	 * @param context
 	 * @return value of UseOnlyPlainText
 	 */
-	public final Boolean getUseOnlyPlainText(IContext context)
+	public final Boolean getUseOnlyPlainText(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (Boolean) getMendixObject().getValue(context, MemberNames.UseOnlyPlainText.toString());
 	}
@@ -386,7 +380,7 @@ public class Email
 	 * @param context
 	 * @param useonlyplaintext
 	 */
-	public final void setUseOnlyPlainText(IContext context, Boolean useonlyplaintext)
+	public final void setUseOnlyPlainText(com.mendix.systemwideinterfaces.core.IContext context, Boolean useonlyplaintext)
 	{
 		getMendixObject().setValue(context, MemberNames.UseOnlyPlainText.toString(), useonlyplaintext);
 	}
@@ -403,7 +397,7 @@ public class Email
 	 * @param context
 	 * @return value of HtmlBody
 	 */
-	public final String getHtmlBody(IContext context)
+	public final String getHtmlBody(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.HtmlBody.toString());
 	}
@@ -422,7 +416,7 @@ public class Email
 	 * @param context
 	 * @param htmlbody
 	 */
-	public final void setHtmlBody(IContext context, String htmlbody)
+	public final void setHtmlBody(com.mendix.systemwideinterfaces.core.IContext context, String htmlbody)
 	{
 		getMendixObject().setValue(context, MemberNames.HtmlBody.toString(), htmlbody);
 	}
@@ -439,7 +433,7 @@ public class Email
 	 * @param context
 	 * @return value of PlainBody
 	 */
-	public final String getPlainBody(IContext context)
+	public final String getPlainBody(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.PlainBody.toString());
 	}
@@ -458,7 +452,7 @@ public class Email
 	 * @param context
 	 * @param plainbody
 	 */
-	public final void setPlainBody(IContext context, String plainbody)
+	public final void setPlainBody(com.mendix.systemwideinterfaces.core.IContext context, String plainbody)
 	{
 		getMendixObject().setValue(context, MemberNames.PlainBody.toString(), plainbody);
 	}
@@ -475,7 +469,7 @@ public class Email
 	 * @param context
 	 * @return value of Queued
 	 */
-	public final Boolean getQueued(IContext context)
+	public final Boolean getQueued(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (Boolean) getMendixObject().getValue(context, MemberNames.Queued.toString());
 	}
@@ -494,7 +488,7 @@ public class Email
 	 * @param context
 	 * @param queued
 	 */
-	public final void setQueued(IContext context, Boolean queued)
+	public final void setQueued(com.mendix.systemwideinterfaces.core.IContext context, Boolean queued)
 	{
 		getMendixObject().setValue(context, MemberNames.Queued.toString(), queued);
 	}
@@ -511,7 +505,7 @@ public class Email
 	 * @param context
 	 * @return value of Attempts
 	 */
-	public final Integer getAttempts(IContext context)
+	public final Integer getAttempts(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (Integer) getMendixObject().getValue(context, MemberNames.Attempts.toString());
 	}
@@ -530,7 +524,7 @@ public class Email
 	 * @param context
 	 * @param attempts
 	 */
-	public final void setAttempts(IContext context, Integer attempts)
+	public final void setAttempts(com.mendix.systemwideinterfaces.core.IContext context, Integer attempts)
 	{
 		getMendixObject().setValue(context, MemberNames.Attempts.toString(), attempts);
 	}
@@ -547,7 +541,7 @@ public class Email
 	 * @param context
 	 * @return value of DateSent
 	 */
-	public final java.util.Date getDateSent(IContext context)
+	public final java.util.Date getDateSent(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (java.util.Date) getMendixObject().getValue(context, MemberNames.DateSent.toString());
 	}
@@ -566,7 +560,7 @@ public class Email
 	 * @param context
 	 * @param datesent
 	 */
-	public final void setDateSent(IContext context, java.util.Date datesent)
+	public final void setDateSent(com.mendix.systemwideinterfaces.core.IContext context, java.util.Date datesent)
 	{
 		getMendixObject().setValue(context, MemberNames.DateSent.toString(), datesent);
 	}
@@ -583,7 +577,7 @@ public class Email
 	 * @param context
 	 * @return value of LastError
 	 */
-	public final String getLastError(IContext context)
+	public final String getLastError(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.LastError.toString());
 	}
@@ -602,7 +596,7 @@ public class Email
 	 * @param context
 	 * @param lasterror
 	 */
-	public final void setLastError(IContext context, String lasterror)
+	public final void setLastError(com.mendix.systemwideinterfaces.core.IContext context, String lasterror)
 	{
 		getMendixObject().setValue(context, MemberNames.LastError.toString(), lasterror);
 	}
@@ -619,7 +613,7 @@ public class Email
 	 * @param context
 	 * @return value of LastAttempt
 	 */
-	public final java.util.Date getLastAttempt(IContext context)
+	public final java.util.Date getLastAttempt(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (java.util.Date) getMendixObject().getValue(context, MemberNames.LastAttempt.toString());
 	}
@@ -638,7 +632,7 @@ public class Email
 	 * @param context
 	 * @param lastattempt
 	 */
-	public final void setLastAttempt(IContext context, java.util.Date lastattempt)
+	public final void setLastAttempt(com.mendix.systemwideinterfaces.core.IContext context, java.util.Date lastattempt)
 	{
 		getMendixObject().setValue(context, MemberNames.LastAttempt.toString(), lastattempt);
 	}
@@ -656,13 +650,13 @@ public class Email
 	 * @param context
 	 * @return value of Status
 	 */
-	public final emailtemplate.proxies.Status getStatus(IContext context)
+	public final emailtemplate.proxies.Status getStatus(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		Object obj = getMendixObject().getValue(context, MemberNames.Status.toString());
 		if (obj == null)
 			return null;
 
-		return emailtemplate.proxies.Status.valueOf((String) obj);
+		return emailtemplate.proxies.Status.valueOf((java.lang.String) obj);
 	}
 
 	/**
@@ -679,7 +673,7 @@ public class Email
 	 * @param context
 	 * @param status
 	 */
-	public final void setStatus(IContext context, emailtemplate.proxies.Status status)
+	public final void setStatus(com.mendix.systemwideinterfaces.core.IContext context, emailtemplate.proxies.Status status)
 	{
 		if (status != null)
 			getMendixObject().setValue(context, MemberNames.Status.toString(), status.toString());
@@ -690,7 +684,7 @@ public class Email
 	/**
 	 * @return value of Email_EmailTemplate
 	 */
-	public final emailtemplate.proxies.EmailTemplate getEmail_EmailTemplate() throws CoreException
+	public final emailtemplate.proxies.EmailTemplate getEmail_EmailTemplate() throws com.mendix.core.CoreException
 	{
 		return getEmail_EmailTemplate(getContext());
 	}
@@ -699,10 +693,10 @@ public class Email
 	 * @param context
 	 * @return value of Email_EmailTemplate
 	 */
-	public final emailtemplate.proxies.EmailTemplate getEmail_EmailTemplate(IContext context) throws CoreException
+	public final emailtemplate.proxies.EmailTemplate getEmail_EmailTemplate(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
 		emailtemplate.proxies.EmailTemplate result = null;
-		IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.Email_EmailTemplate.toString());
+		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.Email_EmailTemplate.toString());
 		if (identifier != null)
 			result = emailtemplate.proxies.EmailTemplate.load(context, identifier);
 		return result;
@@ -722,7 +716,7 @@ public class Email
 	 * @param context
 	 * @param email_emailtemplate
 	 */
-	public final void setEmail_EmailTemplate(IContext context, emailtemplate.proxies.EmailTemplate email_emailtemplate)
+	public final void setEmail_EmailTemplate(com.mendix.systemwideinterfaces.core.IContext context, emailtemplate.proxies.EmailTemplate email_emailtemplate)
 	{
 		if (email_emailtemplate == null)
 			getMendixObject().setValue(context, MemberNames.Email_EmailTemplate.toString(), null);
@@ -733,7 +727,7 @@ public class Email
 	/**
 	 * @return the IMendixObject instance of this proxy for use in the Core interface.
 	 */
-	public final IMendixObject getMendixObject()
+	public final com.mendix.systemwideinterfaces.core.IMendixObject getMendixObject()
 	{
 		return emailMendixObject;
 	}
@@ -741,7 +735,7 @@ public class Email
 	/**
 	 * @return the IContext instance of this proxy, or null if no IContext instance was specified at initialization.
 	 */
-	public final IContext getContext()
+	public final com.mendix.systemwideinterfaces.core.IContext getContext()
 	{
 		return context;
 	}
@@ -769,7 +763,7 @@ public class Email
 	/**
 	 * @return String name of this class
 	 */
-	public static String getType()
+	public static java.lang.String getType()
 	{
 		return "EmailTemplate.Email";
 	}
@@ -779,7 +773,7 @@ public class Email
 	 * @deprecated Use getMendixObject().getId().toLong() to get a unique identifier for this object.
 	 */
 	@Deprecated
-	public String getGUID()
+	public java.lang.String getGUID()
 	{
 		return "ID_" + getMendixObject().getId().toLong();
 	}

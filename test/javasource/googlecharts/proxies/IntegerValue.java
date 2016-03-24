@@ -4,12 +4,6 @@
 
 package googlecharts.proxies;
 
-import com.mendix.core.Core;
-import com.mendix.core.CoreException;
-import com.mendix.systemwideinterfaces.core.IContext;
-import com.mendix.systemwideinterfaces.core.IMendixIdentifier;
-import com.mendix.systemwideinterfaces.core.IMendixObject;
-
 /**
  * 
  */
@@ -18,7 +12,7 @@ public class IntegerValue extends googlecharts.proxies.Cell
 	/**
 	 * Internal name of this entity
 	 */
-	public static final String entityName = "GoogleCharts.IntegerValue";
+	public static final java.lang.String entityName = "GoogleCharts.IntegerValue";
 
 	/**
 	 * Enum describing members of this entity
@@ -27,37 +21,37 @@ public class IntegerValue extends googlecharts.proxies.Cell
 	{
 		v("v");
 
-		private String metaName;
+		private java.lang.String metaName;
 
-		MemberNames(String s)
+		MemberNames(java.lang.String s)
 		{
 			metaName = s;
 		}
 
 		@Override
-		public String toString()
+		public java.lang.String toString()
 		{
 			return metaName;
 		}
 	}
 
-	public IntegerValue(IContext context)
+	public IntegerValue(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, Core.instantiate(context, "GoogleCharts.IntegerValue"));
+		this(context, com.mendix.core.Core.instantiate(context, "GoogleCharts.IntegerValue"));
 	}
 
-	protected IntegerValue(IContext context, IMendixObject integerValueMendixObject)
+	protected IntegerValue(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject integerValueMendixObject)
 	{
 		super(context, integerValueMendixObject);
-		if (!Core.isSubClassOf("GoogleCharts.IntegerValue", integerValueMendixObject.getType()))
-			throw new IllegalArgumentException("The given object is not a GoogleCharts.IntegerValue");
+		if (!com.mendix.core.Core.isSubClassOf("GoogleCharts.IntegerValue", integerValueMendixObject.getType()))
+			throw new java.lang.IllegalArgumentException("The given object is not a GoogleCharts.IntegerValue");
 	}
 
 	/**
 	 * @deprecated Use 'IntegerValue.load(IContext, IMendixIdentifier)' instead.
 	 */
 	@Deprecated
-	public static googlecharts.proxies.IntegerValue initialize(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static googlecharts.proxies.IntegerValue initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
 		return googlecharts.proxies.IntegerValue.load(context, mendixIdentifier);
 	}
@@ -66,14 +60,14 @@ public class IntegerValue extends googlecharts.proxies.Cell
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.getSudoContext() can be used to obtain sudo access).
 	 */
-	public static googlecharts.proxies.IntegerValue initialize(IContext context, IMendixObject mendixObject)
+	public static googlecharts.proxies.IntegerValue initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
 		return new googlecharts.proxies.IntegerValue(context, mendixObject);
 	}
 
-	public static googlecharts.proxies.IntegerValue load(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static googlecharts.proxies.IntegerValue load(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
-		IMendixObject mendixObject = Core.retrieveId(context, mendixIdentifier);
+		com.mendix.systemwideinterfaces.core.IMendixObject mendixObject = com.mendix.core.Core.retrieveId(context, mendixIdentifier);
 		return googlecharts.proxies.IntegerValue.initialize(context, mendixObject);
 	}
 
@@ -89,7 +83,7 @@ public class IntegerValue extends googlecharts.proxies.Cell
 	 * @param context
 	 * @return value of v
 	 */
-	public final Integer getv(IContext context)
+	public final Integer getv(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (Integer) getMendixObject().getValue(context, MemberNames.v.toString());
 	}
@@ -108,7 +102,7 @@ public class IntegerValue extends googlecharts.proxies.Cell
 	 * @param context
 	 * @param v
 	 */
-	public final void setv(IContext context, Integer v)
+	public final void setv(com.mendix.systemwideinterfaces.core.IContext context, Integer v)
 	{
 		getMendixObject().setValue(context, MemberNames.v.toString(), v);
 	}
@@ -136,7 +130,7 @@ public class IntegerValue extends googlecharts.proxies.Cell
 	/**
 	 * @return String name of this class
 	 */
-	public static String getType()
+	public static java.lang.String getType()
 	{
 		return "GoogleCharts.IntegerValue";
 	}
@@ -147,7 +141,7 @@ public class IntegerValue extends googlecharts.proxies.Cell
 	 */
 	@Override
 	@Deprecated
-	public String getGUID()
+	public java.lang.String getGUID()
 	{
 		return "ID_" + getMendixObject().getId().toLong();
 	}

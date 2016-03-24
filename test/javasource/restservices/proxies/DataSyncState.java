@@ -4,25 +4,19 @@
 
 package restservices.proxies;
 
-import com.mendix.core.Core;
-import com.mendix.core.CoreException;
-import com.mendix.systemwideinterfaces.core.IContext;
-import com.mendix.systemwideinterfaces.core.IMendixIdentifier;
-import com.mendix.systemwideinterfaces.core.IMendixObject;
-
 /**
  * 
  */
 public class DataSyncState
 {
-	private final IMendixObject dataSyncStateMendixObject;
+	private final com.mendix.systemwideinterfaces.core.IMendixObject dataSyncStateMendixObject;
 
-	private final IContext context;
+	private final com.mendix.systemwideinterfaces.core.IContext context;
 
 	/**
 	 * Internal name of this entity
 	 */
-	public static final String entityName = "RestServices.DataSyncState";
+	public static final java.lang.String entityName = "RestServices.DataSyncState";
 
 	/**
 	 * Enum describing members of this entity
@@ -33,31 +27,31 @@ public class DataSyncState
 		SequenceNr("SequenceNr"),
 		Status("Status");
 
-		private String metaName;
+		private java.lang.String metaName;
 
-		MemberNames(String s)
+		MemberNames(java.lang.String s)
 		{
 			metaName = s;
 		}
 
 		@Override
-		public String toString()
+		public java.lang.String toString()
 		{
 			return metaName;
 		}
 	}
 
-	public DataSyncState(IContext context)
+	public DataSyncState(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, Core.instantiate(context, "RestServices.DataSyncState"));
+		this(context, com.mendix.core.Core.instantiate(context, "RestServices.DataSyncState"));
 	}
 
-	protected DataSyncState(IContext context, IMendixObject dataSyncStateMendixObject)
+	protected DataSyncState(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject dataSyncStateMendixObject)
 	{
 		if (dataSyncStateMendixObject == null)
-			throw new IllegalArgumentException("The given object cannot be null.");
-		if (!Core.isSubClassOf("RestServices.DataSyncState", dataSyncStateMendixObject.getType()))
-			throw new IllegalArgumentException("The given object is not a RestServices.DataSyncState");
+			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
+		if (!com.mendix.core.Core.isSubClassOf("RestServices.DataSyncState", dataSyncStateMendixObject.getType()))
+			throw new java.lang.IllegalArgumentException("The given object is not a RestServices.DataSyncState");
 
 		this.dataSyncStateMendixObject = dataSyncStateMendixObject;
 		this.context = context;
@@ -67,7 +61,7 @@ public class DataSyncState
 	 * @deprecated Use 'DataSyncState.load(IContext, IMendixIdentifier)' instead.
 	 */
 	@Deprecated
-	public static restservices.proxies.DataSyncState initialize(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static restservices.proxies.DataSyncState initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
 		return restservices.proxies.DataSyncState.load(context, mendixIdentifier);
 	}
@@ -76,21 +70,21 @@ public class DataSyncState
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.getSudoContext() can be used to obtain sudo access).
 	 */
-	public static restservices.proxies.DataSyncState initialize(IContext context, IMendixObject mendixObject)
+	public static restservices.proxies.DataSyncState initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
 		return new restservices.proxies.DataSyncState(context, mendixObject);
 	}
 
-	public static restservices.proxies.DataSyncState load(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static restservices.proxies.DataSyncState load(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
-		IMendixObject mendixObject = Core.retrieveId(context, mendixIdentifier);
+		com.mendix.systemwideinterfaces.core.IMendixObject mendixObject = com.mendix.core.Core.retrieveId(context, mendixIdentifier);
 		return restservices.proxies.DataSyncState.initialize(context, mendixObject);
 	}
 
-	public static java.util.List<restservices.proxies.DataSyncState> load(IContext context, String xpathConstraint) throws CoreException
+	public static java.util.List<restservices.proxies.DataSyncState> load(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String xpathConstraint) throws com.mendix.core.CoreException
 	{
 		java.util.List<restservices.proxies.DataSyncState> result = new java.util.ArrayList<restservices.proxies.DataSyncState>();
-		for (IMendixObject obj : Core.retrieveXPathQuery(context, "//RestServices.DataSyncState" + xpathConstraint))
+		for (com.mendix.systemwideinterfaces.core.IMendixObject obj : com.mendix.core.Core.retrieveXPathQuery(context, "//RestServices.DataSyncState" + xpathConstraint))
 			result.add(restservices.proxies.DataSyncState.initialize(context, obj));
 		return result;
 	}
@@ -98,17 +92,17 @@ public class DataSyncState
 	/**
 	 * Commit the changes made on this proxy object.
 	 */
-	public final void commit() throws CoreException
+	public final void commit() throws com.mendix.core.CoreException
 	{
-		Core.commit(context, getMendixObject());
+		com.mendix.core.Core.commit(context, getMendixObject());
 	}
 
 	/**
 	 * Commit the changes made on this proxy object using the specified context.
 	 */
-	public final void commit(IContext context) throws CoreException
+	public final void commit(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
-		Core.commit(context, getMendixObject());
+		com.mendix.core.Core.commit(context, getMendixObject());
 	}
 
 	/**
@@ -116,15 +110,15 @@ public class DataSyncState
 	 */
 	public final void delete()
 	{
-		Core.delete(context, getMendixObject());
+		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 
 	/**
 	 * Delete the object using the specified context.
 	 */
-	public final void delete(IContext context)
+	public final void delete(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		Core.delete(context, getMendixObject());
+		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 	/**
 	 * @return value of CollectionUrl
@@ -138,7 +132,7 @@ public class DataSyncState
 	 * @param context
 	 * @return value of CollectionUrl
 	 */
-	public final String getCollectionUrl(IContext context)
+	public final String getCollectionUrl(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.CollectionUrl.toString());
 	}
@@ -157,7 +151,7 @@ public class DataSyncState
 	 * @param context
 	 * @param collectionurl
 	 */
-	public final void setCollectionUrl(IContext context, String collectionurl)
+	public final void setCollectionUrl(com.mendix.systemwideinterfaces.core.IContext context, String collectionurl)
 	{
 		getMendixObject().setValue(context, MemberNames.CollectionUrl.toString(), collectionurl);
 	}
@@ -174,7 +168,7 @@ public class DataSyncState
 	 * @param context
 	 * @return value of SequenceNr
 	 */
-	public final Long getSequenceNr(IContext context)
+	public final Long getSequenceNr(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (Long) getMendixObject().getValue(context, MemberNames.SequenceNr.toString());
 	}
@@ -193,7 +187,7 @@ public class DataSyncState
 	 * @param context
 	 * @param sequencenr
 	 */
-	public final void setSequenceNr(IContext context, Long sequencenr)
+	public final void setSequenceNr(com.mendix.systemwideinterfaces.core.IContext context, Long sequencenr)
 	{
 		getMendixObject().setValue(context, MemberNames.SequenceNr.toString(), sequencenr);
 	}
@@ -211,13 +205,13 @@ public class DataSyncState
 	 * @param context
 	 * @return value of Status
 	 */
-	public final restservices.proxies.TrackingState getStatus(IContext context)
+	public final restservices.proxies.TrackingState getStatus(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		Object obj = getMendixObject().getValue(context, MemberNames.Status.toString());
 		if (obj == null)
 			return null;
 
-		return restservices.proxies.TrackingState.valueOf((String) obj);
+		return restservices.proxies.TrackingState.valueOf((java.lang.String) obj);
 	}
 
 	/**
@@ -234,7 +228,7 @@ public class DataSyncState
 	 * @param context
 	 * @param status
 	 */
-	public final void setStatus(IContext context, restservices.proxies.TrackingState status)
+	public final void setStatus(com.mendix.systemwideinterfaces.core.IContext context, restservices.proxies.TrackingState status)
 	{
 		if (status != null)
 			getMendixObject().setValue(context, MemberNames.Status.toString(), status.toString());
@@ -245,7 +239,7 @@ public class DataSyncState
 	/**
 	 * @return the IMendixObject instance of this proxy for use in the Core interface.
 	 */
-	public final IMendixObject getMendixObject()
+	public final com.mendix.systemwideinterfaces.core.IMendixObject getMendixObject()
 	{
 		return dataSyncStateMendixObject;
 	}
@@ -253,7 +247,7 @@ public class DataSyncState
 	/**
 	 * @return the IContext instance of this proxy, or null if no IContext instance was specified at initialization.
 	 */
-	public final IContext getContext()
+	public final com.mendix.systemwideinterfaces.core.IContext getContext()
 	{
 		return context;
 	}
@@ -281,7 +275,7 @@ public class DataSyncState
 	/**
 	 * @return String name of this class
 	 */
-	public static String getType()
+	public static java.lang.String getType()
 	{
 		return "RestServices.DataSyncState";
 	}
@@ -291,7 +285,7 @@ public class DataSyncState
 	 * @deprecated Use getMendixObject().getId().toLong() to get a unique identifier for this object.
 	 */
 	@Deprecated
-	public String getGUID()
+	public java.lang.String getGUID()
 	{
 		return "ID_" + getMendixObject().getId().toLong();
 	}

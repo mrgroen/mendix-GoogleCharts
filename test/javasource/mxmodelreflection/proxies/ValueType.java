@@ -4,25 +4,19 @@
 
 package mxmodelreflection.proxies;
 
-import com.mendix.core.Core;
-import com.mendix.core.CoreException;
-import com.mendix.systemwideinterfaces.core.IContext;
-import com.mendix.systemwideinterfaces.core.IMendixIdentifier;
-import com.mendix.systemwideinterfaces.core.IMendixObject;
-
 /**
  * 
  */
 public class ValueType
 {
-	private final IMendixObject valueTypeMendixObject;
+	private final com.mendix.systemwideinterfaces.core.IMendixObject valueTypeMendixObject;
 
-	private final IContext context;
+	private final com.mendix.systemwideinterfaces.core.IContext context;
 
 	/**
 	 * Internal name of this entity
 	 */
-	public static final String entityName = "MxModelReflection.ValueType";
+	public static final java.lang.String entityName = "MxModelReflection.ValueType";
 
 	/**
 	 * Enum describing members of this entity
@@ -33,31 +27,31 @@ public class ValueType
 		TypeEnum("TypeEnum"),
 		ValueType_MxObjectType("MxModelReflection.ValueType_MxObjectType");
 
-		private String metaName;
+		private java.lang.String metaName;
 
-		MemberNames(String s)
+		MemberNames(java.lang.String s)
 		{
 			metaName = s;
 		}
 
 		@Override
-		public String toString()
+		public java.lang.String toString()
 		{
 			return metaName;
 		}
 	}
 
-	public ValueType(IContext context)
+	public ValueType(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, Core.instantiate(context, "MxModelReflection.ValueType"));
+		this(context, com.mendix.core.Core.instantiate(context, "MxModelReflection.ValueType"));
 	}
 
-	protected ValueType(IContext context, IMendixObject valueTypeMendixObject)
+	protected ValueType(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject valueTypeMendixObject)
 	{
 		if (valueTypeMendixObject == null)
-			throw new IllegalArgumentException("The given object cannot be null.");
-		if (!Core.isSubClassOf("MxModelReflection.ValueType", valueTypeMendixObject.getType()))
-			throw new IllegalArgumentException("The given object is not a MxModelReflection.ValueType");
+			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
+		if (!com.mendix.core.Core.isSubClassOf("MxModelReflection.ValueType", valueTypeMendixObject.getType()))
+			throw new java.lang.IllegalArgumentException("The given object is not a MxModelReflection.ValueType");
 
 		this.valueTypeMendixObject = valueTypeMendixObject;
 		this.context = context;
@@ -67,7 +61,7 @@ public class ValueType
 	 * @deprecated Use 'ValueType.load(IContext, IMendixIdentifier)' instead.
 	 */
 	@Deprecated
-	public static mxmodelreflection.proxies.ValueType initialize(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static mxmodelreflection.proxies.ValueType initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
 		return mxmodelreflection.proxies.ValueType.load(context, mendixIdentifier);
 	}
@@ -76,21 +70,21 @@ public class ValueType
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.getSudoContext() can be used to obtain sudo access).
 	 */
-	public static mxmodelreflection.proxies.ValueType initialize(IContext context, IMendixObject mendixObject)
+	public static mxmodelreflection.proxies.ValueType initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
 		return new mxmodelreflection.proxies.ValueType(context, mendixObject);
 	}
 
-	public static mxmodelreflection.proxies.ValueType load(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static mxmodelreflection.proxies.ValueType load(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
-		IMendixObject mendixObject = Core.retrieveId(context, mendixIdentifier);
+		com.mendix.systemwideinterfaces.core.IMendixObject mendixObject = com.mendix.core.Core.retrieveId(context, mendixIdentifier);
 		return mxmodelreflection.proxies.ValueType.initialize(context, mendixObject);
 	}
 
-	public static java.util.List<mxmodelreflection.proxies.ValueType> load(IContext context, String xpathConstraint) throws CoreException
+	public static java.util.List<mxmodelreflection.proxies.ValueType> load(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String xpathConstraint) throws com.mendix.core.CoreException
 	{
 		java.util.List<mxmodelreflection.proxies.ValueType> result = new java.util.ArrayList<mxmodelreflection.proxies.ValueType>();
-		for (IMendixObject obj : Core.retrieveXPathQuery(context, "//MxModelReflection.ValueType" + xpathConstraint))
+		for (com.mendix.systemwideinterfaces.core.IMendixObject obj : com.mendix.core.Core.retrieveXPathQuery(context, "//MxModelReflection.ValueType" + xpathConstraint))
 			result.add(mxmodelreflection.proxies.ValueType.initialize(context, obj));
 		return result;
 	}
@@ -98,17 +92,17 @@ public class ValueType
 	/**
 	 * Commit the changes made on this proxy object.
 	 */
-	public final void commit() throws CoreException
+	public final void commit() throws com.mendix.core.CoreException
 	{
-		Core.commit(context, getMendixObject());
+		com.mendix.core.Core.commit(context, getMendixObject());
 	}
 
 	/**
 	 * Commit the changes made on this proxy object using the specified context.
 	 */
-	public final void commit(IContext context) throws CoreException
+	public final void commit(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
-		Core.commit(context, getMendixObject());
+		com.mendix.core.Core.commit(context, getMendixObject());
 	}
 
 	/**
@@ -116,15 +110,15 @@ public class ValueType
 	 */
 	public final void delete()
 	{
-		Core.delete(context, getMendixObject());
+		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 
 	/**
 	 * Delete the object using the specified context.
 	 */
-	public final void delete(IContext context)
+	public final void delete(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		Core.delete(context, getMendixObject());
+		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 	/**
 	 * @return value of Name
@@ -138,7 +132,7 @@ public class ValueType
 	 * @param context
 	 * @return value of Name
 	 */
-	public final String getName(IContext context)
+	public final String getName(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.Name.toString());
 	}
@@ -157,7 +151,7 @@ public class ValueType
 	 * @param context
 	 * @param name
 	 */
-	public final void setName(IContext context, String name)
+	public final void setName(com.mendix.systemwideinterfaces.core.IContext context, String name)
 	{
 		getMendixObject().setValue(context, MemberNames.Name.toString(), name);
 	}
@@ -175,13 +169,13 @@ public class ValueType
 	 * @param context
 	 * @return value of TypeEnum
 	 */
-	public final mxmodelreflection.proxies.PrimitiveTypes getTypeEnum(IContext context)
+	public final mxmodelreflection.proxies.PrimitiveTypes getTypeEnum(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		Object obj = getMendixObject().getValue(context, MemberNames.TypeEnum.toString());
 		if (obj == null)
 			return null;
 
-		return mxmodelreflection.proxies.PrimitiveTypes.valueOf((String) obj);
+		return mxmodelreflection.proxies.PrimitiveTypes.valueOf((java.lang.String) obj);
 	}
 
 	/**
@@ -198,7 +192,7 @@ public class ValueType
 	 * @param context
 	 * @param typeenum
 	 */
-	public final void setTypeEnum(IContext context, mxmodelreflection.proxies.PrimitiveTypes typeenum)
+	public final void setTypeEnum(com.mendix.systemwideinterfaces.core.IContext context, mxmodelreflection.proxies.PrimitiveTypes typeenum)
 	{
 		if (typeenum != null)
 			getMendixObject().setValue(context, MemberNames.TypeEnum.toString(), typeenum.toString());
@@ -209,7 +203,7 @@ public class ValueType
 	/**
 	 * @return value of ValueType_MxObjectType
 	 */
-	public final mxmodelreflection.proxies.MxObjectType getValueType_MxObjectType() throws CoreException
+	public final mxmodelreflection.proxies.MxObjectType getValueType_MxObjectType() throws com.mendix.core.CoreException
 	{
 		return getValueType_MxObjectType(getContext());
 	}
@@ -218,10 +212,10 @@ public class ValueType
 	 * @param context
 	 * @return value of ValueType_MxObjectType
 	 */
-	public final mxmodelreflection.proxies.MxObjectType getValueType_MxObjectType(IContext context) throws CoreException
+	public final mxmodelreflection.proxies.MxObjectType getValueType_MxObjectType(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
 		mxmodelreflection.proxies.MxObjectType result = null;
-		IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.ValueType_MxObjectType.toString());
+		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.ValueType_MxObjectType.toString());
 		if (identifier != null)
 			result = mxmodelreflection.proxies.MxObjectType.load(context, identifier);
 		return result;
@@ -241,7 +235,7 @@ public class ValueType
 	 * @param context
 	 * @param valuetype_mxobjecttype
 	 */
-	public final void setValueType_MxObjectType(IContext context, mxmodelreflection.proxies.MxObjectType valuetype_mxobjecttype)
+	public final void setValueType_MxObjectType(com.mendix.systemwideinterfaces.core.IContext context, mxmodelreflection.proxies.MxObjectType valuetype_mxobjecttype)
 	{
 		if (valuetype_mxobjecttype == null)
 			getMendixObject().setValue(context, MemberNames.ValueType_MxObjectType.toString(), null);
@@ -252,7 +246,7 @@ public class ValueType
 	/**
 	 * @return the IMendixObject instance of this proxy for use in the Core interface.
 	 */
-	public final IMendixObject getMendixObject()
+	public final com.mendix.systemwideinterfaces.core.IMendixObject getMendixObject()
 	{
 		return valueTypeMendixObject;
 	}
@@ -260,7 +254,7 @@ public class ValueType
 	/**
 	 * @return the IContext instance of this proxy, or null if no IContext instance was specified at initialization.
 	 */
-	public final IContext getContext()
+	public final com.mendix.systemwideinterfaces.core.IContext getContext()
 	{
 		return context;
 	}
@@ -288,7 +282,7 @@ public class ValueType
 	/**
 	 * @return String name of this class
 	 */
-	public static String getType()
+	public static java.lang.String getType()
 	{
 		return "MxModelReflection.ValueType";
 	}
@@ -298,7 +292,7 @@ public class ValueType
 	 * @deprecated Use getMendixObject().getId().toLong() to get a unique identifier for this object.
 	 */
 	@Deprecated
-	public String getGUID()
+	public java.lang.String getGUID()
 	{
 		return "ID_" + getMendixObject().getId().toLong();
 	}

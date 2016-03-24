@@ -4,25 +4,19 @@
 
 package googlecharts.proxies;
 
-import com.mendix.core.Core;
-import com.mendix.core.CoreException;
-import com.mendix.systemwideinterfaces.core.IContext;
-import com.mendix.systemwideinterfaces.core.IMendixIdentifier;
-import com.mendix.systemwideinterfaces.core.IMendixObject;
-
 /**
  * 
  */
 public class ChartDataSource
 {
-	private final IMendixObject chartDataSourceMendixObject;
+	private final com.mendix.systemwideinterfaces.core.IMendixObject chartDataSourceMendixObject;
 
-	private final IContext context;
+	private final com.mendix.systemwideinterfaces.core.IContext context;
 
 	/**
 	 * Internal name of this entity
 	 */
-	public static final String entityName = "GoogleCharts.ChartDataSource";
+	public static final java.lang.String entityName = "GoogleCharts.ChartDataSource";
 
 	/**
 	 * Enum describing members of this entity
@@ -32,31 +26,31 @@ public class ChartDataSource
 		cols("GoogleCharts.cols"),
 		rows("GoogleCharts.rows");
 
-		private String metaName;
+		private java.lang.String metaName;
 
-		MemberNames(String s)
+		MemberNames(java.lang.String s)
 		{
 			metaName = s;
 		}
 
 		@Override
-		public String toString()
+		public java.lang.String toString()
 		{
 			return metaName;
 		}
 	}
 
-	public ChartDataSource(IContext context)
+	public ChartDataSource(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, Core.instantiate(context, "GoogleCharts.ChartDataSource"));
+		this(context, com.mendix.core.Core.instantiate(context, "GoogleCharts.ChartDataSource"));
 	}
 
-	protected ChartDataSource(IContext context, IMendixObject chartDataSourceMendixObject)
+	protected ChartDataSource(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject chartDataSourceMendixObject)
 	{
 		if (chartDataSourceMendixObject == null)
-			throw new IllegalArgumentException("The given object cannot be null.");
-		if (!Core.isSubClassOf("GoogleCharts.ChartDataSource", chartDataSourceMendixObject.getType()))
-			throw new IllegalArgumentException("The given object is not a GoogleCharts.ChartDataSource");
+			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
+		if (!com.mendix.core.Core.isSubClassOf("GoogleCharts.ChartDataSource", chartDataSourceMendixObject.getType()))
+			throw new java.lang.IllegalArgumentException("The given object is not a GoogleCharts.ChartDataSource");
 
 		this.chartDataSourceMendixObject = chartDataSourceMendixObject;
 		this.context = context;
@@ -66,7 +60,7 @@ public class ChartDataSource
 	 * @deprecated Use 'ChartDataSource.load(IContext, IMendixIdentifier)' instead.
 	 */
 	@Deprecated
-	public static googlecharts.proxies.ChartDataSource initialize(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static googlecharts.proxies.ChartDataSource initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
 		return googlecharts.proxies.ChartDataSource.load(context, mendixIdentifier);
 	}
@@ -75,31 +69,31 @@ public class ChartDataSource
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.getSudoContext() can be used to obtain sudo access).
 	 */
-	public static googlecharts.proxies.ChartDataSource initialize(IContext context, IMendixObject mendixObject)
+	public static googlecharts.proxies.ChartDataSource initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
 		return new googlecharts.proxies.ChartDataSource(context, mendixObject);
 	}
 
-	public static googlecharts.proxies.ChartDataSource load(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static googlecharts.proxies.ChartDataSource load(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
-		IMendixObject mendixObject = Core.retrieveId(context, mendixIdentifier);
+		com.mendix.systemwideinterfaces.core.IMendixObject mendixObject = com.mendix.core.Core.retrieveId(context, mendixIdentifier);
 		return googlecharts.proxies.ChartDataSource.initialize(context, mendixObject);
 	}
 
 	/**
 	 * Commit the changes made on this proxy object.
 	 */
-	public final void commit() throws CoreException
+	public final void commit() throws com.mendix.core.CoreException
 	{
-		Core.commit(context, getMendixObject());
+		com.mendix.core.Core.commit(context, getMendixObject());
 	}
 
 	/**
 	 * Commit the changes made on this proxy object using the specified context.
 	 */
-	public final void commit(IContext context) throws CoreException
+	public final void commit(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
-		Core.commit(context, getMendixObject());
+		com.mendix.core.Core.commit(context, getMendixObject());
 	}
 
 	/**
@@ -107,20 +101,20 @@ public class ChartDataSource
 	 */
 	public final void delete()
 	{
-		Core.delete(context, getMendixObject());
+		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 
 	/**
 	 * Delete the object using the specified context.
 	 */
-	public final void delete(IContext context)
+	public final void delete(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		Core.delete(context, getMendixObject());
+		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 	/**
 	 * @return value of cols
 	 */
-	public final java.util.List<googlecharts.proxies.Column> getcols() throws CoreException
+	public final java.util.List<googlecharts.proxies.Column> getcols() throws com.mendix.core.CoreException
 	{
 		return getcols(getContext());
 	}
@@ -130,13 +124,13 @@ public class ChartDataSource
 	 * @return value of cols
 	 */
 	@SuppressWarnings("unchecked")
-	public final java.util.List<googlecharts.proxies.Column> getcols(IContext context) throws CoreException
+	public final java.util.List<googlecharts.proxies.Column> getcols(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
 		java.util.List<googlecharts.proxies.Column> result = new java.util.ArrayList<googlecharts.proxies.Column>();
 		Object valueObject = getMendixObject().getValue(context, MemberNames.cols.toString());
 		if (valueObject == null)
 			return result;
-		for (IMendixObject mendixObject : Core.retrieveIdList(context, (java.util.List<IMendixIdentifier>) valueObject))
+		for (com.mendix.systemwideinterfaces.core.IMendixObject mendixObject : com.mendix.core.Core.retrieveIdList(context, (java.util.List<com.mendix.systemwideinterfaces.core.IMendixIdentifier>) valueObject))
 			result.add(googlecharts.proxies.Column.initialize(context, mendixObject));
 		return result;
 	}
@@ -155,9 +149,9 @@ public class ChartDataSource
 	 * @param context
 	 * @param cols
 	 */
-	public final void setcols(IContext context, java.util.List<googlecharts.proxies.Column> cols)
+	public final void setcols(com.mendix.systemwideinterfaces.core.IContext context, java.util.List<googlecharts.proxies.Column> cols)
 	{
-		java.util.List<IMendixIdentifier> identifiers = new java.util.ArrayList<IMendixIdentifier>();
+		java.util.List<com.mendix.systemwideinterfaces.core.IMendixIdentifier> identifiers = new java.util.ArrayList<com.mendix.systemwideinterfaces.core.IMendixIdentifier>();
 		for (googlecharts.proxies.Column proxyObject : cols)
 			identifiers.add(proxyObject.getMendixObject().getId());
 		getMendixObject().setValue(context, MemberNames.cols.toString(), identifiers);
@@ -166,7 +160,7 @@ public class ChartDataSource
 	/**
 	 * @return value of rows
 	 */
-	public final java.util.List<googlecharts.proxies.Row> getrows() throws CoreException
+	public final java.util.List<googlecharts.proxies.Row> getrows() throws com.mendix.core.CoreException
 	{
 		return getrows(getContext());
 	}
@@ -176,13 +170,13 @@ public class ChartDataSource
 	 * @return value of rows
 	 */
 	@SuppressWarnings("unchecked")
-	public final java.util.List<googlecharts.proxies.Row> getrows(IContext context) throws CoreException
+	public final java.util.List<googlecharts.proxies.Row> getrows(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
 		java.util.List<googlecharts.proxies.Row> result = new java.util.ArrayList<googlecharts.proxies.Row>();
 		Object valueObject = getMendixObject().getValue(context, MemberNames.rows.toString());
 		if (valueObject == null)
 			return result;
-		for (IMendixObject mendixObject : Core.retrieveIdList(context, (java.util.List<IMendixIdentifier>) valueObject))
+		for (com.mendix.systemwideinterfaces.core.IMendixObject mendixObject : com.mendix.core.Core.retrieveIdList(context, (java.util.List<com.mendix.systemwideinterfaces.core.IMendixIdentifier>) valueObject))
 			result.add(googlecharts.proxies.Row.initialize(context, mendixObject));
 		return result;
 	}
@@ -201,9 +195,9 @@ public class ChartDataSource
 	 * @param context
 	 * @param rows
 	 */
-	public final void setrows(IContext context, java.util.List<googlecharts.proxies.Row> rows)
+	public final void setrows(com.mendix.systemwideinterfaces.core.IContext context, java.util.List<googlecharts.proxies.Row> rows)
 	{
-		java.util.List<IMendixIdentifier> identifiers = new java.util.ArrayList<IMendixIdentifier>();
+		java.util.List<com.mendix.systemwideinterfaces.core.IMendixIdentifier> identifiers = new java.util.ArrayList<com.mendix.systemwideinterfaces.core.IMendixIdentifier>();
 		for (googlecharts.proxies.Row proxyObject : rows)
 			identifiers.add(proxyObject.getMendixObject().getId());
 		getMendixObject().setValue(context, MemberNames.rows.toString(), identifiers);
@@ -212,7 +206,7 @@ public class ChartDataSource
 	/**
 	 * @return the IMendixObject instance of this proxy for use in the Core interface.
 	 */
-	public final IMendixObject getMendixObject()
+	public final com.mendix.systemwideinterfaces.core.IMendixObject getMendixObject()
 	{
 		return chartDataSourceMendixObject;
 	}
@@ -220,7 +214,7 @@ public class ChartDataSource
 	/**
 	 * @return the IContext instance of this proxy, or null if no IContext instance was specified at initialization.
 	 */
-	public final IContext getContext()
+	public final com.mendix.systemwideinterfaces.core.IContext getContext()
 	{
 		return context;
 	}
@@ -248,7 +242,7 @@ public class ChartDataSource
 	/**
 	 * @return String name of this class
 	 */
-	public static String getType()
+	public static java.lang.String getType()
 	{
 		return "GoogleCharts.ChartDataSource";
 	}
@@ -258,7 +252,7 @@ public class ChartDataSource
 	 * @deprecated Use getMendixObject().getId().toLong() to get a unique identifier for this object.
 	 */
 	@Deprecated
-	public String getGUID()
+	public java.lang.String getGUID()
 	{
 		return "ID_" + getMendixObject().getId().toLong();
 	}

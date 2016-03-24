@@ -4,12 +4,6 @@
 
 package restservices.proxies;
 
-import com.mendix.core.Core;
-import com.mendix.core.CoreException;
-import com.mendix.systemwideinterfaces.core.IContext;
-import com.mendix.systemwideinterfaces.core.IMendixIdentifier;
-import com.mendix.systemwideinterfaces.core.IMendixObject;
-
 /**
  * 
  */
@@ -18,7 +12,7 @@ public class ReferableObject extends restservices.proxies.AnyObject
 	/**
 	 * Internal name of this entity
 	 */
-	public static final String entityName = "RestServices.ReferableObject";
+	public static final java.lang.String entityName = "RestServices.ReferableObject";
 
 	/**
 	 * Enum describing members of this entity
@@ -28,37 +22,37 @@ public class ReferableObject extends restservices.proxies.AnyObject
 		URL("URL"),
 		ETag("ETag");
 
-		private String metaName;
+		private java.lang.String metaName;
 
-		MemberNames(String s)
+		MemberNames(java.lang.String s)
 		{
 			metaName = s;
 		}
 
 		@Override
-		public String toString()
+		public java.lang.String toString()
 		{
 			return metaName;
 		}
 	}
 
-	public ReferableObject(IContext context)
+	public ReferableObject(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, Core.instantiate(context, "RestServices.ReferableObject"));
+		this(context, com.mendix.core.Core.instantiate(context, "RestServices.ReferableObject"));
 	}
 
-	protected ReferableObject(IContext context, IMendixObject referableObjectMendixObject)
+	protected ReferableObject(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject referableObjectMendixObject)
 	{
 		super(context, referableObjectMendixObject);
-		if (!Core.isSubClassOf("RestServices.ReferableObject", referableObjectMendixObject.getType()))
-			throw new IllegalArgumentException("The given object is not a RestServices.ReferableObject");
+		if (!com.mendix.core.Core.isSubClassOf("RestServices.ReferableObject", referableObjectMendixObject.getType()))
+			throw new java.lang.IllegalArgumentException("The given object is not a RestServices.ReferableObject");
 	}
 
 	/**
 	 * @deprecated Use 'ReferableObject.load(IContext, IMendixIdentifier)' instead.
 	 */
 	@Deprecated
-	public static restservices.proxies.ReferableObject initialize(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static restservices.proxies.ReferableObject initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
 		return restservices.proxies.ReferableObject.load(context, mendixIdentifier);
 	}
@@ -67,14 +61,14 @@ public class ReferableObject extends restservices.proxies.AnyObject
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.getSudoContext() can be used to obtain sudo access).
 	 */
-	public static restservices.proxies.ReferableObject initialize(IContext context, IMendixObject mendixObject)
+	public static restservices.proxies.ReferableObject initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
 		return new restservices.proxies.ReferableObject(context, mendixObject);
 	}
 
-	public static restservices.proxies.ReferableObject load(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static restservices.proxies.ReferableObject load(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
-		IMendixObject mendixObject = Core.retrieveId(context, mendixIdentifier);
+		com.mendix.systemwideinterfaces.core.IMendixObject mendixObject = com.mendix.core.Core.retrieveId(context, mendixIdentifier);
 		return restservices.proxies.ReferableObject.initialize(context, mendixObject);
 	}
 
@@ -90,7 +84,7 @@ public class ReferableObject extends restservices.proxies.AnyObject
 	 * @param context
 	 * @return value of URL
 	 */
-	public final String getURL(IContext context)
+	public final String getURL(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.URL.toString());
 	}
@@ -109,7 +103,7 @@ public class ReferableObject extends restservices.proxies.AnyObject
 	 * @param context
 	 * @param url
 	 */
-	public final void setURL(IContext context, String url)
+	public final void setURL(com.mendix.systemwideinterfaces.core.IContext context, String url)
 	{
 		getMendixObject().setValue(context, MemberNames.URL.toString(), url);
 	}
@@ -126,7 +120,7 @@ public class ReferableObject extends restservices.proxies.AnyObject
 	 * @param context
 	 * @return value of ETag
 	 */
-	public final String getETag(IContext context)
+	public final String getETag(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.ETag.toString());
 	}
@@ -145,7 +139,7 @@ public class ReferableObject extends restservices.proxies.AnyObject
 	 * @param context
 	 * @param etag
 	 */
-	public final void setETag(IContext context, String etag)
+	public final void setETag(com.mendix.systemwideinterfaces.core.IContext context, String etag)
 	{
 		getMendixObject().setValue(context, MemberNames.ETag.toString(), etag);
 	}
@@ -173,7 +167,7 @@ public class ReferableObject extends restservices.proxies.AnyObject
 	/**
 	 * @return String name of this class
 	 */
-	public static String getType()
+	public static java.lang.String getType()
 	{
 		return "RestServices.ReferableObject";
 	}
@@ -184,7 +178,7 @@ public class ReferableObject extends restservices.proxies.AnyObject
 	 */
 	@Override
 	@Deprecated
-	public String getGUID()
+	public java.lang.String getGUID()
 	{
 		return "ID_" + getMendixObject().getId().toLong();
 	}

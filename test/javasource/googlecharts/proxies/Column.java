@@ -4,25 +4,19 @@
 
 package googlecharts.proxies;
 
-import com.mendix.core.Core;
-import com.mendix.core.CoreException;
-import com.mendix.systemwideinterfaces.core.IContext;
-import com.mendix.systemwideinterfaces.core.IMendixIdentifier;
-import com.mendix.systemwideinterfaces.core.IMendixObject;
-
 /**
  * 
  */
 public class Column
 {
-	private final IMendixObject columnMendixObject;
+	private final com.mendix.systemwideinterfaces.core.IMendixObject columnMendixObject;
 
-	private final IContext context;
+	private final com.mendix.systemwideinterfaces.core.IContext context;
 
 	/**
 	 * Internal name of this entity
 	 */
-	public static final String entityName = "GoogleCharts.Column";
+	public static final java.lang.String entityName = "GoogleCharts.Column";
 
 	/**
 	 * Enum describing members of this entity
@@ -33,31 +27,31 @@ public class Column
 		_type("_type"),
 		_type_jsonkey("_type_jsonkey");
 
-		private String metaName;
+		private java.lang.String metaName;
 
-		MemberNames(String s)
+		MemberNames(java.lang.String s)
 		{
 			metaName = s;
 		}
 
 		@Override
-		public String toString()
+		public java.lang.String toString()
 		{
 			return metaName;
 		}
 	}
 
-	public Column(IContext context)
+	public Column(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, Core.instantiate(context, "GoogleCharts.Column"));
+		this(context, com.mendix.core.Core.instantiate(context, "GoogleCharts.Column"));
 	}
 
-	protected Column(IContext context, IMendixObject columnMendixObject)
+	protected Column(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject columnMendixObject)
 	{
 		if (columnMendixObject == null)
-			throw new IllegalArgumentException("The given object cannot be null.");
-		if (!Core.isSubClassOf("GoogleCharts.Column", columnMendixObject.getType()))
-			throw new IllegalArgumentException("The given object is not a GoogleCharts.Column");
+			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
+		if (!com.mendix.core.Core.isSubClassOf("GoogleCharts.Column", columnMendixObject.getType()))
+			throw new java.lang.IllegalArgumentException("The given object is not a GoogleCharts.Column");
 
 		this.columnMendixObject = columnMendixObject;
 		this.context = context;
@@ -67,7 +61,7 @@ public class Column
 	 * @deprecated Use 'Column.load(IContext, IMendixIdentifier)' instead.
 	 */
 	@Deprecated
-	public static googlecharts.proxies.Column initialize(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static googlecharts.proxies.Column initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
 		return googlecharts.proxies.Column.load(context, mendixIdentifier);
 	}
@@ -76,31 +70,31 @@ public class Column
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.getSudoContext() can be used to obtain sudo access).
 	 */
-	public static googlecharts.proxies.Column initialize(IContext context, IMendixObject mendixObject)
+	public static googlecharts.proxies.Column initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
 		return new googlecharts.proxies.Column(context, mendixObject);
 	}
 
-	public static googlecharts.proxies.Column load(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static googlecharts.proxies.Column load(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
-		IMendixObject mendixObject = Core.retrieveId(context, mendixIdentifier);
+		com.mendix.systemwideinterfaces.core.IMendixObject mendixObject = com.mendix.core.Core.retrieveId(context, mendixIdentifier);
 		return googlecharts.proxies.Column.initialize(context, mendixObject);
 	}
 
 	/**
 	 * Commit the changes made on this proxy object.
 	 */
-	public final void commit() throws CoreException
+	public final void commit() throws com.mendix.core.CoreException
 	{
-		Core.commit(context, getMendixObject());
+		com.mendix.core.Core.commit(context, getMendixObject());
 	}
 
 	/**
 	 * Commit the changes made on this proxy object using the specified context.
 	 */
-	public final void commit(IContext context) throws CoreException
+	public final void commit(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
-		Core.commit(context, getMendixObject());
+		com.mendix.core.Core.commit(context, getMendixObject());
 	}
 
 	/**
@@ -108,15 +102,15 @@ public class Column
 	 */
 	public final void delete()
 	{
-		Core.delete(context, getMendixObject());
+		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 
 	/**
 	 * Delete the object using the specified context.
 	 */
-	public final void delete(IContext context)
+	public final void delete(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		Core.delete(context, getMendixObject());
+		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 	/**
 	 * @return value of label
@@ -130,7 +124,7 @@ public class Column
 	 * @param context
 	 * @return value of label
 	 */
-	public final String getlabel(IContext context)
+	public final String getlabel(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.label.toString());
 	}
@@ -149,7 +143,7 @@ public class Column
 	 * @param context
 	 * @param label
 	 */
-	public final void setlabel(IContext context, String label)
+	public final void setlabel(com.mendix.systemwideinterfaces.core.IContext context, String label)
 	{
 		getMendixObject().setValue(context, MemberNames.label.toString(), label);
 	}
@@ -166,7 +160,7 @@ public class Column
 	 * @param context
 	 * @return value of _type
 	 */
-	public final String get_type(IContext context)
+	public final String get_type(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames._type.toString());
 	}
@@ -185,7 +179,7 @@ public class Column
 	 * @param context
 	 * @param _type
 	 */
-	public final void set_type(IContext context, String _type)
+	public final void set_type(com.mendix.systemwideinterfaces.core.IContext context, String _type)
 	{
 		getMendixObject().setValue(context, MemberNames._type.toString(), _type);
 	}
@@ -202,7 +196,7 @@ public class Column
 	 * @param context
 	 * @return value of _type_jsonkey
 	 */
-	public final String get_type_jsonkey(IContext context)
+	public final String get_type_jsonkey(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames._type_jsonkey.toString());
 	}
@@ -221,7 +215,7 @@ public class Column
 	 * @param context
 	 * @param _type_jsonkey
 	 */
-	public final void set_type_jsonkey(IContext context, String _type_jsonkey)
+	public final void set_type_jsonkey(com.mendix.systemwideinterfaces.core.IContext context, String _type_jsonkey)
 	{
 		getMendixObject().setValue(context, MemberNames._type_jsonkey.toString(), _type_jsonkey);
 	}
@@ -229,7 +223,7 @@ public class Column
 	/**
 	 * @return the IMendixObject instance of this proxy for use in the Core interface.
 	 */
-	public final IMendixObject getMendixObject()
+	public final com.mendix.systemwideinterfaces.core.IMendixObject getMendixObject()
 	{
 		return columnMendixObject;
 	}
@@ -237,7 +231,7 @@ public class Column
 	/**
 	 * @return the IContext instance of this proxy, or null if no IContext instance was specified at initialization.
 	 */
-	public final IContext getContext()
+	public final com.mendix.systemwideinterfaces.core.IContext getContext()
 	{
 		return context;
 	}
@@ -265,7 +259,7 @@ public class Column
 	/**
 	 * @return String name of this class
 	 */
-	public static String getType()
+	public static java.lang.String getType()
 	{
 		return "GoogleCharts.Column";
 	}
@@ -275,7 +269,7 @@ public class Column
 	 * @deprecated Use getMendixObject().getId().toLong() to get a unique identifier for this object.
 	 */
 	@Deprecated
-	public String getGUID()
+	public java.lang.String getGUID()
 	{
 		return "ID_" + getMendixObject().getId().toLong();
 	}

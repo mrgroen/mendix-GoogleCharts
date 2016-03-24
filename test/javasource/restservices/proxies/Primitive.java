@@ -4,12 +4,6 @@
 
 package restservices.proxies;
 
-import com.mendix.core.Core;
-import com.mendix.core.CoreException;
-import com.mendix.systemwideinterfaces.core.IContext;
-import com.mendix.systemwideinterfaces.core.IMendixIdentifier;
-import com.mendix.systemwideinterfaces.core.IMendixObject;
-
 /**
  * 
  */
@@ -18,7 +12,7 @@ public class Primitive extends restservices.proxies.AnyObject
 	/**
 	 * Internal name of this entity
 	 */
-	public static final String entityName = "RestServices.Primitive";
+	public static final java.lang.String entityName = "RestServices.Primitive";
 
 	/**
 	 * Enum describing members of this entity
@@ -30,37 +24,37 @@ public class Primitive extends restservices.proxies.AnyObject
 		NumberValue("NumberValue"),
 		BooleanValue("BooleanValue");
 
-		private String metaName;
+		private java.lang.String metaName;
 
-		MemberNames(String s)
+		MemberNames(java.lang.String s)
 		{
 			metaName = s;
 		}
 
 		@Override
-		public String toString()
+		public java.lang.String toString()
 		{
 			return metaName;
 		}
 	}
 
-	public Primitive(IContext context)
+	public Primitive(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, Core.instantiate(context, "RestServices.Primitive"));
+		this(context, com.mendix.core.Core.instantiate(context, "RestServices.Primitive"));
 	}
 
-	protected Primitive(IContext context, IMendixObject primitiveMendixObject)
+	protected Primitive(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject primitiveMendixObject)
 	{
 		super(context, primitiveMendixObject);
-		if (!Core.isSubClassOf("RestServices.Primitive", primitiveMendixObject.getType()))
-			throw new IllegalArgumentException("The given object is not a RestServices.Primitive");
+		if (!com.mendix.core.Core.isSubClassOf("RestServices.Primitive", primitiveMendixObject.getType()))
+			throw new java.lang.IllegalArgumentException("The given object is not a RestServices.Primitive");
 	}
 
 	/**
 	 * @deprecated Use 'Primitive.load(IContext, IMendixIdentifier)' instead.
 	 */
 	@Deprecated
-	public static restservices.proxies.Primitive initialize(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static restservices.proxies.Primitive initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
 		return restservices.proxies.Primitive.load(context, mendixIdentifier);
 	}
@@ -69,14 +63,14 @@ public class Primitive extends restservices.proxies.AnyObject
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.getSudoContext() can be used to obtain sudo access).
 	 */
-	public static restservices.proxies.Primitive initialize(IContext context, IMendixObject mendixObject)
+	public static restservices.proxies.Primitive initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
 		return new restservices.proxies.Primitive(context, mendixObject);
 	}
 
-	public static restservices.proxies.Primitive load(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static restservices.proxies.Primitive load(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
-		IMendixObject mendixObject = Core.retrieveId(context, mendixIdentifier);
+		com.mendix.systemwideinterfaces.core.IMendixObject mendixObject = com.mendix.core.Core.retrieveId(context, mendixIdentifier);
 		return restservices.proxies.Primitive.initialize(context, mendixObject);
 	}
 
@@ -93,13 +87,13 @@ public class Primitive extends restservices.proxies.AnyObject
 	 * @param context
 	 * @return value of PrimitiveType
 	 */
-	public final restservices.proxies.RestPrimitiveType getPrimitiveType(IContext context)
+	public final restservices.proxies.RestPrimitiveType getPrimitiveType(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		Object obj = getMendixObject().getValue(context, MemberNames.PrimitiveType.toString());
 		if (obj == null)
 			return null;
 
-		return restservices.proxies.RestPrimitiveType.valueOf((String) obj);
+		return restservices.proxies.RestPrimitiveType.valueOf((java.lang.String) obj);
 	}
 
 	/**
@@ -116,7 +110,7 @@ public class Primitive extends restservices.proxies.AnyObject
 	 * @param context
 	 * @param primitivetype
 	 */
-	public final void setPrimitiveType(IContext context, restservices.proxies.RestPrimitiveType primitivetype)
+	public final void setPrimitiveType(com.mendix.systemwideinterfaces.core.IContext context, restservices.proxies.RestPrimitiveType primitivetype)
 	{
 		if (primitivetype != null)
 			getMendixObject().setValue(context, MemberNames.PrimitiveType.toString(), primitivetype.toString());
@@ -136,7 +130,7 @@ public class Primitive extends restservices.proxies.AnyObject
 	 * @param context
 	 * @return value of StringValue
 	 */
-	public final String getStringValue(IContext context)
+	public final String getStringValue(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.StringValue.toString());
 	}
@@ -155,7 +149,7 @@ public class Primitive extends restservices.proxies.AnyObject
 	 * @param context
 	 * @param stringvalue
 	 */
-	public final void setStringValue(IContext context, String stringvalue)
+	public final void setStringValue(com.mendix.systemwideinterfaces.core.IContext context, String stringvalue)
 	{
 		getMendixObject().setValue(context, MemberNames.StringValue.toString(), stringvalue);
 	}
@@ -172,7 +166,7 @@ public class Primitive extends restservices.proxies.AnyObject
 	 * @param context
 	 * @return value of NumberValue
 	 */
-	public final Double getNumberValue(IContext context)
+	public final Double getNumberValue(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (Double) getMendixObject().getValue(context, MemberNames.NumberValue.toString());
 	}
@@ -191,7 +185,7 @@ public class Primitive extends restservices.proxies.AnyObject
 	 * @param context
 	 * @param numbervalue
 	 */
-	public final void setNumberValue(IContext context, Double numbervalue)
+	public final void setNumberValue(com.mendix.systemwideinterfaces.core.IContext context, Double numbervalue)
 	{
 		getMendixObject().setValue(context, MemberNames.NumberValue.toString(), numbervalue);
 	}
@@ -208,7 +202,7 @@ public class Primitive extends restservices.proxies.AnyObject
 	 * @param context
 	 * @return value of BooleanValue
 	 */
-	public final Boolean getBooleanValue(IContext context)
+	public final Boolean getBooleanValue(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (Boolean) getMendixObject().getValue(context, MemberNames.BooleanValue.toString());
 	}
@@ -227,7 +221,7 @@ public class Primitive extends restservices.proxies.AnyObject
 	 * @param context
 	 * @param booleanvalue
 	 */
-	public final void setBooleanValue(IContext context, Boolean booleanvalue)
+	public final void setBooleanValue(com.mendix.systemwideinterfaces.core.IContext context, Boolean booleanvalue)
 	{
 		getMendixObject().setValue(context, MemberNames.BooleanValue.toString(), booleanvalue);
 	}
@@ -255,7 +249,7 @@ public class Primitive extends restservices.proxies.AnyObject
 	/**
 	 * @return String name of this class
 	 */
-	public static String getType()
+	public static java.lang.String getType()
 	{
 		return "RestServices.Primitive";
 	}
@@ -266,7 +260,7 @@ public class Primitive extends restservices.proxies.AnyObject
 	 */
 	@Override
 	@Deprecated
-	public String getGUID()
+	public java.lang.String getGUID()
 	{
 		return "ID_" + getMendixObject().getId().toLong();
 	}

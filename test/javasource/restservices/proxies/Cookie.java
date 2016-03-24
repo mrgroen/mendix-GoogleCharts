@@ -4,25 +4,19 @@
 
 package restservices.proxies;
 
-import com.mendix.core.Core;
-import com.mendix.core.CoreException;
-import com.mendix.systemwideinterfaces.core.IContext;
-import com.mendix.systemwideinterfaces.core.IMendixIdentifier;
-import com.mendix.systemwideinterfaces.core.IMendixObject;
-
 /**
  * 
  */
 public class Cookie
 {
-	private final IMendixObject cookieMendixObject;
+	private final com.mendix.systemwideinterfaces.core.IMendixObject cookieMendixObject;
 
-	private final IContext context;
+	private final com.mendix.systemwideinterfaces.core.IContext context;
 
 	/**
 	 * Internal name of this entity
 	 */
-	public static final String entityName = "RestServices.Cookie";
+	public static final java.lang.String entityName = "RestServices.Cookie";
 
 	/**
 	 * Enum describing members of this entity
@@ -36,31 +30,31 @@ public class Cookie
 		Domain("Domain"),
 		HttpOnly("HttpOnly");
 
-		private String metaName;
+		private java.lang.String metaName;
 
-		MemberNames(String s)
+		MemberNames(java.lang.String s)
 		{
 			metaName = s;
 		}
 
 		@Override
-		public String toString()
+		public java.lang.String toString()
 		{
 			return metaName;
 		}
 	}
 
-	public Cookie(IContext context)
+	public Cookie(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, Core.instantiate(context, "RestServices.Cookie"));
+		this(context, com.mendix.core.Core.instantiate(context, "RestServices.Cookie"));
 	}
 
-	protected Cookie(IContext context, IMendixObject cookieMendixObject)
+	protected Cookie(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject cookieMendixObject)
 	{
 		if (cookieMendixObject == null)
-			throw new IllegalArgumentException("The given object cannot be null.");
-		if (!Core.isSubClassOf("RestServices.Cookie", cookieMendixObject.getType()))
-			throw new IllegalArgumentException("The given object is not a RestServices.Cookie");
+			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
+		if (!com.mendix.core.Core.isSubClassOf("RestServices.Cookie", cookieMendixObject.getType()))
+			throw new java.lang.IllegalArgumentException("The given object is not a RestServices.Cookie");
 
 		this.cookieMendixObject = cookieMendixObject;
 		this.context = context;
@@ -70,7 +64,7 @@ public class Cookie
 	 * @deprecated Use 'Cookie.load(IContext, IMendixIdentifier)' instead.
 	 */
 	@Deprecated
-	public static restservices.proxies.Cookie initialize(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static restservices.proxies.Cookie initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
 		return restservices.proxies.Cookie.load(context, mendixIdentifier);
 	}
@@ -79,31 +73,31 @@ public class Cookie
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.getSudoContext() can be used to obtain sudo access).
 	 */
-	public static restservices.proxies.Cookie initialize(IContext context, IMendixObject mendixObject)
+	public static restservices.proxies.Cookie initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
 		return new restservices.proxies.Cookie(context, mendixObject);
 	}
 
-	public static restservices.proxies.Cookie load(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static restservices.proxies.Cookie load(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
-		IMendixObject mendixObject = Core.retrieveId(context, mendixIdentifier);
+		com.mendix.systemwideinterfaces.core.IMendixObject mendixObject = com.mendix.core.Core.retrieveId(context, mendixIdentifier);
 		return restservices.proxies.Cookie.initialize(context, mendixObject);
 	}
 
 	/**
 	 * Commit the changes made on this proxy object.
 	 */
-	public final void commit() throws CoreException
+	public final void commit() throws com.mendix.core.CoreException
 	{
-		Core.commit(context, getMendixObject());
+		com.mendix.core.Core.commit(context, getMendixObject());
 	}
 
 	/**
 	 * Commit the changes made on this proxy object using the specified context.
 	 */
-	public final void commit(IContext context) throws CoreException
+	public final void commit(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
-		Core.commit(context, getMendixObject());
+		com.mendix.core.Core.commit(context, getMendixObject());
 	}
 
 	/**
@@ -111,15 +105,15 @@ public class Cookie
 	 */
 	public final void delete()
 	{
-		Core.delete(context, getMendixObject());
+		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 
 	/**
 	 * Delete the object using the specified context.
 	 */
-	public final void delete(IContext context)
+	public final void delete(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		Core.delete(context, getMendixObject());
+		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 	/**
 	 * @return value of Name
@@ -133,7 +127,7 @@ public class Cookie
 	 * @param context
 	 * @return value of Name
 	 */
-	public final String getName(IContext context)
+	public final String getName(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.Name.toString());
 	}
@@ -152,7 +146,7 @@ public class Cookie
 	 * @param context
 	 * @param name
 	 */
-	public final void setName(IContext context, String name)
+	public final void setName(com.mendix.systemwideinterfaces.core.IContext context, String name)
 	{
 		getMendixObject().setValue(context, MemberNames.Name.toString(), name);
 	}
@@ -169,7 +163,7 @@ public class Cookie
 	 * @param context
 	 * @return value of Value
 	 */
-	public final String getValue(IContext context)
+	public final String getValue(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.Value.toString());
 	}
@@ -188,7 +182,7 @@ public class Cookie
 	 * @param context
 	 * @param value
 	 */
-	public final void setValue(IContext context, String value)
+	public final void setValue(com.mendix.systemwideinterfaces.core.IContext context, String value)
 	{
 		getMendixObject().setValue(context, MemberNames.Value.toString(), value);
 	}
@@ -205,7 +199,7 @@ public class Cookie
 	 * @param context
 	 * @return value of MaxAgeSeconds
 	 */
-	public final Integer getMaxAgeSeconds(IContext context)
+	public final Integer getMaxAgeSeconds(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (Integer) getMendixObject().getValue(context, MemberNames.MaxAgeSeconds.toString());
 	}
@@ -224,7 +218,7 @@ public class Cookie
 	 * @param context
 	 * @param maxageseconds
 	 */
-	public final void setMaxAgeSeconds(IContext context, Integer maxageseconds)
+	public final void setMaxAgeSeconds(com.mendix.systemwideinterfaces.core.IContext context, Integer maxageseconds)
 	{
 		getMendixObject().setValue(context, MemberNames.MaxAgeSeconds.toString(), maxageseconds);
 	}
@@ -241,7 +235,7 @@ public class Cookie
 	 * @param context
 	 * @return value of Path
 	 */
-	public final String getPath(IContext context)
+	public final String getPath(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.Path.toString());
 	}
@@ -260,7 +254,7 @@ public class Cookie
 	 * @param context
 	 * @param path
 	 */
-	public final void setPath(IContext context, String path)
+	public final void setPath(com.mendix.systemwideinterfaces.core.IContext context, String path)
 	{
 		getMendixObject().setValue(context, MemberNames.Path.toString(), path);
 	}
@@ -277,7 +271,7 @@ public class Cookie
 	 * @param context
 	 * @return value of Domain
 	 */
-	public final String getDomain(IContext context)
+	public final String getDomain(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.Domain.toString());
 	}
@@ -296,7 +290,7 @@ public class Cookie
 	 * @param context
 	 * @param domain
 	 */
-	public final void setDomain(IContext context, String domain)
+	public final void setDomain(com.mendix.systemwideinterfaces.core.IContext context, String domain)
 	{
 		getMendixObject().setValue(context, MemberNames.Domain.toString(), domain);
 	}
@@ -313,7 +307,7 @@ public class Cookie
 	 * @param context
 	 * @return value of HttpOnly
 	 */
-	public final Boolean getHttpOnly(IContext context)
+	public final Boolean getHttpOnly(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (Boolean) getMendixObject().getValue(context, MemberNames.HttpOnly.toString());
 	}
@@ -332,7 +326,7 @@ public class Cookie
 	 * @param context
 	 * @param httponly
 	 */
-	public final void setHttpOnly(IContext context, Boolean httponly)
+	public final void setHttpOnly(com.mendix.systemwideinterfaces.core.IContext context, Boolean httponly)
 	{
 		getMendixObject().setValue(context, MemberNames.HttpOnly.toString(), httponly);
 	}
@@ -340,7 +334,7 @@ public class Cookie
 	/**
 	 * @return the IMendixObject instance of this proxy for use in the Core interface.
 	 */
-	public final IMendixObject getMendixObject()
+	public final com.mendix.systemwideinterfaces.core.IMendixObject getMendixObject()
 	{
 		return cookieMendixObject;
 	}
@@ -348,7 +342,7 @@ public class Cookie
 	/**
 	 * @return the IContext instance of this proxy, or null if no IContext instance was specified at initialization.
 	 */
-	public final IContext getContext()
+	public final com.mendix.systemwideinterfaces.core.IContext getContext()
 	{
 		return context;
 	}
@@ -376,7 +370,7 @@ public class Cookie
 	/**
 	 * @return String name of this class
 	 */
-	public static String getType()
+	public static java.lang.String getType()
 	{
 		return "RestServices.Cookie";
 	}
@@ -386,7 +380,7 @@ public class Cookie
 	 * @deprecated Use getMendixObject().getId().toLong() to get a unique identifier for this object.
 	 */
 	@Deprecated
-	public String getGUID()
+	public java.lang.String getGUID()
 	{
 		return "ID_" + getMendixObject().getId().toLong();
 	}

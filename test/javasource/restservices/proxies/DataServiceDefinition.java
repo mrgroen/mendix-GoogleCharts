@@ -4,25 +4,19 @@
 
 package restservices.proxies;
 
-import com.mendix.core.Core;
-import com.mendix.core.CoreException;
-import com.mendix.systemwideinterfaces.core.IContext;
-import com.mendix.systemwideinterfaces.core.IMendixIdentifier;
-import com.mendix.systemwideinterfaces.core.IMendixObject;
-
 /**
  * 
  */
 public class DataServiceDefinition
 {
-	private final IMendixObject dataServiceDefinitionMendixObject;
+	private final com.mendix.systemwideinterfaces.core.IMendixObject dataServiceDefinitionMendixObject;
 
-	private final IContext context;
+	private final com.mendix.systemwideinterfaces.core.IContext context;
 
 	/**
 	 * Internal name of this entity
 	 */
-	public static final String entityName = "RestServices.DataServiceDefinition";
+	public static final java.lang.String entityName = "RestServices.DataServiceDefinition";
 
 	/**
 	 * Enum describing members of this entity
@@ -46,31 +40,31 @@ public class DataServiceDefinition
 		UseStrictVersioning("UseStrictVersioning"),
 		AccessRole("AccessRole");
 
-		private String metaName;
+		private java.lang.String metaName;
 
-		MemberNames(String s)
+		MemberNames(java.lang.String s)
 		{
 			metaName = s;
 		}
 
 		@Override
-		public String toString()
+		public java.lang.String toString()
 		{
 			return metaName;
 		}
 	}
 
-	public DataServiceDefinition(IContext context)
+	public DataServiceDefinition(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, Core.instantiate(context, "RestServices.DataServiceDefinition"));
+		this(context, com.mendix.core.Core.instantiate(context, "RestServices.DataServiceDefinition"));
 	}
 
-	protected DataServiceDefinition(IContext context, IMendixObject dataServiceDefinitionMendixObject)
+	protected DataServiceDefinition(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject dataServiceDefinitionMendixObject)
 	{
 		if (dataServiceDefinitionMendixObject == null)
-			throw new IllegalArgumentException("The given object cannot be null.");
-		if (!Core.isSubClassOf("RestServices.DataServiceDefinition", dataServiceDefinitionMendixObject.getType()))
-			throw new IllegalArgumentException("The given object is not a RestServices.DataServiceDefinition");
+			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
+		if (!com.mendix.core.Core.isSubClassOf("RestServices.DataServiceDefinition", dataServiceDefinitionMendixObject.getType()))
+			throw new java.lang.IllegalArgumentException("The given object is not a RestServices.DataServiceDefinition");
 
 		this.dataServiceDefinitionMendixObject = dataServiceDefinitionMendixObject;
 		this.context = context;
@@ -80,7 +74,7 @@ public class DataServiceDefinition
 	 * @deprecated Use 'DataServiceDefinition.load(IContext, IMendixIdentifier)' instead.
 	 */
 	@Deprecated
-	public static restservices.proxies.DataServiceDefinition initialize(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static restservices.proxies.DataServiceDefinition initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
 		return restservices.proxies.DataServiceDefinition.load(context, mendixIdentifier);
 	}
@@ -89,21 +83,21 @@ public class DataServiceDefinition
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.getSudoContext() can be used to obtain sudo access).
 	 */
-	public static restservices.proxies.DataServiceDefinition initialize(IContext context, IMendixObject mendixObject)
+	public static restservices.proxies.DataServiceDefinition initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
 		return new restservices.proxies.DataServiceDefinition(context, mendixObject);
 	}
 
-	public static restservices.proxies.DataServiceDefinition load(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static restservices.proxies.DataServiceDefinition load(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
-		IMendixObject mendixObject = Core.retrieveId(context, mendixIdentifier);
+		com.mendix.systemwideinterfaces.core.IMendixObject mendixObject = com.mendix.core.Core.retrieveId(context, mendixIdentifier);
 		return restservices.proxies.DataServiceDefinition.initialize(context, mendixObject);
 	}
 
-	public static java.util.List<restservices.proxies.DataServiceDefinition> load(IContext context, String xpathConstraint) throws CoreException
+	public static java.util.List<restservices.proxies.DataServiceDefinition> load(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String xpathConstraint) throws com.mendix.core.CoreException
 	{
 		java.util.List<restservices.proxies.DataServiceDefinition> result = new java.util.ArrayList<restservices.proxies.DataServiceDefinition>();
-		for (IMendixObject obj : Core.retrieveXPathQuery(context, "//RestServices.DataServiceDefinition" + xpathConstraint))
+		for (com.mendix.systemwideinterfaces.core.IMendixObject obj : com.mendix.core.Core.retrieveXPathQuery(context, "//RestServices.DataServiceDefinition" + xpathConstraint))
 			result.add(restservices.proxies.DataServiceDefinition.initialize(context, obj));
 		return result;
 	}
@@ -111,17 +105,17 @@ public class DataServiceDefinition
 	/**
 	 * Commit the changes made on this proxy object.
 	 */
-	public final void commit() throws CoreException
+	public final void commit() throws com.mendix.core.CoreException
 	{
-		Core.commit(context, getMendixObject());
+		com.mendix.core.Core.commit(context, getMendixObject());
 	}
 
 	/**
 	 * Commit the changes made on this proxy object using the specified context.
 	 */
-	public final void commit(IContext context) throws CoreException
+	public final void commit(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
-		Core.commit(context, getMendixObject());
+		com.mendix.core.Core.commit(context, getMendixObject());
 	}
 
 	/**
@@ -129,15 +123,15 @@ public class DataServiceDefinition
 	 */
 	public final void delete()
 	{
-		Core.delete(context, getMendixObject());
+		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 
 	/**
 	 * Delete the object using the specified context.
 	 */
-	public final void delete(IContext context)
+	public final void delete(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		Core.delete(context, getMendixObject());
+		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 	/**
 	 * @return value of Name
@@ -151,7 +145,7 @@ public class DataServiceDefinition
 	 * @param context
 	 * @return value of Name
 	 */
-	public final String getName(IContext context)
+	public final String getName(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.Name.toString());
 	}
@@ -170,7 +164,7 @@ public class DataServiceDefinition
 	 * @param context
 	 * @param name
 	 */
-	public final void setName(IContext context, String name)
+	public final void setName(com.mendix.systemwideinterfaces.core.IContext context, String name)
 	{
 		getMendixObject().setValue(context, MemberNames.Name.toString(), name);
 	}
@@ -187,7 +181,7 @@ public class DataServiceDefinition
 	 * @param context
 	 * @return value of Description
 	 */
-	public final String getDescription(IContext context)
+	public final String getDescription(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.Description.toString());
 	}
@@ -206,7 +200,7 @@ public class DataServiceDefinition
 	 * @param context
 	 * @param description
 	 */
-	public final void setDescription(IContext context, String description)
+	public final void setDescription(com.mendix.systemwideinterfaces.core.IContext context, String description)
 	{
 		getMendixObject().setValue(context, MemberNames.Description.toString(), description);
 	}
@@ -223,7 +217,7 @@ public class DataServiceDefinition
 	 * @param context
 	 * @return value of SourceEntity
 	 */
-	public final String getSourceEntity(IContext context)
+	public final String getSourceEntity(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.SourceEntity.toString());
 	}
@@ -242,7 +236,7 @@ public class DataServiceDefinition
 	 * @param context
 	 * @param sourceentity
 	 */
-	public final void setSourceEntity(IContext context, String sourceentity)
+	public final void setSourceEntity(com.mendix.systemwideinterfaces.core.IContext context, String sourceentity)
 	{
 		getMendixObject().setValue(context, MemberNames.SourceEntity.toString(), sourceentity);
 	}
@@ -259,7 +253,7 @@ public class DataServiceDefinition
 	 * @param context
 	 * @return value of SourceKeyAttribute
 	 */
-	public final String getSourceKeyAttribute(IContext context)
+	public final String getSourceKeyAttribute(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.SourceKeyAttribute.toString());
 	}
@@ -278,7 +272,7 @@ public class DataServiceDefinition
 	 * @param context
 	 * @param sourcekeyattribute
 	 */
-	public final void setSourceKeyAttribute(IContext context, String sourcekeyattribute)
+	public final void setSourceKeyAttribute(com.mendix.systemwideinterfaces.core.IContext context, String sourcekeyattribute)
 	{
 		getMendixObject().setValue(context, MemberNames.SourceKeyAttribute.toString(), sourcekeyattribute);
 	}
@@ -295,7 +289,7 @@ public class DataServiceDefinition
 	 * @param context
 	 * @return value of SourceConstraint
 	 */
-	public final String getSourceConstraint(IContext context)
+	public final String getSourceConstraint(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.SourceConstraint.toString());
 	}
@@ -314,7 +308,7 @@ public class DataServiceDefinition
 	 * @param context
 	 * @param sourceconstraint
 	 */
-	public final void setSourceConstraint(IContext context, String sourceconstraint)
+	public final void setSourceConstraint(com.mendix.systemwideinterfaces.core.IContext context, String sourceconstraint)
 	{
 		getMendixObject().setValue(context, MemberNames.SourceConstraint.toString(), sourceconstraint);
 	}
@@ -331,7 +325,7 @@ public class DataServiceDefinition
 	 * @param context
 	 * @return value of OnPublishMicroflow
 	 */
-	public final String getOnPublishMicroflow(IContext context)
+	public final String getOnPublishMicroflow(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.OnPublishMicroflow.toString());
 	}
@@ -350,7 +344,7 @@ public class DataServiceDefinition
 	 * @param context
 	 * @param onpublishmicroflow
 	 */
-	public final void setOnPublishMicroflow(IContext context, String onpublishmicroflow)
+	public final void setOnPublishMicroflow(com.mendix.systemwideinterfaces.core.IContext context, String onpublishmicroflow)
 	{
 		getMendixObject().setValue(context, MemberNames.OnPublishMicroflow.toString(), onpublishmicroflow);
 	}
@@ -367,7 +361,7 @@ public class DataServiceDefinition
 	 * @param context
 	 * @return value of OnUpdateMicroflow
 	 */
-	public final String getOnUpdateMicroflow(IContext context)
+	public final String getOnUpdateMicroflow(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.OnUpdateMicroflow.toString());
 	}
@@ -386,7 +380,7 @@ public class DataServiceDefinition
 	 * @param context
 	 * @param onupdatemicroflow
 	 */
-	public final void setOnUpdateMicroflow(IContext context, String onupdatemicroflow)
+	public final void setOnUpdateMicroflow(com.mendix.systemwideinterfaces.core.IContext context, String onupdatemicroflow)
 	{
 		getMendixObject().setValue(context, MemberNames.OnUpdateMicroflow.toString(), onupdatemicroflow);
 	}
@@ -403,7 +397,7 @@ public class DataServiceDefinition
 	 * @param context
 	 * @return value of OnDeleteMicroflow
 	 */
-	public final String getOnDeleteMicroflow(IContext context)
+	public final String getOnDeleteMicroflow(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.OnDeleteMicroflow.toString());
 	}
@@ -422,7 +416,7 @@ public class DataServiceDefinition
 	 * @param context
 	 * @param ondeletemicroflow
 	 */
-	public final void setOnDeleteMicroflow(IContext context, String ondeletemicroflow)
+	public final void setOnDeleteMicroflow(com.mendix.systemwideinterfaces.core.IContext context, String ondeletemicroflow)
 	{
 		getMendixObject().setValue(context, MemberNames.OnDeleteMicroflow.toString(), ondeletemicroflow);
 	}
@@ -439,7 +433,7 @@ public class DataServiceDefinition
 	 * @param context
 	 * @return value of EnableListing
 	 */
-	public final Boolean getEnableListing(IContext context)
+	public final Boolean getEnableListing(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (Boolean) getMendixObject().getValue(context, MemberNames.EnableListing.toString());
 	}
@@ -458,7 +452,7 @@ public class DataServiceDefinition
 	 * @param context
 	 * @param enablelisting
 	 */
-	public final void setEnableListing(IContext context, Boolean enablelisting)
+	public final void setEnableListing(com.mendix.systemwideinterfaces.core.IContext context, Boolean enablelisting)
 	{
 		getMendixObject().setValue(context, MemberNames.EnableListing.toString(), enablelisting);
 	}
@@ -475,7 +469,7 @@ public class DataServiceDefinition
 	 * @param context
 	 * @return value of EnableGet
 	 */
-	public final Boolean getEnableGet(IContext context)
+	public final Boolean getEnableGet(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (Boolean) getMendixObject().getValue(context, MemberNames.EnableGet.toString());
 	}
@@ -494,7 +488,7 @@ public class DataServiceDefinition
 	 * @param context
 	 * @param enableget
 	 */
-	public final void setEnableGet(IContext context, Boolean enableget)
+	public final void setEnableGet(com.mendix.systemwideinterfaces.core.IContext context, Boolean enableget)
 	{
 		getMendixObject().setValue(context, MemberNames.EnableGet.toString(), enableget);
 	}
@@ -511,7 +505,7 @@ public class DataServiceDefinition
 	 * @param context
 	 * @return value of EnableUpdate
 	 */
-	public final Boolean getEnableUpdate(IContext context)
+	public final Boolean getEnableUpdate(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (Boolean) getMendixObject().getValue(context, MemberNames.EnableUpdate.toString());
 	}
@@ -530,7 +524,7 @@ public class DataServiceDefinition
 	 * @param context
 	 * @param enableupdate
 	 */
-	public final void setEnableUpdate(IContext context, Boolean enableupdate)
+	public final void setEnableUpdate(com.mendix.systemwideinterfaces.core.IContext context, Boolean enableupdate)
 	{
 		getMendixObject().setValue(context, MemberNames.EnableUpdate.toString(), enableupdate);
 	}
@@ -547,7 +541,7 @@ public class DataServiceDefinition
 	 * @param context
 	 * @return value of EnableCreate
 	 */
-	public final Boolean getEnableCreate(IContext context)
+	public final Boolean getEnableCreate(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (Boolean) getMendixObject().getValue(context, MemberNames.EnableCreate.toString());
 	}
@@ -566,7 +560,7 @@ public class DataServiceDefinition
 	 * @param context
 	 * @param enablecreate
 	 */
-	public final void setEnableCreate(IContext context, Boolean enablecreate)
+	public final void setEnableCreate(com.mendix.systemwideinterfaces.core.IContext context, Boolean enablecreate)
 	{
 		getMendixObject().setValue(context, MemberNames.EnableCreate.toString(), enablecreate);
 	}
@@ -583,7 +577,7 @@ public class DataServiceDefinition
 	 * @param context
 	 * @return value of EnableDelete
 	 */
-	public final Boolean getEnableDelete(IContext context)
+	public final Boolean getEnableDelete(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (Boolean) getMendixObject().getValue(context, MemberNames.EnableDelete.toString());
 	}
@@ -602,7 +596,7 @@ public class DataServiceDefinition
 	 * @param context
 	 * @param enabledelete
 	 */
-	public final void setEnableDelete(IContext context, Boolean enabledelete)
+	public final void setEnableDelete(com.mendix.systemwideinterfaces.core.IContext context, Boolean enabledelete)
 	{
 		getMendixObject().setValue(context, MemberNames.EnableDelete.toString(), enabledelete);
 	}
@@ -619,7 +613,7 @@ public class DataServiceDefinition
 	 * @param context
 	 * @return value of EnableChangeLog
 	 */
-	public final Boolean getEnableChangeLog(IContext context)
+	public final Boolean getEnableChangeLog(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (Boolean) getMendixObject().getValue(context, MemberNames.EnableChangeLog.toString());
 	}
@@ -638,7 +632,7 @@ public class DataServiceDefinition
 	 * @param context
 	 * @param enablechangelog
 	 */
-	public final void setEnableChangeLog(IContext context, Boolean enablechangelog)
+	public final void setEnableChangeLog(com.mendix.systemwideinterfaces.core.IContext context, Boolean enablechangelog)
 	{
 		getMendixObject().setValue(context, MemberNames.EnableChangeLog.toString(), enablechangelog);
 	}
@@ -655,7 +649,7 @@ public class DataServiceDefinition
 	 * @param context
 	 * @return value of UseStrictVersioning
 	 */
-	public final Boolean getUseStrictVersioning(IContext context)
+	public final Boolean getUseStrictVersioning(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (Boolean) getMendixObject().getValue(context, MemberNames.UseStrictVersioning.toString());
 	}
@@ -674,7 +668,7 @@ public class DataServiceDefinition
 	 * @param context
 	 * @param usestrictversioning
 	 */
-	public final void setUseStrictVersioning(IContext context, Boolean usestrictversioning)
+	public final void setUseStrictVersioning(com.mendix.systemwideinterfaces.core.IContext context, Boolean usestrictversioning)
 	{
 		getMendixObject().setValue(context, MemberNames.UseStrictVersioning.toString(), usestrictversioning);
 	}
@@ -691,7 +685,7 @@ public class DataServiceDefinition
 	 * @param context
 	 * @return value of AccessRole
 	 */
-	public final String getAccessRole(IContext context)
+	public final String getAccessRole(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.AccessRole.toString());
 	}
@@ -710,7 +704,7 @@ public class DataServiceDefinition
 	 * @param context
 	 * @param accessrole
 	 */
-	public final void setAccessRole(IContext context, String accessrole)
+	public final void setAccessRole(com.mendix.systemwideinterfaces.core.IContext context, String accessrole)
 	{
 		getMendixObject().setValue(context, MemberNames.AccessRole.toString(), accessrole);
 	}
@@ -718,7 +712,7 @@ public class DataServiceDefinition
 	/**
 	 * @return the IMendixObject instance of this proxy for use in the Core interface.
 	 */
-	public final IMendixObject getMendixObject()
+	public final com.mendix.systemwideinterfaces.core.IMendixObject getMendixObject()
 	{
 		return dataServiceDefinitionMendixObject;
 	}
@@ -726,7 +720,7 @@ public class DataServiceDefinition
 	/**
 	 * @return the IContext instance of this proxy, or null if no IContext instance was specified at initialization.
 	 */
-	public final IContext getContext()
+	public final com.mendix.systemwideinterfaces.core.IContext getContext()
 	{
 		return context;
 	}
@@ -754,7 +748,7 @@ public class DataServiceDefinition
 	/**
 	 * @return String name of this class
 	 */
-	public static String getType()
+	public static java.lang.String getType()
 	{
 		return "RestServices.DataServiceDefinition";
 	}
@@ -764,7 +758,7 @@ public class DataServiceDefinition
 	 * @deprecated Use getMendixObject().getId().toLong() to get a unique identifier for this object.
 	 */
 	@Deprecated
-	public String getGUID()
+	public java.lang.String getGUID()
 	{
 		return "ID_" + getMendixObject().getId().toLong();
 	}

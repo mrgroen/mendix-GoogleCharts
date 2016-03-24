@@ -4,25 +4,19 @@
 
 package mxmodelreflection.proxies;
 
-import com.mendix.core.Core;
-import com.mendix.core.CoreException;
-import com.mendix.systemwideinterfaces.core.IContext;
-import com.mendix.systemwideinterfaces.core.IMendixIdentifier;
-import com.mendix.systemwideinterfaces.core.IMendixObject;
-
 /**
  * 
  */
 public class MxObjectEnumValue
 {
-	private final IMendixObject mxObjectEnumValueMendixObject;
+	private final com.mendix.systemwideinterfaces.core.IMendixObject mxObjectEnumValueMendixObject;
 
-	private final IContext context;
+	private final com.mendix.systemwideinterfaces.core.IContext context;
 
 	/**
 	 * Internal name of this entity
 	 */
-	public static final String entityName = "MxModelReflection.MxObjectEnumValue";
+	public static final java.lang.String entityName = "MxModelReflection.MxObjectEnumValue";
 
 	/**
 	 * Enum describing members of this entity
@@ -32,31 +26,31 @@ public class MxObjectEnumValue
 		Name("Name"),
 		Captions("MxModelReflection.Captions");
 
-		private String metaName;
+		private java.lang.String metaName;
 
-		MemberNames(String s)
+		MemberNames(java.lang.String s)
 		{
 			metaName = s;
 		}
 
 		@Override
-		public String toString()
+		public java.lang.String toString()
 		{
 			return metaName;
 		}
 	}
 
-	public MxObjectEnumValue(IContext context)
+	public MxObjectEnumValue(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, Core.instantiate(context, "MxModelReflection.MxObjectEnumValue"));
+		this(context, com.mendix.core.Core.instantiate(context, "MxModelReflection.MxObjectEnumValue"));
 	}
 
-	protected MxObjectEnumValue(IContext context, IMendixObject mxObjectEnumValueMendixObject)
+	protected MxObjectEnumValue(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mxObjectEnumValueMendixObject)
 	{
 		if (mxObjectEnumValueMendixObject == null)
-			throw new IllegalArgumentException("The given object cannot be null.");
-		if (!Core.isSubClassOf("MxModelReflection.MxObjectEnumValue", mxObjectEnumValueMendixObject.getType()))
-			throw new IllegalArgumentException("The given object is not a MxModelReflection.MxObjectEnumValue");
+			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
+		if (!com.mendix.core.Core.isSubClassOf("MxModelReflection.MxObjectEnumValue", mxObjectEnumValueMendixObject.getType()))
+			throw new java.lang.IllegalArgumentException("The given object is not a MxModelReflection.MxObjectEnumValue");
 
 		this.mxObjectEnumValueMendixObject = mxObjectEnumValueMendixObject;
 		this.context = context;
@@ -66,7 +60,7 @@ public class MxObjectEnumValue
 	 * @deprecated Use 'MxObjectEnumValue.load(IContext, IMendixIdentifier)' instead.
 	 */
 	@Deprecated
-	public static mxmodelreflection.proxies.MxObjectEnumValue initialize(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static mxmodelreflection.proxies.MxObjectEnumValue initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
 		return mxmodelreflection.proxies.MxObjectEnumValue.load(context, mendixIdentifier);
 	}
@@ -75,21 +69,21 @@ public class MxObjectEnumValue
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.getSudoContext() can be used to obtain sudo access).
 	 */
-	public static mxmodelreflection.proxies.MxObjectEnumValue initialize(IContext context, IMendixObject mendixObject)
+	public static mxmodelreflection.proxies.MxObjectEnumValue initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
 		return new mxmodelreflection.proxies.MxObjectEnumValue(context, mendixObject);
 	}
 
-	public static mxmodelreflection.proxies.MxObjectEnumValue load(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static mxmodelreflection.proxies.MxObjectEnumValue load(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
-		IMendixObject mendixObject = Core.retrieveId(context, mendixIdentifier);
+		com.mendix.systemwideinterfaces.core.IMendixObject mendixObject = com.mendix.core.Core.retrieveId(context, mendixIdentifier);
 		return mxmodelreflection.proxies.MxObjectEnumValue.initialize(context, mendixObject);
 	}
 
-	public static java.util.List<mxmodelreflection.proxies.MxObjectEnumValue> load(IContext context, String xpathConstraint) throws CoreException
+	public static java.util.List<mxmodelreflection.proxies.MxObjectEnumValue> load(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String xpathConstraint) throws com.mendix.core.CoreException
 	{
 		java.util.List<mxmodelreflection.proxies.MxObjectEnumValue> result = new java.util.ArrayList<mxmodelreflection.proxies.MxObjectEnumValue>();
-		for (IMendixObject obj : Core.retrieveXPathQuery(context, "//MxModelReflection.MxObjectEnumValue" + xpathConstraint))
+		for (com.mendix.systemwideinterfaces.core.IMendixObject obj : com.mendix.core.Core.retrieveXPathQuery(context, "//MxModelReflection.MxObjectEnumValue" + xpathConstraint))
 			result.add(mxmodelreflection.proxies.MxObjectEnumValue.initialize(context, obj));
 		return result;
 	}
@@ -97,17 +91,17 @@ public class MxObjectEnumValue
 	/**
 	 * Commit the changes made on this proxy object.
 	 */
-	public final void commit() throws CoreException
+	public final void commit() throws com.mendix.core.CoreException
 	{
-		Core.commit(context, getMendixObject());
+		com.mendix.core.Core.commit(context, getMendixObject());
 	}
 
 	/**
 	 * Commit the changes made on this proxy object using the specified context.
 	 */
-	public final void commit(IContext context) throws CoreException
+	public final void commit(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
-		Core.commit(context, getMendixObject());
+		com.mendix.core.Core.commit(context, getMendixObject());
 	}
 
 	/**
@@ -115,15 +109,15 @@ public class MxObjectEnumValue
 	 */
 	public final void delete()
 	{
-		Core.delete(context, getMendixObject());
+		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 
 	/**
 	 * Delete the object using the specified context.
 	 */
-	public final void delete(IContext context)
+	public final void delete(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		Core.delete(context, getMendixObject());
+		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 	/**
 	 * @return value of Name
@@ -137,7 +131,7 @@ public class MxObjectEnumValue
 	 * @param context
 	 * @return value of Name
 	 */
-	public final String getName(IContext context)
+	public final String getName(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.Name.toString());
 	}
@@ -156,7 +150,7 @@ public class MxObjectEnumValue
 	 * @param context
 	 * @param name
 	 */
-	public final void setName(IContext context, String name)
+	public final void setName(com.mendix.systemwideinterfaces.core.IContext context, String name)
 	{
 		getMendixObject().setValue(context, MemberNames.Name.toString(), name);
 	}
@@ -164,7 +158,7 @@ public class MxObjectEnumValue
 	/**
 	 * @return value of Captions
 	 */
-	public final java.util.List<mxmodelreflection.proxies.MxObjectEnumCaptions> getCaptions() throws CoreException
+	public final java.util.List<mxmodelreflection.proxies.MxObjectEnumCaptions> getCaptions() throws com.mendix.core.CoreException
 	{
 		return getCaptions(getContext());
 	}
@@ -174,13 +168,13 @@ public class MxObjectEnumValue
 	 * @return value of Captions
 	 */
 	@SuppressWarnings("unchecked")
-	public final java.util.List<mxmodelreflection.proxies.MxObjectEnumCaptions> getCaptions(IContext context) throws CoreException
+	public final java.util.List<mxmodelreflection.proxies.MxObjectEnumCaptions> getCaptions(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
 		java.util.List<mxmodelreflection.proxies.MxObjectEnumCaptions> result = new java.util.ArrayList<mxmodelreflection.proxies.MxObjectEnumCaptions>();
 		Object valueObject = getMendixObject().getValue(context, MemberNames.Captions.toString());
 		if (valueObject == null)
 			return result;
-		for (IMendixObject mendixObject : Core.retrieveIdList(context, (java.util.List<IMendixIdentifier>) valueObject))
+		for (com.mendix.systemwideinterfaces.core.IMendixObject mendixObject : com.mendix.core.Core.retrieveIdList(context, (java.util.List<com.mendix.systemwideinterfaces.core.IMendixIdentifier>) valueObject))
 			result.add(mxmodelreflection.proxies.MxObjectEnumCaptions.initialize(context, mendixObject));
 		return result;
 	}
@@ -199,9 +193,9 @@ public class MxObjectEnumValue
 	 * @param context
 	 * @param captions
 	 */
-	public final void setCaptions(IContext context, java.util.List<mxmodelreflection.proxies.MxObjectEnumCaptions> captions)
+	public final void setCaptions(com.mendix.systemwideinterfaces.core.IContext context, java.util.List<mxmodelreflection.proxies.MxObjectEnumCaptions> captions)
 	{
-		java.util.List<IMendixIdentifier> identifiers = new java.util.ArrayList<IMendixIdentifier>();
+		java.util.List<com.mendix.systemwideinterfaces.core.IMendixIdentifier> identifiers = new java.util.ArrayList<com.mendix.systemwideinterfaces.core.IMendixIdentifier>();
 		for (mxmodelreflection.proxies.MxObjectEnumCaptions proxyObject : captions)
 			identifiers.add(proxyObject.getMendixObject().getId());
 		getMendixObject().setValue(context, MemberNames.Captions.toString(), identifiers);
@@ -210,7 +204,7 @@ public class MxObjectEnumValue
 	/**
 	 * @return the IMendixObject instance of this proxy for use in the Core interface.
 	 */
-	public final IMendixObject getMendixObject()
+	public final com.mendix.systemwideinterfaces.core.IMendixObject getMendixObject()
 	{
 		return mxObjectEnumValueMendixObject;
 	}
@@ -218,7 +212,7 @@ public class MxObjectEnumValue
 	/**
 	 * @return the IContext instance of this proxy, or null if no IContext instance was specified at initialization.
 	 */
-	public final IContext getContext()
+	public final com.mendix.systemwideinterfaces.core.IContext getContext()
 	{
 		return context;
 	}
@@ -246,7 +240,7 @@ public class MxObjectEnumValue
 	/**
 	 * @return String name of this class
 	 */
-	public static String getType()
+	public static java.lang.String getType()
 	{
 		return "MxModelReflection.MxObjectEnumValue";
 	}
@@ -256,7 +250,7 @@ public class MxObjectEnumValue
 	 * @deprecated Use getMendixObject().getId().toLong() to get a unique identifier for this object.
 	 */
 	@Deprecated
-	public String getGUID()
+	public java.lang.String getGUID()
 	{
 		return "ID_" + getMendixObject().getId().toLong();
 	}

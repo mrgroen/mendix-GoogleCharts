@@ -4,25 +4,19 @@
 
 package restservices.proxies;
 
-import com.mendix.core.Core;
-import com.mendix.core.CoreException;
-import com.mendix.systemwideinterfaces.core.IContext;
-import com.mendix.systemwideinterfaces.core.IMendixIdentifier;
-import com.mendix.systemwideinterfaces.core.IMendixObject;
-
 /**
  * 
  */
 public class ChangeItem
 {
-	private final IMendixObject changeItemMendixObject;
+	private final com.mendix.systemwideinterfaces.core.IMendixObject changeItemMendixObject;
 
-	private final IContext context;
+	private final com.mendix.systemwideinterfaces.core.IContext context;
 
 	/**
 	 * Internal name of this entity
 	 */
-	public static final String entityName = "RestServices.ChangeItem";
+	public static final java.lang.String entityName = "RestServices.ChangeItem";
 
 	/**
 	 * Enum describing members of this entity
@@ -37,31 +31,31 @@ public class ChangeItem
 		_IsDirty("_IsDirty"),
 		ChangeItem_ChangeLog("RestServices.ChangeItem_ChangeLog");
 
-		private String metaName;
+		private java.lang.String metaName;
 
-		MemberNames(String s)
+		MemberNames(java.lang.String s)
 		{
 			metaName = s;
 		}
 
 		@Override
-		public String toString()
+		public java.lang.String toString()
 		{
 			return metaName;
 		}
 	}
 
-	public ChangeItem(IContext context)
+	public ChangeItem(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, Core.instantiate(context, "RestServices.ChangeItem"));
+		this(context, com.mendix.core.Core.instantiate(context, "RestServices.ChangeItem"));
 	}
 
-	protected ChangeItem(IContext context, IMendixObject changeItemMendixObject)
+	protected ChangeItem(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject changeItemMendixObject)
 	{
 		if (changeItemMendixObject == null)
-			throw new IllegalArgumentException("The given object cannot be null.");
-		if (!Core.isSubClassOf("RestServices.ChangeItem", changeItemMendixObject.getType()))
-			throw new IllegalArgumentException("The given object is not a RestServices.ChangeItem");
+			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
+		if (!com.mendix.core.Core.isSubClassOf("RestServices.ChangeItem", changeItemMendixObject.getType()))
+			throw new java.lang.IllegalArgumentException("The given object is not a RestServices.ChangeItem");
 
 		this.changeItemMendixObject = changeItemMendixObject;
 		this.context = context;
@@ -71,7 +65,7 @@ public class ChangeItem
 	 * @deprecated Use 'ChangeItem.load(IContext, IMendixIdentifier)' instead.
 	 */
 	@Deprecated
-	public static restservices.proxies.ChangeItem initialize(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static restservices.proxies.ChangeItem initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
 		return restservices.proxies.ChangeItem.load(context, mendixIdentifier);
 	}
@@ -80,21 +74,21 @@ public class ChangeItem
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.getSudoContext() can be used to obtain sudo access).
 	 */
-	public static restservices.proxies.ChangeItem initialize(IContext context, IMendixObject mendixObject)
+	public static restservices.proxies.ChangeItem initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
 		return new restservices.proxies.ChangeItem(context, mendixObject);
 	}
 
-	public static restservices.proxies.ChangeItem load(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static restservices.proxies.ChangeItem load(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
-		IMendixObject mendixObject = Core.retrieveId(context, mendixIdentifier);
+		com.mendix.systemwideinterfaces.core.IMendixObject mendixObject = com.mendix.core.Core.retrieveId(context, mendixIdentifier);
 		return restservices.proxies.ChangeItem.initialize(context, mendixObject);
 	}
 
-	public static java.util.List<restservices.proxies.ChangeItem> load(IContext context, String xpathConstraint) throws CoreException
+	public static java.util.List<restservices.proxies.ChangeItem> load(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String xpathConstraint) throws com.mendix.core.CoreException
 	{
 		java.util.List<restservices.proxies.ChangeItem> result = new java.util.ArrayList<restservices.proxies.ChangeItem>();
-		for (IMendixObject obj : Core.retrieveXPathQuery(context, "//RestServices.ChangeItem" + xpathConstraint))
+		for (com.mendix.systemwideinterfaces.core.IMendixObject obj : com.mendix.core.Core.retrieveXPathQuery(context, "//RestServices.ChangeItem" + xpathConstraint))
 			result.add(restservices.proxies.ChangeItem.initialize(context, obj));
 		return result;
 	}
@@ -102,17 +96,17 @@ public class ChangeItem
 	/**
 	 * Commit the changes made on this proxy object.
 	 */
-	public final void commit() throws CoreException
+	public final void commit() throws com.mendix.core.CoreException
 	{
-		Core.commit(context, getMendixObject());
+		com.mendix.core.Core.commit(context, getMendixObject());
 	}
 
 	/**
 	 * Commit the changes made on this proxy object using the specified context.
 	 */
-	public final void commit(IContext context) throws CoreException
+	public final void commit(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
-		Core.commit(context, getMendixObject());
+		com.mendix.core.Core.commit(context, getMendixObject());
 	}
 
 	/**
@@ -120,15 +114,15 @@ public class ChangeItem
 	 */
 	public final void delete()
 	{
-		Core.delete(context, getMendixObject());
+		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 
 	/**
 	 * Delete the object using the specified context.
 	 */
-	public final void delete(IContext context)
+	public final void delete(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		Core.delete(context, getMendixObject());
+		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 	/**
 	 * @return value of Key
@@ -142,7 +136,7 @@ public class ChangeItem
 	 * @param context
 	 * @return value of Key
 	 */
-	public final String getKey(IContext context)
+	public final String getKey(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.Key.toString());
 	}
@@ -161,7 +155,7 @@ public class ChangeItem
 	 * @param context
 	 * @param key
 	 */
-	public final void setKey(IContext context, String key)
+	public final void setKey(com.mendix.systemwideinterfaces.core.IContext context, String key)
 	{
 		getMendixObject().setValue(context, MemberNames.Key.toString(), key);
 	}
@@ -178,7 +172,7 @@ public class ChangeItem
 	 * @param context
 	 * @return value of SequenceNr
 	 */
-	public final Long getSequenceNr(IContext context)
+	public final Long getSequenceNr(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (Long) getMendixObject().getValue(context, MemberNames.SequenceNr.toString());
 	}
@@ -197,7 +191,7 @@ public class ChangeItem
 	 * @param context
 	 * @param sequencenr
 	 */
-	public final void setSequenceNr(IContext context, Long sequencenr)
+	public final void setSequenceNr(com.mendix.systemwideinterfaces.core.IContext context, Long sequencenr)
 	{
 		getMendixObject().setValue(context, MemberNames.SequenceNr.toString(), sequencenr);
 	}
@@ -214,7 +208,7 @@ public class ChangeItem
 	 * @param context
 	 * @return value of Etag
 	 */
-	public final String getEtag(IContext context)
+	public final String getEtag(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.Etag.toString());
 	}
@@ -233,7 +227,7 @@ public class ChangeItem
 	 * @param context
 	 * @param etag
 	 */
-	public final void setEtag(IContext context, String etag)
+	public final void setEtag(com.mendix.systemwideinterfaces.core.IContext context, String etag)
 	{
 		getMendixObject().setValue(context, MemberNames.Etag.toString(), etag);
 	}
@@ -250,7 +244,7 @@ public class ChangeItem
 	 * @param context
 	 * @return value of Json
 	 */
-	public final String getJson(IContext context)
+	public final String getJson(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.Json.toString());
 	}
@@ -269,7 +263,7 @@ public class ChangeItem
 	 * @param context
 	 * @param json
 	 */
-	public final void setJson(IContext context, String json)
+	public final void setJson(com.mendix.systemwideinterfaces.core.IContext context, String json)
 	{
 		getMendixObject().setValue(context, MemberNames.Json.toString(), json);
 	}
@@ -286,7 +280,7 @@ public class ChangeItem
 	 * @param context
 	 * @return value of IsDeleted
 	 */
-	public final Boolean getIsDeleted(IContext context)
+	public final Boolean getIsDeleted(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (Boolean) getMendixObject().getValue(context, MemberNames.IsDeleted.toString());
 	}
@@ -305,7 +299,7 @@ public class ChangeItem
 	 * @param context
 	 * @param isdeleted
 	 */
-	public final void setIsDeleted(IContext context, Boolean isdeleted)
+	public final void setIsDeleted(com.mendix.systemwideinterfaces.core.IContext context, Boolean isdeleted)
 	{
 		getMendixObject().setValue(context, MemberNames.IsDeleted.toString(), isdeleted);
 	}
@@ -322,7 +316,7 @@ public class ChangeItem
 	 * @param context
 	 * @return value of _IsDirty
 	 */
-	public final Boolean get_IsDirty(IContext context)
+	public final Boolean get_IsDirty(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (Boolean) getMendixObject().getValue(context, MemberNames._IsDirty.toString());
 	}
@@ -341,7 +335,7 @@ public class ChangeItem
 	 * @param context
 	 * @param _isdirty
 	 */
-	public final void set_IsDirty(IContext context, Boolean _isdirty)
+	public final void set_IsDirty(com.mendix.systemwideinterfaces.core.IContext context, Boolean _isdirty)
 	{
 		getMendixObject().setValue(context, MemberNames._IsDirty.toString(), _isdirty);
 	}
@@ -349,7 +343,7 @@ public class ChangeItem
 	/**
 	 * @return value of ChangeItem_ChangeLog
 	 */
-	public final restservices.proxies.ChangeLog getChangeItem_ChangeLog() throws CoreException
+	public final restservices.proxies.ChangeLog getChangeItem_ChangeLog() throws com.mendix.core.CoreException
 	{
 		return getChangeItem_ChangeLog(getContext());
 	}
@@ -358,10 +352,10 @@ public class ChangeItem
 	 * @param context
 	 * @return value of ChangeItem_ChangeLog
 	 */
-	public final restservices.proxies.ChangeLog getChangeItem_ChangeLog(IContext context) throws CoreException
+	public final restservices.proxies.ChangeLog getChangeItem_ChangeLog(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
 		restservices.proxies.ChangeLog result = null;
-		IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.ChangeItem_ChangeLog.toString());
+		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.ChangeItem_ChangeLog.toString());
 		if (identifier != null)
 			result = restservices.proxies.ChangeLog.load(context, identifier);
 		return result;
@@ -381,7 +375,7 @@ public class ChangeItem
 	 * @param context
 	 * @param changeitem_changelog
 	 */
-	public final void setChangeItem_ChangeLog(IContext context, restservices.proxies.ChangeLog changeitem_changelog)
+	public final void setChangeItem_ChangeLog(com.mendix.systemwideinterfaces.core.IContext context, restservices.proxies.ChangeLog changeitem_changelog)
 	{
 		if (changeitem_changelog == null)
 			getMendixObject().setValue(context, MemberNames.ChangeItem_ChangeLog.toString(), null);
@@ -392,7 +386,7 @@ public class ChangeItem
 	/**
 	 * @return the IMendixObject instance of this proxy for use in the Core interface.
 	 */
-	public final IMendixObject getMendixObject()
+	public final com.mendix.systemwideinterfaces.core.IMendixObject getMendixObject()
 	{
 		return changeItemMendixObject;
 	}
@@ -400,7 +394,7 @@ public class ChangeItem
 	/**
 	 * @return the IContext instance of this proxy, or null if no IContext instance was specified at initialization.
 	 */
-	public final IContext getContext()
+	public final com.mendix.systemwideinterfaces.core.IContext getContext()
 	{
 		return context;
 	}
@@ -428,7 +422,7 @@ public class ChangeItem
 	/**
 	 * @return String name of this class
 	 */
-	public static String getType()
+	public static java.lang.String getType()
 	{
 		return "RestServices.ChangeItem";
 	}
@@ -438,7 +432,7 @@ public class ChangeItem
 	 * @deprecated Use getMendixObject().getId().toLong() to get a unique identifier for this object.
 	 */
 	@Deprecated
-	public String getGUID()
+	public java.lang.String getGUID()
 	{
 		return "ID_" + getMendixObject().getId().toLong();
 	}

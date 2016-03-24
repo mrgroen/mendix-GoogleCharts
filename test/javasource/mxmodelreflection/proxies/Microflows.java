@@ -4,25 +4,19 @@
 
 package mxmodelreflection.proxies;
 
-import com.mendix.core.Core;
-import com.mendix.core.CoreException;
-import com.mendix.systemwideinterfaces.core.IContext;
-import com.mendix.systemwideinterfaces.core.IMendixIdentifier;
-import com.mendix.systemwideinterfaces.core.IMendixObject;
-
 /**
  * 
  */
 public class Microflows
 {
-	private final IMendixObject microflowsMendixObject;
+	private final com.mendix.systemwideinterfaces.core.IMendixObject microflowsMendixObject;
 
-	private final IContext context;
+	private final com.mendix.systemwideinterfaces.core.IContext context;
 
 	/**
 	 * Internal name of this entity
 	 */
-	public static final String entityName = "MxModelReflection.Microflows";
+	public static final java.lang.String entityName = "MxModelReflection.Microflows";
 
 	/**
 	 * Enum describing members of this entity
@@ -36,31 +30,31 @@ public class Microflows
 		Microflows_Output_Type("MxModelReflection.Microflows_Output_Type"),
 		Microflows_Module("MxModelReflection.Microflows_Module");
 
-		private String metaName;
+		private java.lang.String metaName;
 
-		MemberNames(String s)
+		MemberNames(java.lang.String s)
 		{
 			metaName = s;
 		}
 
 		@Override
-		public String toString()
+		public java.lang.String toString()
 		{
 			return metaName;
 		}
 	}
 
-	public Microflows(IContext context)
+	public Microflows(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, Core.instantiate(context, "MxModelReflection.Microflows"));
+		this(context, com.mendix.core.Core.instantiate(context, "MxModelReflection.Microflows"));
 	}
 
-	protected Microflows(IContext context, IMendixObject microflowsMendixObject)
+	protected Microflows(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject microflowsMendixObject)
 	{
 		if (microflowsMendixObject == null)
-			throw new IllegalArgumentException("The given object cannot be null.");
-		if (!Core.isSubClassOf("MxModelReflection.Microflows", microflowsMendixObject.getType()))
-			throw new IllegalArgumentException("The given object is not a MxModelReflection.Microflows");
+			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
+		if (!com.mendix.core.Core.isSubClassOf("MxModelReflection.Microflows", microflowsMendixObject.getType()))
+			throw new java.lang.IllegalArgumentException("The given object is not a MxModelReflection.Microflows");
 
 		this.microflowsMendixObject = microflowsMendixObject;
 		this.context = context;
@@ -70,7 +64,7 @@ public class Microflows
 	 * @deprecated Use 'Microflows.load(IContext, IMendixIdentifier)' instead.
 	 */
 	@Deprecated
-	public static mxmodelreflection.proxies.Microflows initialize(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static mxmodelreflection.proxies.Microflows initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
 		return mxmodelreflection.proxies.Microflows.load(context, mendixIdentifier);
 	}
@@ -79,21 +73,21 @@ public class Microflows
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.getSudoContext() can be used to obtain sudo access).
 	 */
-	public static mxmodelreflection.proxies.Microflows initialize(IContext context, IMendixObject mendixObject)
+	public static mxmodelreflection.proxies.Microflows initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
 		return new mxmodelreflection.proxies.Microflows(context, mendixObject);
 	}
 
-	public static mxmodelreflection.proxies.Microflows load(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static mxmodelreflection.proxies.Microflows load(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
-		IMendixObject mendixObject = Core.retrieveId(context, mendixIdentifier);
+		com.mendix.systemwideinterfaces.core.IMendixObject mendixObject = com.mendix.core.Core.retrieveId(context, mendixIdentifier);
 		return mxmodelreflection.proxies.Microflows.initialize(context, mendixObject);
 	}
 
-	public static java.util.List<mxmodelreflection.proxies.Microflows> load(IContext context, String xpathConstraint) throws CoreException
+	public static java.util.List<mxmodelreflection.proxies.Microflows> load(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String xpathConstraint) throws com.mendix.core.CoreException
 	{
 		java.util.List<mxmodelreflection.proxies.Microflows> result = new java.util.ArrayList<mxmodelreflection.proxies.Microflows>();
-		for (IMendixObject obj : Core.retrieveXPathQuery(context, "//MxModelReflection.Microflows" + xpathConstraint))
+		for (com.mendix.systemwideinterfaces.core.IMendixObject obj : com.mendix.core.Core.retrieveXPathQuery(context, "//MxModelReflection.Microflows" + xpathConstraint))
 			result.add(mxmodelreflection.proxies.Microflows.initialize(context, obj));
 		return result;
 	}
@@ -101,17 +95,17 @@ public class Microflows
 	/**
 	 * Commit the changes made on this proxy object.
 	 */
-	public final void commit() throws CoreException
+	public final void commit() throws com.mendix.core.CoreException
 	{
-		Core.commit(context, getMendixObject());
+		com.mendix.core.Core.commit(context, getMendixObject());
 	}
 
 	/**
 	 * Commit the changes made on this proxy object using the specified context.
 	 */
-	public final void commit(IContext context) throws CoreException
+	public final void commit(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
-		Core.commit(context, getMendixObject());
+		com.mendix.core.Core.commit(context, getMendixObject());
 	}
 
 	/**
@@ -119,15 +113,15 @@ public class Microflows
 	 */
 	public final void delete()
 	{
-		Core.delete(context, getMendixObject());
+		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 
 	/**
 	 * Delete the object using the specified context.
 	 */
-	public final void delete(IContext context)
+	public final void delete(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		Core.delete(context, getMendixObject());
+		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 	/**
 	 * @return value of Name
@@ -141,7 +135,7 @@ public class Microflows
 	 * @param context
 	 * @return value of Name
 	 */
-	public final String getName(IContext context)
+	public final String getName(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.Name.toString());
 	}
@@ -160,7 +154,7 @@ public class Microflows
 	 * @param context
 	 * @param name
 	 */
-	public final void setName(IContext context, String name)
+	public final void setName(com.mendix.systemwideinterfaces.core.IContext context, String name)
 	{
 		getMendixObject().setValue(context, MemberNames.Name.toString(), name);
 	}
@@ -177,7 +171,7 @@ public class Microflows
 	 * @param context
 	 * @return value of Module
 	 */
-	public final String getModule(IContext context)
+	public final String getModule(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.Module.toString());
 	}
@@ -196,7 +190,7 @@ public class Microflows
 	 * @param context
 	 * @param module
 	 */
-	public final void setModule(IContext context, String module)
+	public final void setModule(com.mendix.systemwideinterfaces.core.IContext context, String module)
 	{
 		getMendixObject().setValue(context, MemberNames.Module.toString(), module);
 	}
@@ -213,7 +207,7 @@ public class Microflows
 	 * @param context
 	 * @return value of CompleteName
 	 */
-	public final String getCompleteName(IContext context)
+	public final String getCompleteName(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.CompleteName.toString());
 	}
@@ -232,7 +226,7 @@ public class Microflows
 	 * @param context
 	 * @param completename
 	 */
-	public final void setCompleteName(IContext context, String completename)
+	public final void setCompleteName(com.mendix.systemwideinterfaces.core.IContext context, String completename)
 	{
 		getMendixObject().setValue(context, MemberNames.CompleteName.toString(), completename);
 	}
@@ -240,7 +234,7 @@ public class Microflows
 	/**
 	 * @return value of Microflows_InputParameter
 	 */
-	public final java.util.List<mxmodelreflection.proxies.Parameter> getMicroflows_InputParameter() throws CoreException
+	public final java.util.List<mxmodelreflection.proxies.Parameter> getMicroflows_InputParameter() throws com.mendix.core.CoreException
 	{
 		return getMicroflows_InputParameter(getContext());
 	}
@@ -250,13 +244,13 @@ public class Microflows
 	 * @return value of Microflows_InputParameter
 	 */
 	@SuppressWarnings("unchecked")
-	public final java.util.List<mxmodelreflection.proxies.Parameter> getMicroflows_InputParameter(IContext context) throws CoreException
+	public final java.util.List<mxmodelreflection.proxies.Parameter> getMicroflows_InputParameter(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
 		java.util.List<mxmodelreflection.proxies.Parameter> result = new java.util.ArrayList<mxmodelreflection.proxies.Parameter>();
 		Object valueObject = getMendixObject().getValue(context, MemberNames.Microflows_InputParameter.toString());
 		if (valueObject == null)
 			return result;
-		for (IMendixObject mendixObject : Core.retrieveIdList(context, (java.util.List<IMendixIdentifier>) valueObject))
+		for (com.mendix.systemwideinterfaces.core.IMendixObject mendixObject : com.mendix.core.Core.retrieveIdList(context, (java.util.List<com.mendix.systemwideinterfaces.core.IMendixIdentifier>) valueObject))
 			result.add(mxmodelreflection.proxies.Parameter.initialize(context, mendixObject));
 		return result;
 	}
@@ -275,9 +269,9 @@ public class Microflows
 	 * @param context
 	 * @param microflows_inputparameter
 	 */
-	public final void setMicroflows_InputParameter(IContext context, java.util.List<mxmodelreflection.proxies.Parameter> microflows_inputparameter)
+	public final void setMicroflows_InputParameter(com.mendix.systemwideinterfaces.core.IContext context, java.util.List<mxmodelreflection.proxies.Parameter> microflows_inputparameter)
 	{
-		java.util.List<IMendixIdentifier> identifiers = new java.util.ArrayList<IMendixIdentifier>();
+		java.util.List<com.mendix.systemwideinterfaces.core.IMendixIdentifier> identifiers = new java.util.ArrayList<com.mendix.systemwideinterfaces.core.IMendixIdentifier>();
 		for (mxmodelreflection.proxies.Parameter proxyObject : microflows_inputparameter)
 			identifiers.add(proxyObject.getMendixObject().getId());
 		getMendixObject().setValue(context, MemberNames.Microflows_InputParameter.toString(), identifiers);
@@ -286,7 +280,7 @@ public class Microflows
 	/**
 	 * @return value of Microflows_Output_Type
 	 */
-	public final mxmodelreflection.proxies.ValueType getMicroflows_Output_Type() throws CoreException
+	public final mxmodelreflection.proxies.ValueType getMicroflows_Output_Type() throws com.mendix.core.CoreException
 	{
 		return getMicroflows_Output_Type(getContext());
 	}
@@ -295,10 +289,10 @@ public class Microflows
 	 * @param context
 	 * @return value of Microflows_Output_Type
 	 */
-	public final mxmodelreflection.proxies.ValueType getMicroflows_Output_Type(IContext context) throws CoreException
+	public final mxmodelreflection.proxies.ValueType getMicroflows_Output_Type(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
 		mxmodelreflection.proxies.ValueType result = null;
-		IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.Microflows_Output_Type.toString());
+		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.Microflows_Output_Type.toString());
 		if (identifier != null)
 			result = mxmodelreflection.proxies.ValueType.load(context, identifier);
 		return result;
@@ -318,7 +312,7 @@ public class Microflows
 	 * @param context
 	 * @param microflows_output_type
 	 */
-	public final void setMicroflows_Output_Type(IContext context, mxmodelreflection.proxies.ValueType microflows_output_type)
+	public final void setMicroflows_Output_Type(com.mendix.systemwideinterfaces.core.IContext context, mxmodelreflection.proxies.ValueType microflows_output_type)
 	{
 		if (microflows_output_type == null)
 			getMendixObject().setValue(context, MemberNames.Microflows_Output_Type.toString(), null);
@@ -329,7 +323,7 @@ public class Microflows
 	/**
 	 * @return value of Microflows_Module
 	 */
-	public final mxmodelreflection.proxies.Module getMicroflows_Module() throws CoreException
+	public final mxmodelreflection.proxies.Module getMicroflows_Module() throws com.mendix.core.CoreException
 	{
 		return getMicroflows_Module(getContext());
 	}
@@ -338,10 +332,10 @@ public class Microflows
 	 * @param context
 	 * @return value of Microflows_Module
 	 */
-	public final mxmodelreflection.proxies.Module getMicroflows_Module(IContext context) throws CoreException
+	public final mxmodelreflection.proxies.Module getMicroflows_Module(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
 		mxmodelreflection.proxies.Module result = null;
-		IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.Microflows_Module.toString());
+		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.Microflows_Module.toString());
 		if (identifier != null)
 			result = mxmodelreflection.proxies.Module.load(context, identifier);
 		return result;
@@ -361,7 +355,7 @@ public class Microflows
 	 * @param context
 	 * @param microflows_module
 	 */
-	public final void setMicroflows_Module(IContext context, mxmodelreflection.proxies.Module microflows_module)
+	public final void setMicroflows_Module(com.mendix.systemwideinterfaces.core.IContext context, mxmodelreflection.proxies.Module microflows_module)
 	{
 		if (microflows_module == null)
 			getMendixObject().setValue(context, MemberNames.Microflows_Module.toString(), null);
@@ -372,7 +366,7 @@ public class Microflows
 	/**
 	 * @return the IMendixObject instance of this proxy for use in the Core interface.
 	 */
-	public final IMendixObject getMendixObject()
+	public final com.mendix.systemwideinterfaces.core.IMendixObject getMendixObject()
 	{
 		return microflowsMendixObject;
 	}
@@ -380,7 +374,7 @@ public class Microflows
 	/**
 	 * @return the IContext instance of this proxy, or null if no IContext instance was specified at initialization.
 	 */
-	public final IContext getContext()
+	public final com.mendix.systemwideinterfaces.core.IContext getContext()
 	{
 		return context;
 	}
@@ -408,7 +402,7 @@ public class Microflows
 	/**
 	 * @return String name of this class
 	 */
-	public static String getType()
+	public static java.lang.String getType()
 	{
 		return "MxModelReflection.Microflows";
 	}
@@ -418,7 +412,7 @@ public class Microflows
 	 * @deprecated Use getMendixObject().getId().toLong() to get a unique identifier for this object.
 	 */
 	@Deprecated
-	public String getGUID()
+	public java.lang.String getGUID()
 	{
 		return "ID_" + getMendixObject().getId().toLong();
 	}

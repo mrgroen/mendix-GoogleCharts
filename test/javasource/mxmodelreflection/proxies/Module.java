@@ -4,25 +4,19 @@
 
 package mxmodelreflection.proxies;
 
-import com.mendix.core.Core;
-import com.mendix.core.CoreException;
-import com.mendix.systemwideinterfaces.core.IContext;
-import com.mendix.systemwideinterfaces.core.IMendixIdentifier;
-import com.mendix.systemwideinterfaces.core.IMendixObject;
-
 /**
  * 
  */
 public class Module
 {
-	private final IMendixObject moduleMendixObject;
+	private final com.mendix.systemwideinterfaces.core.IMendixObject moduleMendixObject;
 
-	private final IContext context;
+	private final com.mendix.systemwideinterfaces.core.IContext context;
 
 	/**
 	 * Internal name of this entity
 	 */
-	public static final String entityName = "MxModelReflection.Module";
+	public static final java.lang.String entityName = "MxModelReflection.Module";
 
 	/**
 	 * Enum describing members of this entity
@@ -32,31 +26,31 @@ public class Module
 		ModuleName("ModuleName"),
 		SynchronizeObjectsWithinModule("SynchronizeObjectsWithinModule");
 
-		private String metaName;
+		private java.lang.String metaName;
 
-		MemberNames(String s)
+		MemberNames(java.lang.String s)
 		{
 			metaName = s;
 		}
 
 		@Override
-		public String toString()
+		public java.lang.String toString()
 		{
 			return metaName;
 		}
 	}
 
-	public Module(IContext context)
+	public Module(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, Core.instantiate(context, "MxModelReflection.Module"));
+		this(context, com.mendix.core.Core.instantiate(context, "MxModelReflection.Module"));
 	}
 
-	protected Module(IContext context, IMendixObject moduleMendixObject)
+	protected Module(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject moduleMendixObject)
 	{
 		if (moduleMendixObject == null)
-			throw new IllegalArgumentException("The given object cannot be null.");
-		if (!Core.isSubClassOf("MxModelReflection.Module", moduleMendixObject.getType()))
-			throw new IllegalArgumentException("The given object is not a MxModelReflection.Module");
+			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
+		if (!com.mendix.core.Core.isSubClassOf("MxModelReflection.Module", moduleMendixObject.getType()))
+			throw new java.lang.IllegalArgumentException("The given object is not a MxModelReflection.Module");
 
 		this.moduleMendixObject = moduleMendixObject;
 		this.context = context;
@@ -66,7 +60,7 @@ public class Module
 	 * @deprecated Use 'Module.load(IContext, IMendixIdentifier)' instead.
 	 */
 	@Deprecated
-	public static mxmodelreflection.proxies.Module initialize(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static mxmodelreflection.proxies.Module initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
 		return mxmodelreflection.proxies.Module.load(context, mendixIdentifier);
 	}
@@ -75,21 +69,21 @@ public class Module
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.getSudoContext() can be used to obtain sudo access).
 	 */
-	public static mxmodelreflection.proxies.Module initialize(IContext context, IMendixObject mendixObject)
+	public static mxmodelreflection.proxies.Module initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
 		return new mxmodelreflection.proxies.Module(context, mendixObject);
 	}
 
-	public static mxmodelreflection.proxies.Module load(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static mxmodelreflection.proxies.Module load(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
-		IMendixObject mendixObject = Core.retrieveId(context, mendixIdentifier);
+		com.mendix.systemwideinterfaces.core.IMendixObject mendixObject = com.mendix.core.Core.retrieveId(context, mendixIdentifier);
 		return mxmodelreflection.proxies.Module.initialize(context, mendixObject);
 	}
 
-	public static java.util.List<mxmodelreflection.proxies.Module> load(IContext context, String xpathConstraint) throws CoreException
+	public static java.util.List<mxmodelreflection.proxies.Module> load(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String xpathConstraint) throws com.mendix.core.CoreException
 	{
 		java.util.List<mxmodelreflection.proxies.Module> result = new java.util.ArrayList<mxmodelreflection.proxies.Module>();
-		for (IMendixObject obj : Core.retrieveXPathQuery(context, "//MxModelReflection.Module" + xpathConstraint))
+		for (com.mendix.systemwideinterfaces.core.IMendixObject obj : com.mendix.core.Core.retrieveXPathQuery(context, "//MxModelReflection.Module" + xpathConstraint))
 			result.add(mxmodelreflection.proxies.Module.initialize(context, obj));
 		return result;
 	}
@@ -97,17 +91,17 @@ public class Module
 	/**
 	 * Commit the changes made on this proxy object.
 	 */
-	public final void commit() throws CoreException
+	public final void commit() throws com.mendix.core.CoreException
 	{
-		Core.commit(context, getMendixObject());
+		com.mendix.core.Core.commit(context, getMendixObject());
 	}
 
 	/**
 	 * Commit the changes made on this proxy object using the specified context.
 	 */
-	public final void commit(IContext context) throws CoreException
+	public final void commit(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
-		Core.commit(context, getMendixObject());
+		com.mendix.core.Core.commit(context, getMendixObject());
 	}
 
 	/**
@@ -115,15 +109,15 @@ public class Module
 	 */
 	public final void delete()
 	{
-		Core.delete(context, getMendixObject());
+		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 
 	/**
 	 * Delete the object using the specified context.
 	 */
-	public final void delete(IContext context)
+	public final void delete(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		Core.delete(context, getMendixObject());
+		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 	/**
 	 * @return value of ModuleName
@@ -137,7 +131,7 @@ public class Module
 	 * @param context
 	 * @return value of ModuleName
 	 */
-	public final String getModuleName(IContext context)
+	public final String getModuleName(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.ModuleName.toString());
 	}
@@ -156,7 +150,7 @@ public class Module
 	 * @param context
 	 * @param modulename
 	 */
-	public final void setModuleName(IContext context, String modulename)
+	public final void setModuleName(com.mendix.systemwideinterfaces.core.IContext context, String modulename)
 	{
 		getMendixObject().setValue(context, MemberNames.ModuleName.toString(), modulename);
 	}
@@ -173,7 +167,7 @@ public class Module
 	 * @param context
 	 * @return value of SynchronizeObjectsWithinModule
 	 */
-	public final Boolean getSynchronizeObjectsWithinModule(IContext context)
+	public final Boolean getSynchronizeObjectsWithinModule(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (Boolean) getMendixObject().getValue(context, MemberNames.SynchronizeObjectsWithinModule.toString());
 	}
@@ -192,7 +186,7 @@ public class Module
 	 * @param context
 	 * @param synchronizeobjectswithinmodule
 	 */
-	public final void setSynchronizeObjectsWithinModule(IContext context, Boolean synchronizeobjectswithinmodule)
+	public final void setSynchronizeObjectsWithinModule(com.mendix.systemwideinterfaces.core.IContext context, Boolean synchronizeobjectswithinmodule)
 	{
 		getMendixObject().setValue(context, MemberNames.SynchronizeObjectsWithinModule.toString(), synchronizeobjectswithinmodule);
 	}
@@ -200,7 +194,7 @@ public class Module
 	/**
 	 * @return the IMendixObject instance of this proxy for use in the Core interface.
 	 */
-	public final IMendixObject getMendixObject()
+	public final com.mendix.systemwideinterfaces.core.IMendixObject getMendixObject()
 	{
 		return moduleMendixObject;
 	}
@@ -208,7 +202,7 @@ public class Module
 	/**
 	 * @return the IContext instance of this proxy, or null if no IContext instance was specified at initialization.
 	 */
-	public final IContext getContext()
+	public final com.mendix.systemwideinterfaces.core.IContext getContext()
 	{
 		return context;
 	}
@@ -236,7 +230,7 @@ public class Module
 	/**
 	 * @return String name of this class
 	 */
-	public static String getType()
+	public static java.lang.String getType()
 	{
 		return "MxModelReflection.Module";
 	}
@@ -246,7 +240,7 @@ public class Module
 	 * @deprecated Use getMendixObject().getId().toLong() to get a unique identifier for this object.
 	 */
 	@Deprecated
-	public String getGUID()
+	public java.lang.String getGUID()
 	{
 		return "ID_" + getMendixObject().getId().toLong();
 	}
