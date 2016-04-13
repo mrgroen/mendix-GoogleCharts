@@ -28,7 +28,7 @@ define([
     'use strict';
 
     var $ = _jQuery.noConflict(true);
-    
+
     // Declare widget's prototype.
     return declare('GoogleCharts.widget.GoogleColumnChart', [_WidgetBase, _TemplatedMixin], {
 
@@ -43,6 +43,7 @@ define([
         forceIFrame: null,
         legend: "",
         tooltip: "",
+        vAxis: "",
         dataOpacity: "",
         animation: false,
         animationStartup: false,
@@ -85,7 +86,7 @@ define([
             this._contextObj = obj;
             this._resetSubscriptions();
             this._updateRendering();
-			
+
 			if (typeof callback !== 'undefined') {
 				callback();
 			}
@@ -116,7 +117,7 @@ define([
         uninitialize: function () {
           // Clean up listeners, helper objects, etc. There is no need to remove listeners added with this.connect / this.subscribe / this.own.
         },
-      
+
         // Using Google ChartWrapper to draw the chart.
         _drawChart: function (data) {
             if (typeof data !== 'undefined' || data.trim() !== '') {
@@ -133,7 +134,8 @@ define([
                 'enableInteractivity': (this.enableInteractivity !== null) ? this.enableInteractivity : undefined,
                 'forceIFrame': (this.forceIFrame !== null) ? this.forceIFrame : undefined,
                 'legend': (this.legend !== '') ? JSON.parse(this.legend) : undefined,
-                'tooltip': (this.tooltip !== '') ? JSON.parse(this.tooltip) : undefined
+                'tooltip': (this.tooltip !== '') ? JSON.parse(this.tooltip) : undefined,
+                'vAxis': (this.vAxis !== '') ? JSON.parse(this.vAxis) : undefined
               });
               this._chartWrapper = new google.visualization.ChartWrapper({
                 'chartType': 'ColumnChart',
@@ -146,7 +148,7 @@ define([
               this._showError('No data for chart.');
             }
         },
-      
+
         // Draw chart with JSON input.
         _drawChartWithJson: function () {
           var jsonString = this._contextObj ? this._contextObj.get(this.jsonDataSource) : "";
@@ -159,7 +161,7 @@ define([
             this._chartInitialized = true;
           }
         },
-      
+
         // We want to stop events on a mobile device
         _stopBubblingEventOnMobile: function (e) {
             if (typeof document.ontouchstart !== 'undefined') {
@@ -295,7 +297,7 @@ define([
                 this._handles = [];
             }
 
-            // When a mendix object exists create subscribtions. 
+            // When a mendix object exists create subscribtions.
             if (this._contextObj) {
 
                 _objectHandle = this.subscribe({
