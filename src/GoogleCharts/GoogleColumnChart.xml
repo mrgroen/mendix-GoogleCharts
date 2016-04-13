@@ -51,6 +51,11 @@
             <category>Appearance</category>
             <description>The transparency of visible data, with 1.0 being completely opaque and 0.0 fully transparent.</description>
         </property>
+        <property key="chartArea" type="string" required="false" defaultValue="">
+            <caption>Chart Area</caption>
+            <category>Appearance</category>
+            <description>A Javascript object with members to configure various chart area elements.</description>
+        </property>
         <property key="animation" type="boolean" required="true" defaultValue="false">
             <caption>Use Animation</caption>
             <category>Animation</category>
