@@ -46,6 +46,16 @@
             <category>Appearance</category>
             <description>A Javascript object with members to configure various vertical axis elements.</description>
         </property>
+        <property key="hAxis" type="string" required="false" defaultValue="">
+            <caption>Horizontal axis</caption>
+            <category>Appearance</category>
+            <description>A Javascript object with members to configure various horizontal axis elements.</description>
+        </property>
+        <property key="isStacked" type="string" required="false" defaultValue="">
+            <caption>Stacked bars</caption>
+            <category>Appearance</category>
+            <description>Stack bars options: true, percent, relative, absolute, false.</description>
+        </property>
         <property key="dataOpacity" type="string" required="true" defaultValue="1.0">
             <caption>Area Opacity</caption>
             <category>Appearance</category>

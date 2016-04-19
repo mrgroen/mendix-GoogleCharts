@@ -43,7 +43,9 @@ define([
         forceIFrame: null,
         legend: "",
         tooltip: "",
+        isStacked: "",
         vAxis: "",
+        hAxis: "",
         dataOpacity: "",
         chartArea: "",
         animation: false,
@@ -137,7 +139,9 @@ define([
                 'forceIFrame': (this.forceIFrame !== null) ? this.forceIFrame : undefined,
                 'legend': (this.legend !== '') ? JSON.parse(this.legend) : undefined,
                 'tooltip': (this.tooltip !== '') ? JSON.parse(this.tooltip) : undefined,
-                'vAxis': (this.vAxis !== '') ? JSON.parse(this.vAxis) : undefined
+                'isStacked': (this.isStacked !== '') ? JSON.parse(this.isStacked) : undefined,
+                'vAxis': (this.vAxis !== '') ? JSON.parse(this.vAxis) : undefined,
+                'hAxis': (this.hAxis !== '') ? JSON.parse(this.hAxis) : undefined
               });
               this._chartWrapper = new google.visualization.ChartWrapper({
                 'chartType': 'ColumnChart',

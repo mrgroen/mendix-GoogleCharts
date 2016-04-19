@@ -43,7 +43,11 @@ define([
         forceIFrame: null,
         legend: "",
         tooltip: "",
+        isStacked: "",
+        vAxis: "",
+        hAxis: "",
         dataOpacity: "",
+        chartArea: "",
         animation: false,
         animationStartup: false,
         animationDuration: 0,
@@ -130,10 +134,14 @@ define([
                 'backgroundColor': (this.backgroundColor !== '') ? this.backgroundColor : undefined,
                 'colors': (this.colors !== '') ? JSON.parse(this.colors) : undefined,
                 'dataOpacity': (this.dataOpacity !== '') ? this.dataOpacity : undefined,
+                'chartArea': (this.chartArea !== '') ? JSON.parse(this.chartArea) : undefined,
                 'enableInteractivity': (this.enableInteractivity !== null) ? this.enableInteractivity : undefined,
                 'forceIFrame': (this.forceIFrame !== null) ? this.forceIFrame : undefined,
                 'legend': (this.legend !== '') ? JSON.parse(this.legend) : undefined,
-                'tooltip': (this.tooltip !== '') ? JSON.parse(this.tooltip) : undefined
+                'tooltip': (this.tooltip !== '') ? JSON.parse(this.tooltip) : undefined,
+                'isStacked': (this.isStacked !== '') ? JSON.parse(this.isStacked) : undefined,
+                'vAxis': (this.vAxis !== '') ? JSON.parse(this.vAxis) : undefined,
+                'hAxis': (this.hAxis !== '') ? JSON.parse(this.hAxis) : undefined
               });
               this._chartWrapper = new google.visualization.ChartWrapper({
                 'chartType': 'BarChart',
