@@ -3,6 +3,7 @@
 	<clientModule name="GoogleCharts" version="1.0" xmlns="http://www.mendix.com/clientModule/1.0/">
 		<widgetFiles>
 			<widgetFile path="GoogleCharts/GoogleAreaChart.xml"/>
+			<widgetFile path="GoogleCharts/GoogleLineChart.xml"/>
 			<widgetFile path="GoogleCharts/GoogleColumnChart.xml"/>
 			<widgetFile path="GoogleCharts/GoogleBarChart.xml"/>
 			<widgetFile path="GoogleCharts/GooglePieChart.xml"/>
