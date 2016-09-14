@@ -15,28 +15,6 @@ public class ChartDataSource
 	 */
 	public static final java.lang.String entityName = "GoogleCharts.ChartDataSource";
 
-	/**
-	 * Enum describing members of this entity
-	 */
-	public enum MemberNames
-	{
-		cols("GoogleCharts.cols"),
-		rows("GoogleCharts.rows");
-
-		private java.lang.String metaName;
-
-		MemberNames(java.lang.String s)
-		{
-			metaName = s;
-		}
-
-		@Override
-		public java.lang.String toString()
-		{
-			return metaName;
-		}
-	}
-
 	public ChartDataSource(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		this(context, com.mendix.core.Core.instantiate(context, "GoogleCharts.ChartDataSource"));
@@ -108,98 +86,6 @@ public class ChartDataSource
 	{
 		com.mendix.core.Core.delete(context, getMendixObject());
 	}
-	/**
-	 * @return value of cols
-	 */
-	public final java.util.List<googlecharts.proxies.Column> getcols() throws com.mendix.core.CoreException
-	{
-		return getcols(getContext());
-	}
-
-	/**
-	 * @param context
-	 * @return value of cols
-	 */
-	@SuppressWarnings("unchecked")
-	public final java.util.List<googlecharts.proxies.Column> getcols(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
-	{
-		java.util.List<googlecharts.proxies.Column> result = new java.util.ArrayList<googlecharts.proxies.Column>();
-		Object valueObject = getMendixObject().getValue(context, MemberNames.cols.toString());
-		if (valueObject == null)
-			return result;
-		for (com.mendix.systemwideinterfaces.core.IMendixObject mendixObject : com.mendix.core.Core.retrieveIdList(context, (java.util.List<com.mendix.systemwideinterfaces.core.IMendixIdentifier>) valueObject))
-			result.add(googlecharts.proxies.Column.initialize(context, mendixObject));
-		return result;
-	}
-
-	/**
-	 * Set value of cols
-	 * @param cols
-	 */
-	public final void setcols(java.util.List<googlecharts.proxies.Column> cols)
-	{
-		setcols(getContext(), cols);
-	}
-
-	/**
-	 * Set value of cols
-	 * @param context
-	 * @param cols
-	 */
-	public final void setcols(com.mendix.systemwideinterfaces.core.IContext context, java.util.List<googlecharts.proxies.Column> cols)
-	{
-		java.util.List<com.mendix.systemwideinterfaces.core.IMendixIdentifier> identifiers = new java.util.ArrayList<com.mendix.systemwideinterfaces.core.IMendixIdentifier>();
-		for (googlecharts.proxies.Column proxyObject : cols)
-			identifiers.add(proxyObject.getMendixObject().getId());
-		getMendixObject().setValue(context, MemberNames.cols.toString(), identifiers);
-	}
-
-	/**
-	 * @return value of rows
-	 */
-	public final java.util.List<googlecharts.proxies.Row> getrows() throws com.mendix.core.CoreException
-	{
-		return getrows(getContext());
-	}
-
-	/**
-	 * @param context
-	 * @return value of rows
-	 */
-	@SuppressWarnings("unchecked")
-	public final java.util.List<googlecharts.proxies.Row> getrows(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
-	{
-		java.util.List<googlecharts.proxies.Row> result = new java.util.ArrayList<googlecharts.proxies.Row>();
-		Object valueObject = getMendixObject().getValue(context, MemberNames.rows.toString());
-		if (valueObject == null)
-			return result;
-		for (com.mendix.systemwideinterfaces.core.IMendixObject mendixObject : com.mendix.core.Core.retrieveIdList(context, (java.util.List<com.mendix.systemwideinterfaces.core.IMendixIdentifier>) valueObject))
-			result.add(googlecharts.proxies.Row.initialize(context, mendixObject));
-		return result;
-	}
-
-	/**
-	 * Set value of rows
-	 * @param rows
-	 */
-	public final void setrows(java.util.List<googlecharts.proxies.Row> rows)
-	{
-		setrows(getContext(), rows);
-	}
-
-	/**
-	 * Set value of rows
-	 * @param context
-	 * @param rows
-	 */
-	public final void setrows(com.mendix.systemwideinterfaces.core.IContext context, java.util.List<googlecharts.proxies.Row> rows)
-	{
-		java.util.List<com.mendix.systemwideinterfaces.core.IMendixIdentifier> identifiers = new java.util.ArrayList<com.mendix.systemwideinterfaces.core.IMendixIdentifier>();
-		for (googlecharts.proxies.Row proxyObject : rows)
-			identifiers.add(proxyObject.getMendixObject().getId());
-		getMendixObject().setValue(context, MemberNames.rows.toString(), identifiers);
-	}
-
 	/**
 	 * @return the IMendixObject instance of this proxy for use in the Core interface.
 	 */

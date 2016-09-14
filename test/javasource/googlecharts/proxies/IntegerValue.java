@@ -16,7 +16,8 @@ public class IntegerValue extends googlecharts.proxies.Cell
 	 */
 	public enum MemberNames
 	{
-		v("v");
+		v("v"),
+		c("GoogleCharts.c");
 
 		private java.lang.String metaName;
 

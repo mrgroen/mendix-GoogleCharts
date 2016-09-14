@@ -15,6 +15,27 @@ public class Cell
 	 */
 	public static final java.lang.String entityName = "GoogleCharts.Cell";
 
+	/**
+	 * Enum describing members of this entity
+	 */
+	public enum MemberNames
+	{
+		c("GoogleCharts.c");
+
+		private java.lang.String metaName;
+
+		MemberNames(java.lang.String s)
+		{
+			metaName = s;
+		}
+
+		@Override
+		public java.lang.String toString()
+		{
+			return metaName;
+		}
+	}
+
 	public Cell(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		this(context, com.mendix.core.Core.instantiate(context, "GoogleCharts.Cell"));
@@ -101,6 +122,49 @@ public class Cell
 	{
 		com.mendix.core.Core.delete(context, getMendixObject());
 	}
+	/**
+	 * @return value of c
+	 */
+	public final googlecharts.proxies.Row getc() throws com.mendix.core.CoreException
+	{
+		return getc(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of c
+	 */
+	public final googlecharts.proxies.Row getc(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
+	{
+		googlecharts.proxies.Row result = null;
+		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.c.toString());
+		if (identifier != null)
+			result = googlecharts.proxies.Row.load(context, identifier);
+		return result;
+	}
+
+	/**
+	 * Set value of c
+	 * @param c
+	 */
+	public final void setc(googlecharts.proxies.Row c)
+	{
+		setc(getContext(), c);
+	}
+
+	/**
+	 * Set value of c
+	 * @param context
+	 * @param c
+	 */
+	public final void setc(com.mendix.systemwideinterfaces.core.IContext context, googlecharts.proxies.Row c)
+	{
+		if (c == null)
+			getMendixObject().setValue(context, MemberNames.c.toString(), null);
+		else
+			getMendixObject().setValue(context, MemberNames.c.toString(), c.getMendixObject().getId());
+	}
+
 	/**
 	 * @return the IMendixObject instance of this proxy for use in the Core interface.
 	 */
