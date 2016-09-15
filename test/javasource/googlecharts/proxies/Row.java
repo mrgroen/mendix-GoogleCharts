@@ -110,7 +110,7 @@ public class Row
 	/**
 	 * @return value of rows
 	 */
-	public final java.util.List<googlecharts.proxies.ChartDataSource> getrows() throws com.mendix.core.CoreException
+	public final googlecharts.proxies.ChartDataSource getrows() throws com.mendix.core.CoreException
 	{
 		return getrows(getContext());
 	}
@@ -119,15 +119,12 @@ public class Row
 	 * @param context
 	 * @return value of rows
 	 */
-	@SuppressWarnings("unchecked")
-	public final java.util.List<googlecharts.proxies.ChartDataSource> getrows(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
+	public final googlecharts.proxies.ChartDataSource getrows(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
-		java.util.List<googlecharts.proxies.ChartDataSource> result = new java.util.ArrayList<googlecharts.proxies.ChartDataSource>();
-		Object valueObject = getMendixObject().getValue(context, MemberNames.rows.toString());
-		if (valueObject == null)
-			return result;
-		for (com.mendix.systemwideinterfaces.core.IMendixObject mendixObject : com.mendix.core.Core.retrieveIdList(context, (java.util.List<com.mendix.systemwideinterfaces.core.IMendixIdentifier>) valueObject))
-			result.add(googlecharts.proxies.ChartDataSource.initialize(context, mendixObject));
+		googlecharts.proxies.ChartDataSource result = null;
+		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.rows.toString());
+		if (identifier != null)
+			result = googlecharts.proxies.ChartDataSource.load(context, identifier);
 		return result;
 	}
 
@@ -135,7 +132,7 @@ public class Row
 	 * Set value of rows
 	 * @param rows
 	 */
-	public final void setrows(java.util.List<googlecharts.proxies.ChartDataSource> rows)
+	public final void setrows(googlecharts.proxies.ChartDataSource rows)
 	{
 		setrows(getContext(), rows);
 	}
@@ -145,12 +142,12 @@ public class Row
 	 * @param context
 	 * @param rows
 	 */
-	public final void setrows(com.mendix.systemwideinterfaces.core.IContext context, java.util.List<googlecharts.proxies.ChartDataSource> rows)
+	public final void setrows(com.mendix.systemwideinterfaces.core.IContext context, googlecharts.proxies.ChartDataSource rows)
 	{
-		java.util.List<com.mendix.systemwideinterfaces.core.IMendixIdentifier> identifiers = new java.util.ArrayList<com.mendix.systemwideinterfaces.core.IMendixIdentifier>();
-		for (googlecharts.proxies.ChartDataSource proxyObject : rows)
-			identifiers.add(proxyObject.getMendixObject().getId());
-		getMendixObject().setValue(context, MemberNames.rows.toString(), identifiers);
+		if (rows == null)
+			getMendixObject().setValue(context, MemberNames.rows.toString(), null);
+		else
+			getMendixObject().setValue(context, MemberNames.rows.toString(), rows.getMendixObject().getId());
 	}
 
 	/**
