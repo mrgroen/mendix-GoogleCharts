@@ -69,7 +69,6 @@ public class UserActionsRegistrar implements EventHandler
 			component.actionRegistry().registerUserAction(communitycommons.actions.GetApplicationUrl.class);
 			component.actionRegistry().registerUserAction(communitycommons.actions.getCreatedByUser.class);
 			component.actionRegistry().registerUserAction(communitycommons.actions.GetDefaultLanguage.class);
-			component.actionRegistry().registerUserAction(communitycommons.actions.getDTAPMode.class);
 			component.actionRegistry().registerUserAction(communitycommons.actions.GetFileContentsFromResource.class);
 			component.actionRegistry().registerUserAction(communitycommons.actions.getFileSize.class);
 			component.actionRegistry().registerUserAction(communitycommons.actions.getGUID.class);
@@ -167,10 +166,12 @@ public class UserActionsRegistrar implements EventHandler
 			component.actionRegistry().registerUserAction(restservices.actions.put.class);
 			component.actionRegistry().registerUserAction(restservices.actions.RebuildServiceIndex.class);
 			component.actionRegistry().registerUserAction(restservices.actions.registerCredentials.class);
+			component.actionRegistry().registerUserAction(restservices.actions.registerNTCredentials.class);
 			component.actionRegistry().registerUserAction(restservices.actions.request.class);
 			component.actionRegistry().registerUserAction(restservices.actions.resetChangeTracking.class);
 			component.actionRegistry().registerUserAction(restservices.actions.serializeObjectToJson.class);
 			component.actionRegistry().registerUserAction(restservices.actions.ServiceConsistencyCheck.class);
+			component.actionRegistry().registerUserAction(restservices.actions.setGlobalRequestSettings.class);
 			component.actionRegistry().registerUserAction(restservices.actions.setResponseCookie.class);
 			component.actionRegistry().registerUserAction(restservices.actions.setResponseHeader.class);
 			component.actionRegistry().registerUserAction(restservices.actions.setResponseStatus.class);

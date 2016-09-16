@@ -20,7 +20,7 @@ public class RestServices {
 	/**
 	 * Version of the RestServices module
 	 */
-	public static final String VERSION = "1.5.0";
+	public static final String VERSION = "2.1.3";
 
 	/**
 	 * Amount of objects that are processed by the module at the same time.
@@ -110,7 +110,7 @@ public class RestServices {
 	}
 
 	public static String getBaseUrl() {
-		return Core.getConfiguration().getApplicationRootUrl() + PATH_REST;
+		return Utils.appendSlashToUrl(Core.getConfiguration().getApplicationRootUrl()) + PATH_REST;
 	}
 
 	/**
