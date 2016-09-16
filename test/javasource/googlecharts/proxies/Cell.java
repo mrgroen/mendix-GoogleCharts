@@ -73,11 +73,8 @@ public class Cell
 		if (com.mendix.core.Core.isSubClassOf("GoogleCharts.DateTimeValue", mendixObject.getType()))
 			return googlecharts.proxies.DateTimeValue.initialize(context, mendixObject);
 
-		if (com.mendix.core.Core.isSubClassOf("GoogleCharts.FloatValue", mendixObject.getType()))
-			return googlecharts.proxies.FloatValue.initialize(context, mendixObject);
-
-		if (com.mendix.core.Core.isSubClassOf("GoogleCharts.IntegerValue", mendixObject.getType()))
-			return googlecharts.proxies.IntegerValue.initialize(context, mendixObject);
+		if (com.mendix.core.Core.isSubClassOf("GoogleCharts.DecimalValue", mendixObject.getType()))
+			return googlecharts.proxies.DecimalValue.initialize(context, mendixObject);
 
 		if (com.mendix.core.Core.isSubClassOf("GoogleCharts.StringValue", mendixObject.getType()))
 			return googlecharts.proxies.StringValue.initialize(context, mendixObject);

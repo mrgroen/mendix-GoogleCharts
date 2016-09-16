@@ -129,6 +129,7 @@ public class UserActionsRegistrar implements EventHandler
 			component.actionRegistry().registerUserAction(encryption.actions.DecryptString.class);
 			component.actionRegistry().registerUserAction(encryption.actions.EncryptString.class);
 			component.actionRegistry().registerUserAction(googlecharts.actions.JsonFormatter.class);
+			component.actionRegistry().registerUserAction(googlecharts.actions.Sin.class);
 			component.actionRegistry().registerUserAction(mxmodelreflection.actions.ReplaceToken.class);
 			component.actionRegistry().registerUserAction(mxmodelreflection.actions.SyncObjects.class);
 			component.actionRegistry().registerUserAction(mxmodelreflection.actions.ValidateTokensInMessage.class);
