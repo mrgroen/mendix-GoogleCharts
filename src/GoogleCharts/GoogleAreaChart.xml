@@ -57,6 +57,11 @@
             <category>Appearance</category>
             <description>The default opacity of the colored area under an area chart series, where 0.0 is fully transparent and 1.0 is fully opaque. To specify opacity for an individual series, set the areaOpacity value in the series property.</description>
         </property>
+		<property key="height" type="integer" required="true" defaultValue="300">
+            <caption>Height</caption>
+            <category>Appearance</category>
+            <description>The height of the graph.</description>
+        </property>
         <property key="animation" type="boolean" required="true" defaultValue="false">
             <caption>Use Animation</caption>
             <category>Animation</category>

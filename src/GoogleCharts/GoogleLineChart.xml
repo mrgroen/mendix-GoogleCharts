@@ -52,6 +52,16 @@
             <category>Appearance</category>
             <description>A Javascript object with members to configure various tooltip elements.</description>
         </property>
+		<property key="height" type="integer" required="true" defaultValue="300">
+            <caption>Height</caption>
+            <category>Appearance</category>
+            <description>The height of the graph.</description>
+        </property>
+		<property key="vaxes" type="boolean" required="true" defaultValue="false">
+            <caption>Dual Y-Axis</caption>
+            <category>Appearance</category>
+            <description>Enable multiple Y-axises.</description>
+        </property>
         <property key="animation" type="boolean" required="true" defaultValue="false">
             <caption>Use Animation</caption>
             <category>Animation</category>

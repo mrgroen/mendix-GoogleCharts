@@ -67,19 +67,6 @@ public class Microflows
 			throw new MendixRuntimeException(e);
 		}
 	}
-	public static googlecharts.proxies.Result dS_DonutsEaten_LineChart_2(IContext context)
-	{
-		try
-		{
-			Map<String, Object> params = new HashMap<String, Object>();
-			IMendixObject result = (IMendixObject)Core.execute(context, "GoogleCharts.DS_DonutsEaten_LineChart_2", params);
-			return result == null ? null : googlecharts.proxies.Result.initialize(context, result);
-		}
-		catch (CoreException e)
-		{
-			throw new MendixRuntimeException(e);
-		}
-	}
 	public static googlecharts.proxies.Result dS_DonutsEaten_PieChart(IContext context)
 	{
 		try
@@ -139,19 +126,6 @@ public class Microflows
 			Map<String, Object> params = new HashMap<String, Object>();
 			params.put("Result", _result == null ? null : _result.getMendixObject());
 			Core.execute(context, "GoogleCharts.IVK_UpdateLineResult", params);
-		}
-		catch (CoreException e)
-		{
-			throw new MendixRuntimeException(e);
-		}
-	}
-	public static void iVK_UpdateLineResult_2(IContext context, googlecharts.proxies.Result _result)
-	{
-		try
-		{
-			Map<String, Object> params = new HashMap<String, Object>();
-			params.put("Result", _result == null ? null : _result.getMendixObject());
-			Core.execute(context, "GoogleCharts.IVK_UpdateLineResult_2", params);
 		}
 		catch (CoreException e)
 		{

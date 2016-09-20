@@ -141,7 +141,8 @@ define([
                 'tooltip': (this.tooltip !== '') ? JSON.parse(this.tooltip) : undefined,
                 'isStacked': (this.isStacked !== '') ? JSON.parse(this.isStacked) : undefined,
                 'vAxis': (this.vAxis !== '') ? JSON.parse(this.vAxis) : undefined,
-                'hAxis': (this.hAxis !== '') ? JSON.parse(this.hAxis) : undefined
+                'hAxis': (this.hAxis !== '') ? JSON.parse(this.hAxis) : undefined,
+				'height': (this.height > 0) ? this.height : 400
               });
               this._chartWrapper = new google.visualization.ChartWrapper({
                 'chartType': 'ColumnChart',

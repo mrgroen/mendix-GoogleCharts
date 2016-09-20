@@ -135,7 +135,8 @@ define([
                 'forceIFrame': (this.forceIFrame !== null) ? this.forceIFrame : undefined,
                 'legend': (this.legend !== '') ? JSON.parse(this.legend) : undefined,
                 'tooltip': (this.tooltip !== '') ? JSON.parse(this.tooltip) : undefined,
-                'aggregationTarget': (this.aggregationTarget !== '') ? this.aggregationTarget : undefined
+                'aggregationTarget': (this.aggregationTarget !== '') ? this.aggregationTarget : undefined,
+				'height': (this.height > 0) ? this.height : 400
               });
               this._chartWrapper = new google.visualization.ChartWrapper({
                 'chartType': 'AreaChart',

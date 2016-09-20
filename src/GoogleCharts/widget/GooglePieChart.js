@@ -142,7 +142,8 @@ define([
                 'slices': (this.slices !== '') ? this.slices : undefined,
                 'sliceVisibilityThreshold': (this.sliceVisibilityThreshold !== null) ? this.sliceVisibilityThreshold : undefined,
                 'tooltip': (this.tooltip !== '') ? JSON.parse(this.tooltip) : undefined,
-                'chartArea': (this.chartArea !== '') ? JSON.parse(this.chartArea) : undefined
+                'chartArea': (this.chartArea !== '') ? JSON.parse(this.chartArea) : undefined,
+				'height': (this.height > 0) ? this.height : 400
               });
               this._chartWrapper = new google.visualization.ChartWrapper({
                 'chartType': 'PieChart',

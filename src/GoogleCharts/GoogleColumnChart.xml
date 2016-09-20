@@ -66,6 +66,11 @@
             <category>Appearance</category>
             <description>A Javascript object with members to configure various chart area elements.</description>
         </property>
+		<property key="height" type="integer" required="true" defaultValue="300">
+            <caption>Height</caption>
+            <category>Appearance</category>
+            <description>The height of the graph.</description>
+        </property>
         <property key="animation" type="boolean" required="true" defaultValue="false">
             <caption>Use Animation</caption>
             <category>Animation</category>

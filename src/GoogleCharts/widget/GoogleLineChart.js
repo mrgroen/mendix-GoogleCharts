@@ -134,7 +134,12 @@ define([
                 'forceIFrame': (this.forceIFrame !== null) ? this.forceIFrame : undefined,
                 'legend': (this.legend !== '') ? JSON.parse(this.legend) : undefined,
                 'tooltip': (this.tooltip !== '') ? JSON.parse(this.tooltip) : undefined,
-                'aggregationTarget': (this.aggregationTarget !== '') ? this.aggregationTarget : undefined
+                'aggregationTarget': (this.aggregationTarget !== '') ? this.aggregationTarget : undefined,
+				'height': (this.height > 0) ? this.height : 300,
+				'vAxes': (this.vaxes) ? {0: {'logScale': false}, 1: {'logScale': false}} : undefined,
+                'series': (this.vaxes) ? {0:{'targetAxisIndex':0},1:{'targetAxisIndex':1}} : undefined 
+				
+				
               });
               this._chartWrapper = new google.visualization.ChartWrapper({
                 'chartType': 'LineChart',
