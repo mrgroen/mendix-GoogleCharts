@@ -1,0 +1,24 @@
+{
+  "Configuration": {
+    "DatabaseName": "default",
+    "DatabasePassword": "",
+    "DatabaseType": "HSQLDB",
+    "DatabaseHost": "",
+    "DatabaseUserName": "",
+    "DatabaseUseIntegratedSecurity": "False",
+    "ApplicationRootUrl": "http://localhost:8080/",
+    "ScheduledEventExecution": "Specified",
+    "MyScheduledEvents": "CommunityCommons.releaseOldLocks,EmailTemplate.Cleanup,EmailTemplate.SendQueuedEmails"
+  },
+  "Constants": {
+    "CommunityCommons.enableReleaseLockEvent": "True",
+    "EmailTemplate.EmailAddressSeparator": ",",
+    "EmailTemplate.LogNode": "Email",
+    "EmailTemplate.EmailRetention": "30",
+    "EmailTemplate.EmailLogRetention": "30",
+    "Encryption.EncryptionKey": "",
+    "Encryption.EncryptionPrefix": "{AES}",
+    "Encryption.LogNode": "Encryption"
+  },
+  "AdminPassword": null
+}

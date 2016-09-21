@@ -1,0 +1,1 @@
+﻿define(["GoogleCharts/widget/GoogleAreaChart", "GoogleCharts/widget/GoogleLineChart", "GoogleCharts/widget/GoogleColumnChart", "GoogleCharts/widget/GoogleBarChart", "GoogleCharts/widget/GooglePieChart", "BootstrapRTE/widget/BootstrapRTE"], {});
