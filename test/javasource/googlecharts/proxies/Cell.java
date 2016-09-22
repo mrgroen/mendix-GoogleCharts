@@ -20,6 +20,10 @@ public class Cell
 	 */
 	public enum MemberNames
 	{
+		DecimalValue("DecimalValue"),
+		StringValue("StringValue"),
+		DateTimeValue("DateTimeValue"),
+		format("format"),
 		c("GoogleCharts.c");
 
 		private java.lang.String metaName;
@@ -67,18 +71,6 @@ public class Cell
 	 */
 	public static googlecharts.proxies.Cell initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
-		if (com.mendix.core.Core.isSubClassOf("GoogleCharts.BooleanValue", mendixObject.getType()))
-			return googlecharts.proxies.BooleanValue.initialize(context, mendixObject);
-
-		if (com.mendix.core.Core.isSubClassOf("GoogleCharts.DateTimeValue", mendixObject.getType()))
-			return googlecharts.proxies.DateTimeValue.initialize(context, mendixObject);
-
-		if (com.mendix.core.Core.isSubClassOf("GoogleCharts.DecimalValue", mendixObject.getType()))
-			return googlecharts.proxies.DecimalValue.initialize(context, mendixObject);
-
-		if (com.mendix.core.Core.isSubClassOf("GoogleCharts.StringValue", mendixObject.getType()))
-			return googlecharts.proxies.StringValue.initialize(context, mendixObject);
-
 		return new googlecharts.proxies.Cell(context, mendixObject);
 	}
 
@@ -119,6 +111,150 @@ public class Cell
 	{
 		com.mendix.core.Core.delete(context, getMendixObject());
 	}
+	/**
+	 * @return value of DecimalValue
+	 */
+	public final java.math.BigDecimal getDecimalValue()
+	{
+		return getDecimalValue(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of DecimalValue
+	 */
+	public final java.math.BigDecimal getDecimalValue(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.math.BigDecimal) getMendixObject().getValue(context, MemberNames.DecimalValue.toString());
+	}
+
+	/**
+	 * Set value of DecimalValue
+	 * @param decimalvalue
+	 */
+	public final void setDecimalValue(java.math.BigDecimal decimalvalue)
+	{
+		setDecimalValue(getContext(), decimalvalue);
+	}
+
+	/**
+	 * Set value of DecimalValue
+	 * @param context
+	 * @param decimalvalue
+	 */
+	public final void setDecimalValue(com.mendix.systemwideinterfaces.core.IContext context, java.math.BigDecimal decimalvalue)
+	{
+		getMendixObject().setValue(context, MemberNames.DecimalValue.toString(), decimalvalue);
+	}
+
+	/**
+	 * @return value of StringValue
+	 */
+	public final String getStringValue()
+	{
+		return getStringValue(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of StringValue
+	 */
+	public final String getStringValue(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (String) getMendixObject().getValue(context, MemberNames.StringValue.toString());
+	}
+
+	/**
+	 * Set value of StringValue
+	 * @param stringvalue
+	 */
+	public final void setStringValue(String stringvalue)
+	{
+		setStringValue(getContext(), stringvalue);
+	}
+
+	/**
+	 * Set value of StringValue
+	 * @param context
+	 * @param stringvalue
+	 */
+	public final void setStringValue(com.mendix.systemwideinterfaces.core.IContext context, String stringvalue)
+	{
+		getMendixObject().setValue(context, MemberNames.StringValue.toString(), stringvalue);
+	}
+
+	/**
+	 * @return value of DateTimeValue
+	 */
+	public final java.util.Date getDateTimeValue()
+	{
+		return getDateTimeValue(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of DateTimeValue
+	 */
+	public final java.util.Date getDateTimeValue(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.util.Date) getMendixObject().getValue(context, MemberNames.DateTimeValue.toString());
+	}
+
+	/**
+	 * Set value of DateTimeValue
+	 * @param datetimevalue
+	 */
+	public final void setDateTimeValue(java.util.Date datetimevalue)
+	{
+		setDateTimeValue(getContext(), datetimevalue);
+	}
+
+	/**
+	 * Set value of DateTimeValue
+	 * @param context
+	 * @param datetimevalue
+	 */
+	public final void setDateTimeValue(com.mendix.systemwideinterfaces.core.IContext context, java.util.Date datetimevalue)
+	{
+		getMendixObject().setValue(context, MemberNames.DateTimeValue.toString(), datetimevalue);
+	}
+
+	/**
+	 * @return value of format
+	 */
+	public final String getformat()
+	{
+		return getformat(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of format
+	 */
+	public final String getformat(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (String) getMendixObject().getValue(context, MemberNames.format.toString());
+	}
+
+	/**
+	 * Set value of format
+	 * @param format
+	 */
+	public final void setformat(String format)
+	{
+		setformat(getContext(), format);
+	}
+
+	/**
+	 * Set value of format
+	 * @param context
+	 * @param format
+	 */
+	public final void setformat(com.mendix.systemwideinterfaces.core.IContext context, String format)
+	{
+		getMendixObject().setValue(context, MemberNames.format.toString(), format);
+	}
+
 	/**
 	 * @return value of c
 	 */

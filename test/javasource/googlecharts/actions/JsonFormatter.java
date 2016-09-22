@@ -51,10 +51,23 @@ public class JsonFormatter extends CustomJavaAction<String>
 			
 			for(IMendixObject e : d){
 				//Core.getLogger("log").info(e.getValue(getContext(), "v").toString());
-				values.add(e.getValue(getContext(), "v"));	
-				if(e.getValue(getContext(), "v") instanceof Date){
+				//Core.getLogger("log").info("dec: " + e.getValue(getContext(), "DecimalValue").toString());
+				//Core.getLogger("log").info("str: " + e.getValue(getContext(), "StringValue").toString());
+				//Core.getLogger("log").info("dat: " + e.getValue(getContext(), "DateTimeValue").toString());
+				if(e.getValue(getContext(), "StringValue") != null){
+					values.add(e.getValue(getContext(), "StringValue"));
+					Core.getLogger("log").info("a");
+				} else if(e.getValue(getContext(), "DateTimeValue") != null){
+					Core.getLogger("log").info("b");
+					values.add(e.getValue(getContext(), "DateTimeValue"));
 					format = e.getValue(getContext(), "format").toString();
+				} else {
+					Core.getLogger("log").info("c");
+					values.add(e.getValue(getContext(), "DecimalValue"));
 				}
+				/*if(e.getValue(getContext(), "DateTimeValue") instanceof Date){
+					format = e.getValue(getContext(), "format").toString();
+				}*/
 			}
 			jsonOutput += "{\"c\": [";
 			for(Object val : values){
