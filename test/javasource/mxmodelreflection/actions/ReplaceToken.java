@@ -9,9 +9,11 @@
 
 package mxmodelreflection.actions;
 
+import mxmodelreflection.TokenReplacer;
+import com.mendix.core.Core;
+import com.mendix.systemwideinterfaces.core.IMendixObject;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
-import com.mendix.systemwideinterfaces.core.IMendixObject;
 
 /**
  * Search the parameter text for the token from the parameter TokenObject, replace the value with a value from the parameter ValueObject.
@@ -37,7 +39,7 @@ public class ReplaceToken extends CustomJavaAction<String>
 		this.TokenObject = __TokenObject == null ? null : mxmodelreflection.proxies.Token.initialize(getContext(), __TokenObject);
 
 		// BEGIN USER CODE
-		throw new com.mendix.systemwideinterfaces.MendixRuntimeException("Java action was not implemented");
+		return TokenReplacer.replaceToken(this.getContext(), this.TextToReplace, this.__TokenObject, this.ValueObject);
 		// END USER CODE
 	}
 

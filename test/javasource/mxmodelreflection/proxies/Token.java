@@ -34,6 +34,7 @@ public class Token
 		FindMember("FindMember"),
 		FindMemberReference("FindMemberReference"),
 		IsOptional("IsOptional"),
+		DisplayPattern("DisplayPattern"),
 		Token_MxObjectMember("MxModelReflection.Token_MxObjectMember"),
 		Token_MxObjectType_Start("MxModelReflection.Token_MxObjectType_Start"),
 		Token_MxObjectType_Referenced("MxModelReflection.Token_MxObjectType_Referenced"),
@@ -650,6 +651,42 @@ public class Token
 	public final void setIsOptional(com.mendix.systemwideinterfaces.core.IContext context, Boolean isoptional)
 	{
 		getMendixObject().setValue(context, MemberNames.IsOptional.toString(), isoptional);
+	}
+
+	/**
+	 * @return value of DisplayPattern
+	 */
+	public final String getDisplayPattern()
+	{
+		return getDisplayPattern(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of DisplayPattern
+	 */
+	public final String getDisplayPattern(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (String) getMendixObject().getValue(context, MemberNames.DisplayPattern.toString());
+	}
+
+	/**
+	 * Set value of DisplayPattern
+	 * @param displaypattern
+	 */
+	public final void setDisplayPattern(String displaypattern)
+	{
+		setDisplayPattern(getContext(), displaypattern);
+	}
+
+	/**
+	 * Set value of DisplayPattern
+	 * @param context
+	 * @param displaypattern
+	 */
+	public final void setDisplayPattern(com.mendix.systemwideinterfaces.core.IContext context, String displaypattern)
+	{
+		getMendixObject().setValue(context, MemberNames.DisplayPattern.toString(), displaypattern);
 	}
 
 	/**

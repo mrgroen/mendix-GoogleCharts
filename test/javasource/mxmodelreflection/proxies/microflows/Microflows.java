@@ -289,18 +289,6 @@ public class Microflows
 			throw new MendixRuntimeException(e);
 		}
 	}
-	public static void iVK_deleteAll(IContext context)
-	{
-		try
-		{
-			Map<String, Object> params = new HashMap<String, Object>();
-			Core.execute(context, "MxModelReflection.IVK_deleteAll", params);
-		}
-		catch (CoreException e)
-		{
-			throw new MendixRuntimeException(e);
-		}
-	}
 	public static void iVK_MxObjectTypeCommit(IContext context, mxmodelreflection.proxies.MxObjectType _mxObjectType)
 	{
 		try
@@ -352,13 +340,53 @@ public class Microflows
 			throw new MendixRuntimeException(e);
 		}
 	}
-	public static void iVK_ToggleSelection(IContext context, mxmodelreflection.proxies.Module _module)
+	public static void iVK_ToggleModule(IContext context, mxmodelreflection.proxies.Module _module)
 	{
 		try
 		{
 			Map<String, Object> params = new HashMap<String, Object>();
 			params.put("Module", _module == null ? null : _module.getMendixObject());
-			Core.execute(context, "MxModelReflection.IVK_ToggleSelection", params);
+			Core.execute(context, "MxModelReflection.IVK_ToggleModule", params);
+		}
+		catch (CoreException e)
+		{
+			throw new MendixRuntimeException(e);
+		}
+	}
+	public static Long log(IContext context, Long _base, Long _x)
+	{
+		try
+		{
+			Map<String, Object> params = new HashMap<String, Object>();
+			params.put("Base", _base);
+			params.put("x", _x);
+			return (Long)Core.execute(context, "MxModelReflection.Log", params);
+		}
+		catch (CoreException e)
+		{
+			throw new MendixRuntimeException(e);
+		}
+	}
+	public static void mB_TestThePattern(IContext context, mxmodelreflection.proxies.TestPattern _testPattern)
+	{
+		try
+		{
+			Map<String, Object> params = new HashMap<String, Object>();
+			params.put("TestPattern", _testPattern == null ? null : _testPattern.getMendixObject());
+			Core.execute(context, "MxModelReflection.MB_TestThePattern", params);
+		}
+		catch (CoreException e)
+		{
+			throw new MendixRuntimeException(e);
+		}
+	}
+	public static void mB_TestTokenPattern(IContext context, mxmodelreflection.proxies.Token _token)
+	{
+		try
+		{
+			Map<String, Object> params = new HashMap<String, Object>();
+			params.put("Token", _token == null ? null : _token.getMendixObject());
+			Core.execute(context, "MxModelReflection.MB_TestTokenPattern", params);
 		}
 		catch (CoreException e)
 		{

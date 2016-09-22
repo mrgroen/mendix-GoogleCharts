@@ -9,9 +9,10 @@
 
 package mxmodelreflection.actions;
 
+import mxmodelreflection.TokenReplacer;
+import com.mendix.systemwideinterfaces.core.IMendixObject;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
-import com.mendix.systemwideinterfaces.core.IMendixObject;
 
 /**
  * Validates if all required tokens are present in the message. The action returns a list of all the tokens that are not optional and not present in the text
@@ -38,7 +39,8 @@ public class ValidateTokensInMessage extends CustomJavaAction<java.util.List<IMe
 				this.TokenList.add(mxmodelreflection.proxies.Token.initialize(getContext(), __TokenListElement));
 
 		// BEGIN USER CODE
-		throw new com.mendix.systemwideinterfaces.MendixRuntimeException("Java action was not implemented");
+		
+		return TokenReplacer.validateTokens(this.getContext(), this.Text, __TokenList);
 		// END USER CODE
 	}
 
