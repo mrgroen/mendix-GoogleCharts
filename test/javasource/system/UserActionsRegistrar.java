@@ -131,7 +131,7 @@ public class UserActionsRegistrar implements EventHandler
 			component.actionRegistry().registerUserAction(excelimporter.actions.GetHeaderInformationFromExcelFile.class);
 			component.actionRegistry().registerUserAction(excelimporter.actions.RefreshClass.class);
 			component.actionRegistry().registerUserAction(excelimporter.actions.StartImportByTemplate.class);
-			component.actionRegistry().registerUserAction(googlecharts.actions.JsonFormatter.class);
+			component.actionRegistry().registerUserAction(googlecharts.actions.CreateLiteralInitializer.class);
 			component.actionRegistry().registerUserAction(googlecharts.actions.Sin.class);
 			component.actionRegistry().registerUserAction(mxmodelreflection.actions.ReplaceToken.class);
 			component.actionRegistry().registerUserAction(mxmodelreflection.actions.SyncObjects.class);

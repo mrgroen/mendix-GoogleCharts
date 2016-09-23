@@ -100,7 +100,7 @@
     },
     {
       "Name": "/ws/",
-      "DefaultEnabled": false,
+      "DefaultEnabled": true,
       "MatchExactly": false
     },
     {

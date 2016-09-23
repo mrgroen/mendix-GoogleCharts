@@ -20,7 +20,7 @@ public class Result
 	 */
 	public enum MemberNames
 	{
-		json("json");
+		literal("literal");
 
 		private java.lang.String metaName;
 
@@ -108,39 +108,39 @@ public class Result
 		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 	/**
-	 * @return value of json
+	 * @return value of literal
 	 */
-	public final String getjson()
+	public final String getliteral()
 	{
-		return getjson(getContext());
+		return getliteral(getContext());
 	}
 
 	/**
 	 * @param context
-	 * @return value of json
+	 * @return value of literal
 	 */
-	public final String getjson(com.mendix.systemwideinterfaces.core.IContext context)
+	public final String getliteral(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.json.toString());
+		return (String) getMendixObject().getValue(context, MemberNames.literal.toString());
 	}
 
 	/**
-	 * Set value of json
-	 * @param json
+	 * Set value of literal
+	 * @param literal
 	 */
-	public final void setjson(String json)
+	public final void setliteral(String literal)
 	{
-		setjson(getContext(), json);
+		setliteral(getContext(), literal);
 	}
 
 	/**
-	 * Set value of json
+	 * Set value of literal
 	 * @param context
-	 * @param json
+	 * @param literal
 	 */
-	public final void setjson(com.mendix.systemwideinterfaces.core.IContext context, String json)
+	public final void setliteral(com.mendix.systemwideinterfaces.core.IContext context, String literal)
 	{
-		getMendixObject().setValue(context, MemberNames.json.toString(), json);
+		getMendixObject().setValue(context, MemberNames.literal.toString(), literal);
 	}
 
 	/**

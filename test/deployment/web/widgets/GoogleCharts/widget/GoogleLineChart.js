@@ -7,10 +7,10 @@
     ========================
 
     @file      : GoogleLineChart.js
-    @version   : 1.0
-    @author    : Paul Ketelaars
-    @date      : Fri, 19 Jun 2015 12:52:36 GMT
-    @copyright : Ciber
+    @version   : 1.1.0
+    @author    : Paul Ketelaars, Dennis Reep & Marcus Groen
+    @date      : Fri, 23 Sep 2016 12:00:00 GMT
+    @copyright : Incentro
     @license   : Apache 2
 
     Documentation
@@ -28,7 +28,7 @@ define([
     'use strict';
 
     var $ = _jQuery.noConflict(true);
-    
+
     // Declare widget's prototype.
     return declare('GoogleCharts.widget.GoogleLineChart', [_WidgetBase, _TemplatedMixin], {
 
@@ -86,7 +86,7 @@ define([
             this._contextObj = obj;
             this._resetSubscriptions();
             this._updateRendering();
-			
+
 			if (typeof callback !== 'undefined') {
 				callback();
 			}
@@ -117,7 +117,7 @@ define([
         uninitialize: function () {
           // Clean up listeners, helper objects, etc. There is no need to remove listeners added with this.connect / this.subscribe / this.own.
         },
-      
+
         // Using Google ChartWrapper to draw the chart.
         _drawChart: function (data) {
             if (typeof data !== 'undefined' || data.trim() !== '') {
@@ -134,12 +134,14 @@ define([
                 'forceIFrame': (this.forceIFrame !== null) ? this.forceIFrame : undefined,
                 'legend': (this.legend !== '') ? JSON.parse(this.legend) : undefined,
                 'tooltip': (this.tooltip !== '') ? JSON.parse(this.tooltip) : undefined,
+                'hAxis': (this.hAxis !== '') ? JSON.parse(this.hAxis) : undefined,
+                'vAxis': (this.vAxis !== '') ? JSON.parse(this.vAxis) : undefined,
                 'aggregationTarget': (this.aggregationTarget !== '') ? this.aggregationTarget : undefined,
-				'height': (this.height > 0) ? this.height : 300,
-				'vAxes': (this.vaxes) ? {0: {'logScale': false}, 1: {'logScale': false}} : undefined,
-                'series': (this.vaxes) ? {0:{'targetAxisIndex':0},1:{'targetAxisIndex':1}} : undefined 
-				
-				
+                'height': (this.height > 0) ? this.height : 300,
+                'interpolateNulls': this.interpolateNulls,
+                'curveType': (this.curveType !== null) ? this.curveType : undefined,
+                'vAxes': (this.vaxes) ? {0: {'logScale': false}, 1: {'logScale': false}} : undefined,
+                'series': (this.vaxes) ? {0:{'targetAxisIndex':0},1:{'targetAxisIndex':1}} : undefined
               });
               this._chartWrapper = new google.visualization.ChartWrapper({
                 'chartType': 'LineChart',
@@ -152,11 +154,12 @@ define([
               this._showError('No data for chart.');
             }
         },
-      
+
         // Draw chart with JSON input.
         _drawChartWithJson: function () {
           var jsonString = this._contextObj ? this._contextObj.get(this.jsonDataSource) : "";
-          var data = new google.visualization.DataTable(jsonString);
+		  var evalledData = eval('(' + jsonString + ')');
+          var data = new google.visualization.DataTable(evalledData);
           if (this._chartInitialized === true) {
             this._chartWrapper.setDataTable(data);
             this._chartWrapper.draw();
@@ -165,7 +168,7 @@ define([
             this._chartInitialized = true;
           }
         },
-      
+
         // We want to stop events on a mobile device
         _stopBubblingEventOnMobile: function (e) {
             if (typeof document.ontouchstart !== 'undefined') {
@@ -215,7 +218,7 @@ define([
             domStyle.set(this.domNode, 'display', 'block');
             if(!window._googleVisualization || window._googleVisualization === false) {
               this._googleVisualization = lang.hitch(this, function () {
-                if (typeof google !== 'undefined') {
+                if (typeof google !== 'undefined' && typeof google.visualization !== 'undefined') {
                   window._googleVisualization = true;
                   google.load('visualization', '1', {
                     'callback': lang.hitch(this,function(){
@@ -228,11 +231,11 @@ define([
                       console.warn('Timeout loading Google API.');
                       return;
                   }
-                  setTimeout(this._googleVisualization,250);
+                  setTimeout(this._googleVisualization,500);
                 }
               });
               this._startTime = new Date().getTime();
-              setTimeout(this._googleVisualization,100);
+              setTimeout(this._googleVisualization,500);
             } else {
               this._drawChartWithJson();
             }
@@ -301,7 +304,7 @@ define([
                 this._handles = [];
             }
 
-            // When a mendix object exists create subscribtions. 
+            // When a mendix object exists create subscribtions.
             if (this._contextObj) {
 
                 _objectHandle = this.subscribe({

@@ -22,7 +22,6 @@ public class Column
 	{
 		label("label"),
 		_type("_type"),
-		_type_jsonkey("_type_jsonkey"),
 		cols("GoogleCharts.cols");
 
 		private java.lang.String metaName;
@@ -180,42 +179,6 @@ public class Column
 	public final void set_type(com.mendix.systemwideinterfaces.core.IContext context, String _type)
 	{
 		getMendixObject().setValue(context, MemberNames._type.toString(), _type);
-	}
-
-	/**
-	 * @return value of _type_jsonkey
-	 */
-	public final String get_type_jsonkey()
-	{
-		return get_type_jsonkey(getContext());
-	}
-
-	/**
-	 * @param context
-	 * @return value of _type_jsonkey
-	 */
-	public final String get_type_jsonkey(com.mendix.systemwideinterfaces.core.IContext context)
-	{
-		return (String) getMendixObject().getValue(context, MemberNames._type_jsonkey.toString());
-	}
-
-	/**
-	 * Set value of _type_jsonkey
-	 * @param _type_jsonkey
-	 */
-	public final void set_type_jsonkey(String _type_jsonkey)
-	{
-		set_type_jsonkey(getContext(), _type_jsonkey);
-	}
-
-	/**
-	 * Set value of _type_jsonkey
-	 * @param context
-	 * @param _type_jsonkey
-	 */
-	public final void set_type_jsonkey(com.mendix.systemwideinterfaces.core.IContext context, String _type_jsonkey)
-	{
-		getMendixObject().setValue(context, MemberNames._type_jsonkey.toString(), _type_jsonkey);
 	}
 
 	/**

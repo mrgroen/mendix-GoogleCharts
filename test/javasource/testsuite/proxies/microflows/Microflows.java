@@ -15,6 +15,19 @@ import com.mendix.systemwideinterfaces.core.IMendixObject;
 public class Microflows
 {
 	// These are the microflows for the TestSuite module
+	public static java.util.Date convert_LongToDateTime(IContext context, Long _long)
+	{
+		try
+		{
+			Map<String, Object> params = new HashMap<String, Object>();
+			params.put("Long", _long);
+			return (java.util.Date)Core.execute(context, "TestSuite.Convert_LongToDateTime", params);
+		}
+		catch (CoreException e)
+		{
+			throw new MendixRuntimeException(e);
+		}
+	}
 	public static java.util.List<testsuite.proxies.Color> dSL_Color(IContext context)
 	{
 		try
