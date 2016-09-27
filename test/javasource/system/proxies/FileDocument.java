@@ -77,8 +77,14 @@ public class FileDocument
 		if (com.mendix.core.Core.isSubClassOf("System.Image", mendixObject.getType()))
 			return system.proxies.Image.initialize(context, mendixObject);
 
+		if (com.mendix.core.Core.isSubClassOf("DatabaseReplication.ImportExportFile", mendixObject.getType()))
+			return databasereplication.proxies.ImportExportFile.initialize(context, mendixObject);
+
 		if (com.mendix.core.Core.isSubClassOf("ExcelImporter.TemplateDocument", mendixObject.getType()))
 			return excelimporter.proxies.TemplateDocument.initialize(context, mendixObject);
+
+		if (com.mendix.core.Core.isSubClassOf("DatabaseReplication.XMLDocumentTM", mendixObject.getType()))
+			return databasereplication.proxies.XMLDocumentTM.initialize(context, mendixObject);
 
 		if (com.mendix.core.Core.isSubClassOf("ExcelImporter.XMLDocumentTemplate", mendixObject.getType()))
 			return excelimporter.proxies.XMLDocumentTemplate.initialize(context, mendixObject);
