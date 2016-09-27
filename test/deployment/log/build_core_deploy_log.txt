@@ -1,7 +1,7 @@
-Buildfile: C:\GitHub\GoogleCharts\test\deployment\build_core.xml
+Buildfile: C:\Users\Grim Reaper\Desktop\GoogleCharts-master\test\deployment\build_core.xml
 
 deploy:
-    [unzip] Expanding: C:\Program Files\Mendix\6.8.1\modeler\deployment.mxz into C:\GitHub\GoogleCharts\test\deployment
+    [unzip] Expanding: C:\Program Files\Mendix\6.8.1\modeler\deployment.mxz into C:\Users\Grim Reaper\Desktop\GoogleCharts-master\test\deployment
 
 BUILD SUCCESSFUL
 Total time: 0 seconds

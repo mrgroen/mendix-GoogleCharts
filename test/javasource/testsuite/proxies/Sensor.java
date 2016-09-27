@@ -123,7 +123,7 @@ public class Sensor
 	/**
 	 * @return value of UTC
 	 */
-	public final java.util.Date getUTC()
+	public final Long getUTC()
 	{
 		return getUTC(getContext());
 	}
@@ -132,16 +132,16 @@ public class Sensor
 	 * @param context
 	 * @return value of UTC
 	 */
-	public final java.util.Date getUTC(com.mendix.systemwideinterfaces.core.IContext context)
+	public final Long getUTC(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (java.util.Date) getMendixObject().getValue(context, MemberNames.UTC.toString());
+		return (Long) getMendixObject().getValue(context, MemberNames.UTC.toString());
 	}
 
 	/**
 	 * Set value of UTC
 	 * @param utc
 	 */
-	public final void setUTC(java.util.Date utc)
+	public final void setUTC(Long utc)
 	{
 		setUTC(getContext(), utc);
 	}
@@ -151,7 +151,7 @@ public class Sensor
 	 * @param context
 	 * @param utc
 	 */
-	public final void setUTC(com.mendix.systemwideinterfaces.core.IContext context, java.util.Date utc)
+	public final void setUTC(com.mendix.systemwideinterfaces.core.IContext context, Long utc)
 	{
 		getMendixObject().setValue(context, MemberNames.UTC.toString(), utc);
 	}

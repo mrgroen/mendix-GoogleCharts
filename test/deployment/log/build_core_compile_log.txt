@@ -1,10 +1,10 @@
-Buildfile: C:\GitHub\GoogleCharts\test\deployment\build_core.xml
+Buildfile: C:\Users\Grim Reaper\Desktop\GoogleCharts-master\test\deployment\build_core.xml
 
 compile:
-    [javac] Compiling 3 source files to C:\GitHub\GoogleCharts\test\deployment\run\bin
-    [javac] Note: C:\GitHub\GoogleCharts\test\javasource\com\mendix\core\Core.java uses or overrides a deprecated API.
+    [javac] Compiling 2 source files to C:\Users\Grim Reaper\Desktop\GoogleCharts-master\test\deployment\run\bin
+    [javac] Note: C:\Users\Grim Reaper\Desktop\GoogleCharts-master\test\javasource\com\mendix\core\Core.java uses or overrides a deprecated API.
     [javac] Note: Recompile with -Xlint:deprecation for details.
-    [javac] Note: C:\GitHub\GoogleCharts\test\javasource\com\mendix\core\Core.java uses unchecked or unsafe operations.
+    [javac] Note: C:\Users\Grim Reaper\Desktop\GoogleCharts-master\test\javasource\com\mendix\core\Core.java uses unchecked or unsafe operations.
     [javac] Note: Recompile with -Xlint:unchecked for details.
 
 build:
@@ -13,11 +13,11 @@ build:
       [bnd]  Split package, multiple jars provide the same package:com/mendix/core
       [bnd] Use Import/Export Package directive -split-package:=(merge-first|merge-last|error|first) to get rid of this warning
       [bnd] Package found in   [Jar:com.mendix.mxruntime, Jar:run]
-      [bnd] Class path         [Jar:biz.aQute.bnd.bndlib, Jar:org.scala-lang.scala-library, Jar:com.mendix.datastorage-api, Jar:com.mendix.json, Jar:com.mendix.logging, Jar:com.mendix.m2ee-api, Jar:com.mendix.mxruntime, Jar:com.mendix.integration, Jar:org.osgi.compendium, Jar:com.mendix.webui, Jar:javax.servlet, Jar:antisamy-1.5.3, Jar:com.google.guava-14.0.1, Jar:com.springsource.javax.activation-1.1.1, Jar:com.springsource.org.apache.batik.css-1.7.0, Jar:com.springsource.org.apache.commons.lang-2.5.0, Jar:com.sun.mail.javax.mail-1.4.5, Jar:commons-email-1.3.1, Jar:commons-httpclient-3.1, Jar:commons-io-2.3, Jar:commons-lang-2.5, Jar:dom4j-1.6.1, Jar:fontbox-1.8.5, Jar:javax.xml.stream-1.0.1, Jar:jcifs-1.3.18, Jar:jempbox-1.8.5, Jar:joda-time-1.6.2, Jar:nekohtml, Jar:org.apache.commons.fileupload-1.2.1, Jar:org.apache.commons.io-2.3.0, Jar:org.apache.commons.lang3, Jar:org.apache.servicemix.bundles.commons-codec-1.3.0, Jar:org.apache.servicemix.bundles.xalan-2.7.1, Jar:org.apache.servicemix.bundles.xmlbeans-2.5.0, Jar:pdfbox-1.8.5, Jar:poi-3.10-FINAL-20140208, Jar:poi-ooxml-3.10-FINAL-20140208, Jar:poi-ooxml-schemas-3.10-FINAL-20140208, Jar:replication, Jar:xml-apis-ext, Jar:run]
-      [bnd] # project (project.jar) 358 
+      [bnd] Class path         [Jar:biz.aQute.bnd.bndlib, Jar:org.scala-lang.scala-library, Jar:com.mendix.datastorage-api, Jar:com.mendix.json, Jar:com.mendix.logging, Jar:com.mendix.m2ee-api, Jar:com.mendix.mxruntime, Jar:com.mendix.integration, Jar:org.osgi.compendium, Jar:com.mendix.webui, Jar:javax.servlet, Jar:antisamy-1.5.3, Jar:axis2-kernel-1.0, Jar:com.google.guava-14.0.1, Jar:com.hxtt.sql.acess_jdbc40, Jar:com.ibm.jt400, Jar:com.mendix.ojdbc6-11.2.0, Jar:com.mendix.postgresql.jdbc4-9.2.1002, Jar:com.mendix.sqljdbc4-4.0.2206, Jar:com.springsource.javax.activation-1.1.1, Jar:com.springsource.org.apache.batik.css-1.7.0, Jar:com.springsource.org.apache.commons.lang-2.5.0, Jar:com.sun.mail.javax.mail-1.4.5, Jar:commons-email-1.3.1, Jar:commons-httpclient-3.1, Jar:commons-io-2.3, Jar:commons-lang-2.5, Jar:dom4j-1.6.1, Jar:fontbox-1.8.5, Jar:javax.xml.stream-1.0.1, Jar:jcifs-1.3.18, Jar:jempbox-1.8.5, Jar:joda-time-1.6.2, Jar:nekohtml, Jar:org.apache.commons.fileupload-1.2.1, Jar:org.apache.commons.io-2.3.0, Jar:org.apache.commons.lang3, Jar:org.apache.servicemix.bundles.commons-codec-1.3.0, Jar:org.apache.servicemix.bundles.xalan-2.7.1, Jar:org.apache.servicemix.bundles.xmlbeans-2.5.0, Jar:pdfbox-1.8.5, Jar:poi-3.10-FINAL-20140208, Jar:poi-ooxml-3.10-FINAL-20140208, Jar:poi-ooxml-schemas-3.10-FINAL-20140208, Jar:replication, Jar:xml-apis-ext, Jar:run]
+      [bnd] # project (project.jar) 383 
 
 BUILD SUCCESSFUL
-Total time: 4 seconds
+Total time: 5 seconds
 
 
 

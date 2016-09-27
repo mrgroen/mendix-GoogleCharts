@@ -138,6 +138,7 @@ public class UserActionsRegistrar implements EventHandler
 			component.actionRegistry().registerUserAction(mxmodelreflection.actions.TestThePattern.class);
 			component.actionRegistry().registerUserAction(mxmodelreflection.actions.ValidateTokensInMessage.class);
 			component.actionRegistry().registerUserAction(system.actions.VerifyPassword.class);
+			component.actionRegistry().registerUserAction(testsuite.actions.Long1000.class);
 		}
 	}
 }
