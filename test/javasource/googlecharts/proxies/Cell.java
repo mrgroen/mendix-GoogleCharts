@@ -23,7 +23,6 @@ public class Cell
 		DecimalValue("DecimalValue"),
 		StringValue("StringValue"),
 		DateTimeValue("DateTimeValue"),
-		format("format"),
 		c("GoogleCharts.c");
 
 		private java.lang.String metaName;
@@ -217,42 +216,6 @@ public class Cell
 	public final void setDateTimeValue(com.mendix.systemwideinterfaces.core.IContext context, java.util.Date datetimevalue)
 	{
 		getMendixObject().setValue(context, MemberNames.DateTimeValue.toString(), datetimevalue);
-	}
-
-	/**
-	 * @return value of format
-	 */
-	public final String getformat()
-	{
-		return getformat(getContext());
-	}
-
-	/**
-	 * @param context
-	 * @return value of format
-	 */
-	public final String getformat(com.mendix.systemwideinterfaces.core.IContext context)
-	{
-		return (String) getMendixObject().getValue(context, MemberNames.format.toString());
-	}
-
-	/**
-	 * Set value of format
-	 * @param format
-	 */
-	public final void setformat(String format)
-	{
-		setformat(getContext(), format);
-	}
-
-	/**
-	 * Set value of format
-	 * @param context
-	 * @param format
-	 */
-	public final void setformat(com.mendix.systemwideinterfaces.core.IContext context, String format)
-	{
-		getMendixObject().setValue(context, MemberNames.format.toString(), format);
 	}
 
 	/**

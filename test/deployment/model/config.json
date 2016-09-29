@@ -8,7 +8,7 @@
     "DatabaseUseIntegratedSecurity": "False",
     "ApplicationRootUrl": "http://localhost:8080/",
     "ScheduledEventExecution": "Specified",
-    "MyScheduledEvents": "CommunityCommons.releaseOldLocks,EmailTemplate.Cleanup,EmailTemplate.SendQueuedEmails"
+    "MyScheduledEvents": "CommunityCommons.releaseOldLocks,EmailTemplate.Cleanup,EmailTemplate.SendQueuedEmails,DatabaseReplication.SE_ImportActiveActivities"
   },
   "Constants": {
     "CommunityCommons.enableReleaseLockEvent": "True",

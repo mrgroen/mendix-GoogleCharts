@@ -9,12 +9,22 @@
 
 package googlecharts.actions;
 
+import googlecharts.proxies.Cell;
+import googlecharts.proxies.Column;
+import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 import com.mendix.core.Core;
+import com.mendix.core.CoreException;
 import com.mendix.logging.ILogNode;
+import com.mendix.systemwideinterfaces.MendixRuntimeException;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
 import com.mendix.systemwideinterfaces.core.IMendixObject;
@@ -40,88 +50,54 @@ public class CreateLiteralInitializer extends CustomJavaAction<String>
 		this.ParameterParameter1 = __ParameterParameter1 == null ? null : googlecharts.proxies.ChartDataSource.initialize(getContext(), __ParameterParameter1);
 
 		// BEGIN USER CODE
+		final int BATCH_SIZE = 1000;
 		ILogNode logger = Core.getLogger("GoogleCharts");
-		IContext context = getContext();
-		ArrayList<Object> values = new ArrayList<>();
-
-		String literalOutput = "{\"rows\": [";
-		
+		IContext context = this.getContext().createSudoClone(); // full access
+		StringBuilder literalOutput = new StringBuilder();
+		literalOutput.append("{\"rows\":[");
 		List<IMendixObject> rows = Core.retrieveByPath(context, __ParameterParameter1, googlecharts.proxies.Row.MemberNames.rows.toString());
+		logger.info("rowsSize="+rows.size());
+		ExecutorService exec = Executors.newFixedThreadPool(10);
+		List<List<IMendixObject>> partitions = MyPartition.partition(rows, BATCH_SIZE);
+		logger.info("partitions="+partitions.size());
+		for(List<IMendixObject> partition : partitions){
+			logger.info("partitionSize="+partition.size());
+			List<Future<String>> results = new ArrayList<Future<String>>();
+			for(IMendixObject row : partition){
+				results.add(exec.submit(new MyMinion(context, row)));
+			}
+			for(Future<String> result : results) {
+				try {
+					literalOutput.append(result.get());
+				} catch (InterruptedException | ExecutionException e) {
+					throw new MendixRuntimeException("task interrupted", e);
+				}
+			}
+			results.clear();
+			context.endTransaction();
+			context.startTransaction();
+		}
+		rows.clear();
+		try {
+			exec.shutdown();
+			exec.awaitTermination(5, TimeUnit.SECONDS);
+		} catch (InterruptedException e) {
+			throw new MendixRuntimeException("tasks interrupted", e);
+		} finally {
+		    exec.shutdownNow();
+		}
+		literalOutput = literalOutput.delete(literalOutput.length()-1, literalOutput.length()); // remove trailing stuff
+		literalOutput.append("],\"cols\":[");
 		List<IMendixObject> columns = Core.retrieveByPath(context, __ParameterParameter1, googlecharts.proxies.Column.MemberNames.cols.toString());
-		
-		for(IMendixObject row : rows){
-			List<IMendixObject> cells = Core.retrieveByPath(context, row, googlecharts.proxies.Cell.MemberNames.c.toString());
-			values = new ArrayList<>(); // clear values
-			String format = "";
-			
-			for(IMendixObject cell : cells){
-				if(cell.getValue(context, "StringValue") != null){
-					Object stringValue = cell.getValue(context, "StringValue");
-					logger.debug("stringValue = " + stringValue);
-					values.add(stringValue);
-				} else if(cell.getValue(context, "DateTimeValue") != null){
-					// get DateTime value
-					Object dateTimeValue = cell.getValue(context, "DateTimeValue");
-					logger.debug("dateTimeValue = " + dateTimeValue);
-					values.add(dateTimeValue);
-					// check for formatting
-					Object formatValue = cell.getValue(context, "format");
-					if (formatValue != null) {
-						format = formatValue.toString();
-					}
-				} else {
-					Object decimalValue = cell.getValue(context, "DecimalValue");
-					logger.debug("decimalValue = " + decimalValue);
-					values.add(decimalValue);
-				}
-			}
-			literalOutput += "{\"c\": [";
-			for(Object value : values){
-				if(value instanceof Date){
-					/*
-					DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
-					if(format != ""){
-						df = new SimpleDateFormat(format);
-					}
-					jsonOutput += "{\"v\": \"" + df.format((Date)val) + "\"},";
-					*/
-					Date valueDate = (Date)value;
-					Calendar cal = Calendar.getInstance();
-				    cal.setTime(valueDate);
-				    int year = cal.get(Calendar.YEAR);
-				    int month = cal.get(Calendar.MONTH) + 1; // Jan = 0, Dec = 11
-				    int day = cal.get(Calendar.DAY_OF_MONTH);
-				    int hour = cal.get(Calendar.HOUR_OF_DAY);
-				    int minute = cal.get(Calendar.MINUTE);
-				    int second = cal.get(Calendar.SECOND);
-				    int millisecond = cal.get(Calendar.MILLISECOND);
-					literalOutput += "{\"v\": ne"+"w D"+"ate("+year+", "+month+", "+day+", "
-				    +hour+", "+minute+", "+second+", "+millisecond+")},";
-					
-				} else if (!(value instanceof String)){
-					literalOutput += "{\"v\": " + value + "},";
-				} else {
-					literalOutput += "{\"v\": \"" + value + "\"},";
-				}
-			}
-			literalOutput = literalOutput.substring(0, literalOutput.length()-1);
-			literalOutput += "]},";
-		}
-		literalOutput = literalOutput.substring(0, literalOutput.length()-2);
-		literalOutput += "}]";
-
-		literalOutput += ",\"cols\": [";
-		
 		for(IMendixObject column : columns){
-			String columnType = column.getValue(context, "_type").toString().toLowerCase();
-			literalOutput += "{\"label\": \"" + column.getValue(context, "label").toString() +"\",";
-			literalOutput += "\"type\": \"" + columnType +"\"},";
+			Column columnProxy = googlecharts.proxies.Column.initialize(context, column);
+			literalOutput.append("{\"label\":\"" + columnProxy.getlabel() +"\",");
+			literalOutput.append("\"type\":\"" + columnProxy.get_type().toLowerCase() +"\"},");
 		}
-		literalOutput = literalOutput.substring(0, literalOutput.length()-1); // remove trailing comma
-		
-		literalOutput += "]}";
-		
-		return literalOutput;
+		columns.clear();
+		literalOutput.delete(literalOutput.length()-1, literalOutput.length()); // remove trailing stuff
+		literalOutput.append("]}");
+		return literalOutput.toString();
 		// END USER CODE
 	}
 
@@ -135,5 +111,113 @@ public class CreateLiteralInitializer extends CustomJavaAction<String>
 	}
 
 	// BEGIN EXTRA CODE
+	public class MyMinion implements Callable<String> {
+		private IContext context;
+	    private IMendixObject row;
+
+	    MyMinion(IContext context, IMendixObject row){
+	    	this.context = context;
+	        this.row = row;
+	    }
+
+	    public String call() {
+	    	StringBuilder s = new StringBuilder();
+	    	Calendar cal = Calendar.getInstance();
+	    	/*
+	    	List<IMendixObject> cells;
+	    	try {
+	    		cells = Core.retrieveXPathQuery(context, "//"+googlecharts.proxies.Cell.entityName+"["+googlecharts.proxies.Cell.MemberNames.c+"="+row.getId().getEntityId()+"]");
+	    	} catch (CoreException e) {
+	    		throw new MendixRuntimeException(e);
+	    	}
+	    	*/
+			List<IMendixObject> cells = Core.retrieveByPath(this.context, this.row, googlecharts.proxies.Cell.MemberNames.c.toString()); // expensive call, maybe retrieve all cells on the highest level?
+			s.append("{\"c\":[");
+			for(IMendixObject cell : cells){
+				Cell cellProxy = googlecharts.proxies.Cell.initialize(context, cell);
+				if(cellProxy.getStringValue() != null){
+					s.append("{\"v\":\"" + cellProxy.getStringValue() + "\"},");
+				} else if(cellProxy.getDateTimeValue() != null){
+				    cal.setTime(cellProxy.getDateTimeValue());
+					s.append("{\"v\":ne"+"w D"+"ate("+cal.get(Calendar.YEAR)+","+(cal.get(Calendar.MONTH) + 1)+","+cal.get(Calendar.DAY_OF_MONTH)+","
+				    +cal.get(Calendar.HOUR_OF_DAY)+","+cal.get(Calendar.MINUTE)+","+cal.get(Calendar.SECOND)+","+cal.get(Calendar.MILLISECOND)+")},");
+				} else {
+					s.append("{\"v\":" + cellProxy.getDecimalValue() + "},");
+				}
+			}
+			cells.clear(); // clear list
+			s.delete(s.length()-1, s.length()); // remove trailing stuff
+			s.append("]},");
+	        return s.toString();
+	    }
+	}
+	public static class MyPartition {
+		/**
+	     * Returns consecutive {@linkplain List#subList(int, int) sublists} of a list,
+	     * each of the same size (the final list may be smaller). For example,
+	     * partitioning a list containing {@code [a, b, c, d, e]} with a partition
+	     * size of 3 yields {@code [[a, b, c], [d, e]]} -- an outer list containing
+	     * two inner lists of three and two elements, all in the original order.
+	     *
+	     * <p>The outer list is unmodifiable, but reflects the latest state of the
+	     * source list. The inner lists are sublist views of the original list,
+	     * produced on demand using {@link List#subList(int, int)}, and are subject
+	     * to all the usual caveats about modification as explained in that API.</p>
+	     *
+	     * * Adapted from http://code.google.com/p/google-collections/ 
+	     *
+	     * @param list the list to return consecutive sublists of
+	     * @param size the desired size of each sublist (the last may be
+	     *     smaller)
+	     * @return a list of consecutive sublists
+	     * @throws IllegalArgumentException if {@code partitionSize} is nonpositive
+	     * 
+	     */
+	    public static <T> List<List<T>> partition(List<T> list, int size) {
+	   
+	     if (list == null)
+	        throw new NullPointerException("'list' must not be null");
+	      if (!(size > 0))
+	        throw new IllegalArgumentException("'size' must be greater than 0");
+
+	      return new Partition<T>(list, size);
+	    }
+
+	    private static class Partition<T> extends AbstractList<List<T>> {
+
+	      final List<T> list;
+	      final int size;
+
+	      Partition(List<T> list, int size) {
+	        this.list = list;
+	        this.size = size;
+	      }
+
+	      @Override
+	      public List<T> get(int index) {
+	        int listSize = size();
+	        if (listSize < 0)
+	          throw new IllegalArgumentException("negative size: " + listSize);
+	        if (index < 0)
+	          throw new IndexOutOfBoundsException("index " + index + " must not be negative");
+	        if (index >= listSize)
+	          throw new IndexOutOfBoundsException("index " + index + " must be less than size " + listSize);
+	        int start = index * size;
+	        int end = Math.min(start + size, list.size());
+	        return list.subList(start, end);
+	      }
+
+	      @Override
+	      public int size() {
+	        return (list.size() + size - 1) / size;
+	      }
+
+	      @Override
+	      public boolean isEmpty() {
+	        return list.isEmpty();
+	      }
+	    }
+
+	} 
 	// END EXTRA CODE
 }
