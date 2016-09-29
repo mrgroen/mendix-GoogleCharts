@@ -218,7 +218,7 @@ define([
             domStyle.set(this.domNode, 'display', 'block');
             if(!window._googleVisualization || window._googleVisualization === false) {
               this._googleVisualization = lang.hitch(this, function () {
-                if (typeof google !== 'undefined' && typeof google.visualization !== 'undefined') {
+                if (typeof google !== 'undefined') {
                   window._googleVisualization = true;
                   google.load('visualization', '1', {
                     'callback': lang.hitch(this,function(){
