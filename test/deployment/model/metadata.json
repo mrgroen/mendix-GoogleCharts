@@ -86,11 +86,6 @@
       "Description": "Start the scheduled events which daily imports all ScheduledImportActivites"
     }
   ],
-  "Configuration": {
-    "SourceDatabaseType": "HSQLDB",
-    "SourceDatabaseName": "default",
-    "SourceBuiltInDatabasePath": "model/sampledata/data/database"
-  },
   "RequestHandlers": [
     {
       "Name": "/api/",
