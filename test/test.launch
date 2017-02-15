@@ -11,7 +11,7 @@
 <mapEntry key="M2EE_ADMIN_PORT" value="8090"/>
 <mapEntry key="M2EE_ADMIN_LISTEN_ADDRESSES" value="*"/>
 <mapEntry key="M2EE_CONSOLE_PATH" value="C:/Program Files/Mendix/6.8.1/modeler/MendixConsoleLog.exe"/>
-<mapEntry key="MXCONSOLE_BASE_PATH" value="C:/Users/Grim Reaper/Desktop/Graphs/GoogleCharts/test/deployment"/>
+<mapEntry key="MXCONSOLE_BASE_PATH" value="C:/GitHub/GoogleCharts/test/deployment"/>
 <mapEntry key="MXCONSOLE_RUNTIME_PATH" value="C:/Program Files/Mendix/6.8.1/runtime"/>
 <mapEntry key="MXCONSOLE_RUNTIME_PORT" value="8080"/>
 <mapEntry key="MXCONSOLE_RUNTIME_LISTEN_ADDRESSES" value="*"/>
@@ -27,6 +27,6 @@
 <booleanAttribute key="org.eclipse.jdt.launching.DEFAULT_CLASSPATH" value="false"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="org.apache.felix.main.Main"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="test"/>
-<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Djava.net.preferIPv4Stack=true -Djava.library.path=&quot;C:/Program Files/Mendix/6.8.1/runtime/lib/x64;C:/Users/Grim Reaper/Desktop/Graphs/GoogleCharts/test/deployment/model/lib/userlib&quot; -Dfile.encoding=UTF-8 -Djava.io.tmpdir=&quot;C:/Users/Grim Reaper/Desktop/Graphs/GoogleCharts/test/deployment/data/tmp&quot; -Xmx1024M -Djava.security.policy==&quot;C:\Users\Grim Reaper\Desktop\Graphs\GoogleCharts\test\deployment\data\.policy&quot; -Dorg.osgi.framework.security=&quot;osgi&quot; -Dcom.mendix.policy.file=&quot;C:\Users\Grim Reaper\Desktop\Graphs\GoogleCharts\test\deployment\data\security.policy&quot; -Dfelix.config.properties=file:run/felixconfig.properties -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 -Dorg.osgi.service.http.port=8080"/>
-<stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="C:/Users/Grim Reaper/Desktop/Graphs/GoogleCharts/test/deployment"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Djava.net.preferIPv4Stack=true -Djava.library.path=&quot;C:/Program Files/Mendix/6.8.1/runtime/lib/x86;C:/GitHub/GoogleCharts/test/deployment/model/lib/userlib&quot; -Dfile.encoding=UTF-8 -Djava.io.tmpdir=&quot;C:/GitHub/GoogleCharts/test/deployment/data/tmp&quot; -Xmx1024M -Djava.security.policy==&quot;C:\GitHub\GoogleCharts\test\deployment\data\.policy&quot; -Dorg.osgi.framework.security=&quot;osgi&quot; -Dcom.mendix.policy.file=&quot;C:\GitHub\GoogleCharts\test\deployment\data\security.policy&quot; -Dfelix.config.properties=file:run/felixconfig.properties -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 -Dorg.osgi.service.http.port=8080"/>
+<stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="C:/GitHub/GoogleCharts/test/deployment"/>
 </launchConfiguration>
