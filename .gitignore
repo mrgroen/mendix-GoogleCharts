@@ -1,8 +1,9 @@
-test/deployment/
+test/deployment
 test/.classpath
 test/.project
 test/.classpath
 test/.project
+test/*.launch
 *.launch
 *.tmp
 *.lock

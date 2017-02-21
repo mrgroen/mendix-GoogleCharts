@@ -24,7 +24,7 @@ define([
     'dojo/_base/declare', 'mxui/widget/_WidgetBase', 'dijit/_TemplatedMixin',
     'mxui/dom', 'dojo/dom', 'dojo/query', 'dojo/dom-prop', 'dojo/dom-geometry', 'dojo/dom-class', 'dojo/dom-style', 'dojo/dom-construct', 'dojo/_base/array', 'dojo/_base/lang', 'dojo/html', 'dojo/_base/event',
     'GoogleCharts/lib/jquery-1.11.2', 'dojo/text!GoogleCharts/widget/template/GoogleChart.html'
-], function (declare, _WidgetBase, _TemplatedMixin, dom, dojoDom, domQuery, domProp, domGeom, domClass, domStyle, domConstruct, dojoArray, lang, html, event, _jQuery, widgetTemplate) {
+], function(declare, _WidgetBase, _TemplatedMixin, dom, dojoDom, domQuery, domProp, domGeom, domClass, domStyle, domConstruct, dojoArray, lang, html, event, _jQuery, widgetTemplate) {
     'use strict';
 
     var $ = _jQuery.noConflict(true);
@@ -66,190 +66,193 @@ define([
         _chartInitialized: false,
 
         // dojo.declare.constructor is called to construct the widget instance. Implement to initialize non-primitive properties.
-        constructor: function () {
+        constructor: function() {
             this._handles = [];
             if (!window._googleLoading || window._googleLoading === false) {
                 window._googleLoading = true;
-                this._googleApiLoadScript = dom.script({'src' : 'https://www.google.com/jsapi', 'id' : 'GoogleApiLoadScript'});
+                this._googleApiLoadScript = dom.script({
+                    'src': 'https://www.google.com/jsapi',
+                    'id': 'GoogleApiLoadScript'
+                });
                 document.getElementsByTagName('head')[0].appendChild(this._googleApiLoadScript);
             }
         },
 
         // dijit._WidgetBase.postCreate is called after constructing the widget. Implement to do extra setup work.
-        postCreate: function () {
-          console.debug(this.id + '.postCreate');
-          this._updateRendering();
-          this._setupEvents();
+        postCreate: function() {
+            console.debug(this.id + '.postCreate');
+            this._updateRendering();
+            this._setupEvents();
         },
 
         // mxui.widget._WidgetBase.update is called when context is changed or initialized. Implement to re-render and / or fetch data.
-        update: function (obj, callback) {
+        update: function(obj, callback) {
             console.debug(this.id + '.update');
 
             this._contextObj = obj;
             this._resetSubscriptions();
             this._updateRendering();
 
-			if (typeof callback !== 'undefined') {
-				callback();
-			}
+            if (typeof callback !== 'undefined') {
+                callback();
+            }
         },
 
         // mxui.widget._WidgetBase.enable is called when the widget should enable editing. Implement to enable editing if widget is input widget.
-        enable: function () {},
+        enable: function() {},
 
         // mxui.widget._WidgetBase.enable is called when the widget should disable editing. Implement to disable editing if widget is input widget.
-        disable: function () {},
+        disable: function() {},
 
         // mxui.widget._WidgetBase.resize is called when the page's layout is recalculated. Implement to do sizing calculations. Prefer using CSS instead.
-        resize: function (box) {
-          if (this._chartWrapper !== null) {
-            // Reset width to be able to shrink till 250.
-            this._chartWrapper.setOption('width', 250);
-            this._chartWrapper.draw();
-            // Set chart width to parent width.
-            var parentWidth = $('#' + this.id).parent().width();
-            if (parentWidth > 250) {
-              this._chartWrapper.setOption('width', parentWidth);
-              this._chartWrapper.draw();
+        resize: function(box) {
+            if (this._chartWrapper !== null) {
+                // Reset width to be able to shrink till 250.
+                this._chartWrapper.setOption('width', 250);
+                this._chartWrapper.draw();
+                // Set chart width to parent width.
+                var parentWidth = $('#' + this.id).parent().width();
+                if (parentWidth > 250) {
+                    this._chartWrapper.setOption('width', parentWidth);
+                    this._chartWrapper.draw();
+                }
             }
-          }
         },
 
         // mxui.widget._WidgetBase.uninitialize is called when the widget is destroyed. Implement to do special tear-down work.
-        uninitialize: function () {
-          // Clean up listeners, helper objects, etc. There is no need to remove listeners added with this.connect / this.subscribe / this.own.
+        uninitialize: function() {
+            // Clean up listeners, helper objects, etc. There is no need to remove listeners added with this.connect / this.subscribe / this.own.
         },
 
         // Using Google ChartWrapper to draw the chart.
-        _drawChart: function (data) {
+        _drawChart: function(data) {
             if (typeof data !== 'undefined' || data.trim() !== '') {
-              var options = $.extend({},{
-                'animation': (this.animation !== false) ? {
-                  'startup': this.animationStartup,
-                  'duration': this.animationDuration,
-                  'easing': (this.animationEasing !== '') ? this.animationEasing : undefined
-                } : undefined,
-                'title': (this.title !== '') ? this.title : undefined,
-                'backgroundColor': (this.backgroundColor !== '') ? this.backgroundColor : undefined,
-                'colors': (this.colors !== '') ? JSON.parse(this.colors) : undefined,
-                'dataOpacity': (this.dataOpacity !== '') ? this.dataOpacity : undefined,
-                'chartArea': (this.chartArea !== '') ? JSON.parse(this.chartArea) : undefined,
-                'enableInteractivity': (this.enableInteractivity !== null) ? this.enableInteractivity : undefined,
-                'forceIFrame': (this.forceIFrame !== null) ? this.forceIFrame : undefined,
-                'legend': (this.legend !== '') ? JSON.parse(this.legend) : undefined,
-                'tooltip': (this.tooltip !== '') ? JSON.parse(this.tooltip) : undefined,
-                'isStacked': (this.isStacked !== '') ? JSON.parse(this.isStacked) : undefined,
-                'vAxis': (this.vAxis !== '') ? JSON.parse(this.vAxis) : undefined,
-                'hAxis': (this.hAxis !== '') ? JSON.parse(this.hAxis) : undefined,
-				'height': (this.height > 0) ? this.height : 400
-              });
-              this._chartWrapper = new google.visualization.ChartWrapper({
-                'chartType': 'ColumnChart',
-                'dataTable': data,
-                'options': options,
-                'containerId': this.id
-              });
-              this._chartWrapper.draw();
+                var options = $.extend({}, {
+                    'animation': (this.animation !== false) ? {
+                        'startup': this.animationStartup,
+                        'duration': this.animationDuration,
+                        'easing': (this.animationEasing !== '') ? this.animationEasing : undefined
+                    } : undefined,
+                    'title': (this.title !== '') ? this.title : undefined,
+                    'backgroundColor': (this.backgroundColor !== '') ? this.backgroundColor : undefined,
+                    'colors': (this.colors !== '') ? JSON.parse(this.colors) : undefined,
+                    'dataOpacity': (this.dataOpacity !== '') ? this.dataOpacity : undefined,
+                    'chartArea': (this.chartArea !== '') ? JSON.parse(this.chartArea) : undefined,
+                    'enableInteractivity': (this.enableInteractivity !== null) ? this.enableInteractivity : undefined,
+                    'forceIFrame': (this.forceIFrame !== null) ? this.forceIFrame : undefined,
+                    'legend': (this.legend !== '') ? JSON.parse(this.legend) : undefined,
+                    'tooltip': (this.tooltip !== '') ? JSON.parse(this.tooltip) : undefined,
+                    'isStacked': (this.isStacked !== '') ? JSON.parse(this.isStacked) : undefined,
+                    'vAxis': (this.vAxis !== '') ? JSON.parse(this.vAxis) : undefined,
+                    'hAxis': (this.hAxis !== '') ? JSON.parse(this.hAxis) : undefined,
+                    'height': (this.height > 0) ? this.height : 400
+                });
+                this._chartWrapper = new google.visualization.ChartWrapper({
+                    'chartType': 'ColumnChart',
+                    'dataTable': data,
+                    'options': options,
+                    'containerId': this.id
+                });
+                this._chartWrapper.draw();
             } else {
-              this._showError('No data for chart.');
+                this._showError('No data for chart.');
             }
         },
 
         // Draw chart with JSON input.
-        _drawChartWithJson: function () {
-          var jsonString = this._contextObj ? this._contextObj.get(this.jsonDataSource) : "";
-          var data = new google.visualization.DataTable(jsonString);
-          if (this._chartInitialized === true) {
-            this._chartWrapper.setDataTable(data);
-            this._chartWrapper.draw();
-          } else {
-            this._drawChart(data);
-            this._chartInitialized = true;
-          }
+        _drawChartWithJson: function() {
+            var jsonString = this._contextObj ? this._contextObj.get(this.jsonDataSource) : "";
+            var data = new google.visualization.DataTable(jsonString);
+            if (this._chartInitialized === true) {
+                this._chartWrapper.setDataTable(data);
+                this._chartWrapper.draw();
+            } else {
+                this._drawChart(data);
+                this._chartInitialized = true;
+            }
         },
 
         // We want to stop events on a mobile device
-        _stopBubblingEventOnMobile: function (e) {
+        _stopBubblingEventOnMobile: function(e) {
             if (typeof document.ontouchstart !== 'undefined') {
                 event.stop(e);
             }
         },
 
         // Attach events to HTML dom elements
-        _setupEvents: function () {
-          /*
-            this.connect(this.colorSelectNode, 'change', function (e) {
-                // Function from mendix object to set an attribute.
-                this._contextObj.set(this.backgroundColor, this.colorSelectNode.value);
-            });
+        _setupEvents: function() {
+            /*
+              this.connect(this.colorSelectNode, 'change', function (e) {
+                  // Function from mendix object to set an attribute.
+                  this._contextObj.set(this.backgroundColor, this.colorSelectNode.value);
+              });
 
-            this.connect(this.infoTextNode, 'click', function (e) {
+              this.connect(this.infoTextNode, 'click', function (e) {
 
-                // Only on mobile stop event bubbling!
-                this._stopBubblingEventOnMobile(e);
+                  // Only on mobile stop event bubbling!
+                  this._stopBubblingEventOnMobile(e);
 
-                // If a microflow has been set execute the microflow on a click.
-                if (this.mfToExecute !== '') {
-                    mx.data.action({
-                        params: {
-                            applyto: 'selection',
-                            actionname: this.mfToExecute,
-                            guids: [this._contextObj.getGuid()]
-                        },
-                        callback: function (obj) {
-                            //TODO what to do when all is ok!
-                        },
-                        error: lang.hitch(this, function (error) {
-                            console.debug(this.id + ': An error occurred while executing microflow: ' + error.description);
-                        })
-                    }, this);
-                }
+                  // If a microflow has been set execute the microflow on a click.
+                  if (this.mfToExecute !== '') {
+                      mx.data.action({
+                          params: {
+                              applyto: 'selection',
+                              actionname: this.mfToExecute,
+                              guids: [this._contextObj.getGuid()]
+                          },
+                          callback: function (obj) {
+                              //TODO what to do when all is ok!
+                          },
+                          error: lang.hitch(this, function (error) {
+                              console.debug(this.id + ': An error occurred while executing microflow: ' + error.description);
+                          })
+                      }, this);
+                  }
 
-            });
-          */
+              });
+            */
         },
 
         // Rerender the interface.
-        _updateRendering: function () {
-          // Draw or reload chart.
-          if (this._contextObj !== null) {
-            // Display widget dom node.
-            domStyle.set(this.domNode, 'display', 'block');
-            if(!window._googleVisualization || window._googleVisualization === false) {
-              this._googleVisualization = lang.hitch(this, function () {
-                if (typeof google !== 'undefined') {
-                  window._googleVisualization = true;
-                  google.load('visualization', '1', {
-                    'callback': lang.hitch(this,function(){
-                      this._drawChartWithJson();
-                    })
-                  });
+        _updateRendering: function() {
+            // Draw or reload chart.
+            if (this._contextObj !== null) {
+                // Display widget dom node.
+                domStyle.set(this.domNode, 'display', 'block');
+                if (!window._googleVisualization || window._googleVisualization === false) {
+                    this._googleVisualization = lang.hitch(this, function() {
+                        if (typeof google !== 'undefined') {
+                            window._googleVisualization = true;
+                            google.load('visualization', '1', {
+                                'callback': lang.hitch(this, function() {
+                                    this._drawChartWithJson();
+                                })
+                            });
+                        } else {
+                            var duration = new Date().getTime() - this._startTime;
+                            if (duration > 5000) {
+                                console.warn('Timeout loading Google API.');
+                                return;
+                            }
+                            setTimeout(this._googleVisualization, 250);
+                        }
+                    });
+                    this._startTime = new Date().getTime();
+                    setTimeout(this._googleVisualization, 100);
                 } else {
-                  var duration =  new Date().getTime() - this._startTime;
-                  if (duration > 5000) {
-                      console.warn('Timeout loading Google API.');
-                      return;
-                  }
-                  setTimeout(this._googleVisualization,250);
+                    this._drawChartWithJson();
                 }
-              });
-              this._startTime = new Date().getTime();
-              setTimeout(this._googleVisualization,100);
             } else {
-              this._drawChartWithJson();
+                // Hide widget dom node.
+                domStyle.set(this.domNode, 'display', 'none');
             }
-          } else {
-            // Hide widget dom node.
-            domStyle.set(this.domNode, 'display', 'none');
-          }
 
-          // Important to clear all validations!
-          this._clearValidations();
+            // Important to clear all validations!
+            this._clearValidations();
         },
 
         // Handle validations.
-        _handleValidation: function (_validations) {
+        _handleValidation: function(_validations) {
             this._clearValidations();
 
             var _validation = _validations[0],
@@ -266,13 +269,13 @@ define([
         },
 
         // Clear validations.
-        _clearValidations: function () {
+        _clearValidations: function() {
             domConstruct.destroy(this._alertdiv);
             this._alertdiv = null;
         },
 
         // Show an error message.
-        _showError: function (message) {
+        _showError: function(message) {
             console.log('[' + this.id + '] ERROR ' + message);
             if (this._alertDiv !== null) {
                 html.set(this._alertDiv, message);
@@ -286,19 +289,19 @@ define([
         },
 
         // Add a validation.
-        _addValidation: function (message) {
+        _addValidation: function(message) {
             this._showError(message);
         },
 
         // Reset subscriptions.
-        _resetSubscriptions: function () {
+        _resetSubscriptions: function() {
             var _objectHandle = null,
                 _attrHandle = null,
                 _validationHandle = null;
 
             // Release handles on previous object, if any.
             if (this._handles) {
-                dojoArray.forEach(this._handles, function (handle, i) {
+                dojoArray.forEach(this._handles, function(handle, i) {
                     mx.data.unsubscribe(handle);
                 });
                 this._handles = [];
@@ -309,7 +312,7 @@ define([
 
                 _objectHandle = this.subscribe({
                     guid: this._contextObj.getGuid(),
-                    callback: lang.hitch(this, function (guid) {
+                    callback: lang.hitch(this, function(guid) {
                         this._updateRendering();
                     })
                 });
@@ -317,7 +320,7 @@ define([
                 _attrHandle = this.subscribe({
                     guid: this._contextObj.getGuid(),
                     attr: this.jsonDataSource,
-                    callback: lang.hitch(this, function (guid, attr, attrValue) {
+                    callback: lang.hitch(this, function(guid, attr, attrValue) {
                         this._updateRendering();
                     })
                 });
@@ -333,6 +336,6 @@ define([
         }
     });
 });
-require(['GoogleCharts/widget/GoogleColumnChart'], function () {
+require(['GoogleCharts/widget/GoogleColumnChart'], function() {
     'use strict';
 });

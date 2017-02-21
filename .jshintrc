@@ -4,7 +4,7 @@
     "forin"    : false,
     "latedef"  : "nofunc",
     "newcap"   : true,
-    "quotmark" : "double",
+    "quotmark" : false,
     "eqeqeq"   : true,
     "undef"    : true,
     "globals"  : {
