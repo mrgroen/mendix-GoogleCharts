@@ -8,6 +8,7 @@
             <widgetFile path="GoogleCharts/GoogleColumnChart.xml"/>
             <widgetFile path="GoogleCharts/GoogleBarChart.xml"/>
             <widgetFile path="GoogleCharts/GooglePieChart.xml"/>
+            <widgetFile path="GoogleCharts/GoogleSankeyDiagram.xml"/>
         </widgetFiles>
         <files>
             <file path="GoogleCharts/widget/"/>

@@ -43,7 +43,14 @@ define([
                 if (!google.visualization) {
                     if (!window._googleVisualizationLoading) {
                         window._googleVisualizationLoading = true;
+                        if (google.loader && google.loader.Secure === false) {
+                            google.loader.Secure = true;
+                        }
                         google.load('visualization', '1', {
+                            packages: [
+                              'corechart',
+                              'sankey'
+                            ],
                             'callback': lang.hitch(this, function() {
                                 window._googleVisualizationLoading = false;
                                 this._drawChartWithJson(callback);

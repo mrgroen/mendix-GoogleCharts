@@ -11,6 +11,8 @@ The widgets are compatible with Mendix 5.16.1 and up.
 - Column Chart
 - Bar chart
 - Pie Chart (with donut option)
+- Bubble Chart
+- Sankey Diagram // TODO: More options
 
 ## Configuration
 
