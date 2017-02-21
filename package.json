@@ -1,12 +1,11 @@
 {
   "name": "GoogleCharts",
-  "version": "1.0.0",
+  "version": "1.3.0",
   "description": "Show a gauge meter in Mendix",
   "license": "Apache 2",
   "author": "Rob Duits",
   "private": true,
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "del": "^2.2.2",
     "gulp": "^3.9.1",
