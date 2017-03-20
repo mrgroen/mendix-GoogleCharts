@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget id="GoogleCharts.widget.GoogleSankeyDiagram" needsEntityContext="true" xmlns="http://www.mendix.com/widget/1.0/">
+    <name>Google Sankey Diagram</name>
+    <description>A sankey diagram is a visualization used to depict a flow from one set of values to another.</description>
+
+    <icon>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</icon>
+
+    <properties>
+        <property key="title" type="string" required="false" defaultValue="">
+            <caption>Title</caption>
+            <category>Appearance</category>
+            <description>The title of the chart.</description>
+        </property>
+        <property key="backgroundColor" type="string" required="true" defaultValue="white">
+            <caption>Background Color</caption>
+            <category>Appearance</category>
+            <description>The background color for the main area of the chart.</description>
+        </property>
+        <property key="colors" type="string" required="false" defaultValue="">
+            <caption>Colors</caption>
+            <category>Appearance</category>
+            <description>The colors to use for the chart elements. An array of strings, where each element is an HTML color string.</description>
+        </property>
+        <property key="enableInteractivity" type="boolean" required="true" defaultValue="true">
+            <caption>Enable Interactivity</caption>
+            <category>Behavior</category>
+            <description>Whether the chart throws user-based events or reacts to user interaction.</description>
+        </property>
+        <property key="forceIFrame" type="boolean" required="true" defaultValue="false">
+            <caption>Force Inline Frame</caption>
+            <category>Behavior</category>
+            <description>Draws the chart inside an inline frame.</description>
+        </property>
+        <property key="tooltip" type="string" required="false" defaultValue="">
+            <caption>Tooltip</caption>
+            <category>Appearance</category>
+            <description>A Javascript object with members to configure various tooltip elements.</description>
+        </property>
+        <property key="height" type="integer" required="true" defaultValue="300">
+            <caption>Height</caption>
+            <category>Appearance</category>
+            <description>The height of the graph.</description>
+        </property>
+        <property key="jsonDataSource" type="attribute">
+            <caption>JSON</caption>
+            <category>Data Source</category>
+            <description>The data source of the chart.</description>
+            <attributeTypes>
+                <attributeType name="String"/>
+            </attributeTypes>
+        </property>
+        <!--
+        <property key="mfToExecute" type="microflow" required="false" defaultValue="">
+            <caption>Microflow</caption>
+            <category>Behavior</category>
+            <description>The microflow to execute on click.</description>
+            <returnType type="Boolean"></returnType>
+        </property>
+        -->
+    </properties>
+</widget>

@@ -80,6 +80,19 @@ public class Microflows
 			throw new MendixRuntimeException(e);
 		}
 	}
+	public static googlecharts.proxies.Result dS_Sankey_Example(IContext context)
+	{
+		try
+		{
+			Map<String, Object> params = new HashMap<String, Object>();
+			IMendixObject result = (IMendixObject)Core.execute(context, "GoogleCharts.DS_Sankey_Example", params);
+			return result == null ? null : googlecharts.proxies.Result.initialize(context, result);
+		}
+		catch (CoreException e)
+		{
+			throw new MendixRuntimeException(e);
+		}
+	}
 	public static googlecharts.proxies.Result dS_SensorData_Linechart(IContext context)
 	{
 		try

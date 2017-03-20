@@ -4,13 +4,14 @@
     "forin"    : false,
     "latedef"  : "nofunc",
     "newcap"   : true,
-    "quotmark" : "double",
+    "quotmark" : false,
     "eqeqeq"   : true,
     "undef"    : true,
     "globals"  : {
         "mendix" : false,
         "mx"     : false,
-        "logger" : false
+        "logger" : false,
+        "google" : false
     },
 
     // Relaxing

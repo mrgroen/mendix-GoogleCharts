@@ -2,7 +2,7 @@
 
 Google charts are powerful, simple to use, and free. This package contains multiple widgets that are wrapping the "Google Charts" library so you can use it to visualize your aggregated data.
 
-The widgets are compatible with Mendix 5.16.1 and up.
+The widgets are compatible with Mendix 6.8.1 and up.
 
 ##### Available Charts:
 
@@ -12,6 +12,7 @@ The widgets are compatible with Mendix 5.16.1 and up.
 - Column Chart
 - Line Chart
 - Pie Chart (with donut option)
+- Sankey Diagram // TODO: More options
 
 ## Configuration
 
