@@ -7,9 +7,9 @@
     ========================
 
     @file      : GoogleBarChart.js
-    @version   : 1.1
+    @version   : 1.3.0
     @author    : Marcus Groen & Rob Duits
-    @date      : Fri, 19 Jun 2015 12:52:36 GMT
+    @date      : 20 March 2017
     @copyright : Incentro
     @license   : Apache 2
 

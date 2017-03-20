@@ -7,9 +7,9 @@
     ========================
 
     @file      : GoogleBubbleChart.js
-    @version   : 1.0
+    @version   : 1.3.0
     @author    : Marcus Groen
-    @date      : Fri, 15 Feb 2017 12:29:36 GMT
+    @date      : 20 March 2017
     @copyright : Incentro
     @license   : Apache 2
 

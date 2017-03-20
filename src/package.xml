@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <package xmlns="http://www.mendix.com/package/1.0/">
-	<clientModule name="GoogleCharts" version="1.0" xmlns="http://www.mendix.com/clientModule/1.0/">
+	<clientModule name="GoogleCharts" version="1.3.0" xmlns="http://www.mendix.com/clientModule/1.0/">
 		<widgetFiles>
 			<widgetFile path="GoogleCharts/GoogleAreaChart.xml"/>
-			<widgetFile path="GoogleCharts/GoogleBubbleChart.xml"/>
-			<widgetFile path="GoogleCharts/GoogleLineChart.xml"/>
-			<widgetFile path="GoogleCharts/GoogleColumnChart.xml"/>
 			<widgetFile path="GoogleCharts/GoogleBarChart.xml"/>
+			<widgetFile path="GoogleCharts/GoogleBubbleChart.xml"/>
+			<widgetFile path="GoogleCharts/GoogleColumnChart.xml"/>
+			<widgetFile path="GoogleCharts/GoogleLineChart.xml"/>
 			<widgetFile path="GoogleCharts/GooglePieChart.xml"/>
 		</widgetFiles>
 		<files>

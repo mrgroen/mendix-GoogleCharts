@@ -7,9 +7,9 @@
     ========================
 
     @file      : GoogleLineChart.js
-    @version   : 1.1.0
+    @version   : 1.3.0
     @author    : Paul Ketelaars, Dennis Reep & Marcus Groen
-    @date      : Fri, 23 Sep 2016 12:00:00 GMT
+    @date      : 20 March 2017
     @copyright : Incentro
     @license   : Apache 2
 
