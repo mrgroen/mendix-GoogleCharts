@@ -11,6 +11,11 @@
             <category>Appearance</category>
             <description>The title of the chart.</description>
         </property>
+        <property key="titleTextStyle" type="string" required="false" defaultValue="">
+            <caption>Title Text Style</caption>
+            <category>Appearance</category>
+            <description>A Javascript object with members to configure various aspects of the Title Text Style.</description>
+        </property>
         <property key="backgroundColor" type="string" required="true" defaultValue="white">
             <caption>Background Color</caption>
             <category>Appearance</category>
@@ -36,6 +41,16 @@
             <category>Appearance</category>
             <description>A Javascript object with members to configure various aspects of the legend.</description>
         </property>
+        <property key="pointSize" type="integer" required="true" defaultValue="0">
+            <caption>Point Size</caption>
+            <category>Appearance</category>
+            <description>The diameter of the points in pixels.</description>
+        </property>
+        <property key="isStacked" type="string" required="false" defaultValue="">
+            <caption>Stacked Areas</caption>
+            <category>Appearance</category>
+            <description>Stac areas options: true, percent, relative, absolute, false.</description>
+        </property>
         <property key="aggregationTarget" type="enumeration" defaultValue="auto" required="true">
             <caption>Aggregation Target</caption>
             <category>Behavior</category>
@@ -51,6 +66,16 @@
             <caption>Tooltip</caption>
             <category>Appearance</category>
             <description>A Javascript object with members to configure various tooltip elements.</description>
+        </property>
+        <property key="vAxis" type="string" required="false" defaultValue="">
+            <caption>Vertical Axis</caption>
+            <category>Appearance</category>
+            <description>A Javascript object with members to configure various vertical axis elements.</description>
+        </property>
+        <property key="hAxis" type="string" required="false" defaultValue="">
+            <caption>Horizontal Axis</caption>
+            <category>Appearance</category>
+            <description>A Javascript object with members to configure various horizontal axis elements.</description>
         </property>
         <property key="areaOpacity" type="string" required="true" defaultValue="0.3">
             <caption>Area Opacity</caption>

@@ -27,6 +27,7 @@ define([
 
         // Parameters configured in the Modeler.
         title: "",
+        titleTextStyle: "",
         backgroundColor: "",
         colors: "",
         enableInteractivity: null,
@@ -61,6 +62,7 @@ define([
             if (typeof data !== 'undefined' || data.trim() !== '') {
                 var options = lang.mixin({}, {
                     'title': (this.title !== '') ? this.title : undefined,
+                    'titleTextStyle': (this.titleTextStyle !== '') ? JSON.parse(this.titleTextStyle) : undefined,
                     'backgroundColor': (this.backgroundColor !== '') ? this.backgroundColor : undefined,
                     'colors': (this.colors !== '') ? JSON.parse(this.colors) : undefined,
                     'enableInteractivity': (this.enableInteractivity !== null) ? this.enableInteractivity : undefined,

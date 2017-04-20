@@ -11,6 +11,11 @@
             <category>Appearance</category>
             <description>The title of the chart.</description>
         </property>
+        <property key="titleTextStyle" type="string" required="false" defaultValue="">
+            <caption>Title Text Style</caption>
+            <category>Appearance</category>
+            <description>A Javascript object with members to configure various aspects of the Title.</description>
+        </property>
         <property key="backgroundColor" type="string" required="true" defaultValue="white">
             <caption>Background Color</caption>
             <category>Appearance</category>
@@ -66,6 +71,28 @@
             <caption>Height</caption>
             <category>Appearance</category>
             <description>The height of the graph.</description>
+        </property>
+        <property key="lineWidth" type="integer" required="true" defaultValue="2">
+            <caption>Line Width</caption>
+            <category>Line Chart</category>
+            <description>The width of the line in pixels.</description>
+        </property>
+        <property key="pointSize" type="integer" required="true" defaultValue="2">
+            <caption>Point Size</caption>
+            <category>Line Chart</category>
+            <description>The diameter of displayed points in pixels.</description>
+        </property>
+        <property key="pointShape" type="enumeration" required="true" defaultValue="circle">
+            <caption>Point Shape</caption>
+            <category>Line Chart</category>
+            <description>The shape of the displayed points.</description>
+            <enumerationValues>
+                <enumerationValue key="circle">Circle</enumerationValue>
+                <enumerationValue key="triangle">Triangle</enumerationValue>
+                <enumerationValue key="square">Square</enumerationValue>
+                <enumerationValue key="diamond">Diamond</enumerationValue>
+                <enumerationValue key="star">Star</enumerationValue>
+           </enumerationValues>
         </property>
         <property key="interpolateNulls" type="boolean" required="true" defaultValue="false">
             <caption>Interpolate Nulls</caption>

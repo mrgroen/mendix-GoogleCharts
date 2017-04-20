@@ -27,6 +27,7 @@ define([
 
         // Parameters configured in the Modeler.
         title: "",
+        titleTextStyle: "",
         backgroundColor: "",
         colors: "",
         enableInteractivity: null,
@@ -65,6 +66,7 @@ define([
                         'easing': (this.animationEasing !== '') ? this.animationEasing : undefined
                     } : undefined,
                     'title': (this.title !== '') ? this.title : undefined,
+                    'titleTextStyle': (this.titleTextStyle !== '') ? JSON.parse(this.titleTextStyle) : undefined,
                     'backgroundColor': (this.backgroundColor !== '') ? this.backgroundColor : undefined,
                     'colors': (this.colors !== '') ? JSON.parse(this.colors) : undefined,
                     'dataOpacity': (this.dataOpacity !== '') ? this.dataOpacity : undefined,

@@ -11,6 +11,11 @@
             <category>Appearance</category>
             <description>The title of the chart.</description>
         </property>
+        <property key="titleTextStyle" type="string" required="false" defaultValue="">
+            <caption>Title Text Style</caption>
+            <category>Appearance</category>
+            <description>A Javascript object with members to configure various aspects of the text style of the title.</description>
+        </property>
         <property key="backgroundColor" type="string" required="true" defaultValue="white">
             <caption>Background Color</caption>
             <category>Appearance</category>

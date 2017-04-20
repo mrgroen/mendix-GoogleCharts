@@ -27,13 +27,18 @@ define([
 
         // Parameters configured in the Modeler.
         title: "",
+        titleTextStyle: "",
         backgroundColor: "",
         colors: "",
         enableInteractivity: null,
         forceIFrame: null,
         legend: "",
+        pointSize: 0,
+        isStacked: "",
         aggregationTarget: "",
         tooltip: "",
+        vAxis: "",
+        hAxis: "",
         areaOpacity: "",
         animation: false,
         animationStartup: false,
@@ -62,15 +67,20 @@ define([
                         'easing': (this.animationEasing !== '') ? this.animationEasing : undefined
                     } : undefined,
                     'title': (this.title !== '') ? this.title : undefined,
+                    'titleTextStyle': (this.titleTextStyle !== '') ? JSON.parse(this.titleTextStyle) : undefined,
                     'backgroundColor': (this.backgroundColor !== '') ? this.backgroundColor : undefined,
                     'colors': (this.colors !== '') ? JSON.parse(this.colors) : undefined,
+                    'isStacked': (this.isStacked !== '') ? JSON.parse(this.isStacked) : undefined,
                     'areaOpacity': (this.areaOpacity !== '') ? this.areaOpacity : undefined,
                     'enableInteractivity': (this.enableInteractivity !== null) ? this.enableInteractivity : undefined,
                     'forceIFrame': (this.forceIFrame !== null) ? this.forceIFrame : undefined,
                     'legend': (this.legend !== '') ? JSON.parse(this.legend) : undefined,
                     'tooltip': (this.tooltip !== '') ? JSON.parse(this.tooltip) : undefined,
+                    'vAxis': (this.vAxis !== '') ? JSON.parse(this.vAxis) : undefined,
+                    'hAxis': (this.hAxis !== '') ? JSON.parse(this.hAxis) : undefined,
                     'aggregationTarget': (this.aggregationTarget !== '') ? this.aggregationTarget : undefined,
-                    'height': (this.height > 0) ? this.height : 400
+                    'height': (this.height > 0) ? this.height : 400,
+                    'pointSize': this.pointSize
                 });
                 this._chartWrapper = new google.visualization.ChartWrapper({
                     'chartType': 'AreaChart',
