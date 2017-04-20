@@ -121,15 +121,6 @@ public class UserActionsRegistrar implements EventHandler
 			component.actionRegistry().registerUserAction(communitycommons.actions.waitForLock.class);
 			component.actionRegistry().registerUserAction(communitycommons.actions.XSSSanitize.class);
 			component.actionRegistry().registerUserAction(communitycommons.actions.YearsBetween.class);
-			component.actionRegistry().registerUserAction(databasereplication.actions.AbortRunningMapping.class);
-			component.actionRegistry().registerUserAction(databasereplication.actions.CreateZipFile.class);
-			component.actionRegistry().registerUserAction(databasereplication.actions.EncryptServerPassword.class);
-			component.actionRegistry().registerUserAction(databasereplication.actions.ImportActivitySet.class);
-			component.actionRegistry().registerUserAction(databasereplication.actions.ImportByImportCall.class);
-			component.actionRegistry().registerUserAction(databasereplication.actions.ImportByMapping.class);
-			component.actionRegistry().registerUserAction(databasereplication.actions.SyncDatabaseInfo.class);
-			component.actionRegistry().registerUserAction(databasereplication.actions.UpdateByMapping.class);
-			component.actionRegistry().registerUserAction(databasereplication.actions.UpdateToken.class);
 			component.actionRegistry().registerUserAction(emailtemplate.actions.ConvertHTMLBodyToPlainText.class);
 			component.actionRegistry().registerUserAction(emailtemplate.actions.CopyAttachmentContent.class);
 			component.actionRegistry().registerUserAction(emailtemplate.actions.ReplaceCustomToken.class);

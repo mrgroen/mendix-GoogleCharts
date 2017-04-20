@@ -90,7 +90,7 @@ public class Account extends system.proxies.User
 	/**
 	 * @return value of FullName
 	 */
-	public final String getFullName()
+	public final java.lang.String getFullName()
 	{
 		return getFullName(getContext());
 	}
@@ -99,16 +99,16 @@ public class Account extends system.proxies.User
 	 * @param context
 	 * @return value of FullName
 	 */
-	public final String getFullName(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getFullName(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.FullName.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.FullName.toString());
 	}
 
 	/**
 	 * Set value of FullName
 	 * @param fullname
 	 */
-	public final void setFullName(String fullname)
+	public final void setFullName(java.lang.String fullname)
 	{
 		setFullName(getContext(), fullname);
 	}
@@ -118,7 +118,7 @@ public class Account extends system.proxies.User
 	 * @param context
 	 * @param fullname
 	 */
-	public final void setFullName(com.mendix.systemwideinterfaces.core.IContext context, String fullname)
+	public final void setFullName(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String fullname)
 	{
 		getMendixObject().setValue(context, MemberNames.FullName.toString(), fullname);
 	}

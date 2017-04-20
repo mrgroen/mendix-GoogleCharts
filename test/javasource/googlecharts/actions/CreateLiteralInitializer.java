@@ -33,7 +33,7 @@ import com.mendix.systemwideinterfaces.core.IMendixObject;
  * JavaScript Literal Initializer for Google Charts.
  * https://developers.google.com/chart/interactive/docs/datatables_dataviews#javascriptliteral
  */
-public class CreateLiteralInitializer extends CustomJavaAction<String>
+public class CreateLiteralInitializer extends CustomJavaAction<java.lang.String>
 {
 	private IMendixObject __ParameterParameter1;
 	private googlecharts.proxies.ChartDataSource ParameterParameter1;
@@ -45,7 +45,7 @@ public class CreateLiteralInitializer extends CustomJavaAction<String>
 	}
 
 	@Override
-	public String executeAction() throws Exception
+	public java.lang.String executeAction() throws Exception
 	{
 		this.ParameterParameter1 = __ParameterParameter1 == null ? null : googlecharts.proxies.ChartDataSource.initialize(getContext(), __ParameterParameter1);
 
@@ -105,7 +105,7 @@ public class CreateLiteralInitializer extends CustomJavaAction<String>
 	 * Returns a string representation of this action
 	 */
 	@Override
-	public String toString()
+	public java.lang.String toString()
 	{
 		return "CreateLiteralInitializer";
 	}

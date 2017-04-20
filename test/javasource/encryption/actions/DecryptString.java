@@ -12,13 +12,13 @@ package encryption.actions;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
 
-public class DecryptString extends CustomJavaAction<String>
+public class DecryptString extends CustomJavaAction<java.lang.String>
 {
-	private String value;
-	private String key;
-	private String prefix;
+	private java.lang.String value;
+	private java.lang.String key;
+	private java.lang.String prefix;
 
-	public DecryptString(IContext context, String value, String key, String prefix)
+	public DecryptString(IContext context, java.lang.String value, java.lang.String key, java.lang.String prefix)
 	{
 		super(context);
 		this.value = value;
@@ -27,7 +27,7 @@ public class DecryptString extends CustomJavaAction<String>
 	}
 
 	@Override
-	public String executeAction() throws Exception
+	public java.lang.String executeAction() throws Exception
 	{
 		// BEGIN USER CODE
 		throw new com.mendix.systemwideinterfaces.MendixRuntimeException("Java action was not implemented");
@@ -38,7 +38,7 @@ public class DecryptString extends CustomJavaAction<String>
 	 * Returns a string representation of this action
 	 */
 	@Override
-	public String toString()
+	public java.lang.String toString()
 	{
 		return "DecryptString";
 	}

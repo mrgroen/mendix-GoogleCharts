@@ -1,16 +1,11 @@
-test/deployment
-test/.classpath
-test/.project
+test/deployment/
 test/.classpath
 test/.project
 test/*.launch
 *.launch
 *.tmp
 *.lock
-.idea/
-
 dist/
-
 node_modules/
 .editorconfig
 *DS_Store*

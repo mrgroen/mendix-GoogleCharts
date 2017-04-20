@@ -112,7 +112,7 @@ public class Column
 	/**
 	 * @return value of label
 	 */
-	public final String getlabel()
+	public final java.lang.String getlabel()
 	{
 		return getlabel(getContext());
 	}
@@ -121,16 +121,16 @@ public class Column
 	 * @param context
 	 * @return value of label
 	 */
-	public final String getlabel(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getlabel(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.label.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.label.toString());
 	}
 
 	/**
 	 * Set value of label
 	 * @param label
 	 */
-	public final void setlabel(String label)
+	public final void setlabel(java.lang.String label)
 	{
 		setlabel(getContext(), label);
 	}
@@ -140,7 +140,7 @@ public class Column
 	 * @param context
 	 * @param label
 	 */
-	public final void setlabel(com.mendix.systemwideinterfaces.core.IContext context, String label)
+	public final void setlabel(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String label)
 	{
 		getMendixObject().setValue(context, MemberNames.label.toString(), label);
 	}
@@ -148,7 +148,7 @@ public class Column
 	/**
 	 * @return value of _type
 	 */
-	public final String get_type()
+	public final java.lang.String get_type()
 	{
 		return get_type(getContext());
 	}
@@ -157,16 +157,16 @@ public class Column
 	 * @param context
 	 * @return value of _type
 	 */
-	public final String get_type(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String get_type(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames._type.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames._type.toString());
 	}
 
 	/**
 	 * Set value of _type
 	 * @param _type
 	 */
-	public final void set_type(String _type)
+	public final void set_type(java.lang.String _type)
 	{
 		set_type(getContext(), _type);
 	}
@@ -176,7 +176,7 @@ public class Column
 	 * @param context
 	 * @param _type
 	 */
-	public final void set_type(com.mendix.systemwideinterfaces.core.IContext context, String _type)
+	public final void set_type(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String _type)
 	{
 		getMendixObject().setValue(context, MemberNames._type.toString(), _type);
 	}

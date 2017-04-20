@@ -129,7 +129,7 @@ public class EmailTemplate
 	/**
 	 * @return value of TemplateName
 	 */
-	public final String getTemplateName()
+	public final java.lang.String getTemplateName()
 	{
 		return getTemplateName(getContext());
 	}
@@ -138,16 +138,16 @@ public class EmailTemplate
 	 * @param context
 	 * @return value of TemplateName
 	 */
-	public final String getTemplateName(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getTemplateName(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.TemplateName.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.TemplateName.toString());
 	}
 
 	/**
 	 * Set value of TemplateName
 	 * @param templatename
 	 */
-	public final void setTemplateName(String templatename)
+	public final void setTemplateName(java.lang.String templatename)
 	{
 		setTemplateName(getContext(), templatename);
 	}
@@ -157,7 +157,7 @@ public class EmailTemplate
 	 * @param context
 	 * @param templatename
 	 */
-	public final void setTemplateName(com.mendix.systemwideinterfaces.core.IContext context, String templatename)
+	public final void setTemplateName(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String templatename)
 	{
 		getMendixObject().setValue(context, MemberNames.TemplateName.toString(), templatename);
 	}
@@ -165,7 +165,7 @@ public class EmailTemplate
 	/**
 	 * @return value of To
 	 */
-	public final String getTo()
+	public final java.lang.String getTo()
 	{
 		return getTo(getContext());
 	}
@@ -174,16 +174,16 @@ public class EmailTemplate
 	 * @param context
 	 * @return value of To
 	 */
-	public final String getTo(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getTo(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.To.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.To.toString());
 	}
 
 	/**
 	 * Set value of To
 	 * @param to
 	 */
-	public final void setTo(String to)
+	public final void setTo(java.lang.String to)
 	{
 		setTo(getContext(), to);
 	}
@@ -193,7 +193,7 @@ public class EmailTemplate
 	 * @param context
 	 * @param to
 	 */
-	public final void setTo(com.mendix.systemwideinterfaces.core.IContext context, String to)
+	public final void setTo(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String to)
 	{
 		getMendixObject().setValue(context, MemberNames.To.toString(), to);
 	}
@@ -201,7 +201,7 @@ public class EmailTemplate
 	/**
 	 * @return value of From
 	 */
-	public final String getFrom()
+	public final java.lang.String getFrom()
 	{
 		return getFrom(getContext());
 	}
@@ -210,16 +210,16 @@ public class EmailTemplate
 	 * @param context
 	 * @return value of From
 	 */
-	public final String getFrom(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getFrom(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.From.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.From.toString());
 	}
 
 	/**
 	 * Set value of From
 	 * @param from
 	 */
-	public final void setFrom(String from)
+	public final void setFrom(java.lang.String from)
 	{
 		setFrom(getContext(), from);
 	}
@@ -229,7 +229,7 @@ public class EmailTemplate
 	 * @param context
 	 * @param from
 	 */
-	public final void setFrom(com.mendix.systemwideinterfaces.core.IContext context, String from)
+	public final void setFrom(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String from)
 	{
 		getMendixObject().setValue(context, MemberNames.From.toString(), from);
 	}
@@ -237,7 +237,7 @@ public class EmailTemplate
 	/**
 	 * @return value of CC
 	 */
-	public final String getCC()
+	public final java.lang.String getCC()
 	{
 		return getCC(getContext());
 	}
@@ -246,16 +246,16 @@ public class EmailTemplate
 	 * @param context
 	 * @return value of CC
 	 */
-	public final String getCC(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getCC(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.CC.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.CC.toString());
 	}
 
 	/**
 	 * Set value of CC
 	 * @param cc
 	 */
-	public final void setCC(String cc)
+	public final void setCC(java.lang.String cc)
 	{
 		setCC(getContext(), cc);
 	}
@@ -265,7 +265,7 @@ public class EmailTemplate
 	 * @param context
 	 * @param cc
 	 */
-	public final void setCC(com.mendix.systemwideinterfaces.core.IContext context, String cc)
+	public final void setCC(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String cc)
 	{
 		getMendixObject().setValue(context, MemberNames.CC.toString(), cc);
 	}
@@ -273,7 +273,7 @@ public class EmailTemplate
 	/**
 	 * @return value of BCC
 	 */
-	public final String getBCC()
+	public final java.lang.String getBCC()
 	{
 		return getBCC(getContext());
 	}
@@ -282,16 +282,16 @@ public class EmailTemplate
 	 * @param context
 	 * @return value of BCC
 	 */
-	public final String getBCC(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getBCC(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.BCC.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.BCC.toString());
 	}
 
 	/**
 	 * Set value of BCC
 	 * @param bcc
 	 */
-	public final void setBCC(String bcc)
+	public final void setBCC(java.lang.String bcc)
 	{
 		setBCC(getContext(), bcc);
 	}
@@ -301,7 +301,7 @@ public class EmailTemplate
 	 * @param context
 	 * @param bcc
 	 */
-	public final void setBCC(com.mendix.systemwideinterfaces.core.IContext context, String bcc)
+	public final void setBCC(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String bcc)
 	{
 		getMendixObject().setValue(context, MemberNames.BCC.toString(), bcc);
 	}
@@ -309,7 +309,7 @@ public class EmailTemplate
 	/**
 	 * @return value of Subject
 	 */
-	public final String getSubject()
+	public final java.lang.String getSubject()
 	{
 		return getSubject(getContext());
 	}
@@ -318,16 +318,16 @@ public class EmailTemplate
 	 * @param context
 	 * @return value of Subject
 	 */
-	public final String getSubject(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getSubject(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.Subject.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.Subject.toString());
 	}
 
 	/**
 	 * Set value of Subject
 	 * @param subject
 	 */
-	public final void setSubject(String subject)
+	public final void setSubject(java.lang.String subject)
 	{
 		setSubject(getContext(), subject);
 	}
@@ -337,7 +337,7 @@ public class EmailTemplate
 	 * @param context
 	 * @param subject
 	 */
-	public final void setSubject(com.mendix.systemwideinterfaces.core.IContext context, String subject)
+	public final void setSubject(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String subject)
 	{
 		getMendixObject().setValue(context, MemberNames.Subject.toString(), subject);
 	}
@@ -345,7 +345,7 @@ public class EmailTemplate
 	/**
 	 * @return value of HtmlBody
 	 */
-	public final String getHtmlBody()
+	public final java.lang.String getHtmlBody()
 	{
 		return getHtmlBody(getContext());
 	}
@@ -354,16 +354,16 @@ public class EmailTemplate
 	 * @param context
 	 * @return value of HtmlBody
 	 */
-	public final String getHtmlBody(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getHtmlBody(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.HtmlBody.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.HtmlBody.toString());
 	}
 
 	/**
 	 * Set value of HtmlBody
 	 * @param htmlbody
 	 */
-	public final void setHtmlBody(String htmlbody)
+	public final void setHtmlBody(java.lang.String htmlbody)
 	{
 		setHtmlBody(getContext(), htmlbody);
 	}
@@ -373,7 +373,7 @@ public class EmailTemplate
 	 * @param context
 	 * @param htmlbody
 	 */
-	public final void setHtmlBody(com.mendix.systemwideinterfaces.core.IContext context, String htmlbody)
+	public final void setHtmlBody(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String htmlbody)
 	{
 		getMendixObject().setValue(context, MemberNames.HtmlBody.toString(), htmlbody);
 	}
@@ -381,7 +381,7 @@ public class EmailTemplate
 	/**
 	 * @return value of PlainBody
 	 */
-	public final String getPlainBody()
+	public final java.lang.String getPlainBody()
 	{
 		return getPlainBody(getContext());
 	}
@@ -390,16 +390,16 @@ public class EmailTemplate
 	 * @param context
 	 * @return value of PlainBody
 	 */
-	public final String getPlainBody(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getPlainBody(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.PlainBody.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.PlainBody.toString());
 	}
 
 	/**
 	 * Set value of PlainBody
 	 * @param plainbody
 	 */
-	public final void setPlainBody(String plainbody)
+	public final void setPlainBody(java.lang.String plainbody)
 	{
 		setPlainBody(getContext(), plainbody);
 	}
@@ -409,7 +409,7 @@ public class EmailTemplate
 	 * @param context
 	 * @param plainbody
 	 */
-	public final void setPlainBody(com.mendix.systemwideinterfaces.core.IContext context, String plainbody)
+	public final void setPlainBody(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String plainbody)
 	{
 		getMendixObject().setValue(context, MemberNames.PlainBody.toString(), plainbody);
 	}
@@ -453,7 +453,7 @@ public class EmailTemplate
 	/**
 	 * @return value of UseOnlyPlainText
 	 */
-	public final Boolean getUseOnlyPlainText()
+	public final java.lang.Boolean getUseOnlyPlainText()
 	{
 		return getUseOnlyPlainText(getContext());
 	}
@@ -462,16 +462,16 @@ public class EmailTemplate
 	 * @param context
 	 * @return value of UseOnlyPlainText
 	 */
-	public final Boolean getUseOnlyPlainText(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.Boolean getUseOnlyPlainText(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (Boolean) getMendixObject().getValue(context, MemberNames.UseOnlyPlainText.toString());
+		return (java.lang.Boolean) getMendixObject().getValue(context, MemberNames.UseOnlyPlainText.toString());
 	}
 
 	/**
 	 * Set value of UseOnlyPlainText
 	 * @param useonlyplaintext
 	 */
-	public final void setUseOnlyPlainText(Boolean useonlyplaintext)
+	public final void setUseOnlyPlainText(java.lang.Boolean useonlyplaintext)
 	{
 		setUseOnlyPlainText(getContext(), useonlyplaintext);
 	}
@@ -481,7 +481,7 @@ public class EmailTemplate
 	 * @param context
 	 * @param useonlyplaintext
 	 */
-	public final void setUseOnlyPlainText(com.mendix.systemwideinterfaces.core.IContext context, Boolean useonlyplaintext)
+	public final void setUseOnlyPlainText(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Boolean useonlyplaintext)
 	{
 		getMendixObject().setValue(context, MemberNames.UseOnlyPlainText.toString(), useonlyplaintext);
 	}

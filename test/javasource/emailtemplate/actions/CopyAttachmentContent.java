@@ -13,7 +13,7 @@ import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
 import com.mendix.systemwideinterfaces.core.IMendixObject;
 
-public class CopyAttachmentContent extends CustomJavaAction<Boolean>
+public class CopyAttachmentContent extends CustomJavaAction<java.lang.Boolean>
 {
 	private IMendixObject __CopyFrom;
 	private system.proxies.FileDocument CopyFrom;
@@ -28,7 +28,7 @@ public class CopyAttachmentContent extends CustomJavaAction<Boolean>
 	}
 
 	@Override
-	public Boolean executeAction() throws Exception
+	public java.lang.Boolean executeAction() throws Exception
 	{
 		this.CopyFrom = __CopyFrom == null ? null : system.proxies.FileDocument.initialize(getContext(), __CopyFrom);
 
@@ -43,7 +43,7 @@ public class CopyAttachmentContent extends CustomJavaAction<Boolean>
 	 * Returns a string representation of this action
 	 */
 	@Override
-	public String toString()
+	public java.lang.String toString()
 	{
 		return "CopyAttachmentContent";
 	}

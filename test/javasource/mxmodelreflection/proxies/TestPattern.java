@@ -119,7 +119,7 @@ public class TestPattern
 	/**
 	 * @return value of DisplayPattern
 	 */
-	public final String getDisplayPattern()
+	public final java.lang.String getDisplayPattern()
 	{
 		return getDisplayPattern(getContext());
 	}
@@ -128,16 +128,16 @@ public class TestPattern
 	 * @param context
 	 * @return value of DisplayPattern
 	 */
-	public final String getDisplayPattern(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getDisplayPattern(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.DisplayPattern.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.DisplayPattern.toString());
 	}
 
 	/**
 	 * Set value of DisplayPattern
 	 * @param displaypattern
 	 */
-	public final void setDisplayPattern(String displaypattern)
+	public final void setDisplayPattern(java.lang.String displaypattern)
 	{
 		setDisplayPattern(getContext(), displaypattern);
 	}
@@ -147,7 +147,7 @@ public class TestPattern
 	 * @param context
 	 * @param displaypattern
 	 */
-	public final void setDisplayPattern(com.mendix.systemwideinterfaces.core.IContext context, String displaypattern)
+	public final void setDisplayPattern(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String displaypattern)
 	{
 		getMendixObject().setValue(context, MemberNames.DisplayPattern.toString(), displaypattern);
 	}
@@ -199,7 +199,7 @@ public class TestPattern
 	/**
 	 * @return value of BooleanAttribute
 	 */
-	public final Boolean getBooleanAttribute()
+	public final java.lang.Boolean getBooleanAttribute()
 	{
 		return getBooleanAttribute(getContext());
 	}
@@ -208,16 +208,16 @@ public class TestPattern
 	 * @param context
 	 * @return value of BooleanAttribute
 	 */
-	public final Boolean getBooleanAttribute(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.Boolean getBooleanAttribute(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (Boolean) getMendixObject().getValue(context, MemberNames.BooleanAttribute.toString());
+		return (java.lang.Boolean) getMendixObject().getValue(context, MemberNames.BooleanAttribute.toString());
 	}
 
 	/**
 	 * Set value of BooleanAttribute
 	 * @param booleanattribute
 	 */
-	public final void setBooleanAttribute(Boolean booleanattribute)
+	public final void setBooleanAttribute(java.lang.Boolean booleanattribute)
 	{
 		setBooleanAttribute(getContext(), booleanattribute);
 	}
@@ -227,7 +227,7 @@ public class TestPattern
 	 * @param context
 	 * @param booleanattribute
 	 */
-	public final void setBooleanAttribute(com.mendix.systemwideinterfaces.core.IContext context, Boolean booleanattribute)
+	public final void setBooleanAttribute(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Boolean booleanattribute)
 	{
 		getMendixObject().setValue(context, MemberNames.BooleanAttribute.toString(), booleanattribute);
 	}
@@ -235,7 +235,7 @@ public class TestPattern
 	/**
 	 * @return value of FloatAttribute
 	 */
-	public final Double getFloatAttribute()
+	public final java.math.BigDecimal getFloatAttribute()
 	{
 		return getFloatAttribute(getContext());
 	}
@@ -244,16 +244,16 @@ public class TestPattern
 	 * @param context
 	 * @return value of FloatAttribute
 	 */
-	public final Double getFloatAttribute(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.math.BigDecimal getFloatAttribute(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (Double) getMendixObject().getValue(context, MemberNames.FloatAttribute.toString());
+		return (java.math.BigDecimal) getMendixObject().getValue(context, MemberNames.FloatAttribute.toString());
 	}
 
 	/**
 	 * Set value of FloatAttribute
 	 * @param floatattribute
 	 */
-	public final void setFloatAttribute(Double floatattribute)
+	public final void setFloatAttribute(java.math.BigDecimal floatattribute)
 	{
 		setFloatAttribute(getContext(), floatattribute);
 	}
@@ -263,7 +263,7 @@ public class TestPattern
 	 * @param context
 	 * @param floatattribute
 	 */
-	public final void setFloatAttribute(com.mendix.systemwideinterfaces.core.IContext context, Double floatattribute)
+	public final void setFloatAttribute(com.mendix.systemwideinterfaces.core.IContext context, java.math.BigDecimal floatattribute)
 	{
 		getMendixObject().setValue(context, MemberNames.FloatAttribute.toString(), floatattribute);
 	}
@@ -343,7 +343,7 @@ public class TestPattern
 	/**
 	 * @return value of IntegerAttribute
 	 */
-	public final Integer getIntegerAttribute()
+	public final java.lang.Integer getIntegerAttribute()
 	{
 		return getIntegerAttribute(getContext());
 	}
@@ -352,16 +352,16 @@ public class TestPattern
 	 * @param context
 	 * @return value of IntegerAttribute
 	 */
-	public final Integer getIntegerAttribute(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.Integer getIntegerAttribute(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (Integer) getMendixObject().getValue(context, MemberNames.IntegerAttribute.toString());
+		return (java.lang.Integer) getMendixObject().getValue(context, MemberNames.IntegerAttribute.toString());
 	}
 
 	/**
 	 * Set value of IntegerAttribute
 	 * @param integerattribute
 	 */
-	public final void setIntegerAttribute(Integer integerattribute)
+	public final void setIntegerAttribute(java.lang.Integer integerattribute)
 	{
 		setIntegerAttribute(getContext(), integerattribute);
 	}
@@ -371,7 +371,7 @@ public class TestPattern
 	 * @param context
 	 * @param integerattribute
 	 */
-	public final void setIntegerAttribute(com.mendix.systemwideinterfaces.core.IContext context, Integer integerattribute)
+	public final void setIntegerAttribute(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Integer integerattribute)
 	{
 		getMendixObject().setValue(context, MemberNames.IntegerAttribute.toString(), integerattribute);
 	}
@@ -379,7 +379,7 @@ public class TestPattern
 	/**
 	 * @return value of LongAttribute
 	 */
-	public final Long getLongAttribute()
+	public final java.lang.Long getLongAttribute()
 	{
 		return getLongAttribute(getContext());
 	}
@@ -388,16 +388,16 @@ public class TestPattern
 	 * @param context
 	 * @return value of LongAttribute
 	 */
-	public final Long getLongAttribute(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.Long getLongAttribute(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (Long) getMendixObject().getValue(context, MemberNames.LongAttribute.toString());
+		return (java.lang.Long) getMendixObject().getValue(context, MemberNames.LongAttribute.toString());
 	}
 
 	/**
 	 * Set value of LongAttribute
 	 * @param longattribute
 	 */
-	public final void setLongAttribute(Long longattribute)
+	public final void setLongAttribute(java.lang.Long longattribute)
 	{
 		setLongAttribute(getContext(), longattribute);
 	}
@@ -407,7 +407,7 @@ public class TestPattern
 	 * @param context
 	 * @param longattribute
 	 */
-	public final void setLongAttribute(com.mendix.systemwideinterfaces.core.IContext context, Long longattribute)
+	public final void setLongAttribute(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Long longattribute)
 	{
 		getMendixObject().setValue(context, MemberNames.LongAttribute.toString(), longattribute);
 	}
@@ -415,7 +415,7 @@ public class TestPattern
 	/**
 	 * @return value of StringAttribute
 	 */
-	public final String getStringAttribute()
+	public final java.lang.String getStringAttribute()
 	{
 		return getStringAttribute(getContext());
 	}
@@ -424,16 +424,16 @@ public class TestPattern
 	 * @param context
 	 * @return value of StringAttribute
 	 */
-	public final String getStringAttribute(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getStringAttribute(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.StringAttribute.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.StringAttribute.toString());
 	}
 
 	/**
 	 * Set value of StringAttribute
 	 * @param stringattribute
 	 */
-	public final void setStringAttribute(String stringattribute)
+	public final void setStringAttribute(java.lang.String stringattribute)
 	{
 		setStringAttribute(getContext(), stringattribute);
 	}
@@ -443,7 +443,7 @@ public class TestPattern
 	 * @param context
 	 * @param stringattribute
 	 */
-	public final void setStringAttribute(com.mendix.systemwideinterfaces.core.IContext context, String stringattribute)
+	public final void setStringAttribute(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String stringattribute)
 	{
 		getMendixObject().setValue(context, MemberNames.StringAttribute.toString(), stringattribute);
 	}
@@ -451,7 +451,7 @@ public class TestPattern
 	/**
 	 * @return value of Result
 	 */
-	public final String getResult()
+	public final java.lang.String getResult()
 	{
 		return getResult(getContext());
 	}
@@ -460,16 +460,16 @@ public class TestPattern
 	 * @param context
 	 * @return value of Result
 	 */
-	public final String getResult(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getResult(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.Result.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.Result.toString());
 	}
 
 	/**
 	 * Set value of Result
 	 * @param result
 	 */
-	public final void setResult(String result)
+	public final void setResult(java.lang.String result)
 	{
 		setResult(getContext(), result);
 	}
@@ -479,7 +479,7 @@ public class TestPattern
 	 * @param context
 	 * @param result
 	 */
-	public final void setResult(com.mendix.systemwideinterfaces.core.IContext context, String result)
+	public final void setResult(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String result)
 	{
 		getMendixObject().setValue(context, MemberNames.Result.toString(), result);
 	}

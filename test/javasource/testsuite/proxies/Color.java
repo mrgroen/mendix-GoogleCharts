@@ -113,7 +113,7 @@ public class Color
 	/**
 	 * @return value of Name
 	 */
-	public final String getName()
+	public final java.lang.String getName()
 	{
 		return getName(getContext());
 	}
@@ -122,16 +122,16 @@ public class Color
 	 * @param context
 	 * @return value of Name
 	 */
-	public final String getName(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getName(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.Name.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.Name.toString());
 	}
 
 	/**
 	 * Set value of Name
 	 * @param name
 	 */
-	public final void setName(String name)
+	public final void setName(java.lang.String name)
 	{
 		setName(getContext(), name);
 	}
@@ -141,7 +141,7 @@ public class Color
 	 * @param context
 	 * @param name
 	 */
-	public final void setName(com.mendix.systemwideinterfaces.core.IContext context, String name)
+	public final void setName(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String name)
 	{
 		getMendixObject().setValue(context, MemberNames.Name.toString(), name);
 	}
@@ -149,7 +149,7 @@ public class Color
 	/**
 	 * @return value of RAL
 	 */
-	public final Integer getRAL()
+	public final java.lang.Integer getRAL()
 	{
 		return getRAL(getContext());
 	}
@@ -158,16 +158,16 @@ public class Color
 	 * @param context
 	 * @return value of RAL
 	 */
-	public final Integer getRAL(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.Integer getRAL(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (Integer) getMendixObject().getValue(context, MemberNames.RAL.toString());
+		return (java.lang.Integer) getMendixObject().getValue(context, MemberNames.RAL.toString());
 	}
 
 	/**
 	 * Set value of RAL
 	 * @param ral
 	 */
-	public final void setRAL(Integer ral)
+	public final void setRAL(java.lang.Integer ral)
 	{
 		setRAL(getContext(), ral);
 	}
@@ -177,7 +177,7 @@ public class Color
 	 * @param context
 	 * @param ral
 	 */
-	public final void setRAL(com.mendix.systemwideinterfaces.core.IContext context, Integer ral)
+	public final void setRAL(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Integer ral)
 	{
 		getMendixObject().setValue(context, MemberNames.RAL.toString(), ral);
 	}
@@ -185,7 +185,7 @@ public class Color
 	/**
 	 * @return value of IsPrimary
 	 */
-	public final Boolean getIsPrimary()
+	public final java.lang.Boolean getIsPrimary()
 	{
 		return getIsPrimary(getContext());
 	}
@@ -194,16 +194,16 @@ public class Color
 	 * @param context
 	 * @return value of IsPrimary
 	 */
-	public final Boolean getIsPrimary(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.Boolean getIsPrimary(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (Boolean) getMendixObject().getValue(context, MemberNames.IsPrimary.toString());
+		return (java.lang.Boolean) getMendixObject().getValue(context, MemberNames.IsPrimary.toString());
 	}
 
 	/**
 	 * Set value of IsPrimary
 	 * @param isprimary
 	 */
-	public final void setIsPrimary(Boolean isprimary)
+	public final void setIsPrimary(java.lang.Boolean isprimary)
 	{
 		setIsPrimary(getContext(), isprimary);
 	}
@@ -213,7 +213,7 @@ public class Color
 	 * @param context
 	 * @param isprimary
 	 */
-	public final void setIsPrimary(com.mendix.systemwideinterfaces.core.IContext context, Boolean isprimary)
+	public final void setIsPrimary(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Boolean isprimary)
 	{
 		getMendixObject().setValue(context, MemberNames.IsPrimary.toString(), isprimary);
 	}
@@ -221,7 +221,7 @@ public class Color
 	/**
 	 * @return value of ColorCode
 	 */
-	public final String getColorCode()
+	public final java.lang.String getColorCode()
 	{
 		return getColorCode(getContext());
 	}
@@ -230,16 +230,16 @@ public class Color
 	 * @param context
 	 * @return value of ColorCode
 	 */
-	public final String getColorCode(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getColorCode(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.ColorCode.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.ColorCode.toString());
 	}
 
 	/**
 	 * Set value of ColorCode
 	 * @param colorcode
 	 */
-	public final void setColorCode(String colorcode)
+	public final void setColorCode(java.lang.String colorcode)
 	{
 		setColorCode(getContext(), colorcode);
 	}
@@ -249,7 +249,7 @@ public class Color
 	 * @param context
 	 * @param colorcode
 	 */
-	public final void setColorCode(com.mendix.systemwideinterfaces.core.IContext context, String colorcode)
+	public final void setColorCode(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String colorcode)
 	{
 		getMendixObject().setValue(context, MemberNames.ColorCode.toString(), colorcode);
 	}

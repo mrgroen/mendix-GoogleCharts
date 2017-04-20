@@ -149,7 +149,7 @@ public class Cell
 	/**
 	 * @return value of StringValue
 	 */
-	public final String getStringValue()
+	public final java.lang.String getStringValue()
 	{
 		return getStringValue(getContext());
 	}
@@ -158,16 +158,16 @@ public class Cell
 	 * @param context
 	 * @return value of StringValue
 	 */
-	public final String getStringValue(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getStringValue(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.StringValue.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.StringValue.toString());
 	}
 
 	/**
 	 * Set value of StringValue
 	 * @param stringvalue
 	 */
-	public final void setStringValue(String stringvalue)
+	public final void setStringValue(java.lang.String stringvalue)
 	{
 		setStringValue(getContext(), stringvalue);
 	}
@@ -177,7 +177,7 @@ public class Cell
 	 * @param context
 	 * @param stringvalue
 	 */
-	public final void setStringValue(com.mendix.systemwideinterfaces.core.IContext context, String stringvalue)
+	public final void setStringValue(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String stringvalue)
 	{
 		getMendixObject().setValue(context, MemberNames.StringValue.toString(), stringvalue);
 	}

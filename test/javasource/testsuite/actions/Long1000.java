@@ -12,18 +12,18 @@ package testsuite.actions;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
 
-public class Long1000 extends CustomJavaAction<Long>
+public class Long1000 extends CustomJavaAction<java.lang.Long>
 {
-	private Long longVar;
+	private java.lang.Long longVar;
 
-	public Long1000(IContext context, Long longVar)
+	public Long1000(IContext context, java.lang.Long longVar)
 	{
 		super(context);
 		this.longVar = longVar;
 	}
 
 	@Override
-	public Long executeAction() throws Exception
+	public java.lang.Long executeAction() throws Exception
 	{
 		// BEGIN USER CODE
 		String longStr = longVar.toString();
@@ -42,7 +42,7 @@ public class Long1000 extends CustomJavaAction<Long>
 	 * Returns a string representation of this action
 	 */
 	@Override
-	public String toString()
+	public java.lang.String toString()
 	{
 		return "Long1000";
 	}

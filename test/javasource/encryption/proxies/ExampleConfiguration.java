@@ -120,7 +120,7 @@ public class ExampleConfiguration
 	/**
 	 * @return value of Title
 	 */
-	public final String getTitle()
+	public final java.lang.String getTitle()
 	{
 		return getTitle(getContext());
 	}
@@ -129,16 +129,16 @@ public class ExampleConfiguration
 	 * @param context
 	 * @return value of Title
 	 */
-	public final String getTitle(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getTitle(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.Title.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.Title.toString());
 	}
 
 	/**
 	 * Set value of Title
 	 * @param title
 	 */
-	public final void setTitle(String title)
+	public final void setTitle(java.lang.String title)
 	{
 		setTitle(getContext(), title);
 	}
@@ -148,7 +148,7 @@ public class ExampleConfiguration
 	 * @param context
 	 * @param title
 	 */
-	public final void setTitle(com.mendix.systemwideinterfaces.core.IContext context, String title)
+	public final void setTitle(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String title)
 	{
 		getMendixObject().setValue(context, MemberNames.Title.toString(), title);
 	}
@@ -156,7 +156,7 @@ public class ExampleConfiguration
 	/**
 	 * @return value of Username
 	 */
-	public final String getUsername()
+	public final java.lang.String getUsername()
 	{
 		return getUsername(getContext());
 	}
@@ -165,16 +165,16 @@ public class ExampleConfiguration
 	 * @param context
 	 * @return value of Username
 	 */
-	public final String getUsername(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getUsername(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.Username.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.Username.toString());
 	}
 
 	/**
 	 * Set value of Username
 	 * @param username
 	 */
-	public final void setUsername(String username)
+	public final void setUsername(java.lang.String username)
 	{
 		setUsername(getContext(), username);
 	}
@@ -184,7 +184,7 @@ public class ExampleConfiguration
 	 * @param context
 	 * @param username
 	 */
-	public final void setUsername(com.mendix.systemwideinterfaces.core.IContext context, String username)
+	public final void setUsername(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String username)
 	{
 		getMendixObject().setValue(context, MemberNames.Username.toString(), username);
 	}
@@ -192,7 +192,7 @@ public class ExampleConfiguration
 	/**
 	 * @return value of Password
 	 */
-	public final String getPassword()
+	public final java.lang.String getPassword()
 	{
 		return getPassword(getContext());
 	}
@@ -201,16 +201,16 @@ public class ExampleConfiguration
 	 * @param context
 	 * @return value of Password
 	 */
-	public final String getPassword(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getPassword(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.Password.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.Password.toString());
 	}
 
 	/**
 	 * Set value of Password
 	 * @param password
 	 */
-	public final void setPassword(String password)
+	public final void setPassword(java.lang.String password)
 	{
 		setPassword(getContext(), password);
 	}
@@ -220,7 +220,7 @@ public class ExampleConfiguration
 	 * @param context
 	 * @param password
 	 */
-	public final void setPassword(com.mendix.systemwideinterfaces.core.IContext context, String password)
+	public final void setPassword(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String password)
 	{
 		getMendixObject().setValue(context, MemberNames.Password.toString(), password);
 	}

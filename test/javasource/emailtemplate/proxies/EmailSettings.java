@@ -125,7 +125,7 @@ public class EmailSettings
 	/**
 	 * @return value of UserName
 	 */
-	public final String getUserName()
+	public final java.lang.String getUserName()
 	{
 		return getUserName(getContext());
 	}
@@ -134,16 +134,16 @@ public class EmailSettings
 	 * @param context
 	 * @return value of UserName
 	 */
-	public final String getUserName(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getUserName(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.UserName.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.UserName.toString());
 	}
 
 	/**
 	 * Set value of UserName
 	 * @param username
 	 */
-	public final void setUserName(String username)
+	public final void setUserName(java.lang.String username)
 	{
 		setUserName(getContext(), username);
 	}
@@ -153,7 +153,7 @@ public class EmailSettings
 	 * @param context
 	 * @param username
 	 */
-	public final void setUserName(com.mendix.systemwideinterfaces.core.IContext context, String username)
+	public final void setUserName(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String username)
 	{
 		getMendixObject().setValue(context, MemberNames.UserName.toString(), username);
 	}
@@ -161,7 +161,7 @@ public class EmailSettings
 	/**
 	 * @return value of Password
 	 */
-	public final String getPassword()
+	public final java.lang.String getPassword()
 	{
 		return getPassword(getContext());
 	}
@@ -170,16 +170,16 @@ public class EmailSettings
 	 * @param context
 	 * @return value of Password
 	 */
-	public final String getPassword(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getPassword(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.Password.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.Password.toString());
 	}
 
 	/**
 	 * Set value of Password
 	 * @param password
 	 */
-	public final void setPassword(String password)
+	public final void setPassword(java.lang.String password)
 	{
 		setPassword(getContext(), password);
 	}
@@ -189,7 +189,7 @@ public class EmailSettings
 	 * @param context
 	 * @param password
 	 */
-	public final void setPassword(com.mendix.systemwideinterfaces.core.IContext context, String password)
+	public final void setPassword(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String password)
 	{
 		getMendixObject().setValue(context, MemberNames.Password.toString(), password);
 	}
@@ -197,7 +197,7 @@ public class EmailSettings
 	/**
 	 * @return value of Server
 	 */
-	public final String getServer()
+	public final java.lang.String getServer()
 	{
 		return getServer(getContext());
 	}
@@ -206,16 +206,16 @@ public class EmailSettings
 	 * @param context
 	 * @return value of Server
 	 */
-	public final String getServer(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getServer(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.Server.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.Server.toString());
 	}
 
 	/**
 	 * Set value of Server
 	 * @param server
 	 */
-	public final void setServer(String server)
+	public final void setServer(java.lang.String server)
 	{
 		setServer(getContext(), server);
 	}
@@ -225,7 +225,7 @@ public class EmailSettings
 	 * @param context
 	 * @param server
 	 */
-	public final void setServer(com.mendix.systemwideinterfaces.core.IContext context, String server)
+	public final void setServer(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String server)
 	{
 		getMendixObject().setValue(context, MemberNames.Server.toString(), server);
 	}
@@ -233,7 +233,7 @@ public class EmailSettings
 	/**
 	 * @return value of Port
 	 */
-	public final Integer getPort()
+	public final java.lang.Integer getPort()
 	{
 		return getPort(getContext());
 	}
@@ -242,16 +242,16 @@ public class EmailSettings
 	 * @param context
 	 * @return value of Port
 	 */
-	public final Integer getPort(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.Integer getPort(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (Integer) getMendixObject().getValue(context, MemberNames.Port.toString());
+		return (java.lang.Integer) getMendixObject().getValue(context, MemberNames.Port.toString());
 	}
 
 	/**
 	 * Set value of Port
 	 * @param port
 	 */
-	public final void setPort(Integer port)
+	public final void setPort(java.lang.Integer port)
 	{
 		setPort(getContext(), port);
 	}
@@ -261,7 +261,7 @@ public class EmailSettings
 	 * @param context
 	 * @param port
 	 */
-	public final void setPort(com.mendix.systemwideinterfaces.core.IContext context, Integer port)
+	public final void setPort(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Integer port)
 	{
 		getMendixObject().setValue(context, MemberNames.Port.toString(), port);
 	}
@@ -269,7 +269,7 @@ public class EmailSettings
 	/**
 	 * @return value of FromAddress
 	 */
-	public final String getFromAddress()
+	public final java.lang.String getFromAddress()
 	{
 		return getFromAddress(getContext());
 	}
@@ -278,16 +278,16 @@ public class EmailSettings
 	 * @param context
 	 * @return value of FromAddress
 	 */
-	public final String getFromAddress(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getFromAddress(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.FromAddress.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.FromAddress.toString());
 	}
 
 	/**
 	 * Set value of FromAddress
 	 * @param fromaddress
 	 */
-	public final void setFromAddress(String fromaddress)
+	public final void setFromAddress(java.lang.String fromaddress)
 	{
 		setFromAddress(getContext(), fromaddress);
 	}
@@ -297,7 +297,7 @@ public class EmailSettings
 	 * @param context
 	 * @param fromaddress
 	 */
-	public final void setFromAddress(com.mendix.systemwideinterfaces.core.IContext context, String fromaddress)
+	public final void setFromAddress(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String fromaddress)
 	{
 		getMendixObject().setValue(context, MemberNames.FromAddress.toString(), fromaddress);
 	}
@@ -305,7 +305,7 @@ public class EmailSettings
 	/**
 	 * @return value of UseSSL
 	 */
-	public final Boolean getUseSSL()
+	public final java.lang.Boolean getUseSSL()
 	{
 		return getUseSSL(getContext());
 	}
@@ -314,16 +314,16 @@ public class EmailSettings
 	 * @param context
 	 * @return value of UseSSL
 	 */
-	public final Boolean getUseSSL(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.Boolean getUseSSL(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (Boolean) getMendixObject().getValue(context, MemberNames.UseSSL.toString());
+		return (java.lang.Boolean) getMendixObject().getValue(context, MemberNames.UseSSL.toString());
 	}
 
 	/**
 	 * Set value of UseSSL
 	 * @param usessl
 	 */
-	public final void setUseSSL(Boolean usessl)
+	public final void setUseSSL(java.lang.Boolean usessl)
 	{
 		setUseSSL(getContext(), usessl);
 	}
@@ -333,7 +333,7 @@ public class EmailSettings
 	 * @param context
 	 * @param usessl
 	 */
-	public final void setUseSSL(com.mendix.systemwideinterfaces.core.IContext context, Boolean usessl)
+	public final void setUseSSL(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Boolean usessl)
 	{
 		getMendixObject().setValue(context, MemberNames.UseSSL.toString(), usessl);
 	}
@@ -341,7 +341,7 @@ public class EmailSettings
 	/**
 	 * @return value of UseTLS
 	 */
-	public final Boolean getUseTLS()
+	public final java.lang.Boolean getUseTLS()
 	{
 		return getUseTLS(getContext());
 	}
@@ -350,16 +350,16 @@ public class EmailSettings
 	 * @param context
 	 * @return value of UseTLS
 	 */
-	public final Boolean getUseTLS(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.Boolean getUseTLS(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (Boolean) getMendixObject().getValue(context, MemberNames.UseTLS.toString());
+		return (java.lang.Boolean) getMendixObject().getValue(context, MemberNames.UseTLS.toString());
 	}
 
 	/**
 	 * Set value of UseTLS
 	 * @param usetls
 	 */
-	public final void setUseTLS(Boolean usetls)
+	public final void setUseTLS(java.lang.Boolean usetls)
 	{
 		setUseTLS(getContext(), usetls);
 	}
@@ -369,7 +369,7 @@ public class EmailSettings
 	 * @param context
 	 * @param usetls
 	 */
-	public final void setUseTLS(com.mendix.systemwideinterfaces.core.IContext context, Boolean usetls)
+	public final void setUseTLS(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Boolean usetls)
 	{
 		getMendixObject().setValue(context, MemberNames.UseTLS.toString(), usetls);
 	}
@@ -377,7 +377,7 @@ public class EmailSettings
 	/**
 	 * @return value of MaxAttempts
 	 */
-	public final Integer getMaxAttempts()
+	public final java.lang.Integer getMaxAttempts()
 	{
 		return getMaxAttempts(getContext());
 	}
@@ -386,16 +386,16 @@ public class EmailSettings
 	 * @param context
 	 * @return value of MaxAttempts
 	 */
-	public final Integer getMaxAttempts(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.Integer getMaxAttempts(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (Integer) getMendixObject().getValue(context, MemberNames.MaxAttempts.toString());
+		return (java.lang.Integer) getMendixObject().getValue(context, MemberNames.MaxAttempts.toString());
 	}
 
 	/**
 	 * Set value of MaxAttempts
 	 * @param maxattempts
 	 */
-	public final void setMaxAttempts(Integer maxattempts)
+	public final void setMaxAttempts(java.lang.Integer maxattempts)
 	{
 		setMaxAttempts(getContext(), maxattempts);
 	}
@@ -405,7 +405,7 @@ public class EmailSettings
 	 * @param context
 	 * @param maxattempts
 	 */
-	public final void setMaxAttempts(com.mendix.systemwideinterfaces.core.IContext context, Integer maxattempts)
+	public final void setMaxAttempts(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Integer maxattempts)
 	{
 		getMendixObject().setValue(context, MemberNames.MaxAttempts.toString(), maxattempts);
 	}

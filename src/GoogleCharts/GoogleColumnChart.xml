@@ -77,17 +77,17 @@
             <category>Appearance</category>
             <description>The height of the graph.</description>
         </property>
-        <property key="animation" type="boolean" required="true" defaultValue="false">
+        <property key="animation" type="boolean" required="true" defaultValue="true">
             <caption>Use Animation</caption>
             <category>Animation</category>
             <description>Enable animations for this chart.</description>
         </property>
-        <property key="animationStartup" type="boolean" required="true" defaultValue="false">
+        <property key="animationStartup" type="boolean" required="true" defaultValue="true">
             <caption>Startup</caption>
             <category>Animation</category>
             <description>Determines if the chart will animate on the initial draw. If true, the chart will start at the baseline and animate to its final state.</description>
         </property>
-        <property key="animationDuration" type="integer" required="true" defaultValue="0">
+        <property key="animationDuration" type="integer" required="true" defaultValue="1000">
             <caption>Duration</caption>
             <category>Animation</category>
             <description>The duration of the animation, in milliseconds.</description>

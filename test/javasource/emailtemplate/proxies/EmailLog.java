@@ -203,7 +203,7 @@ public class EmailLog
 	/**
 	 * @return value of Message
 	 */
-	public final String getMessage()
+	public final java.lang.String getMessage()
 	{
 		return getMessage(getContext());
 	}
@@ -212,16 +212,16 @@ public class EmailLog
 	 * @param context
 	 * @return value of Message
 	 */
-	public final String getMessage(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getMessage(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.Message.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.Message.toString());
 	}
 
 	/**
 	 * Set value of Message
 	 * @param message
 	 */
-	public final void setMessage(String message)
+	public final void setMessage(java.lang.String message)
 	{
 		setMessage(getContext(), message);
 	}
@@ -231,7 +231,7 @@ public class EmailLog
 	 * @param context
 	 * @param message
 	 */
-	public final void setMessage(com.mendix.systemwideinterfaces.core.IContext context, String message)
+	public final void setMessage(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String message)
 	{
 		getMendixObject().setValue(context, MemberNames.Message.toString(), message);
 	}
@@ -239,7 +239,7 @@ public class EmailLog
 	/**
 	 * @return value of ErrorMessage
 	 */
-	public final String getErrorMessage()
+	public final java.lang.String getErrorMessage()
 	{
 		return getErrorMessage(getContext());
 	}
@@ -248,16 +248,16 @@ public class EmailLog
 	 * @param context
 	 * @return value of ErrorMessage
 	 */
-	public final String getErrorMessage(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getErrorMessage(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.ErrorMessage.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.ErrorMessage.toString());
 	}
 
 	/**
 	 * Set value of ErrorMessage
 	 * @param errormessage
 	 */
-	public final void setErrorMessage(String errormessage)
+	public final void setErrorMessage(java.lang.String errormessage)
 	{
 		setErrorMessage(getContext(), errormessage);
 	}
@@ -267,7 +267,7 @@ public class EmailLog
 	 * @param context
 	 * @param errormessage
 	 */
-	public final void setErrorMessage(com.mendix.systemwideinterfaces.core.IContext context, String errormessage)
+	public final void setErrorMessage(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String errormessage)
 	{
 		getMendixObject().setValue(context, MemberNames.ErrorMessage.toString(), errormessage);
 	}
@@ -275,7 +275,7 @@ public class EmailLog
 	/**
 	 * @return value of TriggeredInMF
 	 */
-	public final String getTriggeredInMF()
+	public final java.lang.String getTriggeredInMF()
 	{
 		return getTriggeredInMF(getContext());
 	}
@@ -284,16 +284,16 @@ public class EmailLog
 	 * @param context
 	 * @return value of TriggeredInMF
 	 */
-	public final String getTriggeredInMF(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getTriggeredInMF(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.TriggeredInMF.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.TriggeredInMF.toString());
 	}
 
 	/**
 	 * Set value of TriggeredInMF
 	 * @param triggeredinmf
 	 */
-	public final void setTriggeredInMF(String triggeredinmf)
+	public final void setTriggeredInMF(java.lang.String triggeredinmf)
 	{
 		setTriggeredInMF(getContext(), triggeredinmf);
 	}
@@ -303,7 +303,7 @@ public class EmailLog
 	 * @param context
 	 * @param triggeredinmf
 	 */
-	public final void setTriggeredInMF(com.mendix.systemwideinterfaces.core.IContext context, String triggeredinmf)
+	public final void setTriggeredInMF(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String triggeredinmf)
 	{
 		getMendixObject().setValue(context, MemberNames.TriggeredInMF.toString(), triggeredinmf);
 	}
@@ -311,7 +311,7 @@ public class EmailLog
 	/**
 	 * @return value of StackTrace
 	 */
-	public final String getStackTrace()
+	public final java.lang.String getStackTrace()
 	{
 		return getStackTrace(getContext());
 	}
@@ -320,16 +320,16 @@ public class EmailLog
 	 * @param context
 	 * @return value of StackTrace
 	 */
-	public final String getStackTrace(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getStackTrace(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.StackTrace.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.StackTrace.toString());
 	}
 
 	/**
 	 * Set value of StackTrace
 	 * @param stacktrace
 	 */
-	public final void setStackTrace(String stacktrace)
+	public final void setStackTrace(java.lang.String stacktrace)
 	{
 		setStackTrace(getContext(), stacktrace);
 	}
@@ -339,7 +339,7 @@ public class EmailLog
 	 * @param context
 	 * @param stacktrace
 	 */
-	public final void setStackTrace(com.mendix.systemwideinterfaces.core.IContext context, String stacktrace)
+	public final void setStackTrace(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String stacktrace)
 	{
 		getMendixObject().setValue(context, MemberNames.StackTrace.toString(), stacktrace);
 	}

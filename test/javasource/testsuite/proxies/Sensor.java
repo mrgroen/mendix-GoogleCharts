@@ -123,7 +123,7 @@ public class Sensor
 	/**
 	 * @return value of UTC
 	 */
-	public final Long getUTC()
+	public final java.lang.Long getUTC()
 	{
 		return getUTC(getContext());
 	}
@@ -132,16 +132,16 @@ public class Sensor
 	 * @param context
 	 * @return value of UTC
 	 */
-	public final Long getUTC(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.Long getUTC(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (Long) getMendixObject().getValue(context, MemberNames.UTC.toString());
+		return (java.lang.Long) getMendixObject().getValue(context, MemberNames.UTC.toString());
 	}
 
 	/**
 	 * Set value of UTC
 	 * @param utc
 	 */
-	public final void setUTC(Long utc)
+	public final void setUTC(java.lang.Long utc)
 	{
 		setUTC(getContext(), utc);
 	}
@@ -151,7 +151,7 @@ public class Sensor
 	 * @param context
 	 * @param utc
 	 */
-	public final void setUTC(com.mendix.systemwideinterfaces.core.IContext context, Long utc)
+	public final void setUTC(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Long utc)
 	{
 		getMendixObject().setValue(context, MemberNames.UTC.toString(), utc);
 	}
@@ -159,7 +159,7 @@ public class Sensor
 	/**
 	 * @return value of _Type
 	 */
-	public final String get_Type()
+	public final java.lang.String get_Type()
 	{
 		return get_Type(getContext());
 	}
@@ -168,16 +168,16 @@ public class Sensor
 	 * @param context
 	 * @return value of _Type
 	 */
-	public final String get_Type(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String get_Type(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames._Type.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames._Type.toString());
 	}
 
 	/**
 	 * Set value of _Type
 	 * @param _type
 	 */
-	public final void set_Type(String _type)
+	public final void set_Type(java.lang.String _type)
 	{
 		set_Type(getContext(), _type);
 	}
@@ -187,7 +187,7 @@ public class Sensor
 	 * @param context
 	 * @param _type
 	 */
-	public final void set_Type(com.mendix.systemwideinterfaces.core.IContext context, String _type)
+	public final void set_Type(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String _type)
 	{
 		getMendixObject().setValue(context, MemberNames._Type.toString(), _type);
 	}
@@ -231,7 +231,7 @@ public class Sensor
 	/**
 	 * @return value of Gateway
 	 */
-	public final String getGateway()
+	public final java.lang.String getGateway()
 	{
 		return getGateway(getContext());
 	}
@@ -240,16 +240,16 @@ public class Sensor
 	 * @param context
 	 * @return value of Gateway
 	 */
-	public final String getGateway(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getGateway(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.Gateway.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.Gateway.toString());
 	}
 
 	/**
 	 * Set value of Gateway
 	 * @param gateway
 	 */
-	public final void setGateway(String gateway)
+	public final void setGateway(java.lang.String gateway)
 	{
 		setGateway(getContext(), gateway);
 	}
@@ -259,7 +259,7 @@ public class Sensor
 	 * @param context
 	 * @param gateway
 	 */
-	public final void setGateway(com.mendix.systemwideinterfaces.core.IContext context, String gateway)
+	public final void setGateway(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String gateway)
 	{
 		getMendixObject().setValue(context, MemberNames.Gateway.toString(), gateway);
 	}
@@ -267,7 +267,7 @@ public class Sensor
 	/**
 	 * @return value of NodeID
 	 */
-	public final String getNodeID()
+	public final java.lang.String getNodeID()
 	{
 		return getNodeID(getContext());
 	}
@@ -276,16 +276,16 @@ public class Sensor
 	 * @param context
 	 * @return value of NodeID
 	 */
-	public final String getNodeID(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getNodeID(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.NodeID.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.NodeID.toString());
 	}
 
 	/**
 	 * Set value of NodeID
 	 * @param nodeid
 	 */
-	public final void setNodeID(String nodeid)
+	public final void setNodeID(java.lang.String nodeid)
 	{
 		setNodeID(getContext(), nodeid);
 	}
@@ -295,7 +295,7 @@ public class Sensor
 	 * @param context
 	 * @param nodeid
 	 */
-	public final void setNodeID(com.mendix.systemwideinterfaces.core.IContext context, String nodeid)
+	public final void setNodeID(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String nodeid)
 	{
 		getMendixObject().setValue(context, MemberNames.NodeID.toString(), nodeid);
 	}
@@ -303,7 +303,7 @@ public class Sensor
 	/**
 	 * @return value of Seal_State
 	 */
-	public final String getSeal_State()
+	public final java.lang.String getSeal_State()
 	{
 		return getSeal_State(getContext());
 	}
@@ -312,16 +312,16 @@ public class Sensor
 	 * @param context
 	 * @return value of Seal_State
 	 */
-	public final String getSeal_State(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getSeal_State(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.Seal_State.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.Seal_State.toString());
 	}
 
 	/**
 	 * Set value of Seal_State
 	 * @param seal_state
 	 */
-	public final void setSeal_State(String seal_state)
+	public final void setSeal_State(java.lang.String seal_state)
 	{
 		setSeal_State(getContext(), seal_state);
 	}
@@ -331,7 +331,7 @@ public class Sensor
 	 * @param context
 	 * @param seal_state
 	 */
-	public final void setSeal_State(com.mendix.systemwideinterfaces.core.IContext context, String seal_state)
+	public final void setSeal_State(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String seal_state)
 	{
 		getMendixObject().setValue(context, MemberNames.Seal_State.toString(), seal_state);
 	}

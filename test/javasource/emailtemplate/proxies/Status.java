@@ -6,28 +6,28 @@ package emailtemplate.proxies;
 
 public enum Status
 {
-	QUEUED(new String[][] { new String[] { "en_US", "Queued" }, new String[] { "en_GB", "Queued" }, new String[] { "en_ZA", "Queued" }, new String[] { "nl_NL", "In wachtrij" } }),
-	SENT(new String[][] { new String[] { "en_US", "Sent" }, new String[] { "en_GB", "Sent" }, new String[] { "en_ZA", "Sent" }, new String[] { "nl_NL", "Verzonden" } }),
-	FAILED(new String[][] { new String[] { "en_US", "Failed" }, new String[] { "en_GB", "Failed" }, new String[] { "en_ZA", "Failed" }, new String[] { "nl_NL", "Gefaald" } }),
-	ERROR(new String[][] { new String[] { "en_US", "Error" }, new String[] { "en_GB", "Error" }, new String[] { "en_ZA", "Error" }, new String[] { "nl_NL", "Fout" } });
+	QUEUED(new java.lang.String[][] { new java.lang.String[] { "en_US", "Queued" }, new java.lang.String[] { "en_GB", "Queued" }, new java.lang.String[] { "en_ZA", "Queued" }, new java.lang.String[] { "nl_NL", "In wachtrij" } }),
+	SENT(new java.lang.String[][] { new java.lang.String[] { "en_US", "Sent" }, new java.lang.String[] { "en_GB", "Sent" }, new java.lang.String[] { "en_ZA", "Sent" }, new java.lang.String[] { "nl_NL", "Verzonden" } }),
+	FAILED(new java.lang.String[][] { new java.lang.String[] { "en_US", "Failed" }, new java.lang.String[] { "en_GB", "Failed" }, new java.lang.String[] { "en_ZA", "Failed" }, new java.lang.String[] { "nl_NL", "Gefaald" } }),
+	ERROR(new java.lang.String[][] { new java.lang.String[] { "en_US", "Error" }, new java.lang.String[] { "en_GB", "Error" }, new java.lang.String[] { "en_ZA", "Error" }, new java.lang.String[] { "nl_NL", "Fout" } });
 
-	private java.util.Map<String,String> captions;
+	private java.util.Map<java.lang.String, java.lang.String> captions;
 
-	private Status(String[][] captionStrings)
+	private Status(java.lang.String[][] captionStrings)
 	{
-		this.captions = new java.util.HashMap<String,String>();
-		for (String[] captionString : captionStrings)
+		this.captions = new java.util.HashMap<java.lang.String, java.lang.String>();
+		for (java.lang.String[] captionString : captionStrings)
 			captions.put(captionString[0], captionString[1]);
 	}
 
-	public String getCaption(String languageCode)
+	public java.lang.String getCaption(java.lang.String languageCode)
 	{
 		if (captions.containsKey(languageCode))
 			return captions.get(languageCode);
 		return captions.get("en_US");
 	}
 
-	public String getCaption()
+	public java.lang.String getCaption()
 	{
 		return captions.get("en_US");
 	}

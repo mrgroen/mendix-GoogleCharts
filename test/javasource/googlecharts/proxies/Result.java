@@ -110,7 +110,7 @@ public class Result
 	/**
 	 * @return value of literal
 	 */
-	public final String getliteral()
+	public final java.lang.String getliteral()
 	{
 		return getliteral(getContext());
 	}
@@ -119,16 +119,16 @@ public class Result
 	 * @param context
 	 * @return value of literal
 	 */
-	public final String getliteral(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getliteral(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.literal.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.literal.toString());
 	}
 
 	/**
 	 * Set value of literal
 	 * @param literal
 	 */
-	public final void setliteral(String literal)
+	public final void setliteral(java.lang.String literal)
 	{
 		setliteral(getContext(), literal);
 	}
@@ -138,7 +138,7 @@ public class Result
 	 * @param context
 	 * @param literal
 	 */
-	public final void setliteral(com.mendix.systemwideinterfaces.core.IContext context, String literal)
+	public final void setliteral(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String literal)
 	{
 		getMendixObject().setValue(context, MemberNames.literal.toString(), literal);
 	}

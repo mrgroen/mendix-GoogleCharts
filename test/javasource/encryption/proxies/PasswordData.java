@@ -112,7 +112,7 @@ public class PasswordData
 	/**
 	 * @return value of NewPassword
 	 */
-	public final String getNewPassword()
+	public final java.lang.String getNewPassword()
 	{
 		return getNewPassword(getContext());
 	}
@@ -121,16 +121,16 @@ public class PasswordData
 	 * @param context
 	 * @return value of NewPassword
 	 */
-	public final String getNewPassword(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getNewPassword(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.NewPassword.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.NewPassword.toString());
 	}
 
 	/**
 	 * Set value of NewPassword
 	 * @param newpassword
 	 */
-	public final void setNewPassword(String newpassword)
+	public final void setNewPassword(java.lang.String newpassword)
 	{
 		setNewPassword(getContext(), newpassword);
 	}
@@ -140,7 +140,7 @@ public class PasswordData
 	 * @param context
 	 * @param newpassword
 	 */
-	public final void setNewPassword(com.mendix.systemwideinterfaces.core.IContext context, String newpassword)
+	public final void setNewPassword(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String newpassword)
 	{
 		getMendixObject().setValue(context, MemberNames.NewPassword.toString(), newpassword);
 	}
@@ -148,7 +148,7 @@ public class PasswordData
 	/**
 	 * @return value of ConfirmPassword
 	 */
-	public final String getConfirmPassword()
+	public final java.lang.String getConfirmPassword()
 	{
 		return getConfirmPassword(getContext());
 	}
@@ -157,16 +157,16 @@ public class PasswordData
 	 * @param context
 	 * @return value of ConfirmPassword
 	 */
-	public final String getConfirmPassword(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.String getConfirmPassword(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (String) getMendixObject().getValue(context, MemberNames.ConfirmPassword.toString());
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.ConfirmPassword.toString());
 	}
 
 	/**
 	 * Set value of ConfirmPassword
 	 * @param confirmpassword
 	 */
-	public final void setConfirmPassword(String confirmpassword)
+	public final void setConfirmPassword(java.lang.String confirmpassword)
 	{
 		setConfirmPassword(getContext(), confirmpassword);
 	}
@@ -176,7 +176,7 @@ public class PasswordData
 	 * @param context
 	 * @param confirmpassword
 	 */
-	public final void setConfirmPassword(com.mendix.systemwideinterfaces.core.IContext context, String confirmpassword)
+	public final void setConfirmPassword(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String confirmpassword)
 	{
 		getMendixObject().setValue(context, MemberNames.ConfirmPassword.toString(), confirmpassword);
 	}

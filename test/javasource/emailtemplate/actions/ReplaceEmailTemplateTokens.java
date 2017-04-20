@@ -13,7 +13,7 @@ import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
 import com.mendix.systemwideinterfaces.core.IMendixObject;
 
-public class ReplaceEmailTemplateTokens extends CustomJavaAction<Boolean>
+public class ReplaceEmailTemplateTokens extends CustomJavaAction<java.lang.Boolean>
 {
 	private IMendixObject DataObject;
 	private IMendixObject __email;
@@ -30,7 +30,7 @@ public class ReplaceEmailTemplateTokens extends CustomJavaAction<Boolean>
 	}
 
 	@Override
-	public Boolean executeAction() throws Exception
+	public java.lang.Boolean executeAction() throws Exception
 	{
 		this.email = __email == null ? null : emailtemplate.proxies.Email.initialize(getContext(), __email);
 
@@ -48,7 +48,7 @@ public class ReplaceEmailTemplateTokens extends CustomJavaAction<Boolean>
 	 * Returns a string representation of this action
 	 */
 	@Override
-	public String toString()
+	public java.lang.String toString()
 	{
 		return "ReplaceEmailTemplateTokens";
 	}
