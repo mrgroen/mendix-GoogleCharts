@@ -10,6 +10,7 @@
 package googlecharts.actions;
 
 import googlecharts.proxies.Cell;
+import googlecharts.proxies.ChartDataSource;
 import googlecharts.proxies.Column;
 import java.util.AbstractList;
 import java.util.ArrayList;
@@ -22,12 +23,12 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import com.mendix.core.Core;
-import com.mendix.core.CoreException;
 import com.mendix.logging.ILogNode;
 import com.mendix.systemwideinterfaces.MendixRuntimeException;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
 import com.mendix.systemwideinterfaces.core.IMendixObject;
+import googlecharts.proxies.Row;
 
 /**
  * JavaScript Literal Initializer for Google Charts.
@@ -35,19 +36,19 @@ import com.mendix.systemwideinterfaces.core.IMendixObject;
  */
 public class CreateLiteralInitializer extends CustomJavaAction<java.lang.String>
 {
-	private IMendixObject __ParameterParameter1;
-	private googlecharts.proxies.ChartDataSource ParameterParameter1;
+	private IMendixObject __Parameter;
+	private googlecharts.proxies.ChartDataSource Parameter;
 
-	public CreateLiteralInitializer(IContext context, IMendixObject ParameterParameter1)
+	public CreateLiteralInitializer(IContext context, IMendixObject Parameter)
 	{
 		super(context);
-		this.__ParameterParameter1 = ParameterParameter1;
+		this.__Parameter = Parameter;
 	}
 
 	@Override
 	public java.lang.String executeAction() throws Exception
 	{
-		this.ParameterParameter1 = __ParameterParameter1 == null ? null : googlecharts.proxies.ChartDataSource.initialize(getContext(), __ParameterParameter1);
+		this.Parameter = __Parameter == null ? null : googlecharts.proxies.ChartDataSource.initialize(getContext(), __Parameter);
 
 		// BEGIN USER CODE
 		final int BATCH_SIZE = 1000;
@@ -55,7 +56,7 @@ public class CreateLiteralInitializer extends CustomJavaAction<java.lang.String>
 		IContext context = this.getContext().createSudoClone(); // full access
 		StringBuilder literalOutput = new StringBuilder();
 		literalOutput.append("{\"rows\":[");
-		List<IMendixObject> rows = Core.retrieveByPath(context, __ParameterParameter1, googlecharts.proxies.Row.MemberNames.rows.toString());
+		List<IMendixObject> rows = Core.retrieveByPath(context, __Parameter, Row.MemberNames.rows.toString());
 		logger.info("rowsSize="+rows.size());
 		ExecutorService exec = Executors.newFixedThreadPool(10);
 		List<List<IMendixObject>> partitions = MyPartition.partition(rows, BATCH_SIZE);
@@ -88,9 +89,9 @@ public class CreateLiteralInitializer extends CustomJavaAction<java.lang.String>
 		}
 		literalOutput = literalOutput.delete(literalOutput.length()-1, literalOutput.length()); // remove trailing stuff
 		literalOutput.append("],\"cols\":[");
-		List<IMendixObject> columns = Core.retrieveByPath(context, __ParameterParameter1, googlecharts.proxies.Column.MemberNames.cols.toString());
+		List<IMendixObject> columns = Core.retrieveByPath(context, __Parameter, Column.MemberNames.cols.toString());
 		for(IMendixObject column : columns){
-			Column columnProxy = googlecharts.proxies.Column.initialize(context, column);
+			Column columnProxy = Column.initialize(context, column);
 			literalOutput.append("{\"label\":\"" + columnProxy.getlabel() +"\",");
 			literalOutput.append("\"type\":\"" + columnProxy.get_type().toLowerCase() +"\"},");
 		}

@@ -24,7 +24,8 @@ public class FileDocument
 		Name("Name"),
 		DeleteAfterDownload("DeleteAfterDownload"),
 		Contents("Contents"),
-		HasContents("HasContents");
+		HasContents("HasContents"),
+		Size("Size");
 
 		private java.lang.String metaName;
 
@@ -67,21 +68,12 @@ public class FileDocument
 
 	/**
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
-	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.getSudoContext() can be used to obtain sudo access).
+	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.createSudoClone() can be used to obtain sudo access).
 	 */
 	public static system.proxies.FileDocument initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
-		if (com.mendix.core.Core.isSubClassOf("EmailTemplate.Attachment", mendixObject.getType()))
-			return emailtemplate.proxies.Attachment.initialize(context, mendixObject);
-
 		if (com.mendix.core.Core.isSubClassOf("System.Image", mendixObject.getType()))
 			return system.proxies.Image.initialize(context, mendixObject);
-
-		if (com.mendix.core.Core.isSubClassOf("ExcelImporter.TemplateDocument", mendixObject.getType()))
-			return excelimporter.proxies.TemplateDocument.initialize(context, mendixObject);
-
-		if (com.mendix.core.Core.isSubClassOf("ExcelImporter.XMLDocumentTemplate", mendixObject.getType()))
-			return excelimporter.proxies.XMLDocumentTemplate.initialize(context, mendixObject);
 
 		return new system.proxies.FileDocument(context, mendixObject);
 	}
@@ -304,6 +296,42 @@ public class FileDocument
 	public final void setHasContents(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Boolean hascontents)
 	{
 		getMendixObject().setValue(context, MemberNames.HasContents.toString(), hascontents);
+	}
+
+	/**
+	 * @return value of Size
+	 */
+	public final java.lang.Long getSize()
+	{
+		return getSize(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of Size
+	 */
+	public final java.lang.Long getSize(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.Long) getMendixObject().getValue(context, MemberNames.Size.toString());
+	}
+
+	/**
+	 * Set value of Size
+	 * @param size
+	 */
+	public final void setSize(java.lang.Long size)
+	{
+		setSize(getContext(), size);
+	}
+
+	/**
+	 * Set value of Size
+	 * @param context
+	 * @param size
+	 */
+	public final void setSize(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Long size)
+	{
+		getMendixObject().setValue(context, MemberNames.Size.toString(), size);
 	}
 
 	/**

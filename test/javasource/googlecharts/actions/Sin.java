@@ -11,22 +11,23 @@ package googlecharts.actions;
 
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
+import java.math.BigDecimal;
 
 public class Sin extends CustomJavaAction<java.math.BigDecimal>
 {
-	private java.math.BigDecimal ParameterParameter1;
+	private java.math.BigDecimal Parameter;
 
-	public Sin(IContext context, java.math.BigDecimal ParameterParameter1)
+	public Sin(IContext context, java.math.BigDecimal Parameter)
 	{
 		super(context);
-		this.ParameterParameter1 = ParameterParameter1;
+		this.Parameter = Parameter;
 	}
 
 	@Override
 	public java.math.BigDecimal executeAction() throws Exception
 	{
 		// BEGIN USER CODE
-		return java.math.BigDecimal.valueOf(Math.sin(ParameterParameter1.doubleValue()));
+		return BigDecimal.valueOf(Math.sin(Parameter.doubleValue()));
 
 		// END USER CODE
 	}
