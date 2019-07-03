@@ -34,6 +34,8 @@ define([
         greenFrom: null,
         greenTo: null,
         height: null,
+        majorTicks: null,
+        minorTicks: null,
         max: null,
         min: null,
         redColor: null,
@@ -59,6 +61,8 @@ define([
         _greenColor: null,
         _greenFrom: null,
         _greenTo: null,
+        _majorTicks: null,
+        _minorTicks: null,
         _max: null,
         _min: null,
         _redColor: null,
@@ -70,12 +74,12 @@ define([
 
         resize: function(box) {
             if (this._chartWrapper !== null) {
-                // Reset width to be able to shrink till 100.
-                this._chartWrapper.setOption('width', 250);
+                // Reset width to be able to shrink till 120.
+                this._chartWrapper.setOption('width', 120);
                 this._chartWrapper.draw();
                 // Set chart width to parent width.
                 var parentWidth = domGeom.getMarginSize(query(this.domNode).parent()[0]).w;
-                if (parentWidth > 250) {
+                if (parentWidth > 120) {
                     this._chartWrapper.setOption('width', parentWidth);
                     this._chartWrapper.draw();
                 }
@@ -117,6 +121,8 @@ define([
                 this._greenColor = this._contextObj ? this._contextObj.get(this.greenColor) : null;
                 this._greenFrom = this._contextObj ? this._contextObj.get(this.greenFrom) : null;
                 this._greenTo = this._contextObj ? this._contextObj.get(this.greenTo) : null;
+                this._majorTicks = this._contextObj ? this._contextObj.get(this.majorTicks) : null;
+                this._minorTicks = this._contextObj ? this._contextObj.get(this.minorTicks) : null;
                 this._max = this._contextObj ? this._contextObj.get(this.max) : null;
                 this._min = this._contextObj ? this._contextObj.get(this.min) : null;
                 this._redColor = this._contextObj ? this._contextObj.get(this.redColor) : null;
@@ -134,6 +140,8 @@ define([
                     'greenFrom': (this._greenFrom !== null) ? this._greenFrom : undefined,
                     'greenTo': (this._greenTo !== null) ? this._greenTo : undefined,
                     'height': (this.height > 0) ? this.height : undefined,
+                    'majorTicks': (this._majorTicks !== null) ? JSON.parse(this._majorTicks) : undefined,
+                    'minorTicks': (this._minorTicks !== null) ? this._minorTicks : undefined,
                     'max': (this._max !== null) ? this._max : undefined,
                     'min': (this._min !== null) ? this._min : undefined,
                     'redColor': (this._redColor !== null) ? this._redColor : undefined,

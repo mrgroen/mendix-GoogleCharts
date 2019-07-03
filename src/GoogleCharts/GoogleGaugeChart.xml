@@ -32,7 +32,7 @@
         </property>
         <property key="greenColor" type="attribute" required="false">
             <caption>Green Color</caption>
-            <category>Appearance</category>
+            <category>Ranges</category>
             <description>The color to use for the green section, in HTML color notation. (Default: '#109618')</description>
             <attributeTypes>
                 <attributeType name="String"/>
@@ -40,7 +40,7 @@
         </property>
         <property key="greenFrom" type="attribute" required="false">
             <caption>Green From</caption>
-            <category>Appearance</category>
+            <category>Ranges</category>
             <description>The lowest value for a range marked by a green color.</description>
             <attributeTypes>
                 <attributeType name="Integer"/>
@@ -48,7 +48,7 @@
         </property>
         <property key="greenTo" type="attribute" required="false">
             <caption>Green To</caption>
-            <category>Appearance</category>
+            <category>Ranges</category>
             <description>The highest value for a range marked by a green color.</description>
             <attributeTypes>
                 <attributeType name="Integer"/>
@@ -63,6 +63,22 @@
             <caption>Width</caption>
             <category>Appearance</category>
             <description>Width of the chart in pixels. (Default: container's width)</description>
+        </property>
+        <property key="majorTicks" type="attribute" required="false">
+            <caption>majorTicks</caption>
+            <category>Appearance</category>
+            <description>Labels for major tick marks. The number of labels define the number of major ticks in all gauges. The default is five major ticks, with the labels of the minimal and maximal gauge value. (Example: ["0","25","50","75","100"])</description>
+            <attributeTypes>
+                <attributeType name="String"/>
+            </attributeTypes>
+        </property>
+        <property key="minorTicks" type="attribute" required="false">
+            <caption>minorTicks</caption>
+            <category>Appearance</category>
+            <description>The number of minor tick section in each major tick section.</description>
+            <attributeTypes>
+                <attributeType name="Integer"/>
+            </attributeTypes>
         </property>
         <property key="max" type="attribute" required="false">
             <caption>Max</caption>
@@ -82,7 +98,7 @@
         </property>
         <property key="redColor" type="attribute" required="false">
             <caption>Red Color</caption>
-            <category>Appearance</category>
+            <category>Ranges</category>
             <description>The color to use for the red section, in HTML color notation. (Default: '#DC3912')</description>
             <attributeTypes>
                 <attributeType name="String"/>
@@ -90,7 +106,7 @@
         </property>
         <property key="redFrom" type="attribute" required="false">
             <caption>Red From</caption>
-            <category>Appearance</category>
+            <category>Ranges</category>
             <description>The lowest value for a range marked by a red color.</description>
             <attributeTypes>
                 <attributeType name="Integer"/>
@@ -98,7 +114,7 @@
         </property>
         <property key="redTo" type="attribute" required="false">
             <caption>Red To</caption>
-            <category>Appearance</category>
+            <category>Ranges</category>
             <description>The highest value for a range marked by a red color.</description>
             <attributeTypes>
                 <attributeType name="Integer"/>
@@ -106,7 +122,7 @@
         </property>
         <property key="yellowColor" type="attribute" required="false">
             <caption>Yellow Color</caption>
-            <category>Appearance</category>
+            <category>Ranges</category>
             <description>The color to use for the yellow section, in HTML color notation. (Default: '#FF9900')</description>
             <attributeTypes>
                 <attributeType name="String"/>
@@ -114,7 +130,7 @@
         </property>
         <property key="yellowFrom" type="attribute" required="false">
             <caption>Yellow From</caption>
-            <category>Appearance</category>
+            <category>Ranges</category>
             <description>The lowest value for a range marked by a yellow color.</description>
             <attributeTypes>
                 <attributeType name="Integer"/>
@@ -122,7 +138,7 @@
         </property>
         <property key="yellowTo" type="attribute" required="false">
             <caption>Yellow To</caption>
-            <category>Appearance</category>
+            <category>Ranges</category>
             <description>The highest value for a range marked by a yellow color.</description>
             <attributeTypes>
                 <attributeType name="Integer"/>
