@@ -13,6 +13,7 @@ The widgets are compatible with Mendix 6.8.1 and up.
 - Line Chart
 - Pie Chart (with donut option)
 - Sankey Diagram // TODO: More options
+- Gauge Chart
 
 ## Configuration
 
