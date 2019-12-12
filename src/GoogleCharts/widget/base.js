@@ -10,9 +10,21 @@ define([
     'dojo/html',
     'dojo/_base/lang',
     'dojo/text!GoogleCharts/widget/template/GoogleChart.html',
-    'GoogleCharts/lib/jsapi',
+    'GoogleCharts/lib/loader',
     'dojo/NodeList-traverse',
-], function(declare, _WidgetBase, _TemplatedMixin, dom, domClass, domConstruct, domGeom, query, html, lang, widgetTemplate) {
+], function(declare,
+    _WidgetBase,
+    _TemplatedMixin,
+    dom,
+    domClass,
+    domConstruct,
+    domGeom,
+    query,
+    html,
+    lang,
+    widgetTemplate,
+    googleLoader,
+    nodeListTraverse) {
 
     return declare('GoogleCharts.widget.base', [_WidgetBase, _TemplatedMixin], {
 
@@ -35,7 +47,7 @@ define([
                 domClass.toggle(this.domNode, 'hidden', false);
 
                 if (!google) {
-                    console.warn("Google JSAPI is not loaded!");
+                    console.warn("Google library is not loaded!");
                     this._executeCallback(callback, "_updateRendering google not loaded");
                     return;
                 }
@@ -43,19 +55,13 @@ define([
                 if (!google.visualization) {
                     if (!window._googleVisualizationLoading) {
                         window._googleVisualizationLoading = true;
-                        if (google.loader && google.loader.Secure === false) {
-                            google.loader.Secure = true;
-                        }
-                        google.load('visualization', '1', {
-                            packages: [
-                              'corechart',
-                              'sankey'
-                            ],
-                            'callback': lang.hitch(this, function() {
-                                window._googleVisualizationLoading = false;
-                                this._drawChartWithJson(callback);
-                            })
+                        google.charts.load('current', {
+                            packages: ['corechart','sankey']
                         });
+                        google.charts.setOnLoadCallback(lang.hitch(this, function() {
+                            window._googleVisualizationLoading = false;
+                            this._drawChartWithJson(callback);
+                        }));
                     } else {
                         this._waitForGoogleLoad(callback);
                     }
