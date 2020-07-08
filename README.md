@@ -15,6 +15,9 @@ The widgets are compatible with Mendix 6.8.1 and up.
 - Sankey Diagram // TODO: More options
 - Gauge Chart
 
+## Known issues
+- Sankey Diagram is not working since the library update.
+
 ## Configuration
 
 The data for the widgets are retrieved through a (dataview) context object. The assumption here is that all aggregation of data is done in a microflow and a "JavaScript Literal" string is send back. In the included test project you can see an example on how to do this.
